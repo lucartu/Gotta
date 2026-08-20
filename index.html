@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,11 +7,10 @@
 <title>GOTTA | Water Intelligence</title>
 
 <style>
-
 *{
+    box-sizing:border-box;
     margin:0;
     padding:0;
-    box-sizing:border-box;
 }
 
 html{
@@ -20,12 +18,12 @@ html{
 }
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
     background:#06151d;
     color:white;
 }
 
-/* ================= HEADER ================= */
+/* ================= MENU ================= */
 
 header{
     position:sticky;
@@ -33,15 +31,13 @@ header{
     z-index:1000;
 
     display:flex;
-    justify-content:space-between;
     align-items:center;
+    justify-content:space-between;
 
-    padding:22px 8%;
+    padding:18px 7%;
 
-    background:rgba(6,21,29,.96);
-    backdrop-filter:blur(10px);
-
-    border-bottom:1px solid #123846;
+    background:rgba(6,21,29,.97);
+    border-bottom:1px solid #17485b;
 }
 
 .logo{
@@ -55,40 +51,64 @@ header{
     color:white;
 }
 
-nav a{
-    color:#d7e9ee;
-    text-decoration:none;
-    margin-left:25px;
-    font-size:15px;
-    transition:.3s;
+.menu{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
 }
 
-nav a:hover{
+.menu button{
+    background:transparent;
+    border:0;
+    color:#b9d0d7;
+
+    padding:10px 13px;
+
+    cursor:pointer;
+    border-radius:8px;
+
+    font-size:14px;
+}
+
+.menu button:hover,
+.menu button.active{
+    background:#103746;
     color:#4de1ff;
 }
 
-/* ================= HERO ================= */
+/* ================= ABAS ================= */
 
-.hero{
-    min-height:90vh;
+.aba{
+    display:none;
+    min-height:calc(100vh - 80px);
+}
+
+.aba.active{
+    display:block;
+}
+
+/* ================= INÍCIO ================= */
+
+.inicio{
+    min-height:calc(100vh - 80px);
 
     display:flex;
     align-items:center;
     justify-content:space-between;
 
-    padding:80px 8%;
-    gap:60px;
+    padding:70px 8%;
+    gap:50px;
 
     background:
     radial-gradient(
         circle at 80% 50%,
-        rgba(36,177,218,.18),
+        rgba(77,225,255,.16),
         transparent 35%
     );
 }
 
-.hero-text{
-    max-width:680px;
+.inicio-texto{
+    max-width:650px;
 }
 
 .tag{
@@ -106,90 +126,77 @@ nav a:hover{
     margin-bottom:25px;
 }
 
-.hero h1{
-    font-size:clamp(45px,7vw,80px);
-    line-height:.98;
-    margin-bottom:30px;
+h1{
+    font-size:clamp(50px,7vw,85px);
+    line-height:1;
+    margin-bottom:25px;
 }
 
-.hero h1 span{
+h1 span{
     color:#4de1ff;
 }
 
-.hero p{
-    font-size:20px;
-    line-height:1.7;
+.inicio p{
     color:#a9c4cd;
-    margin-bottom:40px;
+    font-size:19px;
+    line-height:1.7;
+    margin-bottom:35px;
 }
 
-.button{
+.botao{
     display:inline-block;
 
-    padding:16px 30px;
+    padding:16px 28px;
+
+    border:0;
+    border-radius:30px;
 
     background:#4de1ff;
     color:#06151d;
 
-    text-decoration:none;
-
-    border-radius:30px;
-
     font-weight:bold;
+    cursor:pointer;
 
     transition:.3s;
 }
 
-.button:hover{
-    transform:translateY(-4px);
+.botao:hover{
+    transform:translateY(-3px);
 }
 
-/* ================= WATER ================= */
-
-.water-container{
-    width:350px;
-    height:350px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
-
-.water{
-    width:270px;
-    height:270px;
+.gota{
+    width:280px;
+    height:280px;
 
     border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
     background:
     radial-gradient(
         circle at 35% 30%,
-        #a4f1ff,
+        #b5f5ff,
         #4de1ff 30%,
         #14799a 65%,
         #073848
     );
 
     box-shadow:
-    0 0 60px rgba(77,225,255,.25),
-    inset -20px -20px 50px rgba(0,0,0,.25);
+    0 0 70px rgba(77,225,255,.25),
+    inset -25px -25px 50px rgba(0,0,0,.25);
 
-    animation:floating 4s ease-in-out infinite;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    animation:flutuar 4s infinite ease-in-out;
 }
 
-.water::after{
-    content:"G";
+.gota span{
     font-size:90px;
     font-weight:900;
-    color:rgba(255,255,255,.8);
+    color:rgba(255,255,255,.85);
 }
 
-@keyframes floating{
-
+@keyframes flutuar{
     0%,100%{
         transform:translateY(0);
     }
@@ -197,77 +204,101 @@ nav a:hover{
     50%{
         transform:translateY(-18px);
     }
-
 }
 
-/* ================= SECTIONS ================= */
+/* ================= GERAL ================= */
 
-.section{
-    padding:100px 8%;
-    background:#09212c;
-    text-align:center;
-}
-
-.section.dark{
-    background:#06151d;
-}
-
-.section h2{
-    font-size:45px;
-    margin-bottom:20px;
-}
-
-.section-intro{
-    max-width:700px;
+.conteudo{
+    max-width:1100px;
     margin:auto;
+    padding:70px 25px;
+}
+
+.titulo{
+    text-align:center;
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+.subtitulo{
+    text-align:center;
+    max-width:700px;
+    margin:0 auto 50px;
 
     color:#a9c4cd;
-
     line-height:1.7;
+}
 
-    font-size:17px;
+/* ================= COMO FUNCIONA ================= */
+
+.fluxo{
+    display:grid;
+
+    grid-template-columns:
+    repeat(5,1fr);
+
+    gap:15px;
+}
+
+.etapa{
+    background:#0d2d3b;
+
+    padding:25px 15px;
+
+    border-radius:18px;
+
+    text-align:center;
+
+    border:1px solid #17485b;
+
+    transition:.3s;
+}
+
+.etapa:hover{
+    transform:translateY(-8px);
+    border-color:#4de1ff;
+}
+
+.etapa .emoji{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.etapa h3{
+    color:#4de1ff;
+    margin-bottom:10px;
+}
+
+.etapa p{
+    color:#9bb8c0;
+    line-height:1.5;
+    font-size:14px;
 }
 
 /* ================= CARDS ================= */
 
 .cards{
-    display:flex;
-    justify-content:center;
-    gap:25px;
-    margin-top:60px;
-    flex-wrap:wrap;
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:20px;
 }
 
 .card{
-    width:290px;
-
-    padding:35px;
-
-    text-align:left;
-
     background:#0d2d3b;
 
-    border:1px solid #16495d;
+    padding:30px;
 
-    border-radius:22px;
+    border-radius:20px;
 
-    transition:.3s;
-}
-
-.card:hover{
-    transform:translateY(-10px);
-    border-color:#4de1ff;
-}
-
-.icon{
-    font-size:45px;
-    margin-bottom:20px;
+    border:1px solid #17485b;
 }
 
 .card h3{
     color:#4de1ff;
-    font-size:22px;
-    margin-bottom:15px;
+    margin-bottom:12px;
 }
 
 .card p{
@@ -275,84 +306,24 @@ nav a:hover{
     line-height:1.6;
 }
 
-/* ================= DASHBOARD ================= */
-
-.dashboard{
-    max-width:900px;
-
-    margin:60px auto 0;
-
-    padding:30px;
-
-    background:#071a23;
-
-    border:1px solid #17485b;
-
-    border-radius:25px;
-
-    text-align:left;
-}
-
-.dashboard-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:30px;
-}
-
-.online{
-    color:#4dff9a;
-    font-size:14px;
-}
-
-.stats{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-}
-
-.stat{
-    padding:25px;
-    background:#0d2d3b;
-    border-radius:15px;
-}
-
-.stat small{
-    color:#8aaab5;
-}
-
-.stat strong{
-    display:block;
-
-    font-size:28px;
-
-    margin-top:10px;
-
-    color:#4de1ff;
-}
-
 /* ================= QUESTIONÁRIO ================= */
 
 .questionario{
     max-width:800px;
-
-    margin:50px auto 0;
-
-    padding:40px;
+    margin:auto;
 
     background:#071a23;
 
     border:1px solid #17485b;
 
-    border-radius:25px;
+    border-radius:22px;
 
-    text-align:left;
+    padding:35px;
 }
 
-.progresso-texto{
+.progresso{
     color:#8aaab5;
     margin-bottom:10px;
-    font-size:14px;
 }
 
 .barra{
@@ -363,23 +334,22 @@ nav a:hover{
 
     border-radius:20px;
 
-    margin-bottom:35px;
-
     overflow:hidden;
+
+    margin-bottom:30px;
 }
 
-.barra-progresso{
-    width:12.5%;
+.barra div{
     height:100%;
+    width:12.5%;
 
     background:#4de1ff;
 
-    transition:.4s;
+    transition:.3s;
 }
 
 .pergunta{
     font-size:27px;
-    color:white;
     margin-bottom:25px;
 }
 
@@ -390,65 +360,55 @@ nav a:hover{
 }
 
 .opcao{
-
     padding:18px;
 
     background:#0d2d3b;
+
+    color:white;
 
     border:1px solid #20566a;
 
     border-radius:12px;
 
-    color:white;
-
     cursor:pointer;
 
-    transition:.3s;
+    text-align:left;
 
     font-size:16px;
-
-    text-align:left;
 }
 
 .opcao:hover{
     border-color:#4de1ff;
-    transform:translateY(-3px);
+    transform:translateY(-2px);
 }
 
-.input-questionario,
+.input,
 select{
-
     width:100%;
 
     padding:16px;
 
     background:#0d2d3b;
 
+    color:white;
+
     border:1px solid #20566a;
 
     border-radius:10px;
 
-    color:white;
-
-    font-size:17px;
+    font-size:16px;
 
     outline:none;
 }
 
-.input-questionario:focus,
-select:focus{
-    border-color:#4de1ff;
-}
-
-.botao-proximo{
-
+.botao-largo{
     width:100%;
+
+    margin-top:15px;
 
     padding:16px;
 
-    margin-top:20px;
-
-    border:none;
+    border:0;
 
     border-radius:30px;
 
@@ -458,124 +418,126 @@ select:focus{
 
     font-weight:bold;
 
-    font-size:16px;
-
     cursor:pointer;
 }
 
 /* ================= RESULTADO ================= */
 
 .resultado{
-
-    max-width:800px;
-
-    margin:50px auto 0;
-
-    padding:40px;
+    margin-top:30px;
 
     background:#071a23;
 
     border:1px solid #4de1ff;
 
-    border-radius:25px;
+    border-radius:22px;
 
-    text-align:left;
-}
-
-.resultado h3{
-
-    color:#4de1ff;
-
-    font-size:30px;
-
-    margin-bottom:25px;
-}
-
-/* SCORE */
-
-.score-box{
-
-    text-align:center;
-
-    padding:35px;
-
-    background:#0d2d3b;
-
-    border-radius:20px;
-
-    margin-bottom:25px;
+    padding:30px;
 }
 
 .score{
+    text-align:center;
 
+    background:#0d2d3b;
+
+    padding:30px;
+
+    border-radius:18px;
+
+    margin-bottom:20px;
+}
+
+.numero-score{
     font-size:80px;
-
     font-weight:900;
-
     color:#4de1ff;
 }
 
-.score-label{
-
+.nome-score{
     font-size:20px;
-
-    color:#a9c4cd;
-
-    margin-top:5px;
+    color:#b9d0d7;
 }
 
-/* RESULTADO CARDS */
-
 .resultado-grid{
-
     display:grid;
 
-    grid-template-columns:
-    repeat(2,1fr);
+    grid-template-columns:1fr 1fr;
 
     gap:15px;
 }
 
 .resultado-card{
-
-    padding:25px;
-
     background:#0d2d3b;
+
+    padding:22px;
 
     border-radius:15px;
 }
 
-.resultado-card span{
-
-    display:block;
-
+.resultado-card small{
     color:#8aaab5;
-
-    font-size:14px;
-
-    margin-bottom:10px;
 }
 
 .resultado-card strong{
+    display:block;
 
     color:#4de1ff;
 
-    font-size:25px;
-}
-
-.resultado-card p{
-
-    color:#a9c4cd;
-
-    line-height:1.6;
+    font-size:24px;
 
     margin-top:8px;
 }
 
-/* MISSÃO */
+.missao{
+    margin-top:20px;
 
-.mission-final{
+    padding:22px;
 
+    border-left:4px solid #4de1ff;
+
+    background:#0d2d3b;
+
+    border-radius:10px;
+}
+
+.missao h3{
+    color:#4de1ff;
+    margin-bottom:10px;
+}
+
+.missao p{
+    color:#d4e4e8;
+    line-height:1.6;
+}
+
+/* ================= SIMULADOR ================= */
+
+.simulador{
+    max-width:700px;
+    margin:auto;
+
+    background:#071a23;
+
+    border:1px solid #17485b;
+
+    padding:35px;
+
+    border-radius:22px;
+}
+
+.campo{
+    margin-bottom:20px;
+}
+
+.campo label{
+    display:block;
+
+    color:#b9d0d7;
+
+    margin-bottom:8px;
+}
+
+.resultado-simulador{
     margin-top:25px;
 
     padding:25px;
@@ -584,175 +546,231 @@ select:focus{
 
     border-radius:18px;
 
-    border-left:4px solid #4de1ff;
+    display:none;
 }
 
-.mission-final h4{
-
+.resultado-simulador h3{
     color:#4de1ff;
 
-    font-size:20px;
-
-    margin-bottom:10px;
+    margin-bottom:15px;
 }
 
-.mission-final p{
-
-    color:#d7e9ee;
-
-    line-height:1.6;
-}
-
-.aviso{
-
-    margin-top:25px;
-
-    color:#708d96;
-
-    font-size:13px;
-
-    line-height:1.5;
+.numero{
+    font-size:35px;
+    font-weight:bold;
+    color:#4de1ff;
 }
 
 /* ================= ODS ================= */
 
-.ods-number{
+.ods{
+    text-align:center;
+}
 
-    font-size:80px;
+.ods-numero{
+    font-size:100px;
 
     font-weight:900;
 
     color:#4de1ff;
 
-    margin:30px 0;
+    margin:30px;
+}
+
+.ods-box{
+    max-width:700px;
+
+    margin:auto;
+
+    background:#0d2d3b;
+
+    padding:35px;
+
+    border-radius:22px;
+
+    border:1px solid #17485b;
+}
+
+.ods-box h3{
+    color:#4de1ff;
+
+    font-size:25px;
+
+    margin-bottom:15px;
+}
+
+.ods-box p{
+    color:#a9c4cd;
+
+    line-height:1.7;
+}
+
+/* ================= STARTUP ================= */
+
+.startup-grid{
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:20px;
+}
+
+.startup-card{
+    padding:30px;
+
+    background:#0d2d3b;
+
+    border:1px solid #17485b;
+
+    border-radius:20px;
+}
+
+.startup-card h3{
+    color:#4de1ff;
+
+    margin-bottom:12px;
+}
+
+.startup-card p{
+    color:#a9c4cd;
+
+    line-height:1.6;
+}
+
+.dinheiro{
+    border-color:#4de1ff;
 }
 
 /* ================= FOOTER ================= */
 
 footer{
+    text-align:center;
 
-    padding:40px 8%;
+    padding:35px;
 
     background:#041017;
 
-    text-align:center;
-
-    color:#66828c;
+    color:#718e97;
 }
 
 footer strong{
     color:#4de1ff;
 }
 
-/* ================= MOBILE ================= */
+/* ================= RESPONSIVO ================= */
 
-@media(max-width:800px){
+@media(max-width:850px){
 
     header{
-        padding:20px;
-    }
-
-    nav{
-        display:none;
-    }
-
-    .hero{
-
+        align-items:flex-start;
+        gap:15px;
         flex-direction:column;
+    }
 
+    .menu{
+        width:100%;
+        overflow-x:auto;
+    }
+
+    .inicio{
+        flex-direction:column;
         text-align:center;
-
-        padding:70px 20px;
     }
 
-    .hero h1{
-        font-size:48px;
-    }
-
-    .water-container{
-
-        width:280px;
-        height:280px;
-    }
-
-    .water{
-
+    .gota{
         width:220px;
         height:220px;
     }
 
-    .stats{
-
+    .fluxo{
         grid-template-columns:1fr;
     }
 
-    .opcoes{
+    .cards{
+        grid-template-columns:1fr;
+    }
 
+    .startup-grid{
         grid-template-columns:1fr;
     }
 
     .resultado-grid{
-
         grid-template-columns:1fr;
     }
 
-    .section{
-
-        padding:80px 20px;
+    .opcoes{
+        grid-template-columns:1fr;
     }
-
 }
 
 </style>
-
 </head>
 
 
 <body>
 
 
-<!-- ================= HEADER ================= -->
+<!-- ================= MENU ================= -->
 
 <header>
 
 <div class="logo">
-
 GOTTA<span>.</span>
-
 </div>
 
-<nav>
+<div class="menu">
 
-<a href="#solucao">Solução</a>
+<button class="active"
+onclick="abrirAba('inicio',this)">
+Início
+</button>
 
-<a href="#tecnologia">Tecnologia</a>
+<button onclick="abrirAba('funciona',this)">
+Como funciona
+</button>
 
-<a href="#dashboard">Dashboard</a>
+<button onclick="abrirAba('score',this)">
+GOTTA Score
+</button>
 
-<a href="#questionario">Análise</a>
+<button onclick="abrirAba('simulador',this)">
+Simulador
+</button>
 
-<a href="#impacto">Impacto</a>
+<button onclick="abrirAba('impacto',this)">
+Impacto
+</button>
 
-</nav>
+<button onclick="abrirAba('startup',this)">
+Nossa startup
+</button>
+
+</div>
 
 </header>
 
 
-<!-- ================= HERO ================= -->
+<!-- ================================================= -->
+<!-- INÍCIO -->
+<!-- ================================================= -->
 
-<section class="hero">
+<section
+id="inicio"
+class="aba active">
 
-<div class="hero-text">
+<div class="inicio">
+
+<div class="inicio-texto">
 
 <div class="tag">
-
 💧 WATER INTELLIGENCE
-
 </div>
 
 <h1>
 
 A água fala.
+<br>
 
 <span>
 Nós prevemos.
@@ -762,54 +780,155 @@ Nós prevemos.
 
 <p>
 
-A GOTTA utiliza sensores,
-Inteligência Artificial e análise
-de dados para identificar padrões,
-prever desperdícios e transformar
-o consumo de água em decisões
-inteligentes.
+A GOTTA é uma plataforma de
+inteligência hídrica criada para
+identificar desperdícios, analisar
+hábitos de consumo e incentivar
+a economia de água.
 
 </p>
 
-<a href="#questionario"
-class="button">
+<button
+class="botao"
+onclick="abrirPorNome('score')">
 
-Fazer análise GOTTA →
+Começar análise GOTTA →
 
-</a>
+</button>
 
 </div>
 
 
-<div class="water-container">
+<div class="gota">
 
-<div class="water"></div>
+<span>G</span>
+
+</div>
 
 </div>
 
 </section>
 
 
-<!-- ================= SOLUÇÃO ================= -->
+<!-- ================================================= -->
+<!-- COMO FUNCIONA -->
+<!-- ================================================= -->
 
-<section class="section"
-id="solucao">
+<section
+id="funciona"
+class="aba">
 
-<h2>
+<div class="conteudo">
 
-Uma nova forma de entender a água.
-
+<h2 class="titulo">
+Como a GOTTA funciona?
 </h2>
 
-<p class="section-intro">
+<p class="subtitulo">
 
-A GOTTA não quer apenas detectar
-desperdícios. Nossa tecnologia aprende
-o comportamento hídrico de cada ambiente
-para antecipar problemas antes que eles
-aconteçam.
+A ideia da GOTTA é transformar
+dados sobre água em decisões
+simples e inteligentes.
 
 </p>
+
+
+<div class="fluxo">
+
+
+<div class="etapa">
+
+<div class="emoji">
+📡
+</div>
+
+<h3>
+1. Sensores
+</h3>
+
+<p>
+Captam informações sobre
+o consumo de água.
+</p>
+
+</div>
+
+
+<div class="etapa">
+
+<div class="emoji">
+📊
+</div>
+
+<h3>
+2. Dados
+</h3>
+
+<p>
+As informações são
+organizadas pela plataforma.
+</p>
+
+</div>
+
+
+<div class="etapa">
+
+<div class="emoji">
+🧠
+</div>
+
+<h3>
+3. IA
+</h3>
+
+<p>
+A inteligência analisa
+os padrões de consumo.
+</p>
+
+</div>
+
+
+<div class="etapa">
+
+<div class="emoji">
+🔎
+</div>
+
+<h3>
+4. Análise
+</h3>
+
+<p>
+A GOTTA identifica possíveis
+pontos de desperdício.
+</p>
+
+</div>
+
+
+<div class="etapa">
+
+<div class="emoji">
+💧
+</div>
+
+<h3>
+5. Economia
+</h3>
+
+<p>
+O usuário recebe ações
+para reduzir o desperdício.
+</p>
+
+</div>
+
+
+</div>
+
+<br><br>
 
 
 <div class="cards">
@@ -817,19 +936,14 @@ aconteçam.
 
 <div class="card">
 
-<div class="icon">
-💧
-</div>
-
 <h3>
 Gotta Pulse
 </h3>
 
 <p>
-
-Sensor inteligente que monitora
-o consumo de água em tempo real.
-
+Sistema de sensores pensado
+para acompanhar o consumo
+de água em tempo real.
 </p>
 
 </div>
@@ -837,142 +951,30 @@ o consumo de água em tempo real.
 
 <div class="card">
 
-<div class="icon">
-🧠
-</div>
-
 <h3>
-Gotta AI
-</h3>
-
-<p>
-
-Inteligência Artificial que aprende
-os padrões de consumo e identifica
-anomalias.
-
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">
-📊
-</div>
-
-<h3>
-Gotta Hub
-</h3>
-
-<p>
-
-Um painel inteligente que transforma
-dados complexos em informações simples.
-
-</p>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<!-- ================= TECNOLOGIA ================= -->
-
-<section class="section dark"
-id="tecnologia">
-
-<h2>
-Inteligência Hídrica
-</h2>
-
-<p class="section-intro">
-
-Quanto mais a GOTTA observa,
-mais inteligente ela se torna.
-Nossa tecnologia aprende como cada
-ambiente utiliza água e procura padrões
-que poderiam passar despercebidos.
-
-</p>
-
-</section>
-
-
-<!-- ================= DASHBOARD ================= -->
-
-<section class="section"
-id="dashboard">
-
-<h2>
-Gotta Hub
-</h2>
-
-<p class="section-intro">
-
-Um exemplo de como nossa plataforma
-transforma dados em decisões.
-
-</p>
-
-
-<div class="dashboard">
-
-<div class="dashboard-header">
-
-<strong>
 Gotta Intelligence
-</strong>
+</h3>
 
-<span class="online">
-● Sistema online
-</span>
-
-</div>
-
-
-<div class="stats">
-
-
-<div class="stat">
-
-<small>
-Consumo hoje
-</small>
-
-<strong>
-2.840 L
-</strong>
+<p>
+Sistema responsável por
+analisar os dados e encontrar
+padrões de consumo.
+</p>
 
 </div>
 
 
-<div class="stat">
+<div class="card">
 
-<small>
-Economia mensal
-</small>
+<h3>
+Gotta Mission
+</h3>
 
-<strong>
-13,7%
-</strong>
-
-</div>
-
-
-<div class="stat">
-
-<small>
-Eficiência
-</small>
-
-<strong>
-92%
-</strong>
+<p>
+Transforma a análise em
+missões simples para incentivar
+mudanças de comportamento.
+</p>
 
 </div>
 
@@ -984,57 +986,58 @@ Eficiência
 </section>
 
 
-<!-- ================= QUESTIONÁRIO ================= -->
+<!-- ================================================= -->
+<!-- GOTTA SCORE -->
+<!-- ================================================= -->
 
-<section class="section dark"
-id="questionario">
+<section
+id="score"
+class="aba">
 
-<h2>
+<div class="conteudo">
 
+<h2 class="titulo">
 GOTTA Score
-
 </h2>
 
-<p class="section-intro">
+<p class="subtitulo">
 
-Responda algumas perguntas e descubra
-como está o perfil hídrico do seu ambiente.
+Descubra o perfil hídrico do
+seu ambiente respondendo
+algumas perguntas.
 
 </p>
 
 
-<div class="questionario"
-id="questionario-box">
+<div
+id="questionario"
+class="questionario">
 
-
-<div class="progresso-texto"
-id="progresso">
+<div
+id="progresso"
+class="progresso">
 
 Pergunta 1 de 8
 
 </div>
 
-
 <div class="barra">
 
-<div class="barra-progresso"
-id="barra-progresso">
+<div id="barraScore"></div>
 
 </div>
 
-</div>
-
-
-<h3 class="pergunta"
-id="pergunta">
+<h3
+id="pergunta"
+class="pergunta">
 
 Qual é o tipo de local?
 
 </h3>
 
-
-<div class="opcoes"
-id="opcoes">
+<div
+id="opcoes"
+class="opcoes">
 
 
 <button class="opcao"
@@ -1074,49 +1077,368 @@ onclick="responder('empresa')">
 </div>
 
 
-<div id="resultado-area"></div>
+<div id="resultadoScore"></div>
+
+</div>
 
 </section>
 
 
-<!-- ================= IMPACTO ================= -->
+<!-- ================================================= -->
+<!-- SIMULADOR -->
+<!-- ================================================= -->
 
-<section class="section"
-id="impacto">
+<section
+id="simulador"
+class="aba">
 
-<h2>
+<div class="conteudo">
 
-Nosso impacto
-
+<h2 class="titulo">
+Simulador de Economia
 </h2>
 
-<p class="section-intro">
+<p class="subtitulo">
 
-A GOTTA contribui principalmente
-para a ODS 6 — Água Potável e
-Saneamento, incentivando o uso
-consciente e sustentável dos
+Veja uma estimativa de quanto
+uma família poderia economizar
+reduzindo o consumo de água.
+
+</p>
+
+
+<div class="simulador">
+
+
+<div class="campo">
+
+<label>
+Quantas pessoas moram na casa?
+</label>
+
+<input
+id="simPessoas"
+class="input"
+type="number"
+min="1"
+placeholder="Ex: 4">
+
+</div>
+
+
+<div class="campo">
+
+<label>
+Consumo médio por pessoa/dia
+(Litros)
+</label>
+
+<input
+id="simLitros"
+class="input"
+type="number"
+min="1"
+placeholder="Ex: 150"
+value="150">
+
+</div>
+
+
+<div class="campo">
+
+<label>
+Quanto você acredita que consegue reduzir?
+</label>
+
+<select
+id="simReducao"
+class="input">
+
+<option value="0.05">
+5%
+</option>
+
+<option value="0.10">
+10%
+</option>
+
+<option value="0.15">
+15%
+</option>
+
+<option value="0.20">
+20%
+</option>
+
+<option value="0.25">
+25%
+</option>
+
+</select>
+
+</div>
+
+
+<button
+class="botao-largo"
+onclick="calcularSimulador()">
+
+Calcular economia 💧
+
+</button>
+
+
+<div
+id="resultadoSimulador"
+class="resultado-simulador">
+
+<h3>
+Resultado da simulação
+</h3>
+
+<p>
+Consumo estimado mensal:
+</p>
+
+<div
+id="consumoSim"
+class="numero">
+
+</div>
+
+<br>
+
+<p>
+Economia possível por mês:
+</p>
+
+<div
+id="economiaSim"
+class="numero">
+
+</div>
+
+<br>
+
+<p>
+Economia possível por ano:
+</p>
+
+<div
+id="anoSim"
+class="numero">
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- IMPACTO -->
+<!-- ================================================= -->
+
+<section
+id="impacto"
+class="aba">
+
+<div class="conteudo">
+
+<h2 class="titulo">
+Nosso impacto
+</h2>
+
+<p class="subtitulo">
+
+A GOTTA está diretamente relacionada
+à ODS 6 — Água Potável e Saneamento.
+
+</p>
+
+
+<div class="ods">
+
+<div class="ods-numero">
+ODS 6
+</div>
+
+
+<div class="ods-box">
+
+<h3>
+💧 Água Potável e Saneamento
+</h3>
+
+<p>
+
+A GOTTA busca incentivar o uso
+consciente da água, reduzir
+desperdícios e utilizar tecnologia
+para melhorar a gestão dos
 recursos hídricos.
 
 </p>
 
-<div class="ods-number">
+<br>
 
-ODS 6
+<p>
+
+Nosso projeto não pretende resolver
+todo o problema da água. A proposta
+é dar um passo progressivo:
+<strong>medir, entender e melhorar.</strong>
+
+</p>
 
 </div>
 
-<p class="section-intro">
+</div>
 
-Nosso objetivo é simples:
+</div>
 
-<strong>
+</section>
 
-usar melhor a água que já temos.
 
-</strong>
+<!-- ================================================= -->
+<!-- STARTUP -->
+<!-- ================================================= -->
+
+<section
+id="startup"
+class="aba">
+
+<div class="conteudo">
+
+<h2 class="titulo">
+Nossa Startup
+</h2>
+
+<p class="subtitulo">
+
+A GOTTA foi pensada como uma
+startup real, com tecnologia,
+impacto e um modelo de negócio.
 
 </p>
+
+
+<div class="startup-grid">
+
+
+<div class="startup-card">
+
+<h3>
+🎯 Problema
+</h3>
+
+<p>
+
+Muitas pessoas não sabem
+exatamente onde estão
+desperdiçando água.
+
+</p>
+
+</div>
+
+
+<div class="startup-card">
+
+<h3>
+💡 Solução
+</h3>
+
+<p>
+
+Uma plataforma que utiliza
+dados, sensores e análise
+inteligente para identificar
+oportunidades de economia.
+
+</p>
+
+</div>
+
+
+<div class="startup-card">
+
+<h3>
+👥 Público-alvo
+</h3>
+
+<p>
+
+Famílias, escolas, empresas
+e outros ambientes que
+consomem água diariamente.
+
+</p>
+
+</div>
+
+
+<div class="startup-card dinheiro">
+
+<h3>
+💰 Como ganhamos dinheiro
+</h3>
+
+<p>
+
+A GOTTA poderia vender
+kits de sensores e oferecer
+uma assinatura mensal da
+plataforma de análise.
+
+</p>
+
+</div>
+
+
+<div class="startup-card">
+
+<h3>
+🚀 Diferencial
+</h3>
+
+<p>
+
+A GOTTA não apenas mostra
+o consumo. Ela transforma
+os dados em recomendações
+e desafios personalizados.
+
+</p>
+
+</div>
+
+
+<div class="startup-card">
+
+<h3>
+🌎 ODS
+</h3>
+
+<p>
+
+ODS 6 — Água Potável e
+Saneamento, contribuindo
+para o uso sustentável
+da água.
+
+</p>
+
+</div>
+
+
+</div>
+
+</div>
 
 </section>
 
@@ -1125,51 +1447,106 @@ usar melhor a água que já temos.
 
 <footer>
 
-<p>
-
-<strong>
-GOTTA.
-</strong>
+<strong>GOTTA.</strong>
 
 Water Intelligence.
 
-</p>
+<br><br>
 
-<br>
-
-<p>
-
-© 2026 GOTTA —
-Inteligência para um futuro sustentável.
-
-</p>
+Projeto escolar de empreendedorismo — 2026
 
 </footer>
 
 
 <script>
 
+/* =================================================
+   SISTEMA DE ABAS
+================================================= */
 
-/* ================= DADOS ================= */
+function abrirAba(id, botao){
 
-let perguntaAtual = 1;
+    const abas =
+    document.querySelectorAll(".aba");
+
+    abas.forEach(function(aba){
+
+        aba.classList.remove("active");
+
+    });
 
 
-let respostas = {
+    document
+    .getElementById(id)
+    .classList.add("active");
 
-local:"",
-pessoas:0,
-estado:"",
-consumo:0,
-banhos:0,
-torneiras:"",
-vaso:"",
-reuso:""
+
+    const botoes =
+    document.querySelectorAll(".menu button");
+
+    botoes.forEach(function(btn){
+
+        btn.classList.remove("active");
+
+    });
+
+
+    if(botao){
+
+        botao.classList.add("active");
+
+    }
+
+    window.scrollTo(0,0);
+}
+
+
+/* Abrir aba pelo nome */
+
+function abrirPorNome(id){
+
+    const botoes =
+    document.querySelectorAll(".menu button");
+
+    for(let botao of botoes){
+
+        if(
+        botao.innerText
+        .toLowerCase()
+        .includes(id.toLowerCase())
+        ){
+
+            abrirAba(id,botao);
+
+            return;
+
+        }
+
+    }
+
+    abrirAba(id,null);
+}
+
+
+/* =================================================
+   QUESTIONÁRIO
+================================================= */
+
+let perguntaAtual=1;
+
+let respostas={
+
+    local:"",
+    pessoas:0,
+    estado:"",
+    banhos:0,
+    consumo:0,
+    torneiras:"",
+    vaso:"",
+    reuso:""
 
 };
 
-
-/* ================= RESPONDER ================= */
 
 function responder(valor){
 
@@ -1233,8 +1610,6 @@ function responder(valor){
 }
 
 
-/* ================= MOSTRAR PERGUNTA ================= */
-
 function mostrarPergunta(){
 
     const pergunta =
@@ -1247,16 +1622,16 @@ function mostrarPergunta(){
     document.getElementById("progresso");
 
     const barra =
-    document.getElementById("barra-progresso");
+    document.getElementById("barraScore");
 
 
-    progresso.innerText =
+    progresso.innerText=
     "Pergunta "
-    + perguntaAtual
-    + " de 8";
+    +perguntaAtual+
+    " de 8";
 
 
-    barra.style.width =
+    barra.style.width=
     ((perguntaAtual/8)*100)+"%";
 
 
@@ -1264,21 +1639,21 @@ function mostrarPergunta(){
 
     if(perguntaAtual===2){
 
-        pergunta.innerText =
+        pergunta.innerText=
         "Quantas pessoas utilizam este local?";
 
 
         opcoes.innerHTML=`
 
         <input
-        class="input-questionario"
         id="pessoas"
+        class="input"
         type="number"
         min="1"
         placeholder="Ex: 4">
 
         <button
-        class="botao-proximo"
+        class="botao-largo"
         onclick="salvarPessoas()">
 
         Continuar →
@@ -1295,53 +1670,38 @@ function mostrarPergunta(){
 
     if(perguntaAtual===3){
 
-        pergunta.innerText =
+        pergunta.innerText=
         "Em qual estado você está?";
 
 
         opcoes.innerHTML=`
 
         <select
-        class="input-questionario"
-        id="estado">
+        id="estado"
+        class="input">
 
         <option value="">
-        Selecione seu estado
+        Selecione
         </option>
 
-        <option>Acre</option>
-        <option>Alagoas</option>
-        <option>Amapá</option>
-        <option>Amazonas</option>
-        <option>Bahia</option>
-        <option>Ceará</option>
-        <option>Distrito Federal</option>
-        <option>Espírito Santo</option>
-        <option>Goiás</option>
-        <option>Maranhão</option>
-        <option>Mato Grosso</option>
-        <option>Mato Grosso do Sul</option>
-        <option>Minas Gerais</option>
-        <option>Pará</option>
-        <option>Paraíba</option>
-        <option>Paraná</option>
-        <option>Pernambuco</option>
-        <option>Piauí</option>
-        <option>Rio de Janeiro</option>
-        <option>Rio Grande do Norte</option>
-        <option>Rio Grande do Sul</option>
-        <option>Rondônia</option>
-        <option>Roraima</option>
         <option>Santa Catarina</option>
+        <option>Paraná</option>
+        <option>Rio Grande do Sul</option>
         <option>São Paulo</option>
-        <option>Sergipe</option>
-        <option>Tocantins</option>
+        <option>Rio de Janeiro</option>
+        <option>Minas Gerais</option>
+        <option>Bahia</option>
+        <option>Pará</option>
+        <option>Amazonas</option>
+        <option>Goiás</option>
+        <option>Pernambuco</option>
+        <option>Ceará</option>
+        <option>Outro</option>
 
         </select>
 
-
         <button
-        class="botao-proximo"
+        class="botao-largo"
         onclick="salvarEstado()">
 
         Continuar →
@@ -1358,21 +1718,21 @@ function mostrarPergunta(){
 
     if(perguntaAtual===4){
 
-        pergunta.innerText =
+        pergunta.innerText=
         "Quantos banhos aproximadamente são tomados por dia?";
 
 
         opcoes.innerHTML=`
 
         <input
-        class="input-questionario"
         id="banhos"
+        class="input"
         type="number"
         min="0"
         placeholder="Ex: 5">
 
         <button
-        class="botao-proximo"
+        class="botao-largo"
         onclick="salvarBanhos()">
 
         Continuar →
@@ -1389,21 +1749,21 @@ function mostrarPergunta(){
 
     if(perguntaAtual===5){
 
-        pergunta.innerText =
+        pergunta.innerText=
         "Você sabe seu consumo mensal de água?";
 
 
         opcoes.innerHTML=`
 
         <input
-        class="input-questionario"
         id="consumo"
+        class="input"
         type="number"
         min="0"
-        placeholder="Litros por mês (opcional)">
+        placeholder="Litros por mês">
 
         <button
-        class="botao-proximo"
+        class="botao-largo"
         onclick="salvarConsumo()">
 
         Continuar →
@@ -1420,8 +1780,8 @@ function mostrarPergunta(){
 
     if(perguntaAtual===6){
 
-        pergunta.innerText =
-        "Existem torneiras que pingam ou apresentam problemas?";
+        pergunta.innerText=
+        "Existem torneiras pingando ou com vazamentos?";
 
 
         opcoes.innerHTML=`
@@ -1457,7 +1817,7 @@ function mostrarPergunta(){
 
     if(perguntaAtual===7){
 
-        pergunta.innerText =
+        pergunta.innerText=
         "O vaso sanitário apresenta algum problema?";
 
 
@@ -1494,7 +1854,7 @@ function mostrarPergunta(){
 
     if(perguntaAtual===8){
 
-        pergunta.innerText =
+        pergunta.innerText=
         "Você reutiliza água?";
 
 
@@ -1528,21 +1888,17 @@ function mostrarPergunta(){
 }
 
 
-/* ================= SALVAR PESSOAS ================= */
-
 function salvarPessoas(){
 
-    const valor =
+    const valor=
     Number(
-        document.getElementById("pessoas").value
+    document.getElementById("pessoas").value
     );
 
 
     if(!valor || valor<1){
 
-        alert(
-        "Digite um número válido de pessoas."
-        );
+        alert("Digite um número válido.");
 
         return;
     }
@@ -1553,23 +1909,18 @@ function salvarPessoas(){
     perguntaAtual=3;
 
     mostrarPergunta();
-
 }
 
 
-/* ================= SALVAR ESTADO ================= */
-
 function salvarEstado(){
 
-    const valor =
+    const valor=
     document.getElementById("estado").value;
 
 
     if(!valor){
 
-        alert(
-        "Selecione seu estado."
-        );
+        alert("Selecione seu estado.");
 
         return;
     }
@@ -1580,65 +1931,44 @@ function salvarEstado(){
     perguntaAtual=4;
 
     mostrarPergunta();
-
 }
 
 
-/* ================= SALVAR BANHOS ================= */
-
 function salvarBanhos(){
 
-    const valor =
+    respostas.banhos=
     Number(
-        document.getElementById("banhos").value
-    );
+    document.getElementById("banhos").value
+    )||0;
 
-
-    respostas.banhos=valor||0;
 
     perguntaAtual=5;
 
     mostrarPergunta();
-
 }
 
 
-/* ================= SALVAR CONSUMO ================= */
-
 function salvarConsumo(){
 
-    const valor =
+    respostas.consumo=
     Number(
-        document.getElementById("consumo").value
-    );
+    document.getElementById("consumo").value
+    )||0;
 
-
-    respostas.consumo=valor||0;
 
     perguntaAtual=6;
 
     mostrarPergunta();
-
 }
 
 
-/* ================= RESULTADO ================= */
+/* =================================================
+   RESULTADO DO SCORE
+================================================= */
 
 function mostrarResultado(){
 
-
     let consumo;
-
-
-    /*
-    Se o usuário informou consumo,
-    usamos o valor informado.
-
-    Caso contrário:
-
-    150 litros por pessoa/dia
-    × 30 dias.
-    */
 
 
     if(respostas.consumo>0){
@@ -1655,17 +1985,8 @@ function mostrarResultado(){
     }
 
 
-    /*
-    CÁLCULO DO SCORE
-    */
-
-
     let score=100;
 
-
-    /*
-    Torneiras
-    */
 
     if(respostas.torneiras==="sim"){
         score-=15;
@@ -1676,10 +1997,6 @@ function mostrarResultado(){
     }
 
 
-    /*
-    Vaso
-    */
-
     if(respostas.vaso==="sim"){
         score-=15;
     }
@@ -1688,10 +2005,6 @@ function mostrarResultado(){
         score-=7;
     }
 
-
-    /*
-    Reutilização
-    */
 
     if(respostas.reuso==="sim"){
         score+=5;
@@ -1702,17 +2015,9 @@ function mostrarResultado(){
     }
 
 
-    /*
-    Banhos
-    */
-
-    const mediaBanhos =
-    respostas.pessoas*1.5;
-
-
     if(
     respostas.banhos>
-    mediaBanhos*1.5
+    respostas.pessoas*1.5
     ){
 
         score-=10;
@@ -1720,88 +2025,49 @@ function mostrarResultado(){
     }
 
 
-    /*
-    Limites
-    */
+    score=Math.max(0,Math.min(100,score));
 
-    if(score>100){
-        score=100;
+
+    let nome;
+
+    if(score>=80){
+
+        nome="🌊 Guardião da Água";
+
+    }else if(score>=60){
+
+        nome="💧 Consumidor Consciente";
+
+    }else if(score>=40){
+
+        nome="🌱 Em Evolução";
+
+    }else{
+
+        nome="⚠️ Alto potencial de economia";
+
     }
-
-    if(score<0){
-        score=0;
-    }
-
-
-    /*
-    POTENCIAL DE ECONOMIA
-    */
 
 
     let percentual;
 
 
     if(score>=80){
-
         percentual=.08;
-
     }else if(score>=60){
-
         percentual=.12;
-
     }else if(score>=40){
-
         percentual=.18;
-
     }else{
-
         percentual=.25;
-
     }
 
 
-    const economiaMensal=
+    const economia=
     consumo*percentual;
 
-
-    const economiaAnual=
-    economiaMensal*12;
-
-
-    /*
-    CLASSIFICAÇÃO
-    */
-
-
-    let classificacao;
-
-
-    if(score>=80){
-
-        classificacao=
-        "🌊 Guardião da Água";
-
-    }else if(score>=60){
-
-        classificacao=
-        "💧 Consumidor Consciente";
-
-    }else if(score>=40){
-
-        classificacao=
-        "🌱 Em Evolução";
-
-    }else{
-
-        classificacao=
-        "⚠️ Alto potencial de economia";
-
-    }
-
-
-    /*
-    MISSÃO
-    */
+    const anual=
+    economia*12;
 
 
     let missao;
@@ -1810,68 +2076,41 @@ function mostrarResultado(){
     if(respostas.torneiras==="sim"){
 
         missao=
-        "Verificar e corrigir torneiras que apresentam vazamentos.";
+        "Verifique e conserte as torneiras com vazamentos.";
 
     }else if(respostas.vaso==="sim"){
 
         missao=
-        "Verificar o vaso sanitário e procurar possíveis vazamentos.";
+        "Verifique o vaso sanitário e procure possíveis vazamentos.";
 
     }else if(respostas.reuso==="nao"){
 
         missao=
-        "Começar a reutilizar água sempre que possível, como para limpeza.";
-
-    }else if(
-    respostas.banhos>
-    respostas.pessoas*1.5
-    ){
-
-        missao=
-        "Reduzir o tempo dos banhos e evitar água correndo sem necessidade.";
+        "Procure uma forma de reutilizar água em tarefas como limpeza.";
 
     }else{
 
         missao=
-        "Encontrar um novo ponto de economia de água esta semana.";
+        "Reduza o tempo dos banhos e observe seu consumo durante esta semana.";
 
     }
 
 
-    /*
-    ESCONDE QUESTIONÁRIO
-    */
-
-    document
-    .getElementById("questionario-box")
-    .style.display="none";
+    document.getElementById("questionario").style.display="none";
 
 
-    /*
-    MOSTRA RESULTADO
-    */
-
-    document
-    .getElementById("resultado-area")
-    .innerHTML=`
+    document.getElementById("resultadoScore").innerHTML=`
 
     <div class="resultado">
 
-        <h3>
-            🧠 Análise GOTTA
-        </h3>
+        <div class="score">
 
-
-        <div class="score-box">
-
-            <div class="score">
-                ${score}
+            <div class="numero-score">
+            ${score}
             </div>
 
-            <div class="score-label">
-
-                ${classificacao}
-
+            <div class="nome-score">
+            ${nome}
             </div>
 
         </div>
@@ -1882,86 +2121,52 @@ function mostrarResultado(){
 
             <div class="resultado-card">
 
-                <span>
-                    👥 Perfil
-                </span>
+                <small>
+                👥 Pessoas
+                </small>
 
                 <strong>
-
-                    ${respostas.pessoas}
-                    pessoa(s)
-
+                ${respostas.pessoas}
                 </strong>
-
-                <p>
-
-                    ${respostas.local}
-                    · ${respostas.estado}
-
-                </p>
 
             </div>
 
 
             <div class="resultado-card">
 
-                <span>
-                    💧 Consumo estimado
-                </span>
+                <small>
+                💧 Consumo estimado
+                </small>
 
                 <strong>
-
-                    ${consumo.toLocaleString(
-                    "pt-BR"
-                    )} L
-
+                ${consumo.toLocaleString("pt-BR")} L
                 </strong>
-
-                <p>
-                    por mês
-                </p>
 
             </div>
 
 
             <div class="resultado-card">
 
-                <span>
-                    ♻️ Economia potencial
-                </span>
+                <small>
+                ♻️ Economia mensal
+                </small>
 
                 <strong>
-
-                    ${economiaMensal.toLocaleString(
-                    "pt-BR"
-                    )} L
-
+                ${economia.toLocaleString("pt-BR")} L
                 </strong>
-
-                <p>
-                    por mês
-                </p>
 
             </div>
 
 
             <div class="resultado-card">
 
-                <span>
-                    🌎 Impacto anual
-                </span>
+                <small>
+                🌎 Economia anual
+                </small>
 
                 <strong>
-
-                    ${economiaAnual.toLocaleString(
-                    "pt-BR"
-                    )} L
-
+                ${anual.toLocaleString("pt-BR")} L
                 </strong>
-
-                <p>
-                    de água potencialmente economizada
-                </p>
 
             </div>
 
@@ -1969,31 +2174,17 @@ function mostrarResultado(){
         </div>
 
 
-        <div class="mission-final">
+        <div class="missao">
 
-            <h4>
-                🎯 Sua GOTTA Mission
-            </h4>
+            <h3>
+            🎯 Sua GOTTA Mission
+            </h3>
 
             <p>
-
-                ${missao}
-
+            ${missao}
             </p>
 
         </div>
-
-
-        <p class="aviso">
-
-            *O GOTTA Score e as estimativas
-            são parte do protótipo escolar.
-            Os valores não representam
-            medições reais e poderiam ser
-            aprimorados utilizando dados
-            reais dos sensores GOTTA.
-
-        </p>
 
     </div>
 
@@ -2001,8 +2192,83 @@ function mostrarResultado(){
 
 }
 
+
+/* =================================================
+   SIMULADOR
+================================================= */
+
+function calcularSimulador(){
+
+    const pessoas=
+    Number(
+    document.getElementById("simPessoas").value
+    );
+
+
+    const litros=
+    Number(
+    document.getElementById("simLitros").value
+    );
+
+
+    const reducao=
+    Number(
+    document.getElementById("simReducao").value
+    );
+
+
+    if(!pessoas || pessoas<1){
+
+        alert("Digite a quantidade de pessoas.");
+
+        return;
+    }
+
+
+    const consumo=
+    pessoas*
+    litros*
+    30;
+
+
+    const economia=
+    consumo*
+    reducao;
+
+
+    const anual=
+    economia*12;
+
+
+    document.getElementById(
+    "resultadoSimulador"
+    ).style.display="block";
+
+
+    document.getElementById(
+    "consumoSim"
+    ).innerText=
+    consumo.toLocaleString("pt-BR")
+    +" L/mês";
+
+
+    document.getElementById(
+    "economiaSim"
+    ).innerText=
+    economia.toLocaleString("pt-BR")
+    +" L/mês";
+
+
+    document.getElementById(
+    "anoSim"
+    ).innerText=
+    anual.toLocaleString("pt-BR")
+    +" L/ano";
+
+}
+
 </script>
 
-</body>
 
+</body>
 </html>
