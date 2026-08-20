@@ -42,6 +42,7 @@
             padding: 22px 8%;
 
             background: rgba(6, 21, 29, 0.95);
+
             backdrop-filter: blur(10px);
 
             border-bottom: 1px solid #123846;
@@ -80,6 +81,7 @@
             justify-content: space-between;
 
             padding: 80px 8%;
+
             gap: 60px;
 
             background:
@@ -100,6 +102,7 @@
             padding: 8px 15px;
 
             border: 1px solid #20566a;
+
             border-radius: 30px;
 
             color: #4de1ff;
@@ -111,7 +114,9 @@
 
         .hero h1 {
             font-size: clamp(45px, 7vw, 80px);
+
             line-height: 0.98;
+
             margin-bottom: 30px;
         }
 
@@ -121,6 +126,7 @@
 
         .hero p {
             font-size: 20px;
+
             line-height: 1.7;
 
             color: #a9c4cd;
@@ -161,7 +167,9 @@
             height: 350px;
 
             display: flex;
+
             align-items: center;
+
             justify-content: center;
         }
 
@@ -187,10 +195,13 @@
                 inset -20px -20px 50px
                 rgba(0,0,0,0.25);
 
-            animation: floating 4s ease-in-out infinite;
+            animation:
+                floating 4s ease-in-out infinite;
 
             display: flex;
+
             align-items: center;
+
             justify-content: center;
         }
 
@@ -232,6 +243,7 @@
 
         .section h2 {
             font-size: 45px;
+
             margin-bottom: 20px;
         }
 
@@ -281,14 +293,11 @@
             transform: translateY(-10px);
 
             border-color: #4de1ff;
-
-            box-shadow:
-                0 15px 40px
-                rgba(0,0,0,0.25);
         }
 
         .icon {
             font-size: 45px;
+
             margin-bottom: 20px;
         }
 
@@ -322,10 +331,6 @@
             border-radius: 25px;
 
             text-align: left;
-
-            box-shadow:
-                0 20px 50px
-                rgba(0,0,0,0.25);
         }
 
         .dashboard-header {
@@ -419,10 +424,10 @@
             border-radius: 20px;
         }
 
-        /* ================= SIMULADOR ================= */
+        /* ================= QUESTIONÁRIO ================= */
 
-        .simulator {
-            max-width: 700px;
+        .questionario {
+            max-width: 750px;
 
             margin: 50px auto 0;
 
@@ -437,15 +442,85 @@
             text-align: left;
         }
 
-        .simulator label {
-            display: block;
+        .progresso-texto {
+            color: #8aaab5;
 
-            margin-bottom: 12px;
+            margin-bottom: 10px;
 
-            color: #a9c4cd;
+            font-size: 14px;
         }
 
-        .simulator input {
+        .barra {
+            width: 100%;
+
+            height: 8px;
+
+            background: #163b49;
+
+            border-radius: 20px;
+
+            margin-bottom: 35px;
+
+            overflow: hidden;
+        }
+
+        .barra-progresso {
+            width: 16%;
+
+            height: 100%;
+
+            background: #4de1ff;
+
+            transition: 0.4s;
+        }
+
+        .pergunta {
+            font-size: 25px;
+
+            color: white;
+
+            margin-bottom: 25px;
+        }
+
+        .opcoes {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 15px;
+        }
+
+        .opcao {
+
+            padding: 18px;
+
+            background: #0d2d3b;
+
+            border: 1px solid #20566a;
+
+            border-radius: 12px;
+
+            color: white;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+
+            font-size: 16px;
+
+            text-align: left;
+        }
+
+        .opcao:hover {
+
+            border-color: #4de1ff;
+
+            transform: translateY(-3px);
+
+        }
+
+        .input-questionario {
+
             width: 100%;
 
             padding: 16px;
@@ -460,19 +535,23 @@
 
             font-size: 17px;
 
-            margin-bottom: 20px;
-
             outline: none;
+
         }
 
-        .simulator input:focus {
+        .input-questionario:focus {
+
             border-color: #4de1ff;
+
         }
 
-        .simulator button {
+        .botao-proximo {
+
             width: 100%;
 
             padding: 16px;
+
+            margin-top: 20px;
 
             border: none;
 
@@ -488,19 +567,71 @@
 
             cursor: pointer;
 
-            transition: 0.3s;
         }
 
-        .simulator button:hover {
-            transform: translateY(-3px);
-
-            box-shadow:
-                0 10px 30px
-                rgba(77,225,255,0.2);
-        }
+        /* ================= RESULTADO ================= */
 
         .resultado {
-            margin-top: 35px;
+
+            max-width: 750px;
+
+            margin: 50px auto 0;
+
+            padding: 40px;
+
+            background: #071a23;
+
+            border: 1px solid #4de1ff;
+
+            border-radius: 25px;
+
+            text-align: left;
+
+        }
+
+        .resultado h3 {
+
+            color: #4de1ff;
+
+            font-size: 30px;
+
+            margin-bottom: 25px;
+
+        }
+
+        .resultado-card {
+
+            padding: 20px;
+
+            background: #0d2d3b;
+
+            border-radius: 15px;
+
+            margin-top: 15px;
+
+        }
+
+        .resultado-card strong {
+
+            color: #4de1ff;
+
+            font-size: 25px;
+
+        }
+
+        .resultado-card p {
+
+            color: #a9c4cd;
+
+            line-height: 1.6;
+
+            margin-top: 8px;
+
+        }
+
+        .mission-final {
+
+            margin-top: 25px;
 
             padding: 25px;
 
@@ -508,59 +639,36 @@
 
             border-radius: 18px;
 
-            color: #a9c4cd;
+            border-left: 4px solid #4de1ff;
+
         }
 
-        .resultado h3 {
+        .mission-final h4 {
+
             color: #4de1ff;
 
-            margin-bottom: 25px;
+            font-size: 20px;
+
+            margin-bottom: 10px;
+
         }
 
-        .resultado-grid {
-            display: grid;
+        .aviso {
 
-            grid-template-columns:
-                repeat(3, 1fr);
+            margin-top: 25px;
 
-            gap: 15px;
-        }
-
-        .resultado-grid div {
-            padding: 20px;
-
-            background: #071a23;
-
-            border-radius: 12px;
-        }
-
-        .resultado-grid span {
-            display: block;
+            color: #708d96;
 
             font-size: 13px;
 
-            color: #8aaab5;
+            line-height: 1.5;
 
-            margin-bottom: 10px;
-        }
-
-        .resultado-grid strong {
-            display: block;
-
-            color: #4de1ff;
-
-            font-size: 22px;
-        }
-
-        .analise {
-            margin-top: 25px;
-
-            line-height: 1.6;
         }
 
         /* ================= ODS ================= */
 
         .ods-number {
+
             font-size: 80px;
 
             font-weight: 900;
@@ -568,11 +676,13 @@
             color: #4de1ff;
 
             margin: 30px 0;
+
         }
 
         /* ================= FOOTER ================= */
 
         footer {
+
             padding: 40px 8%;
 
             background: #041017;
@@ -580,10 +690,13 @@
             text-align: center;
 
             color: #66828c;
+
         }
 
         footer strong {
+
             color: #4de1ff;
+
         }
 
         /* ================= MOBILE ================= */
@@ -599,11 +712,13 @@
             }
 
             .hero {
+
                 flex-direction: column;
 
                 text-align: center;
 
                 padding: 70px 20px;
+
             }
 
             .hero h1 {
@@ -611,25 +726,37 @@
             }
 
             .water-container {
+
                 width: 280px;
+
                 height: 280px;
+
             }
 
             .water {
+
                 width: 220px;
+
                 height: 220px;
+
             }
 
             .stats {
+
                 grid-template-columns: 1fr;
+
             }
 
-            .resultado-grid {
+            .opcoes {
+
                 grid-template-columns: 1fr;
+
             }
 
             .section {
+
                 padding: 80px 20px;
+
             }
 
         }
@@ -647,8 +774,11 @@
 <header>
 
     <div class="logo">
+
         GOTTA<span>.</span>
+
     </div>
+
 
     <nav>
 
@@ -664,8 +794,8 @@
             Dashboard
         </a>
 
-        <a href="#simulador">
-            Simulador
+        <a href="#questionario">
+            Análise
         </a>
 
         <a href="#impacto">
@@ -685,8 +815,11 @@
     <div class="hero-text">
 
         <div class="tag">
+
             💧 WATER INTELLIGENCE
+
         </div>
+
 
         <h1>
 
@@ -697,6 +830,7 @@
             </span>
 
         </h1>
+
 
         <p>
 
@@ -709,10 +843,11 @@
 
         </p>
 
-        <a href="#solucao"
+
+        <a href="#questionario"
            class="button">
 
-            Descobrir a GOTTA →
+            Fazer análise GOTTA →
 
         </a>
 
@@ -739,6 +874,7 @@
         Uma nova forma de entender a água.
 
     </h2>
+
 
     <p class="section-intro">
 
@@ -827,8 +963,11 @@
          id="tecnologia">
 
     <h2>
+
         Inteligência Hídrica
+
     </h2>
+
 
     <p class="section-intro">
 
@@ -853,6 +992,7 @@
         Gotta Hub
     </h2>
 
+
     <p class="section-intro">
 
         Um exemplo de como nossa plataforma
@@ -863,14 +1003,18 @@
 
     <div class="dashboard">
 
+
         <div class="dashboard-header">
 
             <strong>
                 Gotta Intelligence
             </strong>
 
+
             <span class="online">
+
                 ● Sistema online
+
             </span>
 
         </div>
@@ -924,8 +1068,11 @@
         <div class="mission">
 
             <h3>
+
                 🎯 Gotta Mission
+
             </h3>
+
 
             <p>
 
@@ -943,7 +1090,9 @@
 
 
             <small>
+
                 82% da missão concluída
+
             </small>
 
         </div>
@@ -954,64 +1103,96 @@
 
 
 
-<!-- ================= SIMULADOR ================= -->
+<!-- ================= QUESTIONÁRIO ================= -->
 
 <section class="section dark"
-         id="simulador">
+         id="questionario">
 
     <h2>
-        Simule sua economia
+
+        Análise GOTTA
+
     </h2>
 
 
     <p class="section-intro">
 
-        Descubra quanto poderia ser economizado
-        caso o desperdício fosse reduzido.
+        Responda algumas perguntas e descubra
+        como a GOTTA poderia ajudar seu ambiente
+        a utilizar água de forma mais inteligente.
 
     </p>
 
 
-    <div class="simulator">
+    <div class="questionario"
+         id="questionario-box">
 
+        <div class="progresso-texto"
+             id="progresso">
 
-        <label for="consumo">
-
-            Seu consumo mensal de água
-            (litros)
-
-        </label>
-
-
-        <input
-            type="number"
-            id="consumo"
-            placeholder="Ex: 20000"
-            min="1"
-        >
-
-
-        <button onclick="calcularEconomia()">
-
-            Analisar meu consumo →
-
-        </button>
-
-
-        <div id="resultado"
-             class="resultado">
-
-            <p>
-
-                Digite seu consumo acima
-                para começar.
-
-            </p>
+            Pergunta 1 de 6
 
         </div>
 
 
+        <div class="barra">
+
+            <div class="barra-progresso"
+                 id="barra-progresso">
+
+            </div>
+
+        </div>
+
+
+        <h3 class="pergunta"
+            id="pergunta">
+
+            Onde você mora?
+
+        </h3>
+
+
+        <div class="opcoes"
+             id="opcoes">
+
+            <button class="opcao"
+                    onclick="responder('casa')">
+
+                🏠 Casa
+
+            </button>
+
+
+            <button class="opcao"
+                    onclick="responder('apartamento')">
+
+                🏢 Apartamento
+
+            </button>
+
+
+            <button class="opcao"
+                    onclick="responder('escola')">
+
+                🏫 Escola
+
+            </button>
+
+
+            <button class="opcao"
+                    onclick="responder('empresa')">
+
+                🏢 Empresa
+
+            </button>
+
+        </div>
+
     </div>
+
+
+    <div id="resultado-area"></div>
 
 </section>
 
@@ -1023,7 +1204,9 @@
          id="impacto">
 
     <h2>
+
         Nosso impacto
+
     </h2>
 
 
@@ -1039,7 +1222,9 @@
 
 
     <div class="ods-number">
+
         ODS 6
+
     </div>
 
 
@@ -1048,7 +1233,9 @@
         Nosso objetivo é simples:
 
         <strong>
+
             usar melhor a água que já temos.
+
         </strong>
 
     </p>
@@ -1071,7 +1258,9 @@
 
     </p>
 
+
     <br>
+
 
     <p>
 
@@ -1088,9 +1277,505 @@
 
 <script>
 
-function calcularEconomia() {
 
-    const consumo =
+let perguntaAtual = 1;
+
+
+let respostas = {
+
+    local: "",
+
+    pessoas: 0,
+
+    estado: "",
+
+    consumo: 0,
+
+    desperdicio: "",
+
+    vazamento: ""
+
+};
+
+
+
+function responder(valor) {
+
+
+    if (perguntaAtual === 1) {
+
+        respostas.local = valor;
+
+        perguntaAtual = 2;
+
+        mostrarPergunta();
+
+        return;
+
+    }
+
+
+    if (perguntaAtual === 4) {
+
+        respostas.consumo = Number(valor);
+
+        perguntaAtual = 5;
+
+        mostrarPergunta();
+
+        return;
+
+    }
+
+
+    if (perguntaAtual === 5) {
+
+        respostas.desperdicio = valor;
+
+        perguntaAtual = 6;
+
+        mostrarPergunta();
+
+        return;
+
+    }
+
+
+    if (perguntaAtual === 6) {
+
+        respostas.vazamento = valor;
+
+        mostrarResultado();
+
+        return;
+
+    }
+
+}
+
+
+
+function mostrarPergunta() {
+
+
+    const pergunta =
+        document.getElementById("pergunta");
+
+
+    const opcoes =
+        document.getElementById("opcoes");
+
+
+    const progresso =
+        document.getElementById("progresso");
+
+
+    const barra =
+        document.getElementById("barra-progresso");
+
+
+    progresso.innerText =
+        "Pergunta "
+        + perguntaAtual
+        + " de 6";
+
+
+    barra.style.width =
+        ((perguntaAtual / 6) * 100)
+        + "%";
+
+
+
+    /* PERGUNTA 2 */
+
+    if (perguntaAtual === 2) {
+
+
+        pergunta.innerText =
+            "Quantas pessoas utilizam este local?";
+
+
+        opcoes.innerHTML = `
+
+            <input
+                class="input-questionario"
+                id="pessoas"
+                type="number"
+                min="1"
+                placeholder="Ex: 4"
+            >
+
+            <button
+                class="botao-proximo"
+                onclick="salvarPessoas()">
+
+                Continuar →
+
+            </button>
+
+        `;
+
+        return;
+
+    }
+
+
+
+    /* PERGUNTA 3 */
+
+    if (perguntaAtual === 3) {
+
+
+        pergunta.innerText =
+            "Em qual estado você está?";
+
+
+        opcoes.innerHTML = `
+
+            <select
+                class="input-questionario"
+                id="estado">
+
+                <option value="">
+                    Selecione seu estado
+                </option>
+
+                <option>
+                    Acre
+                </option>
+
+                <option>
+                    Alagoas
+                </option>
+
+                <option>
+                    Amapá
+                </option>
+
+                <option>
+                    Amazonas
+                </option>
+
+                <option>
+                    Bahia
+                </option>
+
+                <option>
+                    Ceará
+                </option>
+
+                <option>
+                    Distrito Federal
+                </option>
+
+                <option>
+                    Espírito Santo
+                </option>
+
+                <option>
+                    Goiás
+                </option>
+
+                <option>
+                    Maranhão
+                </option>
+
+                <option>
+                    Mato Grosso
+                </option>
+
+                <option>
+                    Mato Grosso do Sul
+                </option>
+
+                <option>
+                    Minas Gerais
+                </option>
+
+                <option>
+                    Pará
+                </option>
+
+                <option>
+                    Paraíba
+                </option>
+
+                <option>
+                    Paraná
+                </option>
+
+                <option>
+                    Pernambuco
+                </option>
+
+                <option>
+                    Piauí
+                </option>
+
+                <option>
+                    Rio de Janeiro
+                </option>
+
+                <option>
+                    Rio Grande do Norte
+                </option>
+
+                <option>
+                    Rio Grande do Sul
+                </option>
+
+                <option>
+                    Rondônia
+                </option>
+
+                <option>
+                    Roraima
+                </option>
+
+                <option>
+                    Santa Catarina
+                </option>
+
+                <option>
+                    São Paulo
+                </option>
+
+                <option>
+                    Sergipe
+                </option>
+
+                <option>
+                    Tocantins
+                </option>
+
+            </select>
+
+
+            <button
+                class="botao-proximo"
+                onclick="salvarEstado()">
+
+                Continuar →
+
+            </button>
+
+        `;
+
+        return;
+
+    }
+
+
+
+    /* PERGUNTA 4 */
+
+    if (perguntaAtual === 4) {
+
+
+        pergunta.innerText =
+            "Você sabe seu consumo mensal de água?";
+
+
+        opcoes.innerHTML = `
+
+            <input
+                class="input-questionario"
+                id="consumo"
+                type="number"
+                min="0"
+                placeholder="Litros por mês (opcional)"
+            >
+
+            <button
+                class="botao-proximo"
+                onclick="salvarConsumo()">
+
+                Continuar →
+
+            </button>
+
+        `;
+
+        return;
+
+    }
+
+
+
+    /* PERGUNTA 5 */
+
+    if (perguntaAtual === 5) {
+
+
+        pergunta.innerText =
+            "Com que frequência você percebe desperdício?";
+
+
+        opcoes.innerHTML = `
+
+            <button
+                class="opcao"
+                onclick="responder('nunca')">
+
+                🟢 Nunca
+
+            </button>
+
+
+            <button
+                class="opcao"
+                onclick="responder('as vezes')">
+
+                🟡 Às vezes
+
+            </button>
+
+
+            <button
+                class="opcao"
+                onclick="responder('frequente')">
+
+                🟠 Frequentemente
+
+            </button>
+
+
+            <button
+                class="opcao"
+                onclick="responder('nao sei')">
+
+                ⚪ Não sei
+
+            </button>
+
+        `;
+
+        return;
+
+    }
+
+
+
+    /* PERGUNTA 6 */
+
+    if (perguntaAtual === 6) {
+
+
+        pergunta.innerText =
+            "Existem vazamentos no local?";
+
+
+        opcoes.innerHTML = `
+
+            <button
+                class="opcao"
+                onclick="responder('nao')">
+
+                🟢 Não
+
+            </button>
+
+
+            <button
+                class="opcao"
+                onclick="responder('talvez')">
+
+                🟡 Talvez
+
+            </button>
+
+
+            <button
+                class="opcao"
+                onclick="responder('sim')">
+
+                🔴 Sim
+
+            </button>
+
+
+            <button
+                class="opcao"
+                onclick="responder('nao sei')">
+
+                ⚪ Não sei
+
+            </button>
+
+        `;
+
+    }
+
+}
+
+
+
+function salvarPessoas() {
+
+
+    const valor =
+        Number(
+            document
+            .getElementById("pessoas")
+            .value
+        );
+
+
+    if (!valor || valor < 1) {
+
+        alert(
+            "Digite um número válido de pessoas."
+        );
+
+        return;
+
+    }
+
+
+    respostas.pessoas = valor;
+
+    perguntaAtual = 3;
+
+    mostrarPergunta();
+
+}
+
+
+
+function salvarEstado() {
+
+
+    const valor =
+        document
+        .getElementById("estado")
+        .value;
+
+
+    if (!valor) {
+
+        alert(
+            "Selecione seu estado."
+        );
+
+        return;
+
+    }
+
+
+    respostas.estado = valor;
+
+    perguntaAtual = 4;
+
+    mostrarPergunta();
+
+}
+
+
+
+function salvarConsumo() {
+
+
+    const valor =
         Number(
             document
             .getElementById("consumo")
@@ -1098,130 +1783,277 @@ function calcularEconomia() {
         );
 
 
-    const resultado =
-        document
-        .getElementById("resultado");
+    respostas.consumo = valor || 0;
+
+    perguntaAtual = 5;
+
+    mostrarPergunta();
+
+}
 
 
-    if (!consumo || consumo <= 0) {
 
-        resultado.innerHTML = `
+function mostrarResultado() {
 
-            <p>
-                ⚠️ Digite um consumo válido
-                para continuar.
-            </p>
 
-        `;
+    const questionario =
+        document.getElementById(
+            "questionario-box"
+        );
 
-        return;
+
+    const resultadoArea =
+        document.getElementById(
+            "resultado-area"
+        );
+
+
+    /*
+        ESTIMATIVA DO PROTÓTIPO
+
+        Caso o usuário não saiba
+        o consumo, usamos uma
+        estimativa simples de
+        150 litros por pessoa/dia.
+    */
+
+
+    let consumo;
+
+
+    if (respostas.consumo > 0) {
+
+        consumo =
+            respostas.consumo;
+
+    } else {
+
+        consumo =
+            respostas.pessoas
+            * 150
+            * 30;
+
+    }
+
+
+    let percentual = 0;
+
+
+    if (
+        respostas.desperdicio
+        === "frequente"
+    ) {
+
+        percentual += 0.10;
+
+    }
+
+
+    if (
+        respostas.desperdicio
+        === "as vezes"
+    ) {
+
+        percentual += 0.07;
+
+    }
+
+
+    if (
+        respostas.vazamento
+        === "sim"
+    ) {
+
+        percentual += 0.08;
+
+    }
+
+
+    if (
+        respostas.vazamento
+        === "talvez"
+    ) {
+
+        percentual += 0.04;
+
     }
 
 
     /*
-        SIMULAÇÃO DO PROTÓTIPO
-
-        A GOTTA considera uma redução
-        hipotética de 15%.
-
-        Este resultado é ilustrativo.
+        Mantemos um potencial mínimo
+        de economia de 10%.
     */
 
-    const economiaLitros =
-        consumo * 0.15;
+
+    if (percentual < 0.10) {
+
+        percentual = 0.10;
+
+    }
 
 
-    /*
-        Valor financeiro ilustrativo.
-
-        Não representa uma tarifa
-        real de água.
-    */
-
-    const economiaFinanceira =
-        economiaLitros * 0.01;
+    const economiaMensal =
+        consumo * percentual;
 
 
-    resultado.innerHTML = `
-
-        <h3>
-            🧠 Análise GOTTA
-        </h3>
+    const economiaAnual =
+        economiaMensal * 12;
 
 
-        <div class="resultado-grid">
+    const porcentagem =
+        Math.round(
+            percentual * 100
+        );
 
 
-            <div>
+    let missao;
 
-                <span>
-                    💧 Economia estimada
-                </span>
+
+    if (
+        respostas.vazamento === "sim"
+    ) {
+
+        missao =
+            "Verificar e corrigir possíveis vazamentos.";
+
+    } else if (
+        respostas.desperdicio
+        === "frequente"
+    ) {
+
+        missao =
+            "Identificar os principais pontos de desperdício.";
+
+    } else {
+
+        missao =
+            "Reduzir o tempo de banho em 2 minutos.";
+
+    }
+
+
+    questionario.style.display =
+        "none";
+
+
+    resultadoArea.innerHTML = `
+
+        <div class="resultado">
+
+            <h3>
+                🧠 Análise GOTTA
+            </h3>
+
+
+            <div class="resultado-card">
+
+                <p>
+                    Perfil analisado
+                </p>
+
+                <strong>
+                    ${respostas.local}
+                </strong>
+
+                <p>
+                    ${respostas.pessoas}
+                    pessoa(s) ·
+                    ${respostas.estado}
+                </p>
+
+            </div>
+
+
+            <div class="resultado-card">
+
+                <p>
+                    Consumo mensal estimado
+                </p>
 
                 <strong>
 
-                    ${economiaLitros
-                    .toLocaleString('pt-BR')} L
+                    ${consumo.toLocaleString(
+                        'pt-BR'
+                    )} L
 
                 </strong>
 
             </div>
 
 
-            <div>
+            <div class="resultado-card">
 
-                <span>
-                    💰 Economia estimada
-                </span>
+                <p>
+                    Potencial de economia
+                </p>
 
                 <strong>
 
-                    R$ ${economiaFinanceira
-                    .toFixed(2)}
+                    ${economiaMensal.toLocaleString(
+                        'pt-BR'
+                    )} L/mês
+
+                </strong>
+
+                <p>
+
+                    Aproximadamente
+                    ${porcentagem}% de redução.
+
+                </p>
+
+            </div>
+
+
+            <div class="resultado-card">
+
+                <p>
+                    Impacto em um ano
+                </p>
+
+                <strong>
+
+                    ${economiaAnual.toLocaleString(
+                        'pt-BR'
+                    )} L
 
                 </strong>
 
             </div>
 
 
-            <div>
+            <div class="mission-final">
 
-                <span>
-                    📉 Redução estimada
-                </span>
+                <h4>
+                    🎯 Sua GOTTA Mission
+                </h4>
 
-                <strong>
-                    15%
-                </strong>
+                <p>
+
+                    ${missao}
+
+                </p>
 
             </div>
 
 
-        </div>
+            <p class="aviso">
 
-
-        <p class="analise">
-
-            🧠 A GOTTA identificou uma
-            oportunidade de redução de
-            aproximadamente 15% no consumo.
-
-            <br><br>
-
-            <small>
-
-                *Resultado ilustrativo do protótipo.
-                A economia real depende do perfil
-                de consumo, tarifas e condições
+                *Os resultados são estimativas
+                do protótipo GOTTA e não
+                representam uma medição real.
+                A economia real depende das
+                características e do consumo
                 de cada local.
 
-            </small>
+            </p>
 
-        </p>
+        </div>
 
     `;
 
 }
+
 
 </script>
 
