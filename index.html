@@ -2,766 +2,708 @@
 <html lang="pt-BR">
 
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta charset="UTF-8">
+<title>GOTTA | Water Intelligence</title>
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+<style>
 
-    <title>GOTTA | Water Intelligence</title>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-    <style>
+html{
+    scroll-behavior:smooth;
+}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#06151d;
+    color:white;
+}
 
-        html {
-            scroll-behavior: smooth;
-        }
+/* ================= HEADER ================= */
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #06151d;
-            color: white;
-        }
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
 
-        /* ================= HEADER ================= */
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+    padding:22px 8%;
 
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+    background:rgba(6,21,29,.96);
+    backdrop-filter:blur(10px);
 
-            padding: 22px 8%;
+    border-bottom:1px solid #123846;
+}
 
-            background: rgba(6, 21, 29, 0.95);
+.logo{
+    font-size:30px;
+    font-weight:900;
+    letter-spacing:4px;
+    color:#4de1ff;
+}
 
-            backdrop-filter: blur(10px);
+.logo span{
+    color:white;
+}
 
-            border-bottom: 1px solid #123846;
-        }
+nav a{
+    color:#d7e9ee;
+    text-decoration:none;
+    margin-left:25px;
+    font-size:15px;
+    transition:.3s;
+}
 
-        .logo {
-            font-size: 30px;
-            font-weight: 900;
-            letter-spacing: 4px;
-            color: #4de1ff;
-        }
+nav a:hover{
+    color:#4de1ff;
+}
 
-        .logo span {
-            color: white;
-        }
+/* ================= HERO ================= */
 
-        nav a {
-            color: #d7e9ee;
-            text-decoration: none;
-            margin-left: 25px;
-            font-size: 15px;
-            transition: 0.3s;
-        }
+.hero{
+    min-height:90vh;
 
-        nav a:hover {
-            color: #4de1ff;
-        }
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 
-        /* ================= HERO ================= */
+    padding:80px 8%;
+    gap:60px;
 
-        .hero {
-            min-height: 90vh;
+    background:
+    radial-gradient(
+        circle at 80% 50%,
+        rgba(36,177,218,.18),
+        transparent 35%
+    );
+}
 
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+.hero-text{
+    max-width:680px;
+}
 
-            padding: 80px 8%;
+.tag{
+    display:inline-block;
 
-            gap: 60px;
+    padding:8px 15px;
 
-            background:
-                radial-gradient(
-                    circle at 80% 50%,
-                    rgba(36, 177, 218, 0.18),
-                    transparent 35%
-                );
-        }
+    border:1px solid #20566a;
+    border-radius:30px;
 
-        .hero-text {
-            max-width: 680px;
-        }
+    color:#4de1ff;
 
-        .tag {
-            display: inline-block;
+    font-size:13px;
 
-            padding: 8px 15px;
+    margin-bottom:25px;
+}
 
-            border: 1px solid #20566a;
+.hero h1{
+    font-size:clamp(45px,7vw,80px);
+    line-height:.98;
+    margin-bottom:30px;
+}
 
-            border-radius: 30px;
+.hero h1 span{
+    color:#4de1ff;
+}
 
-            color: #4de1ff;
+.hero p{
+    font-size:20px;
+    line-height:1.7;
+    color:#a9c4cd;
+    margin-bottom:40px;
+}
 
-            font-size: 13px;
+.button{
+    display:inline-block;
 
-            margin-bottom: 25px;
-        }
+    padding:16px 30px;
 
-        .hero h1 {
-            font-size: clamp(45px, 7vw, 80px);
+    background:#4de1ff;
+    color:#06151d;
 
-            line-height: 0.98;
+    text-decoration:none;
 
-            margin-bottom: 30px;
-        }
+    border-radius:30px;
 
-        .hero h1 span {
-            color: #4de1ff;
-        }
+    font-weight:bold;
 
-        .hero p {
-            font-size: 20px;
+    transition:.3s;
+}
 
-            line-height: 1.7;
+.button:hover{
+    transform:translateY(-4px);
+}
 
-            color: #a9c4cd;
+/* ================= WATER ================= */
 
-            margin-bottom: 40px;
-        }
+.water-container{
+    width:350px;
+    height:350px;
 
-        .button {
-            display: inline-block;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
 
-            padding: 16px 30px;
+.water{
+    width:270px;
+    height:270px;
 
-            background: #4de1ff;
+    border-radius:50%;
 
-            color: #06151d;
+    background:
+    radial-gradient(
+        circle at 35% 30%,
+        #a4f1ff,
+        #4de1ff 30%,
+        #14799a 65%,
+        #073848
+    );
 
-            text-decoration: none;
+    box-shadow:
+    0 0 60px rgba(77,225,255,.25),
+    inset -20px -20px 50px rgba(0,0,0,.25);
 
-            border-radius: 30px;
+    animation:floating 4s ease-in-out infinite;
 
-            font-weight: bold;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
 
-            transition: 0.3s;
-        }
+.water::after{
+    content:"G";
+    font-size:90px;
+    font-weight:900;
+    color:rgba(255,255,255,.8);
+}
 
-        .button:hover {
-            transform: translateY(-4px);
+@keyframes floating{
 
-            box-shadow:
-                0 10px 30px
-                rgba(77, 225, 255, 0.25);
-        }
+    0%,100%{
+        transform:translateY(0);
+    }
 
-        /* ================= WATER ================= */
+    50%{
+        transform:translateY(-18px);
+    }
 
-        .water-container {
-            width: 350px;
-            height: 350px;
+}
 
-            display: flex;
+/* ================= SECTIONS ================= */
 
-            align-items: center;
+.section{
+    padding:100px 8%;
+    background:#09212c;
+    text-align:center;
+}
 
-            justify-content: center;
-        }
+.section.dark{
+    background:#06151d;
+}
 
-        .water {
-            width: 270px;
-            height: 270px;
+.section h2{
+    font-size:45px;
+    margin-bottom:20px;
+}
 
-            border-radius: 50%;
+.section-intro{
+    max-width:700px;
+    margin:auto;
 
-            background:
-                radial-gradient(
-                    circle at 35% 30%,
-                    #a4f1ff,
-                    #4de1ff 30%,
-                    #14799a 65%,
-                    #073848
-                );
+    color:#a9c4cd;
 
-            box-shadow:
-                0 0 60px
-                rgba(77, 225, 255, 0.25),
+    line-height:1.7;
 
-                inset -20px -20px 50px
-                rgba(0,0,0,0.25);
+    font-size:17px;
+}
 
-            animation:
-                floating 4s ease-in-out infinite;
+/* ================= CARDS ================= */
 
-            display: flex;
+.cards{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    margin-top:60px;
+    flex-wrap:wrap;
+}
 
-            align-items: center;
+.card{
+    width:290px;
 
-            justify-content: center;
-        }
+    padding:35px;
 
-        .water::after {
-            content: "G";
+    text-align:left;
 
-            font-size: 90px;
+    background:#0d2d3b;
 
-            font-weight: 900;
+    border:1px solid #16495d;
 
-            color: rgba(255,255,255,0.8);
-        }
+    border-radius:22px;
 
-        @keyframes floating {
+    transition:.3s;
+}
 
-            0%, 100% {
-                transform: translateY(0);
-            }
+.card:hover{
+    transform:translateY(-10px);
+    border-color:#4de1ff;
+}
 
-            50% {
-                transform: translateY(-18px);
-            }
+.icon{
+    font-size:45px;
+    margin-bottom:20px;
+}
 
-        }
+.card h3{
+    color:#4de1ff;
+    font-size:22px;
+    margin-bottom:15px;
+}
 
-        /* ================= SECTIONS ================= */
+.card p{
+    color:#a9c4cd;
+    line-height:1.6;
+}
 
-        .section {
-            padding: 100px 8%;
+/* ================= DASHBOARD ================= */
 
-            background: #09212c;
+.dashboard{
+    max-width:900px;
 
-            text-align: center;
-        }
+    margin:60px auto 0;
 
-        .section.dark {
-            background: #06151d;
-        }
+    padding:30px;
 
-        .section h2 {
-            font-size: 45px;
+    background:#071a23;
 
-            margin-bottom: 20px;
-        }
+    border:1px solid #17485b;
 
-        .section-intro {
-            max-width: 700px;
+    border-radius:25px;
 
-            margin: auto;
+    text-align:left;
+}
 
-            color: #a9c4cd;
+.dashboard-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
 
-            line-height: 1.7;
+.online{
+    color:#4dff9a;
+    font-size:14px;
+}
 
-            font-size: 17px;
-        }
+.stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
 
-        /* ================= CARDS ================= */
+.stat{
+    padding:25px;
+    background:#0d2d3b;
+    border-radius:15px;
+}
 
-        .cards {
-            display: flex;
+.stat small{
+    color:#8aaab5;
+}
 
-            justify-content: center;
+.stat strong{
+    display:block;
 
-            gap: 25px;
+    font-size:28px;
 
-            margin-top: 60px;
+    margin-top:10px;
 
-            flex-wrap: wrap;
-        }
+    color:#4de1ff;
+}
 
-        .card {
-            width: 290px;
+/* ================= QUESTIONÁRIO ================= */
 
-            padding: 35px;
+.questionario{
+    max-width:800px;
 
-            text-align: left;
+    margin:50px auto 0;
 
-            background: #0d2d3b;
+    padding:40px;
 
-            border: 1px solid #16495d;
+    background:#071a23;
 
-            border-radius: 22px;
+    border:1px solid #17485b;
 
-            transition: 0.3s;
-        }
+    border-radius:25px;
 
-        .card:hover {
-            transform: translateY(-10px);
+    text-align:left;
+}
 
-            border-color: #4de1ff;
-        }
+.progresso-texto{
+    color:#8aaab5;
+    margin-bottom:10px;
+    font-size:14px;
+}
 
-        .icon {
-            font-size: 45px;
+.barra{
+    width:100%;
+    height:8px;
 
-            margin-bottom: 20px;
-        }
+    background:#163b49;
 
-        .card h3 {
-            color: #4de1ff;
+    border-radius:20px;
 
-            font-size: 22px;
+    margin-bottom:35px;
 
-            margin-bottom: 15px;
-        }
+    overflow:hidden;
+}
 
-        .card p {
-            color: #a9c4cd;
+.barra-progresso{
+    width:12.5%;
+    height:100%;
 
-            line-height: 1.6;
-        }
+    background:#4de1ff;
 
-        /* ================= DASHBOARD ================= */
+    transition:.4s;
+}
 
-        .dashboard {
-            max-width: 900px;
+.pergunta{
+    font-size:27px;
+    color:white;
+    margin-bottom:25px;
+}
 
-            margin: 60px auto 0;
+.opcoes{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
 
-            padding: 30px;
+.opcao{
 
-            background: #071a23;
+    padding:18px;
 
-            border: 1px solid #17485b;
+    background:#0d2d3b;
 
-            border-radius: 25px;
+    border:1px solid #20566a;
 
-            text-align: left;
-        }
+    border-radius:12px;
 
-        .dashboard-header {
-            display: flex;
+    color:white;
 
-            justify-content: space-between;
+    cursor:pointer;
 
-            align-items: center;
+    transition:.3s;
 
-            margin-bottom: 30px;
-        }
+    font-size:16px;
 
-        .online {
-            color: #4dff9a;
+    text-align:left;
+}
 
-            font-size: 14px;
-        }
+.opcao:hover{
+    border-color:#4de1ff;
+    transform:translateY(-3px);
+}
 
-        .stats {
-            display: grid;
+.input-questionario,
+select{
 
-            grid-template-columns:
-                repeat(3, 1fr);
+    width:100%;
 
-            gap: 20px;
-        }
+    padding:16px;
 
-        .stat {
-            padding: 25px;
+    background:#0d2d3b;
 
-            background: #0d2d3b;
+    border:1px solid #20566a;
 
-            border-radius: 15px;
-        }
+    border-radius:10px;
 
-        .stat small {
-            color: #8aaab5;
-        }
+    color:white;
 
-        .stat strong {
-            display: block;
+    font-size:17px;
 
-            font-size: 28px;
+    outline:none;
+}
 
-            margin-top: 10px;
+.input-questionario:focus,
+select:focus{
+    border-color:#4de1ff;
+}
 
-            color: #4de1ff;
-        }
+.botao-proximo{
 
-        /* ================= MISSION ================= */
+    width:100%;
 
-        .mission {
-            max-width: 700px;
+    padding:16px;
 
-            margin: 60px auto 0;
+    margin-top:20px;
 
-            padding: 35px;
+    border:none;
 
-            background: #0d2d3b;
+    border-radius:30px;
 
-            border-radius: 20px;
+    background:#4de1ff;
 
-            border: 1px solid #16495d;
-        }
+    color:#06151d;
 
-        .mission h3 {
-            color: #4de1ff;
+    font-weight:bold;
 
-            margin-bottom: 15px;
-        }
+    font-size:16px;
 
-        .progress {
-            height: 14px;
+    cursor:pointer;
+}
 
-            background: #163b49;
+/* ================= RESULTADO ================= */
 
-            border-radius: 20px;
+.resultado{
 
-            overflow: hidden;
+    max-width:800px;
 
-            margin: 25px 0 10px;
-        }
+    margin:50px auto 0;
 
-        .progress-bar {
-            height: 100%;
+    padding:40px;
 
-            width: 82%;
+    background:#071a23;
 
-            background: #4de1ff;
+    border:1px solid #4de1ff;
 
-            border-radius: 20px;
-        }
+    border-radius:25px;
 
-        /* ================= QUESTIONÁRIO ================= */
+    text-align:left;
+}
 
-        .questionario {
-            max-width: 750px;
+.resultado h3{
 
-            margin: 50px auto 0;
+    color:#4de1ff;
 
-            padding: 40px;
+    font-size:30px;
 
-            background: #071a23;
+    margin-bottom:25px;
+}
 
-            border: 1px solid #17485b;
+/* SCORE */
 
-            border-radius: 25px;
+.score-box{
 
-            text-align: left;
-        }
+    text-align:center;
 
-        .progresso-texto {
-            color: #8aaab5;
+    padding:35px;
 
-            margin-bottom: 10px;
+    background:#0d2d3b;
 
-            font-size: 14px;
-        }
+    border-radius:20px;
 
-        .barra {
-            width: 100%;
+    margin-bottom:25px;
+}
 
-            height: 8px;
+.score{
 
-            background: #163b49;
+    font-size:80px;
 
-            border-radius: 20px;
+    font-weight:900;
 
-            margin-bottom: 35px;
+    color:#4de1ff;
+}
 
-            overflow: hidden;
-        }
+.score-label{
 
-        .barra-progresso {
-            width: 16%;
+    font-size:20px;
 
-            height: 100%;
+    color:#a9c4cd;
 
-            background: #4de1ff;
+    margin-top:5px;
+}
 
-            transition: 0.4s;
-        }
+/* RESULTADO CARDS */
 
-        .pergunta {
-            font-size: 25px;
+.resultado-grid{
 
-            color: white;
+    display:grid;
 
-            margin-bottom: 25px;
-        }
+    grid-template-columns:
+    repeat(2,1fr);
 
-        .opcoes {
-            display: grid;
+    gap:15px;
+}
 
-            grid-template-columns: 1fr 1fr;
+.resultado-card{
 
-            gap: 15px;
-        }
+    padding:25px;
 
-        .opcao {
+    background:#0d2d3b;
 
-            padding: 18px;
+    border-radius:15px;
+}
 
-            background: #0d2d3b;
+.resultado-card span{
 
-            border: 1px solid #20566a;
+    display:block;
 
-            border-radius: 12px;
+    color:#8aaab5;
 
-            color: white;
+    font-size:14px;
 
-            cursor: pointer;
+    margin-bottom:10px;
+}
 
-            transition: 0.3s;
+.resultado-card strong{
 
-            font-size: 16px;
+    color:#4de1ff;
 
-            text-align: left;
-        }
+    font-size:25px;
+}
 
-        .opcao:hover {
+.resultado-card p{
 
-            border-color: #4de1ff;
+    color:#a9c4cd;
 
-            transform: translateY(-3px);
+    line-height:1.6;
 
-        }
+    margin-top:8px;
+}
 
-        .input-questionario {
+/* MISSÃO */
 
-            width: 100%;
+.mission-final{
 
-            padding: 16px;
+    margin-top:25px;
 
-            background: #0d2d3b;
+    padding:25px;
 
-            border: 1px solid #20566a;
+    background:#0d2d3b;
 
-            border-radius: 10px;
+    border-radius:18px;
 
-            color: white;
+    border-left:4px solid #4de1ff;
+}
 
-            font-size: 17px;
+.mission-final h4{
 
-            outline: none;
+    color:#4de1ff;
 
-        }
+    font-size:20px;
 
-        .input-questionario:focus {
+    margin-bottom:10px;
+}
 
-            border-color: #4de1ff;
+.mission-final p{
 
-        }
+    color:#d7e9ee;
 
-        .botao-proximo {
+    line-height:1.6;
+}
 
-            width: 100%;
+.aviso{
 
-            padding: 16px;
+    margin-top:25px;
 
-            margin-top: 20px;
+    color:#708d96;
 
-            border: none;
+    font-size:13px;
 
-            border-radius: 30px;
+    line-height:1.5;
+}
 
-            background: #4de1ff;
+/* ================= ODS ================= */
 
-            color: #06151d;
+.ods-number{
 
-            font-weight: bold;
+    font-size:80px;
 
-            font-size: 16px;
+    font-weight:900;
 
-            cursor: pointer;
+    color:#4de1ff;
 
-        }
+    margin:30px 0;
+}
 
-        /* ================= RESULTADO ================= */
+/* ================= FOOTER ================= */
 
-        .resultado {
+footer{
 
-            max-width: 750px;
+    padding:40px 8%;
 
-            margin: 50px auto 0;
+    background:#041017;
 
-            padding: 40px;
+    text-align:center;
 
-            background: #071a23;
+    color:#66828c;
+}
 
-            border: 1px solid #4de1ff;
+footer strong{
+    color:#4de1ff;
+}
 
-            border-radius: 25px;
+/* ================= MOBILE ================= */
 
-            text-align: left;
+@media(max-width:800px){
 
-        }
+    header{
+        padding:20px;
+    }
 
-        .resultado h3 {
+    nav{
+        display:none;
+    }
 
-            color: #4de1ff;
+    .hero{
 
-            font-size: 30px;
+        flex-direction:column;
 
-            margin-bottom: 25px;
+        text-align:center;
 
-        }
+        padding:70px 20px;
+    }
 
-        .resultado-card {
+    .hero h1{
+        font-size:48px;
+    }
 
-            padding: 20px;
+    .water-container{
 
-            background: #0d2d3b;
+        width:280px;
+        height:280px;
+    }
 
-            border-radius: 15px;
+    .water{
 
-            margin-top: 15px;
+        width:220px;
+        height:220px;
+    }
 
-        }
+    .stats{
 
-        .resultado-card strong {
+        grid-template-columns:1fr;
+    }
 
-            color: #4de1ff;
+    .opcoes{
 
-            font-size: 25px;
+        grid-template-columns:1fr;
+    }
 
-        }
+    .resultado-grid{
 
-        .resultado-card p {
+        grid-template-columns:1fr;
+    }
 
-            color: #a9c4cd;
+    .section{
 
-            line-height: 1.6;
+        padding:80px 20px;
+    }
 
-            margin-top: 8px;
+}
 
-        }
-
-        .mission-final {
-
-            margin-top: 25px;
-
-            padding: 25px;
-
-            background: #0d2d3b;
-
-            border-radius: 18px;
-
-            border-left: 4px solid #4de1ff;
-
-        }
-
-        .mission-final h4 {
-
-            color: #4de1ff;
-
-            font-size: 20px;
-
-            margin-bottom: 10px;
-
-        }
-
-        .aviso {
-
-            margin-top: 25px;
-
-            color: #708d96;
-
-            font-size: 13px;
-
-            line-height: 1.5;
-
-        }
-
-        /* ================= ODS ================= */
-
-        .ods-number {
-
-            font-size: 80px;
-
-            font-weight: 900;
-
-            color: #4de1ff;
-
-            margin: 30px 0;
-
-        }
-
-        /* ================= FOOTER ================= */
-
-        footer {
-
-            padding: 40px 8%;
-
-            background: #041017;
-
-            text-align: center;
-
-            color: #66828c;
-
-        }
-
-        footer strong {
-
-            color: #4de1ff;
-
-        }
-
-        /* ================= MOBILE ================= */
-
-        @media (max-width: 800px) {
-
-            header {
-                padding: 20px;
-            }
-
-            nav {
-                display: none;
-            }
-
-            .hero {
-
-                flex-direction: column;
-
-                text-align: center;
-
-                padding: 70px 20px;
-
-            }
-
-            .hero h1 {
-                font-size: 48px;
-            }
-
-            .water-container {
-
-                width: 280px;
-
-                height: 280px;
-
-            }
-
-            .water {
-
-                width: 220px;
-
-                height: 220px;
-
-            }
-
-            .stats {
-
-                grid-template-columns: 1fr;
-
-            }
-
-            .opcoes {
-
-                grid-template-columns: 1fr;
-
-            }
-
-            .section {
-
-                padding: 80px 20px;
-
-            }
-
-        }
-
-    </style>
+</style>
 
 </head>
 
@@ -773,934 +715,811 @@
 
 <header>
 
-    <div class="logo">
+<div class="logo">
 
-        GOTTA<span>.</span>
+GOTTA<span>.</span>
 
-    </div>
+</div>
 
+<nav>
 
-    <nav>
+<a href="#solucao">Solução</a>
 
-        <a href="#solucao">
-            Solução
-        </a>
+<a href="#tecnologia">Tecnologia</a>
 
-        <a href="#tecnologia">
-            Tecnologia
-        </a>
+<a href="#dashboard">Dashboard</a>
 
-        <a href="#dashboard">
-            Dashboard
-        </a>
+<a href="#questionario">Análise</a>
 
-        <a href="#questionario">
-            Análise
-        </a>
+<a href="#impacto">Impacto</a>
 
-        <a href="#impacto">
-            Impacto
-        </a>
-
-    </nav>
+</nav>
 
 </header>
-
 
 
 <!-- ================= HERO ================= -->
 
 <section class="hero">
 
-    <div class="hero-text">
+<div class="hero-text">
 
-        <div class="tag">
+<div class="tag">
 
-            💧 WATER INTELLIGENCE
+💧 WATER INTELLIGENCE
 
-        </div>
+</div>
 
+<h1>
 
-        <h1>
+A água fala.
 
-            A água fala.
+<span>
+Nós prevemos.
+</span>
 
-            <span>
-                Nós prevemos.
-            </span>
+</h1>
 
-        </h1>
+<p>
 
+A GOTTA utiliza sensores,
+Inteligência Artificial e análise
+de dados para identificar padrões,
+prever desperdícios e transformar
+o consumo de água em decisões
+inteligentes.
 
-        <p>
+</p>
 
-            A GOTTA utiliza sensores,
-            Inteligência Artificial e análise
-            de dados para identificar padrões,
-            prever desperdícios e transformar
-            o consumo de água em decisões
-            inteligentes.
+<a href="#questionario"
+class="button">
 
-        </p>
+Fazer análise GOTTA →
 
+</a>
 
-        <a href="#questionario"
-           class="button">
-
-            Fazer análise GOTTA →
-
-        </a>
-
-    </div>
+</div>
 
 
-    <div class="water-container">
+<div class="water-container">
 
-        <div class="water"></div>
+<div class="water"></div>
 
-    </div>
+</div>
 
 </section>
-
 
 
 <!-- ================= SOLUÇÃO ================= -->
 
 <section class="section"
-         id="solucao">
+id="solucao">
 
-    <h2>
+<h2>
 
-        Uma nova forma de entender a água.
+Uma nova forma de entender a água.
 
-    </h2>
+</h2>
 
+<p class="section-intro">
 
-    <p class="section-intro">
+A GOTTA não quer apenas detectar
+desperdícios. Nossa tecnologia aprende
+o comportamento hídrico de cada ambiente
+para antecipar problemas antes que eles
+aconteçam.
 
-        A GOTTA não quer apenas detectar
-        desperdícios. Nossa tecnologia aprende
-        o comportamento hídrico de cada ambiente
-        para antecipar problemas antes que eles
-        aconteçam.
-
-    </p>
-
-
-    <div class="cards">
+</p>
 
 
-        <div class="card">
-
-            <div class="icon">
-                💧
-            </div>
-
-            <h3>
-                Gotta Pulse
-            </h3>
-
-            <p>
-
-                Sensor inteligente que monitora
-                o consumo de água em tempo real.
-
-            </p>
-
-        </div>
+<div class="cards">
 
 
-        <div class="card">
+<div class="card">
 
-            <div class="icon">
-                🧠
-            </div>
+<div class="icon">
+💧
+</div>
 
-            <h3>
-                Gotta AI
-            </h3>
+<h3>
+Gotta Pulse
+</h3>
 
-            <p>
+<p>
 
-                Inteligência Artificial que aprende
-                os padrões de consumo e identifica
-                anomalias.
+Sensor inteligente que monitora
+o consumo de água em tempo real.
 
-            </p>
+</p>
 
-        </div>
-
-
-        <div class="card">
-
-            <div class="icon">
-                📊
-            </div>
-
-            <h3>
-                Gotta Hub
-            </h3>
-
-            <p>
-
-                Um painel inteligente que transforma
-                dados complexos em informações simples.
-
-            </p>
-
-        </div>
+</div>
 
 
-    </div>
+<div class="card">
+
+<div class="icon">
+🧠
+</div>
+
+<h3>
+Gotta AI
+</h3>
+
+<p>
+
+Inteligência Artificial que aprende
+os padrões de consumo e identifica
+anomalias.
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">
+📊
+</div>
+
+<h3>
+Gotta Hub
+</h3>
+
+<p>
+
+Um painel inteligente que transforma
+dados complexos em informações simples.
+
+</p>
+
+</div>
+
+
+</div>
 
 </section>
-
 
 
 <!-- ================= TECNOLOGIA ================= -->
 
 <section class="section dark"
-         id="tecnologia">
+id="tecnologia">
 
-    <h2>
+<h2>
+Inteligência Hídrica
+</h2>
 
-        Inteligência Hídrica
+<p class="section-intro">
 
-    </h2>
+Quanto mais a GOTTA observa,
+mais inteligente ela se torna.
+Nossa tecnologia aprende como cada
+ambiente utiliza água e procura padrões
+que poderiam passar despercebidos.
 
-
-    <p class="section-intro">
-
-        Quanto mais a GOTTA observa,
-        mais inteligente ela se torna.
-        Nossa tecnologia aprende como cada
-        ambiente utiliza água e procura padrões
-        que poderiam passar despercebidos.
-
-    </p>
+</p>
 
 </section>
-
 
 
 <!-- ================= DASHBOARD ================= -->
 
 <section class="section"
-         id="dashboard">
+id="dashboard">
 
-    <h2>
-        Gotta Hub
-    </h2>
+<h2>
+Gotta Hub
+</h2>
 
+<p class="section-intro">
 
-    <p class="section-intro">
+Um exemplo de como nossa plataforma
+transforma dados em decisões.
 
-        Um exemplo de como nossa plataforma
-        transforma dados em decisões.
-
-    </p>
-
-
-    <div class="dashboard">
+</p>
 
 
-        <div class="dashboard-header">
+<div class="dashboard">
 
-            <strong>
-                Gotta Intelligence
-            </strong>
+<div class="dashboard-header">
 
+<strong>
+Gotta Intelligence
+</strong>
 
-            <span class="online">
+<span class="online">
+● Sistema online
+</span>
 
-                ● Sistema online
-
-            </span>
-
-        </div>
-
-
-        <div class="stats">
+</div>
 
 
-            <div class="stat">
-
-                <small>
-                    Consumo hoje
-                </small>
-
-                <strong>
-                    2.840 L
-                </strong>
-
-            </div>
+<div class="stats">
 
 
-            <div class="stat">
+<div class="stat">
 
-                <small>
-                    Economia mensal
-                </small>
+<small>
+Consumo hoje
+</small>
 
-                <strong>
-                    13,7%
-                </strong>
+<strong>
+2.840 L
+</strong>
 
-            </div>
-
-
-            <div class="stat">
-
-                <small>
-                    Eficiência
-                </small>
-
-                <strong>
-                    92%
-                </strong>
-
-            </div>
+</div>
 
 
-        </div>
+<div class="stat">
+
+<small>
+Economia mensal
+</small>
+
+<strong>
+13,7%
+</strong>
+
+</div>
 
 
-        <div class="mission">
+<div class="stat">
 
-            <h3>
+<small>
+Eficiência
+</small>
 
-                🎯 Gotta Mission
+<strong>
+92%
+</strong>
 
-            </h3>
-
-
-            <p>
-
-                Meta inteligente criada pela IA:
-                reduzir o consumo em 10% este mês.
-
-            </p>
+</div>
 
 
-            <div class="progress">
+</div>
 
-                <div class="progress-bar"></div>
-
-            </div>
-
-
-            <small>
-
-                82% da missão concluída
-
-            </small>
-
-        </div>
-
-    </div>
+</div>
 
 </section>
-
 
 
 <!-- ================= QUESTIONÁRIO ================= -->
 
 <section class="section dark"
-         id="questionario">
+id="questionario">
 
-    <h2>
+<h2>
 
-        Análise GOTTA
+GOTTA Score
 
-    </h2>
+</h2>
 
+<p class="section-intro">
 
-    <p class="section-intro">
+Responda algumas perguntas e descubra
+como está o perfil hídrico do seu ambiente.
 
-        Responda algumas perguntas e descubra
-        como a GOTTA poderia ajudar seu ambiente
-        a utilizar água de forma mais inteligente.
-
-    </p>
+</p>
 
 
-    <div class="questionario"
-         id="questionario-box">
-
-        <div class="progresso-texto"
-             id="progresso">
-
-            Pergunta 1 de 6
-
-        </div>
+<div class="questionario"
+id="questionario-box">
 
 
-        <div class="barra">
+<div class="progresso-texto"
+id="progresso">
 
-            <div class="barra-progresso"
-                 id="barra-progresso">
+Pergunta 1 de 8
 
-            </div>
-
-        </div>
+</div>
 
 
-        <h3 class="pergunta"
-            id="pergunta">
+<div class="barra">
 
-            Onde você mora?
+<div class="barra-progresso"
+id="barra-progresso">
 
-        </h3>
+</div>
 
-
-        <div class="opcoes"
-             id="opcoes">
-
-            <button class="opcao"
-                    onclick="responder('casa')">
-
-                🏠 Casa
-
-            </button>
+</div>
 
 
-            <button class="opcao"
-                    onclick="responder('apartamento')">
+<h3 class="pergunta"
+id="pergunta">
 
-                🏢 Apartamento
+Qual é o tipo de local?
 
-            </button>
-
-
-            <button class="opcao"
-                    onclick="responder('escola')">
-
-                🏫 Escola
-
-            </button>
+</h3>
 
 
-            <button class="opcao"
-                    onclick="responder('empresa')">
-
-                🏢 Empresa
-
-            </button>
-
-        </div>
-
-    </div>
+<div class="opcoes"
+id="opcoes">
 
 
-    <div id="resultado-area"></div>
+<button class="opcao"
+onclick="responder('casa')">
+
+🏠 Casa
+
+</button>
+
+
+<button class="opcao"
+onclick="responder('apartamento')">
+
+🏢 Apartamento
+
+</button>
+
+
+<button class="opcao"
+onclick="responder('escola')">
+
+🏫 Escola
+
+</button>
+
+
+<button class="opcao"
+onclick="responder('empresa')">
+
+🏢 Empresa
+
+</button>
+
+
+</div>
+
+</div>
+
+
+<div id="resultado-area"></div>
 
 </section>
-
 
 
 <!-- ================= IMPACTO ================= -->
 
 <section class="section"
-         id="impacto">
+id="impacto">
 
-    <h2>
+<h2>
 
-        Nosso impacto
+Nosso impacto
 
-    </h2>
+</h2>
 
+<p class="section-intro">
 
-    <p class="section-intro">
+A GOTTA contribui principalmente
+para a ODS 6 — Água Potável e
+Saneamento, incentivando o uso
+consciente e sustentável dos
+recursos hídricos.
 
-        A GOTTA contribui principalmente
-        para a ODS 6 — Água Potável e
-        Saneamento, incentivando o uso
-        consciente e sustentável dos
-        recursos hídricos.
+</p>
 
-    </p>
+<div class="ods-number">
 
+ODS 6
 
-    <div class="ods-number">
+</div>
 
-        ODS 6
+<p class="section-intro">
 
-    </div>
+Nosso objetivo é simples:
 
+<strong>
 
-    <p class="section-intro">
+usar melhor a água que já temos.
 
-        Nosso objetivo é simples:
+</strong>
 
-        <strong>
-
-            usar melhor a água que já temos.
-
-        </strong>
-
-    </p>
+</p>
 
 </section>
-
 
 
 <!-- ================= FOOTER ================= -->
 
 <footer>
 
-    <p>
+<p>
 
-        <strong>
-            GOTTA.
-        </strong>
+<strong>
+GOTTA.
+</strong>
 
-        Water Intelligence.
+Water Intelligence.
 
-    </p>
+</p>
 
+<br>
 
-    <br>
+<p>
 
+© 2026 GOTTA —
+Inteligência para um futuro sustentável.
 
-    <p>
-
-        © 2026 GOTTA —
-        Inteligência para um futuro sustentável.
-
-    </p>
+</p>
 
 </footer>
 
 
-
-<!-- ================= JAVASCRIPT ================= -->
-
 <script>
 
+
+/* ================= DADOS ================= */
 
 let perguntaAtual = 1;
 
 
 let respostas = {
 
-    local: "",
-
-    pessoas: 0,
-
-    estado: "",
-
-    consumo: 0,
-
-    desperdicio: "",
-
-    vazamento: ""
+local:"",
+pessoas:0,
+estado:"",
+consumo:0,
+banhos:0,
+torneiras:"",
+vaso:"",
+reuso:""
 
 };
 
 
+/* ================= RESPONDER ================= */
 
-function responder(valor) {
+function responder(valor){
 
+    if(perguntaAtual===1){
 
-    if (perguntaAtual === 1) {
+        respostas.local=valor;
 
-        respostas.local = valor;
-
-        perguntaAtual = 2;
-
-        mostrarPergunta();
-
-        return;
-
-    }
-
-
-    if (perguntaAtual === 4) {
-
-        respostas.consumo = Number(valor);
-
-        perguntaAtual = 5;
+        perguntaAtual=2;
 
         mostrarPergunta();
 
         return;
-
     }
 
 
-    if (perguntaAtual === 5) {
+    if(perguntaAtual===3){
 
-        respostas.desperdicio = valor;
+        respostas.estado=valor;
 
-        perguntaAtual = 6;
+        perguntaAtual=4;
 
         mostrarPergunta();
 
         return;
-
     }
 
 
-    if (perguntaAtual === 6) {
+    if(perguntaAtual===6){
 
-        respostas.vazamento = valor;
+        respostas.torneiras=valor;
+
+        perguntaAtual=7;
+
+        mostrarPergunta();
+
+        return;
+    }
+
+
+    if(perguntaAtual===7){
+
+        respostas.vaso=valor;
+
+        perguntaAtual=8;
+
+        mostrarPergunta();
+
+        return;
+    }
+
+
+    if(perguntaAtual===8){
+
+        respostas.reuso=valor;
 
         mostrarResultado();
 
         return;
-
     }
 
 }
 
 
+/* ================= MOSTRAR PERGUNTA ================= */
 
-function mostrarPergunta() {
-
+function mostrarPergunta(){
 
     const pergunta =
-        document.getElementById("pergunta");
-
+    document.getElementById("pergunta");
 
     const opcoes =
-        document.getElementById("opcoes");
-
+    document.getElementById("opcoes");
 
     const progresso =
-        document.getElementById("progresso");
-
+    document.getElementById("progresso");
 
     const barra =
-        document.getElementById("barra-progresso");
+    document.getElementById("barra-progresso");
 
 
     progresso.innerText =
-        "Pergunta "
-        + perguntaAtual
-        + " de 6";
+    "Pergunta "
+    + perguntaAtual
+    + " de 8";
 
 
     barra.style.width =
-        ((perguntaAtual / 6) * 100)
-        + "%";
-
+    ((perguntaAtual/8)*100)+"%";
 
 
     /* PERGUNTA 2 */
 
-    if (perguntaAtual === 2) {
-
+    if(perguntaAtual===2){
 
         pergunta.innerText =
-            "Quantas pessoas utilizam este local?";
+        "Quantas pessoas utilizam este local?";
 
 
-        opcoes.innerHTML = `
+        opcoes.innerHTML=`
 
-            <input
-                class="input-questionario"
-                id="pessoas"
-                type="number"
-                min="1"
-                placeholder="Ex: 4"
-            >
+        <input
+        class="input-questionario"
+        id="pessoas"
+        type="number"
+        min="1"
+        placeholder="Ex: 4">
 
-            <button
-                class="botao-proximo"
-                onclick="salvarPessoas()">
+        <button
+        class="botao-proximo"
+        onclick="salvarPessoas()">
 
-                Continuar →
+        Continuar →
 
-            </button>
+        </button>
 
         `;
 
         return;
-
     }
-
 
 
     /* PERGUNTA 3 */
 
-    if (perguntaAtual === 3) {
-
+    if(perguntaAtual===3){
 
         pergunta.innerText =
-            "Em qual estado você está?";
+        "Em qual estado você está?";
 
 
-        opcoes.innerHTML = `
+        opcoes.innerHTML=`
 
-            <select
-                class="input-questionario"
-                id="estado">
+        <select
+        class="input-questionario"
+        id="estado">
 
-                <option value="">
-                    Selecione seu estado
-                </option>
+        <option value="">
+        Selecione seu estado
+        </option>
 
-                <option>
-                    Acre
-                </option>
+        <option>Acre</option>
+        <option>Alagoas</option>
+        <option>Amapá</option>
+        <option>Amazonas</option>
+        <option>Bahia</option>
+        <option>Ceará</option>
+        <option>Distrito Federal</option>
+        <option>Espírito Santo</option>
+        <option>Goiás</option>
+        <option>Maranhão</option>
+        <option>Mato Grosso</option>
+        <option>Mato Grosso do Sul</option>
+        <option>Minas Gerais</option>
+        <option>Pará</option>
+        <option>Paraíba</option>
+        <option>Paraná</option>
+        <option>Pernambuco</option>
+        <option>Piauí</option>
+        <option>Rio de Janeiro</option>
+        <option>Rio Grande do Norte</option>
+        <option>Rio Grande do Sul</option>
+        <option>Rondônia</option>
+        <option>Roraima</option>
+        <option>Santa Catarina</option>
+        <option>São Paulo</option>
+        <option>Sergipe</option>
+        <option>Tocantins</option>
 
-                <option>
-                    Alagoas
-                </option>
-
-                <option>
-                    Amapá
-                </option>
-
-                <option>
-                    Amazonas
-                </option>
-
-                <option>
-                    Bahia
-                </option>
-
-                <option>
-                    Ceará
-                </option>
-
-                <option>
-                    Distrito Federal
-                </option>
-
-                <option>
-                    Espírito Santo
-                </option>
-
-                <option>
-                    Goiás
-                </option>
-
-                <option>
-                    Maranhão
-                </option>
-
-                <option>
-                    Mato Grosso
-                </option>
-
-                <option>
-                    Mato Grosso do Sul
-                </option>
-
-                <option>
-                    Minas Gerais
-                </option>
-
-                <option>
-                    Pará
-                </option>
-
-                <option>
-                    Paraíba
-                </option>
-
-                <option>
-                    Paraná
-                </option>
-
-                <option>
-                    Pernambuco
-                </option>
-
-                <option>
-                    Piauí
-                </option>
-
-                <option>
-                    Rio de Janeiro
-                </option>
-
-                <option>
-                    Rio Grande do Norte
-                </option>
-
-                <option>
-                    Rio Grande do Sul
-                </option>
-
-                <option>
-                    Rondônia
-                </option>
-
-                <option>
-                    Roraima
-                </option>
-
-                <option>
-                    Santa Catarina
-                </option>
-
-                <option>
-                    São Paulo
-                </option>
-
-                <option>
-                    Sergipe
-                </option>
-
-                <option>
-                    Tocantins
-                </option>
-
-            </select>
+        </select>
 
 
-            <button
-                class="botao-proximo"
-                onclick="salvarEstado()">
+        <button
+        class="botao-proximo"
+        onclick="salvarEstado()">
 
-                Continuar →
+        Continuar →
 
-            </button>
+        </button>
 
         `;
 
         return;
-
     }
-
 
 
     /* PERGUNTA 4 */
 
-    if (perguntaAtual === 4) {
-
+    if(perguntaAtual===4){
 
         pergunta.innerText =
-            "Você sabe seu consumo mensal de água?";
+        "Quantos banhos aproximadamente são tomados por dia?";
 
 
-        opcoes.innerHTML = `
+        opcoes.innerHTML=`
 
-            <input
-                class="input-questionario"
-                id="consumo"
-                type="number"
-                min="0"
-                placeholder="Litros por mês (opcional)"
-            >
+        <input
+        class="input-questionario"
+        id="banhos"
+        type="number"
+        min="0"
+        placeholder="Ex: 5">
 
-            <button
-                class="botao-proximo"
-                onclick="salvarConsumo()">
+        <button
+        class="botao-proximo"
+        onclick="salvarBanhos()">
 
-                Continuar →
+        Continuar →
 
-            </button>
+        </button>
 
         `;
 
         return;
-
     }
-
 
 
     /* PERGUNTA 5 */
 
-    if (perguntaAtual === 5) {
-
+    if(perguntaAtual===5){
 
         pergunta.innerText =
-            "Com que frequência você percebe desperdício?";
+        "Você sabe seu consumo mensal de água?";
 
 
-        opcoes.innerHTML = `
+        opcoes.innerHTML=`
 
-            <button
-                class="opcao"
-                onclick="responder('nunca')">
+        <input
+        class="input-questionario"
+        id="consumo"
+        type="number"
+        min="0"
+        placeholder="Litros por mês (opcional)">
 
-                🟢 Nunca
+        <button
+        class="botao-proximo"
+        onclick="salvarConsumo()">
 
-            </button>
+        Continuar →
 
-
-            <button
-                class="opcao"
-                onclick="responder('as vezes')">
-
-                🟡 Às vezes
-
-            </button>
-
-
-            <button
-                class="opcao"
-                onclick="responder('frequente')">
-
-                🟠 Frequentemente
-
-            </button>
-
-
-            <button
-                class="opcao"
-                onclick="responder('nao sei')">
-
-                ⚪ Não sei
-
-            </button>
+        </button>
 
         `;
 
         return;
-
     }
-
 
 
     /* PERGUNTA 6 */
 
-    if (perguntaAtual === 6) {
-
+    if(perguntaAtual===6){
 
         pergunta.innerText =
-            "Existem vazamentos no local?";
+        "Existem torneiras que pingam ou apresentam problemas?";
 
 
-        opcoes.innerHTML = `
+        opcoes.innerHTML=`
 
-            <button
-                class="opcao"
-                onclick="responder('nao')">
+        <button class="opcao"
+        onclick="responder('nao')">
 
-                🟢 Não
+        🟢 Não
 
-            </button>
+        </button>
+
+        <button class="opcao"
+        onclick="responder('talvez')">
+
+        🟡 Talvez
+
+        </button>
+
+        <button class="opcao"
+        onclick="responder('sim')">
+
+        🔴 Sim
+
+        </button>
+
+        `;
+
+        return;
+    }
 
 
-            <button
-                class="opcao"
-                onclick="responder('talvez')">
+    /* PERGUNTA 7 */
 
-                🟡 Talvez
+    if(perguntaAtual===7){
 
-            </button>
-
-
-            <button
-                class="opcao"
-                onclick="responder('sim')">
-
-                🔴 Sim
-
-            </button>
+        pergunta.innerText =
+        "O vaso sanitário apresenta algum problema?";
 
 
-            <button
-                class="opcao"
-                onclick="responder('nao sei')">
+        opcoes.innerHTML=`
 
-                ⚪ Não sei
+        <button class="opcao"
+        onclick="responder('nao')">
 
-            </button>
+        🟢 Não
+
+        </button>
+
+        <button class="opcao"
+        onclick="responder('talvez')">
+
+        🟡 Talvez
+
+        </button>
+
+        <button class="opcao"
+        onclick="responder('sim')">
+
+        🔴 Sim
+
+        </button>
+
+        `;
+
+        return;
+    }
+
+
+    /* PERGUNTA 8 */
+
+    if(perguntaAtual===8){
+
+        pergunta.innerText =
+        "Você reutiliza água?";
+
+
+        opcoes.innerHTML=`
+
+        <button class="opcao"
+        onclick="responder('sim')">
+
+        🟢 Sim
+
+        </button>
+
+        <button class="opcao"
+        onclick="responder('as vezes')">
+
+        🟡 Às vezes
+
+        </button>
+
+        <button class="opcao"
+        onclick="responder('nao')">
+
+        🔴 Não
+
+        </button>
 
         `;
 
@@ -1709,256 +1528,376 @@ function mostrarPergunta() {
 }
 
 
+/* ================= SALVAR PESSOAS ================= */
 
-function salvarPessoas() {
-
+function salvarPessoas(){
 
     const valor =
-        Number(
-            document
-            .getElementById("pessoas")
-            .value
-        );
+    Number(
+        document.getElementById("pessoas").value
+    );
 
 
-    if (!valor || valor < 1) {
+    if(!valor || valor<1){
 
         alert(
-            "Digite um número válido de pessoas."
+        "Digite um número válido de pessoas."
         );
 
         return;
-
     }
 
 
-    respostas.pessoas = valor;
+    respostas.pessoas=valor;
 
-    perguntaAtual = 3;
+    perguntaAtual=3;
 
     mostrarPergunta();
 
 }
 
 
+/* ================= SALVAR ESTADO ================= */
 
-function salvarEstado() {
-
+function salvarEstado(){
 
     const valor =
-        document
-        .getElementById("estado")
-        .value;
+    document.getElementById("estado").value;
 
 
-    if (!valor) {
+    if(!valor){
 
         alert(
-            "Selecione seu estado."
+        "Selecione seu estado."
         );
 
         return;
-
     }
 
 
-    respostas.estado = valor;
+    respostas.estado=valor;
 
-    perguntaAtual = 4;
+    perguntaAtual=4;
 
     mostrarPergunta();
 
 }
 
 
+/* ================= SALVAR BANHOS ================= */
 
-function salvarConsumo() {
-
+function salvarBanhos(){
 
     const valor =
-        Number(
-            document
-            .getElementById("consumo")
-            .value
-        );
+    Number(
+        document.getElementById("banhos").value
+    );
 
 
-    respostas.consumo = valor || 0;
+    respostas.banhos=valor||0;
 
-    perguntaAtual = 5;
+    perguntaAtual=5;
 
     mostrarPergunta();
 
 }
 
 
+/* ================= SALVAR CONSUMO ================= */
 
-function mostrarResultado() {
+function salvarConsumo(){
 
-
-    const questionario =
-        document.getElementById(
-            "questionario-box"
-        );
-
-
-    const resultadoArea =
-        document.getElementById(
-            "resultado-area"
-        );
+    const valor =
+    Number(
+        document.getElementById("consumo").value
+    );
 
 
-    /*
-        ESTIMATIVA DO PROTÓTIPO
+    respostas.consumo=valor||0;
 
-        Caso o usuário não saiba
-        o consumo, usamos uma
-        estimativa simples de
-        150 litros por pessoa/dia.
-    */
+    perguntaAtual=6;
+
+    mostrarPergunta();
+
+}
+
+
+/* ================= RESULTADO ================= */
+
+function mostrarResultado(){
 
 
     let consumo;
 
 
-    if (respostas.consumo > 0) {
+    /*
+    Se o usuário informou consumo,
+    usamos o valor informado.
 
-        consumo =
-            respostas.consumo;
+    Caso contrário:
 
-    } else {
-
-        consumo =
-            respostas.pessoas
-            * 150
-            * 30;
-
-    }
+    150 litros por pessoa/dia
+    × 30 dias.
+    */
 
 
-    let percentual = 0;
+    if(respostas.consumo>0){
 
+        consumo=respostas.consumo;
 
-    if (
-        respostas.desperdicio
-        === "frequente"
-    ) {
+    }else{
 
-        percentual += 0.10;
-
-    }
-
-
-    if (
-        respostas.desperdicio
-        === "as vezes"
-    ) {
-
-        percentual += 0.07;
-
-    }
-
-
-    if (
-        respostas.vazamento
-        === "sim"
-    ) {
-
-        percentual += 0.08;
-
-    }
-
-
-    if (
-        respostas.vazamento
-        === "talvez"
-    ) {
-
-        percentual += 0.04;
+        consumo=
+        respostas.pessoas*
+        150*
+        30;
 
     }
 
 
     /*
-        Mantemos um potencial mínimo
-        de economia de 10%.
+    CÁLCULO DO SCORE
     */
 
 
-    if (percentual < 0.10) {
+    let score=100;
 
-        percentual = 0.10;
+
+    /*
+    Torneiras
+    */
+
+    if(respostas.torneiras==="sim"){
+        score-=15;
+    }
+
+    if(respostas.torneiras==="talvez"){
+        score-=7;
+    }
+
+
+    /*
+    Vaso
+    */
+
+    if(respostas.vaso==="sim"){
+        score-=15;
+    }
+
+    if(respostas.vaso==="talvez"){
+        score-=7;
+    }
+
+
+    /*
+    Reutilização
+    */
+
+    if(respostas.reuso==="sim"){
+        score+=5;
+    }
+
+    if(respostas.reuso==="nao"){
+        score-=5;
+    }
+
+
+    /*
+    Banhos
+    */
+
+    const mediaBanhos =
+    respostas.pessoas*1.5;
+
+
+    if(
+    respostas.banhos>
+    mediaBanhos*1.5
+    ){
+
+        score-=10;
 
     }
 
 
-    const economiaMensal =
-        consumo * percentual;
+    /*
+    Limites
+    */
+
+    if(score>100){
+        score=100;
+    }
+
+    if(score<0){
+        score=0;
+    }
 
 
-    const economiaAnual =
-        economiaMensal * 12;
+    /*
+    POTENCIAL DE ECONOMIA
+    */
 
 
-    const porcentagem =
-        Math.round(
-            percentual * 100
-        );
+    let percentual;
+
+
+    if(score>=80){
+
+        percentual=.08;
+
+    }else if(score>=60){
+
+        percentual=.12;
+
+    }else if(score>=40){
+
+        percentual=.18;
+
+    }else{
+
+        percentual=.25;
+
+    }
+
+
+    const economiaMensal=
+    consumo*percentual;
+
+
+    const economiaAnual=
+    economiaMensal*12;
+
+
+    /*
+    CLASSIFICAÇÃO
+    */
+
+
+    let classificacao;
+
+
+    if(score>=80){
+
+        classificacao=
+        "🌊 Guardião da Água";
+
+    }else if(score>=60){
+
+        classificacao=
+        "💧 Consumidor Consciente";
+
+    }else if(score>=40){
+
+        classificacao=
+        "🌱 Em Evolução";
+
+    }else{
+
+        classificacao=
+        "⚠️ Alto potencial de economia";
+
+    }
+
+
+    /*
+    MISSÃO
+    */
 
 
     let missao;
 
 
-    if (
-        respostas.vazamento === "sim"
-    ) {
+    if(respostas.torneiras==="sim"){
 
-        missao =
-            "Verificar e corrigir possíveis vazamentos.";
+        missao=
+        "Verificar e corrigir torneiras que apresentam vazamentos.";
 
-    } else if (
-        respostas.desperdicio
-        === "frequente"
-    ) {
+    }else if(respostas.vaso==="sim"){
 
-        missao =
-            "Identificar os principais pontos de desperdício.";
+        missao=
+        "Verificar o vaso sanitário e procurar possíveis vazamentos.";
 
-    } else {
+    }else if(respostas.reuso==="nao"){
 
-        missao =
-            "Reduzir o tempo de banho em 2 minutos.";
+        missao=
+        "Começar a reutilizar água sempre que possível, como para limpeza.";
+
+    }else if(
+    respostas.banhos>
+    respostas.pessoas*1.5
+    ){
+
+        missao=
+        "Reduzir o tempo dos banhos e evitar água correndo sem necessidade.";
+
+    }else{
+
+        missao=
+        "Encontrar um novo ponto de economia de água esta semana.";
 
     }
 
 
-    questionario.style.display =
-        "none";
+    /*
+    ESCONDE QUESTIONÁRIO
+    */
+
+    document
+    .getElementById("questionario-box")
+    .style.display="none";
 
 
-    resultadoArea.innerHTML = `
+    /*
+    MOSTRA RESULTADO
+    */
 
-        <div class="resultado">
+    document
+    .getElementById("resultado-area")
+    .innerHTML=`
 
-            <h3>
-                🧠 Análise GOTTA
-            </h3>
+    <div class="resultado">
+
+        <h3>
+            🧠 Análise GOTTA
+        </h3>
+
+
+        <div class="score-box">
+
+            <div class="score">
+                ${score}
+            </div>
+
+            <div class="score-label">
+
+                ${classificacao}
+
+            </div>
+
+        </div>
+
+
+        <div class="resultado-grid">
 
 
             <div class="resultado-card">
 
-                <p>
-                    Perfil analisado
-                </p>
+                <span>
+                    👥 Perfil
+                </span>
 
                 <strong>
-                    ${respostas.local}
+
+                    ${respostas.pessoas}
+                    pessoa(s)
+
                 </strong>
 
                 <p>
-                    ${respostas.pessoas}
-                    pessoa(s) ·
-                    ${respostas.estado}
+
+                    ${respostas.local}
+                    · ${respostas.estado}
+
                 </p>
 
             </div>
@@ -1966,40 +1905,41 @@ function mostrarResultado() {
 
             <div class="resultado-card">
 
-                <p>
-                    Consumo mensal estimado
-                </p>
+                <span>
+                    💧 Consumo estimado
+                </span>
 
                 <strong>
 
                     ${consumo.toLocaleString(
-                        'pt-BR'
+                    "pt-BR"
                     )} L
 
                 </strong>
+
+                <p>
+                    por mês
+                </p>
 
             </div>
 
 
             <div class="resultado-card">
 
-                <p>
-                    Potencial de economia
-                </p>
+                <span>
+                    ♻️ Economia potencial
+                </span>
 
                 <strong>
 
                     ${economiaMensal.toLocaleString(
-                        'pt-BR'
-                    )} L/mês
+                    "pt-BR"
+                    )} L
 
                 </strong>
 
                 <p>
-
-                    Aproximadamente
-                    ${porcentagem}% de redução.
-
+                    por mês
                 </p>
 
             </div>
@@ -2007,56 +1947,61 @@ function mostrarResultado() {
 
             <div class="resultado-card">
 
-                <p>
-                    Impacto em um ano
-                </p>
+                <span>
+                    🌎 Impacto anual
+                </span>
 
                 <strong>
 
                     ${economiaAnual.toLocaleString(
-                        'pt-BR'
+                    "pt-BR"
                     )} L
 
                 </strong>
 
-            </div>
-
-
-            <div class="mission-final">
-
-                <h4>
-                    🎯 Sua GOTTA Mission
-                </h4>
-
                 <p>
-
-                    ${missao}
-
+                    de água potencialmente economizada
                 </p>
 
             </div>
 
 
-            <p class="aviso">
+        </div>
 
-                *Os resultados são estimativas
-                do protótipo GOTTA e não
-                representam uma medição real.
-                A economia real depende das
-                características e do consumo
-                de cada local.
+
+        <div class="mission-final">
+
+            <h4>
+                🎯 Sua GOTTA Mission
+            </h4>
+
+            <p>
+
+                ${missao}
 
             </p>
 
         </div>
 
+
+        <p class="aviso">
+
+            *O GOTTA Score e as estimativas
+            são parte do protótipo escolar.
+            Os valores não representam
+            medições reais e poderiam ser
+            aprimorados utilizando dados
+            reais dos sensores GOTTA.
+
+        </p>
+
+    </div>
+
     `;
 
 }
 
-
 </script>
-
 
 </body>
 
