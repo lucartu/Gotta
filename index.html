@@ -1,78 +1,121 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>GOTTA | Water Intelligence</title>
 
+
     <style>
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+
         html {
             scroll-behavior: smooth;
         }
 
+
         body {
+
             font-family: Arial, Helvetica, sans-serif;
+
             background: #06151d;
+
             color: white;
+
         }
+
 
         /* ================= HEADER ================= */
 
         header {
+
             position: sticky;
+
             top: 0;
+
             z-index: 1000;
 
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
 
             padding: 22px 8%;
 
             background: rgba(6, 21, 29, 0.92);
+
             backdrop-filter: blur(10px);
 
             border-bottom: 1px solid #123846;
+
         }
+
 
         .logo {
+
             font-size: 30px;
+
             font-weight: 900;
+
             letter-spacing: 4px;
+
             color: #4de1ff;
+
         }
+
 
         .logo span {
+
             color: white;
+
         }
+
 
         nav a {
+
             color: #d7e9ee;
+
             text-decoration: none;
+
             margin-left: 30px;
+
             font-size: 15px;
+
             transition: 0.3s;
+
         }
 
+
         nav a:hover {
+
             color: #4de1ff;
+
         }
+
 
 
         /* ================= HERO ================= */
 
         .hero {
+
             min-height: 90vh;
 
             display: flex;
+
             align-items: center;
+
             justify-content: space-between;
 
             padding: 80px 8%;
@@ -80,52 +123,79 @@
             gap: 60px;
 
             background:
+
                 radial-gradient(
+
                     circle at 80% 50%,
+
                     rgba(36, 177, 218, 0.18),
+
                     transparent 35%
+
                 );
+
         }
+
 
         .hero-text {
+
             max-width: 680px;
+
         }
 
+
         .tag {
+
             display: inline-block;
 
             padding: 8px 15px;
 
             border: 1px solid #20566a;
+
             border-radius: 30px;
 
             color: #4de1ff;
 
             font-size: 13px;
+
             margin-bottom: 25px;
+
         }
 
+
         .hero h1 {
+
             font-size: clamp(45px, 7vw, 80px);
+
             line-height: 0.98;
 
             margin-bottom: 30px;
+
         }
+
 
         .hero h1 span {
+
             color: #4de1ff;
+
         }
 
+
         .hero p {
+
             font-size: 20px;
+
             line-height: 1.7;
 
             color: #a9c4cd;
 
             margin-bottom: 40px;
+
         }
 
+
         .button {
+
             display: inline-block;
 
             padding: 16px 30px;
@@ -141,93 +211,148 @@
             font-weight: bold;
 
             transition: 0.3s;
+
         }
+
 
         .button:hover {
+
             transform: translateY(-4px);
-            box-shadow: 0 10px 30px rgba(77, 225, 255, 0.25);
+
+            box-shadow:
+
+                0 10px 30px
+
+                rgba(77, 225, 255, 0.25);
+
         }
 
 
-        /* ================= WATER ANIMATION ================= */
+
+        /* ================= WATER ================= */
 
         .water-container {
+
             position: relative;
 
             width: 350px;
+
             height: 350px;
 
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
         }
 
+
         .water {
+
             width: 270px;
+
             height: 270px;
 
             border-radius: 50%;
 
             background:
+
                 radial-gradient(
+
                     circle at 35% 30%,
+
                     #a4f1ff,
+
                     #4de1ff 30%,
+
                     #14799a 65%,
+
                     #073848
+
                 );
 
             box-shadow:
-                0 0 60px rgba(77, 225, 255, 0.25),
-                inset -20px -20px 50px rgba(0,0,0,0.25);
 
-            animation: floating 4s ease-in-out infinite;
+                0 0 60px
+
+                rgba(77, 225, 255, 0.25),
+
+                inset -20px -20px 50px
+
+                rgba(0,0,0,0.25);
+
+            animation:
+
+                floating 4s ease-in-out infinite;
+
         }
 
+
         .water::after {
+
             content: "G";
 
             position: absolute;
 
             font-size: 90px;
+
             font-weight: 900;
 
             color: rgba(255,255,255,0.8);
+
         }
+
 
         @keyframes floating {
 
             0%, 100% {
+
                 transform: translateY(0);
+
             }
 
             50% {
+
                 transform: translateY(-18px);
+
             }
+
         }
+
 
 
         /* ================= SECTIONS ================= */
 
         .section {
+
             padding: 100px 8%;
 
             background: #09212c;
 
             text-align: center;
+
         }
+
 
         .section.dark {
+
             background: #06151d;
+
         }
 
+
         .section h2 {
+
             font-size: 45px;
 
             margin-bottom: 20px;
+
         }
 
+
         .section-intro {
+
             max-width: 700px;
 
             margin: auto;
@@ -237,12 +362,15 @@
             line-height: 1.7;
 
             font-size: 17px;
+
         }
+
 
 
         /* ================= CARDS ================= */
 
         .cards {
+
             display: flex;
 
             justify-content: center;
@@ -252,9 +380,12 @@
             margin-top: 60px;
 
             flex-wrap: wrap;
+
         }
 
+
         .card {
+
             width: 290px;
 
             padding: 35px;
@@ -268,40 +399,59 @@
             border-radius: 22px;
 
             transition: 0.3s;
+
         }
 
+
         .card:hover {
+
             transform: translateY(-10px);
 
             border-color: #4de1ff;
 
-            box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+            box-shadow:
+
+                0 15px 40px
+
+                rgba(0,0,0,0.25);
+
         }
 
+
         .icon {
+
             font-size: 45px;
 
             margin-bottom: 20px;
+
         }
 
+
         .card h3 {
+
             color: #4de1ff;
 
             font-size: 22px;
 
             margin-bottom: 15px;
+
         }
 
+
         .card p {
+
             color: #a9c4cd;
 
             line-height: 1.6;
+
         }
+
 
 
         /* ================= DASHBOARD ================= */
 
         .dashboard {
+
             max-width: 900px;
 
             margin: 60px auto 0;
@@ -316,10 +466,17 @@
 
             text-align: left;
 
-            box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+            box-shadow:
+
+                0 20px 50px
+
+                rgba(0,0,0,0.25);
+
         }
 
+
         .dashboard-header {
+
             display: flex;
 
             justify-content: space-between;
@@ -327,35 +484,52 @@
             align-items: center;
 
             margin-bottom: 30px;
+
         }
 
+
         .online {
+
             color: #4dff9a;
 
             font-size: 14px;
+
         }
+
 
         .stats {
+
             display: grid;
 
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns:
+
+                repeat(3, 1fr);
 
             gap: 20px;
+
         }
 
+
         .stat {
+
             padding: 25px;
 
             background: #0d2d3b;
 
             border-radius: 15px;
+
         }
+
 
         .stat small {
+
             color: #8aaab5;
+
         }
 
+
         .stat strong {
+
             display: block;
 
             font-size: 28px;
@@ -363,12 +537,15 @@
             margin-top: 10px;
 
             color: #4de1ff;
+
         }
 
 
-        /* ================= WATER MISSION ================= */
+
+        /* ================= MISSION ================= */
 
         .mission {
+
             max-width: 700px;
 
             margin: 60px auto 0;
@@ -380,15 +557,21 @@
             border-radius: 20px;
 
             border: 1px solid #16495d;
+
         }
 
+
         .mission h3 {
+
             color: #4de1ff;
 
             margin-bottom: 15px;
+
         }
 
+
         .progress {
+
             height: 14px;
 
             background: #163b49;
@@ -398,9 +581,12 @@
             overflow: hidden;
 
             margin: 25px 0 10px;
+
         }
 
+
         .progress-bar {
+
             height: 100%;
 
             width: 82%;
@@ -408,12 +594,197 @@
             background: #4de1ff;
 
             border-radius: 20px;
+
         }
+
+
+
+        /* ================= SIMULADOR ================= */
+
+        .simulator {
+
+            max-width: 700px;
+
+            margin: 50px auto 0;
+
+            padding: 40px;
+
+            background: #071a23;
+
+            border: 1px solid #17485b;
+
+            border-radius: 25px;
+
+            text-align: left;
+
+        }
+
+
+        .simulator label {
+
+            display: block;
+
+            margin-bottom: 12px;
+
+            color: #a9c4cd;
+
+        }
+
+
+        .simulator input {
+
+            width: 100%;
+
+            padding: 16px;
+
+            background: #0d2d3b;
+
+            border: 1px solid #20566a;
+
+            border-radius: 10px;
+
+            color: white;
+
+            font-size: 17px;
+
+            margin-bottom: 20px;
+
+            outline: none;
+
+        }
+
+
+        .simulator input:focus {
+
+            border-color: #4de1ff;
+
+        }
+
+
+        .simulator button {
+
+            width: 100%;
+
+            padding: 16px;
+
+            border: none;
+
+            border-radius: 30px;
+
+            background: #4de1ff;
+
+            color: #06151d;
+
+            font-weight: bold;
+
+            font-size: 16px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+
+        }
+
+
+        .simulator button:hover {
+
+            transform: translateY(-3px);
+
+            box-shadow:
+
+                0 10px 30px
+
+                rgba(77,225,255,0.2);
+
+        }
+
+
+        .resultado {
+
+            margin-top: 35px;
+
+            padding: 25px;
+
+            background: #0d2d3b;
+
+            border-radius: 18px;
+
+            color: #a9c4cd;
+
+        }
+
+
+        .resultado h3 {
+
+            color: #4de1ff;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .resultado-grid {
+
+            display: grid;
+
+            grid-template-columns:
+
+                repeat(3, 1fr);
+
+            gap: 15px;
+
+        }
+
+
+        .resultado-grid div {
+
+            padding: 20px;
+
+            background: #071a23;
+
+            border-radius: 12px;
+
+        }
+
+
+        .resultado-grid span {
+
+            display: block;
+
+            font-size: 13px;
+
+            color: #8aaab5;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .resultado-grid strong {
+
+            display: block;
+
+            color: #4de1ff;
+
+            font-size: 22px;
+
+        }
+
+
+        .analise {
+
+            margin-top: 25px;
+
+            line-height: 1.6;
+
+        }
+
 
 
         /* ================= ODS ================= */
 
         .ods-number {
+
             font-size: 80px;
 
             font-weight: 900;
@@ -421,12 +792,15 @@
             color: #4de1ff;
 
             margin: 30px 0;
+
         }
+
 
 
         /* ================= FOOTER ================= */
 
         footer {
+
             padding: 40px 8%;
 
             background: #041017;
@@ -434,222 +808,96 @@
             text-align: center;
 
             color: #66828c;
+
         }
 
+
         footer strong {
+
             color: #4de1ff;
+
         }
+
 
 
         /* ================= MOBILE ================= */
 
-        /* ================= SIMULADOR ================= */
+        @media (max-width: 800px) {
 
-.simulator {
-
-    max-width: 700px;
-
-    margin: 50px auto 0;
-
-    padding: 40px;
-
-    background: #071a23;
-
-    border: 1px solid #17485b;
-
-    border-radius: 25px;
-
-    text-align: left;
-
-}
-
-.simulator label {
-
-    display: block;
-
-    margin-bottom: 12px;
-
-    color: #a9c4cd;
-
-}
-
-.simulator input {
-
-    width: 100%;
-
-    padding: 16px;
-
-    background: #0d2d3b;
-
-    border: 1px solid #20566a;
-
-    border-radius: 10px;
-
-    color: white;
-
-    font-size: 17px;
-
-    margin-bottom: 20px;
-
-    outline: none;
-
-}
-
-.simulator input:focus {
-
-    border-color: #4de1ff;
-
-}
-
-.simulator button {
-
-    width: 100%;
-
-    padding: 16px;
-
-    border: none;
-
-    border-radius: 30px;
-
-    background: #4de1ff;
-
-    color: #06151d;
-
-    font-weight: bold;
-
-    font-size: 16px;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-
-}
-
-.simulator button:hover {
-
-    transform: translateY(-3px);
-
-    box-shadow: 0 10px 30px rgba(77,225,255,0.2);
-
-}
-
-.resultado {
-
-    margin-top: 35px;
-
-    padding: 25px;
-
-    background: #0d2d3b;
-
-    border-radius: 18px;
-
-    color: #a9c4cd;
-
-}
-
-.resultado h3 {
-
-    color: #4de1ff;
-
-    margin-bottom: 25px;
-
-}
-
-.resultado-grid {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 15px;
-
-}
-
-.resultado-grid div {
-
-    padding: 20px;
-
-    background: #071a23;
-
-    border-radius: 12px;
-
-}
-
-.resultado-grid span {
-
-    display: block;
-
-    font-size: 13px;
-
-    color: #8aaab5;
-
-    margin-bottom: 10px;
-
-}
-
-.resultado-grid strong {
-
-    display: block;
-
-    color: #4de1ff;
-
-    font-size: 22px;
-
-}
-
-.analise {
-
-    margin-top: 25px;
-
-    line-height: 1.6;
-
-}@media (max-width: 800px) {
-
-    .resultado-grid {
-    grid-template-columns: 1fr;
-}
             header {
+
                 padding: 20px;
+
             }
+
 
             nav {
+
                 display: none;
+
             }
 
+
             .hero {
+
                 flex-direction: column;
 
                 text-align: center;
 
                 padding: 70px 20px;
+
             }
+
 
             .hero h1 {
+
                 font-size: 48px;
+
             }
+
 
             .water-container {
+
                 width: 280px;
+
                 height: 280px;
+
             }
+
 
             .water {
+
                 width: 220px;
+
                 height: 220px;
+
             }
+
 
             .stats {
+
                 grid-template-columns: 1fr;
+
             }
 
+
+            .resultado-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
             .section {
+
                 padding: 80px 20px;
+
             }
 
         }
 
     </style>
+
 </head>
 
 
@@ -661,18 +909,33 @@
 <header>
 
     <div class="logo">
+
         GOTTA<span>.</span>
+
     </div>
+
 
     <nav>
 
-        <a href="#solucao">Solução</a>
+        <a href="#solucao">
+            Solução
+        </a>
 
-        <a href="#tecnologia">Tecnologia</a>
+        <a href="#tecnologia">
+            Tecnologia
+        </a>
 
-        <a href="#dashboard">Dashboard</a>
+        <a href="#dashboard">
+            Dashboard
+        </a>
 
-        <a href="#impacto">Impacto</a>
+        <a href="#simulador">
+            Simulador
+        </a>
+
+        <a href="#impacto">
+            Impacto
+        </a>
 
     </nav>
 
@@ -687,23 +950,40 @@
     <div class="hero-text">
 
         <div class="tag">
+
             💧 WATER INTELLIGENCE
+
         </div>
 
+
         <h1>
+
             A água fala.
-            <span>Nós prevemos.</span>
+
+            <span>
+                Nós prevemos.
+            </span>
+
         </h1>
 
+
         <p>
-            A GOTTA utiliza sensores, Inteligência Artificial
-            e análise de dados para identificar padrões,
-            prever desperdícios e transformar o consumo de
-            água em decisões inteligentes.
+
+            A GOTTA utiliza sensores,
+            Inteligência Artificial e análise
+            de dados para identificar padrões,
+            prever desperdícios e transformar
+            o consumo de água em decisões
+            inteligentes.
+
         </p>
 
-        <a href="#solucao" class="button">
+
+        <a href="#solucao"
+           class="button">
+
             Descobrir a GOTTA →
+
         </a>
 
     </div>
@@ -721,18 +1001,23 @@
 
 <!-- ================= SOLUÇÃO ================= -->
 
-<section class="section" id="solucao">
+<section class="section"
+         id="solucao">
 
     <h2>
+
         Uma nova forma de entender a água.
+
     </h2>
+
 
     <p class="section-intro">
 
-        A GOTTA não quer apenas detectar desperdícios.
-        Nossa tecnologia aprende o comportamento hídrico
-        de cada ambiente para antecipar problemas antes
-        que eles aconteçam.
+        A GOTTA não quer apenas detectar
+        desperdícios. Nossa tecnologia aprende
+        o comportamento hídrico de cada ambiente
+        para antecipar problemas antes que eles
+        aconteçam.
 
     </p>
 
@@ -742,13 +1027,19 @@
 
         <div class="card">
 
-            <div class="icon">💧</div>
+            <div class="icon">
+                💧
+            </div>
 
-            <h3>Gotta Pulse</h3>
+            <h3>
+                Gotta Pulse
+            </h3>
 
             <p>
-                Sensor inteligente que monitora o consumo
-                de água em tempo real.
+
+                Sensor inteligente que monitora
+                o consumo de água em tempo real.
+
             </p>
 
         </div>
@@ -756,13 +1047,20 @@
 
         <div class="card">
 
-            <div class="icon">🧠</div>
+            <div class="icon">
+                🧠
+            </div>
 
-            <h3>Gotta AI</h3>
+            <h3>
+                Gotta AI
+            </h3>
 
             <p>
-                Inteligência Artificial que aprende os
-                padrões de consumo e identifica anomalias.
+
+                Inteligência Artificial que aprende
+                os padrões de consumo e identifica
+                anomalias.
+
             </p>
 
         </div>
@@ -770,13 +1068,19 @@
 
         <div class="card">
 
-            <div class="icon">📊</div>
+            <div class="icon">
+                📊
+            </div>
 
-            <h3>Gotta Hub</h3>
+            <h3>
+                Gotta Hub
+            </h3>
 
             <p>
+
                 Um painel inteligente que transforma
                 dados complexos em informações simples.
+
             </p>
 
         </div>
@@ -790,17 +1094,22 @@
 
 <!-- ================= TECNOLOGIA ================= -->
 
-<section class="section dark" id="tecnologia">
+<section class="section dark"
+         id="tecnologia">
 
     <h2>
+
         Inteligência Hídrica
+
     </h2>
+
 
     <p class="section-intro">
 
-        Quanto mais a GOTTA observa, mais inteligente
-        ela se torna. Nossa tecnologia aprende como
-        cada ambiente utiliza água e procura padrões
+        Quanto mais a GOTTA observa,
+        mais inteligente ela se torna.
+        Nossa tecnologia aprende como cada
+        ambiente utiliza água e procura padrões
         que poderiam passar despercebidos.
 
     </p>
@@ -811,21 +1120,26 @@
 
 <!-- ================= DASHBOARD ================= -->
 
-<section class="section" id="dashboard">
+<section class="section"
+         id="dashboard">
 
     <h2>
+
         Gotta Hub
+
     </h2>
+
 
     <p class="section-intro">
 
-        Um exemplo de como nossa plataforma transforma
-        dados em decisões.
+        Um exemplo de como nossa plataforma
+        transforma dados em decisões.
 
     </p>
 
 
     <div class="dashboard">
+
 
         <div class="dashboard-header">
 
@@ -833,14 +1147,18 @@
                 Gotta Intelligence
             </strong>
 
+
             <span class="online">
+
                 ● Sistema online
+
             </span>
 
         </div>
 
 
         <div class="stats">
+
 
             <div class="stat">
 
@@ -880,18 +1198,24 @@
 
             </div>
 
+
         </div>
 
 
         <div class="mission">
 
             <h3>
+
                 🎯 Gotta Mission
+
             </h3>
 
+
             <p>
+
                 Meta inteligente criada pela IA:
                 reduzir o consumo em 10% este mês.
+
             </p>
 
 
@@ -901,8 +1225,11 @@
 
             </div>
 
+
             <small>
+
                 82% da missão concluída
+
             </small>
 
         </div>
@@ -911,78 +1238,115 @@
 
 </section>
 
+
+
 <!-- ================= SIMULADOR ================= -->
 
-<section class="section" id="simulador">
+<section class="section dark"
+         id="simulador">
 
     <h2>
+
         Simule sua economia
+
     </h2>
+
 
     <p class="section-intro">
 
-        Descubra quanto você poderia economizar
-        reduzindo o desperdício de água.
+        Descubra quanto poderia ser economizado
+        caso o desperdício fosse reduzido.
 
     </p>
 
 
     <div class="simulator">
 
+
         <label for="consumo">
-            Seu consumo mensal de água (litros)
+
+            Seu consumo mensal de água
+            (litros)
+
         </label>
 
+
         <input
+
             type="number"
+
             id="consumo"
+
             placeholder="Ex: 20000"
+
             min="1"
+
         >
 
+
         <button onclick="calcularEconomia()">
+
             Analisar meu consumo →
+
         </button>
 
 
-        <div id="resultado" class="resultado">
+        <div id="resultado"
+             class="resultado">
 
             <p>
-                Digite seu consumo acima para começar.
+
+                Digite seu consumo acima
+                para começar.
+
             </p>
 
         </div>
+
 
     </div>
 
 </section>
 
+
+
 <!-- ================= IMPACTO ================= -->
 
-<section class="section dark" id="impacto">
+<section class="section"
+         id="impacto">
 
     <h2>
+
         Nosso impacto
+
     </h2>
+
 
     <p class="section-intro">
 
-        A GOTTA contribui principalmente para a
-        ODS 6 — Água Potável e Saneamento, incentivando
-        o uso consciente e sustentável dos recursos hídricos.
+        A GOTTA contribui principalmente
+        para a ODS 6 — Água Potável e
+        Saneamento, incentivando o uso
+        consciente e sustentável dos
+        recursos hídricos.
 
     </p>
 
 
     <div class="ods-number">
+
         ODS 6
+
     </div>
 
 
     <p class="section-intro">
 
         Nosso objetivo é simples:
-        <strong>usar melhor a água que já temos.</strong>
+
+        <strong>
+            usar melhor a água que já temos.
+        </strong>
 
     </p>
 
@@ -995,58 +1359,91 @@
 <footer>
 
     <p>
-        <strong>GOTTA.</strong>
+
+        <strong>
+            GOTTA.
+        </strong>
+
         Water Intelligence.
+
     </p>
+
 
     <br>
 
+
     <p>
-        © 2026 GOTTA — Inteligência para um futuro sustentável.
+
+        © 2026 GOTTA —
+        Inteligência para um futuro sustentável.
+
     </p>
 
 </footer>
 
-    <script>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
 
 function calcularEconomia() {
 
-    const consumo = Number(
-        document.getElementById("consumo").value
-    );
+
+    const consumo =
+        Number(
+            document
+            .getElementById("consumo")
+            .value
+        );
+
 
     const resultado =
-        document.getElementById("resultado");
+        document
+        .getElementById("resultado");
 
 
     if (!consumo || consumo <= 0) {
 
+
         resultado.innerHTML = `
+
             <p>
-                ⚠️ Digite um consumo válido.
+
+                ⚠️ Digite um consumo
+                válido para continuar.
+
             </p>
+
         `;
 
+
         return;
+
     }
 
 
     /*
         ESTIMATIVA DO PROTÓTIPO
 
-        A GOTTA considera uma redução
-        simulada de 15%.
+        A GOTTA simula uma redução
+        de 15% no consumo.
+
+        Este valor é apenas
+        demonstrativo.
     */
+
 
     const economiaLitros =
         consumo * 0.15;
 
 
     /*
-        Valor ilustrativo para
-        demonstrar o funcionamento
-        do protótipo.
+        Valor financeiro
+        ilustrativo para o protótipo.
     */
+
 
     const economiaFinanceira =
         economiaLitros * 0.01;
@@ -1055,45 +1452,79 @@ function calcularEconomia() {
     resultado.innerHTML = `
 
         <h3>
-            Análise GOTTA
+
+            🧠 Análise GOTTA
+
         </h3>
+
 
         <div class="resultado-grid">
 
+
             <div>
-                <span>💧 Economia estimada</span>
+
+                <span>
+                    💧 Economia estimada
+                </span>
 
                 <strong>
-                    ${economiaLitros.toLocaleString('pt-BR')} L
+
+                    ${economiaLitros
+                    .toLocaleString('pt-BR')} L
+
                 </strong>
+
             </div>
 
 
             <div>
-                <span>💰 Economia estimada</span>
+
+                <span>
+                    💰 Economia estimada
+                </span>
 
                 <strong>
-                    R$ ${economiaFinanceira.toFixed(2)}
+
+                    R$ ${economiaFinanceira
+                    .toFixed(2)}
+
                 </strong>
+
             </div>
 
 
             <div>
-                <span>📉 Redução estimada</span>
+
+                <span>
+                    📉 Redução estimada
+                </span>
 
                 <strong>
                     15%
                 </strong>
+
             </div>
+
 
         </div>
 
 
         <p class="analise">
 
-            🧠 A GOTTA identificou que uma redução
-            de aproximadamente 15% no consumo poderia
-            representar uma economia significativa.
+            🧠 A GOTTA identificou uma
+            oportunidade de redução de
+            aproximadamente 15% no consumo.
+
+            <br><br>
+
+            <small>
+
+                *Resultado ilustrativo do
+                protótipo. A economia real
+                depende do perfil de consumo,
+                tarifas e condições de cada local.
+
+            </small>
 
         </p>
 
@@ -1101,7 +1532,9 @@ function calcularEconomia() {
 
 }
 
+
 </script>
+
 
 </body>
 
