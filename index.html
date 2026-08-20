@@ -443,8 +443,172 @@
 
         /* ================= MOBILE ================= */
 
-        @media (max-width: 800px) {
+        /* ================= SIMULADOR ================= */
 
+.simulator {
+
+    max-width: 700px;
+
+    margin: 50px auto 0;
+
+    padding: 40px;
+
+    background: #071a23;
+
+    border: 1px solid #17485b;
+
+    border-radius: 25px;
+
+    text-align: left;
+
+}
+
+.simulator label {
+
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: #a9c4cd;
+
+}
+
+.simulator input {
+
+    width: 100%;
+
+    padding: 16px;
+
+    background: #0d2d3b;
+
+    border: 1px solid #20566a;
+
+    border-radius: 10px;
+
+    color: white;
+
+    font-size: 17px;
+
+    margin-bottom: 20px;
+
+    outline: none;
+
+}
+
+.simulator input:focus {
+
+    border-color: #4de1ff;
+
+}
+
+.simulator button {
+
+    width: 100%;
+
+    padding: 16px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: #4de1ff;
+
+    color: #06151d;
+
+    font-weight: bold;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+.simulator button:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 30px rgba(77,225,255,0.2);
+
+}
+
+.resultado {
+
+    margin-top: 35px;
+
+    padding: 25px;
+
+    background: #0d2d3b;
+
+    border-radius: 18px;
+
+    color: #a9c4cd;
+
+}
+
+.resultado h3 {
+
+    color: #4de1ff;
+
+    margin-bottom: 25px;
+
+}
+
+.resultado-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+}
+
+.resultado-grid div {
+
+    padding: 20px;
+
+    background: #071a23;
+
+    border-radius: 12px;
+
+}
+
+.resultado-grid span {
+
+    display: block;
+
+    font-size: 13px;
+
+    color: #8aaab5;
+
+    margin-bottom: 10px;
+
+}
+
+.resultado-grid strong {
+
+    display: block;
+
+    color: #4de1ff;
+
+    font-size: 22px;
+
+}
+
+.analise {
+
+    margin-top: 25px;
+
+    line-height: 1.6;
+
+}@media (max-width: 800px) {
+
+    .resultado-grid {
+    grid-template-columns: 1fr;
+}
             header {
                 padding: 20px;
             }
@@ -747,7 +911,51 @@
 
 </section>
 
+<!-- ================= SIMULADOR ================= -->
 
+<section class="section" id="simulador">
+
+    <h2>
+        Simule sua economia
+    </h2>
+
+    <p class="section-intro">
+
+        Descubra quanto você poderia economizar
+        reduzindo o desperdício de água.
+
+    </p>
+
+
+    <div class="simulator">
+
+        <label for="consumo">
+            Seu consumo mensal de água (litros)
+        </label>
+
+        <input
+            type="number"
+            id="consumo"
+            placeholder="Ex: 20000"
+            min="1"
+        >
+
+        <button onclick="calcularEconomia()">
+            Analisar meu consumo →
+        </button>
+
+
+        <div id="resultado" class="resultado">
+
+            <p>
+                Digite seu consumo acima para começar.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
 
 <!-- ================= IMPACTO ================= -->
 
@@ -799,6 +1007,101 @@
 
 </footer>
 
+    <script>
+
+function calcularEconomia() {
+
+    const consumo = Number(
+        document.getElementById("consumo").value
+    );
+
+    const resultado =
+        document.getElementById("resultado");
+
+
+    if (!consumo || consumo <= 0) {
+
+        resultado.innerHTML = `
+            <p>
+                ⚠️ Digite um consumo válido.
+            </p>
+        `;
+
+        return;
+    }
+
+
+    /*
+        ESTIMATIVA DO PROTÓTIPO
+
+        A GOTTA considera uma redução
+        simulada de 15%.
+    */
+
+    const economiaLitros =
+        consumo * 0.15;
+
+
+    /*
+        Valor ilustrativo para
+        demonstrar o funcionamento
+        do protótipo.
+    */
+
+    const economiaFinanceira =
+        economiaLitros * 0.01;
+
+
+    resultado.innerHTML = `
+
+        <h3>
+            Análise GOTTA
+        </h3>
+
+        <div class="resultado-grid">
+
+            <div>
+                <span>💧 Economia estimada</span>
+
+                <strong>
+                    ${economiaLitros.toLocaleString('pt-BR')} L
+                </strong>
+            </div>
+
+
+            <div>
+                <span>💰 Economia estimada</span>
+
+                <strong>
+                    R$ ${economiaFinanceira.toFixed(2)}
+                </strong>
+            </div>
+
+
+            <div>
+                <span>📉 Redução estimada</span>
+
+                <strong>
+                    15%
+                </strong>
+            </div>
+
+        </div>
+
+
+        <p class="analise">
+
+            🧠 A GOTTA identificou que uma redução
+            de aproximadamente 15% no consumo poderia
+            representar uma economia significativa.
+
+        </p>
+
+    `;
+
+}
+
+</script>
 
 </body>
 
