@@ -1,1 +1,805 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>GOTTA | Water Intelligence</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #06151d;
+            color: white;
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 22px 8%;
+
+            background: rgba(6, 21, 29, 0.92);
+            backdrop-filter: blur(10px);
+
+            border-bottom: 1px solid #123846;
+        }
+
+        .logo {
+            font-size: 30px;
+            font-weight: 900;
+            letter-spacing: 4px;
+            color: #4de1ff;
+        }
+
+        .logo span {
+            color: white;
+        }
+
+        nav a {
+            color: #d7e9ee;
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #4de1ff;
+        }
+
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 90vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 80px 8%;
+
+            gap: 60px;
+
+            background:
+                radial-gradient(
+                    circle at 80% 50%,
+                    rgba(36, 177, 218, 0.18),
+                    transparent 35%
+                );
+        }
+
+        .hero-text {
+            max-width: 680px;
+        }
+
+        .tag {
+            display: inline-block;
+
+            padding: 8px 15px;
+
+            border: 1px solid #20566a;
+            border-radius: 30px;
+
+            color: #4de1ff;
+
+            font-size: 13px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 7vw, 80px);
+            line-height: 0.98;
+
+            margin-bottom: 30px;
+        }
+
+        .hero h1 span {
+            color: #4de1ff;
+        }
+
+        .hero p {
+            font-size: 20px;
+            line-height: 1.7;
+
+            color: #a9c4cd;
+
+            margin-bottom: 40px;
+        }
+
+        .button {
+            display: inline-block;
+
+            padding: 16px 30px;
+
+            background: #4de1ff;
+
+            color: #06151d;
+
+            text-decoration: none;
+
+            border-radius: 30px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(77, 225, 255, 0.25);
+        }
+
+
+        /* ================= WATER ANIMATION ================= */
+
+        .water-container {
+            position: relative;
+
+            width: 350px;
+            height: 350px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .water {
+            width: 270px;
+            height: 270px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle at 35% 30%,
+                    #a4f1ff,
+                    #4de1ff 30%,
+                    #14799a 65%,
+                    #073848
+                );
+
+            box-shadow:
+                0 0 60px rgba(77, 225, 255, 0.25),
+                inset -20px -20px 50px rgba(0,0,0,0.25);
+
+            animation: floating 4s ease-in-out infinite;
+        }
+
+        .water::after {
+            content: "G";
+
+            position: absolute;
+
+            font-size: 90px;
+            font-weight: 900;
+
+            color: rgba(255,255,255,0.8);
+        }
+
+        @keyframes floating {
+
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-18px);
+            }
+        }
+
+
+        /* ================= SECTIONS ================= */
+
+        .section {
+            padding: 100px 8%;
+
+            background: #09212c;
+
+            text-align: center;
+        }
+
+        .section.dark {
+            background: #06151d;
+        }
+
+        .section h2 {
+            font-size: 45px;
+
+            margin-bottom: 20px;
+        }
+
+        .section-intro {
+            max-width: 700px;
+
+            margin: auto;
+
+            color: #a9c4cd;
+
+            line-height: 1.7;
+
+            font-size: 17px;
+        }
+
+
+        /* ================= CARDS ================= */
+
+        .cards {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 25px;
+
+            margin-top: 60px;
+
+            flex-wrap: wrap;
+        }
+
+        .card {
+            width: 290px;
+
+            padding: 35px;
+
+            text-align: left;
+
+            background: #0d2d3b;
+
+            border: 1px solid #16495d;
+
+            border-radius: 22px;
+
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+
+            border-color: #4de1ff;
+
+            box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+        }
+
+        .icon {
+            font-size: 45px;
+
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            color: #4de1ff;
+
+            font-size: 22px;
+
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: #a9c4cd;
+
+            line-height: 1.6;
+        }
+
+
+        /* ================= DASHBOARD ================= */
+
+        .dashboard {
+            max-width: 900px;
+
+            margin: 60px auto 0;
+
+            padding: 30px;
+
+            background: #071a23;
+
+            border: 1px solid #17485b;
+
+            border-radius: 25px;
+
+            text-align: left;
+
+            box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+        }
+
+        .dashboard-header {
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 30px;
+        }
+
+        .online {
+            color: #4dff9a;
+
+            font-size: 14px;
+        }
+
+        .stats {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .stat {
+            padding: 25px;
+
+            background: #0d2d3b;
+
+            border-radius: 15px;
+        }
+
+        .stat small {
+            color: #8aaab5;
+        }
+
+        .stat strong {
+            display: block;
+
+            font-size: 28px;
+
+            margin-top: 10px;
+
+            color: #4de1ff;
+        }
+
+
+        /* ================= WATER MISSION ================= */
+
+        .mission {
+            max-width: 700px;
+
+            margin: 60px auto 0;
+
+            padding: 35px;
+
+            background: #0d2d3b;
+
+            border-radius: 20px;
+
+            border: 1px solid #16495d;
+        }
+
+        .mission h3 {
+            color: #4de1ff;
+
+            margin-bottom: 15px;
+        }
+
+        .progress {
+            height: 14px;
+
+            background: #163b49;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            margin: 25px 0 10px;
+        }
+
+        .progress-bar {
+            height: 100%;
+
+            width: 82%;
+
+            background: #4de1ff;
+
+            border-radius: 20px;
+        }
+
+
+        /* ================= ODS ================= */
+
+        .ods-number {
+            font-size: 80px;
+
+            font-weight: 900;
+
+            color: #4de1ff;
+
+            margin: 30px 0;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            padding: 40px 8%;
+
+            background: #041017;
+
+            text-align: center;
+
+            color: #66828c;
+        }
+
+        footer strong {
+            color: #4de1ff;
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 800px) {
+
+            header {
+                padding: 20px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .hero {
+                flex-direction: column;
+
+                text-align: center;
+
+                padding: 70px 20px;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .water-container {
+                width: 280px;
+                height: 280px;
+            }
+
+            .water {
+                width: 220px;
+                height: 220px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 80px 20px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <div class="logo">
+        GOTTA<span>.</span>
+    </div>
+
+    <nav>
+
+        <a href="#solucao">Solução</a>
+
+        <a href="#tecnologia">Tecnologia</a>
+
+        <a href="#dashboard">Dashboard</a>
+
+        <a href="#impacto">Impacto</a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="hero-text">
+
+        <div class="tag">
+            💧 WATER INTELLIGENCE
+        </div>
+
+        <h1>
+            A água fala.
+            <span>Nós prevemos.</span>
+        </h1>
+
+        <p>
+            A GOTTA utiliza sensores, Inteligência Artificial
+            e análise de dados para identificar padrões,
+            prever desperdícios e transformar o consumo de
+            água em decisões inteligentes.
+        </p>
+
+        <a href="#solucao" class="button">
+            Descobrir a GOTTA →
+        </a>
+
+    </div>
+
+
+    <div class="water-container">
+
+        <div class="water"></div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= SOLUÇÃO ================= -->
+
+<section class="section" id="solucao">
+
+    <h2>
+        Uma nova forma de entender a água.
+    </h2>
+
+    <p class="section-intro">
+
+        A GOTTA não quer apenas detectar desperdícios.
+        Nossa tecnologia aprende o comportamento hídrico
+        de cada ambiente para antecipar problemas antes
+        que eles aconteçam.
+
+    </p>
+
+
+    <div class="cards">
+
+
+        <div class="card">
+
+            <div class="icon">💧</div>
+
+            <h3>Gotta Pulse</h3>
+
+            <p>
+                Sensor inteligente que monitora o consumo
+                de água em tempo real.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">🧠</div>
+
+            <h3>Gotta AI</h3>
+
+            <p>
+                Inteligência Artificial que aprende os
+                padrões de consumo e identifica anomalias.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">📊</div>
+
+            <h3>Gotta Hub</h3>
+
+            <p>
+                Um painel inteligente que transforma
+                dados complexos em informações simples.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= TECNOLOGIA ================= -->
+
+<section class="section dark" id="tecnologia">
+
+    <h2>
+        Inteligência Hídrica
+    </h2>
+
+    <p class="section-intro">
+
+        Quanto mais a GOTTA observa, mais inteligente
+        ela se torna. Nossa tecnologia aprende como
+        cada ambiente utiliza água e procura padrões
+        que poderiam passar despercebidos.
+
+    </p>
+
+</section>
+
+
+
+<!-- ================= DASHBOARD ================= -->
+
+<section class="section" id="dashboard">
+
+    <h2>
+        Gotta Hub
+    </h2>
+
+    <p class="section-intro">
+
+        Um exemplo de como nossa plataforma transforma
+        dados em decisões.
+
+    </p>
+
+
+    <div class="dashboard">
+
+        <div class="dashboard-header">
+
+            <strong>
+                Gotta Intelligence
+            </strong>
+
+            <span class="online">
+                ● Sistema online
+            </span>
+
+        </div>
+
+
+        <div class="stats">
+
+            <div class="stat">
+
+                <small>
+                    Consumo hoje
+                </small>
+
+                <strong>
+                    2.840 L
+                </strong>
+
+            </div>
+
+
+            <div class="stat">
+
+                <small>
+                    Economia mensal
+                </small>
+
+                <strong>
+                    13,7%
+                </strong>
+
+            </div>
+
+
+            <div class="stat">
+
+                <small>
+                    Eficiência
+                </small>
+
+                <strong>
+                    92%
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="mission">
+
+            <h3>
+                🎯 Gotta Mission
+            </h3>
+
+            <p>
+                Meta inteligente criada pela IA:
+                reduzir o consumo em 10% este mês.
+            </p>
+
+
+            <div class="progress">
+
+                <div class="progress-bar"></div>
+
+            </div>
+
+            <small>
+                82% da missão concluída
+            </small>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= IMPACTO ================= -->
+
+<section class="section dark" id="impacto">
+
+    <h2>
+        Nosso impacto
+    </h2>
+
+    <p class="section-intro">
+
+        A GOTTA contribui principalmente para a
+        ODS 6 — Água Potável e Saneamento, incentivando
+        o uso consciente e sustentável dos recursos hídricos.
+
+    </p>
+
+
+    <div class="ods-number">
+        ODS 6
+    </div>
+
+
+    <p class="section-intro">
+
+        Nosso objetivo é simples:
+        <strong>usar melhor a água que já temos.</strong>
+
+    </p>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+        <strong>GOTTA.</strong>
+        Water Intelligence.
+    </p>
+
+    <br>
+
+    <p>
+        © 2026 GOTTA — Inteligência para um futuro sustentável.
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>
