@@ -4,31 +4,32 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>GOTTA | Water Intelligence</title>
 
 <style>
 
-/* =========================================================
-   CONFIGURAÇÕES
-========================================================= */
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
-html {
-    scroll-behavior: smooth;
+html{
+    scroll-behavior:smooth;
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #06151d;
-    color: white;
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#06151d;
+    color:white;
+}
+
+button,
+input,
+select{
+    font-family:inherit;
 }
 
 
@@ -36,60 +37,60 @@ body {
    MENU
 ========================================================= */
 
-header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 
-    padding: 18px 7%;
+    padding:18px 7%;
 
-    background: rgba(6, 21, 29, 0.97);
+    background:rgba(6,21,29,.97);
 
-    border-bottom: 1px solid #17485b;
+    border-bottom:1px solid #17485b;
 }
 
-.logo {
-    font-size: 30px;
-    font-weight: 900;
-    letter-spacing: 4px;
-    color: #4de1ff;
+.logo{
+    font-size:30px;
+    font-weight:900;
+    letter-spacing:4px;
+    color:#4de1ff;
 }
 
-.logo span {
-    color: white;
+.logo span{
+    color:white;
 }
 
-.menu {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
+.menu{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
 }
 
-.menu button {
-    background: transparent;
-    border: 0;
+.menu button{
+    background:transparent;
+    border:0;
 
-    color: #b9d0d7;
+    color:#b9d0d7;
 
-    padding: 10px 13px;
+    padding:10px 13px;
 
-    cursor: pointer;
+    cursor:pointer;
 
-    border-radius: 8px;
+    border-radius:8px;
 
-    font-size: 14px;
+    font-size:14px;
 
-    transition: 0.3s;
+    transition:.3s;
 }
 
 .menu button:hover,
-.menu button.active {
-    background: #103746;
-    color: #4de1ff;
+.menu button.active{
+    background:#103746;
+    color:#4de1ff;
 }
 
 
@@ -97,13 +98,13 @@ header {
    ABAS
 ========================================================= */
 
-.aba {
-    display: none;
-    min-height: calc(100vh - 80px);
+.aba{
+    display:none;
+    min-height:calc(100vh - 80px);
 }
 
-.aba.active {
-    display: block;
+.aba.active{
+    display:block;
 }
 
 
@@ -111,166 +112,159 @@ header {
    INÍCIO
 ========================================================= */
 
-.inicio {
-    min-height: calc(100vh - 80px);
+.inicio{
+    min-height:calc(100vh - 80px);
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 
-    padding: 70px 8%;
-
-    gap: 50px;
-
-    background:
-        radial-gradient(
-            circle at 80% 50%,
-            rgba(77, 225, 255, 0.16),
-            transparent 35%
-        );
-}
-
-.inicio-texto {
-    max-width: 650px;
-}
-
-.tag {
-    display: inline-block;
-
-    padding: 8px 15px;
-
-    border: 1px solid #20566a;
-
-    border-radius: 30px;
-
-    color: #4de1ff;
-
-    font-size: 13px;
-
-    margin-bottom: 25px;
-}
-
-h1 {
-    font-size: clamp(50px, 7vw, 85px);
-
-    line-height: 1;
-
-    margin-bottom: 25px;
-}
-
-h1 span {
-    color: #4de1ff;
-}
-
-.inicio p {
-    color: #a9c4cd;
-
-    font-size: 19px;
-
-    line-height: 1.7;
-
-    margin-bottom: 35px;
-}
-
-.botao {
-    display: inline-block;
-
-    padding: 16px 28px;
-
-    border: 0;
-
-    border-radius: 30px;
-
-    background: #4de1ff;
-
-    color: #06151d;
-
-    font-weight: bold;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-}
-
-.botao:hover {
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 10px 30px rgba(77, 225, 255, 0.18);
-}
-
-.gota {
-    width: 280px;
-    height: 280px;
-
-    border-radius: 50%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding:70px 8%;
+    gap:50px;
 
     background:
-        radial-gradient(
-            circle at 35% 30%,
-            #b5f5ff,
-            #4de1ff 30%,
-            #14799a 65%,
-            #073848
-        );
+    radial-gradient(
+        circle at 80% 50%,
+        rgba(77,225,255,.16),
+        transparent 35%
+    );
+}
+
+.inicio-texto{
+    max-width:650px;
+}
+
+.tag{
+    display:inline-block;
+
+    padding:8px 15px;
+
+    border:1px solid #20566a;
+    border-radius:30px;
+
+    color:#4de1ff;
+
+    font-size:13px;
+
+    margin-bottom:25px;
+}
+
+h1{
+    font-size:clamp(50px,7vw,85px);
+    line-height:1;
+
+    margin-bottom:25px;
+}
+
+h1 span{
+    color:#4de1ff;
+}
+
+.inicio p{
+    color:#a9c4cd;
+
+    font-size:19px;
+    line-height:1.7;
+
+    margin-bottom:35px;
+}
+
+.botao{
+    display:inline-block;
+
+    padding:16px 28px;
+
+    border:0;
+    border-radius:30px;
+
+    background:#4de1ff;
+    color:#06151d;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.botao:hover{
+    transform:translateY(-3px);
 
     box-shadow:
-        0 0 70px rgba(77, 225, 255, 0.25),
-        inset -25px -25px 50px rgba(0, 0, 0, 0.25);
-
-    animation: flutuar 4s infinite ease-in-out;
+    0 10px 30px rgba(77,225,255,.18);
 }
 
-.gota span {
-    font-size: 90px;
-    font-weight: 900;
-    color: rgba(255, 255, 255, 0.85);
+.gota{
+    width:280px;
+    height:280px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+    radial-gradient(
+        circle at 35% 30%,
+        #b5f5ff,
+        #4de1ff 30%,
+        #14799a 65%,
+        #073848
+    );
+
+    box-shadow:
+    0 0 70px rgba(77,225,255,.25),
+    inset -25px -25px 50px rgba(0,0,0,.25);
+
+    animation:flutuar 4s infinite ease-in-out;
 }
 
-@keyframes flutuar {
+.gota span{
+    font-size:90px;
+    font-weight:900;
+    color:rgba(255,255,255,.85);
+}
 
-    0%, 100% {
-        transform: translateY(0);
+@keyframes flutuar{
+    0%,100%{
+        transform:translateY(0);
     }
 
-    50% {
-        transform: translateY(-18px);
+    50%{
+        transform:translateY(-18px);
     }
 }
 
 
 /* =========================================================
-   CONTEÚDO
+   GERAL
 ========================================================= */
 
-.conteudo {
-    max-width: 1100px;
-    margin: auto;
-    padding: 70px 25px;
+.conteudo{
+    max-width:1100px;
+    margin:auto;
+    padding:70px 25px;
 }
 
-.titulo {
-    text-align: center;
+.titulo{
+    text-align:center;
 
-    font-size: 45px;
+    font-size:45px;
 
-    margin-bottom: 15px;
+    margin-bottom:15px;
 }
 
-.subtitulo {
-    text-align: center;
+.subtitulo{
+    text-align:center;
 
-    max-width: 700px;
+    max-width:700px;
 
-    margin: 0 auto 50px;
+    margin:0 auto 50px;
 
-    color: #a9c4cd;
+    color:#a9c4cd;
 
-    line-height: 1.7;
+    line-height:1.7;
 }
 
 
@@ -278,116 +272,106 @@ h1 span {
    COMO FUNCIONA
 ========================================================= */
 
-.fluxo {
-    display: grid;
+.fluxo{
+    display:grid;
 
     grid-template-columns:
-        repeat(5, 1fr);
+    repeat(5,1fr);
 
-    gap: 15px;
+    gap:15px;
 }
 
-.etapa {
-    width: 100%;
+.etapa{
+    width:100%;
 
-    background: #0d2d3b;
+    background:#0d2d3b;
+    color:white;
 
-    color: white;
+    padding:25px 15px;
 
-    padding: 25px 15px;
+    border-radius:18px;
 
-    border-radius: 18px;
+    text-align:center;
 
-    text-align: center;
+    border:1px solid #17485b;
 
-    border: 1px solid #17485b;
+    transition:.3s;
 
-    transition: 0.3s;
-
-    cursor: pointer;
+    cursor:pointer;
 }
 
-.etapa:hover {
-    transform: translateY(-8px);
+.etapa:hover{
+    transform:translateY(-8px);
 
-    border-color: #4de1ff;
+    border-color:#4de1ff;
 
     box-shadow:
-        0 10px 30px
-        rgba(77, 225, 255, 0.12);
+    0 10px 30px
+    rgba(77,225,255,.12);
 }
 
-.etapa:active {
-    transform: scale(0.97);
+.etapa .emoji{
+    font-size:40px;
+    margin-bottom:15px;
 }
 
-.etapa .emoji {
-    font-size: 40px;
-
-    margin-bottom: 15px;
+.etapa h3{
+    color:#4de1ff;
+    margin-bottom:10px;
 }
 
-.etapa h3 {
-    color: #4de1ff;
-
-    margin-bottom: 10px;
+.etapa p{
+    color:#9bb8c0;
+    line-height:1.5;
+    font-size:14px;
 }
 
-.etapa p {
-    color: #9bb8c0;
+.explicacao-etapa{
+    max-width:900px;
 
-    line-height: 1.5;
+    margin:35px auto 0;
 
-    font-size: 14px;
+    padding:30px;
+
+    background:#071a23;
+
+    border:1px solid #4de1ff;
+
+    border-radius:20px;
+
+    display:none;
+
+    animation:aparecer .4s ease;
 }
 
-.explicacao-etapa {
-    max-width: 900px;
+.explicacao-etapa h3{
+    color:#4de1ff;
 
-    margin: 35px auto 0;
+    font-size:26px;
 
-    padding: 30px;
-
-    background: #071a23;
-
-    border: 1px solid #4de1ff;
-
-    border-radius: 20px;
-
-    display: none;
-
-    animation: aparecer 0.4s ease;
+    margin-bottom:12px;
 }
 
-.explicacao-etapa h3 {
-    color: #4de1ff;
+.explicacao-etapa p{
+    color:#b9d0d7;
 
-    font-size: 26px;
+    line-height:1.7;
 
-    margin-bottom: 12px;
+    font-size:17px;
 }
 
-.explicacao-etapa p {
-    color: #b9d0d7;
+@keyframes aparecer{
 
-    line-height: 1.7;
-
-    font-size: 17px;
-}
-
-@keyframes aparecer {
-
-    from {
-        opacity: 0;
-
-        transform: translateY(10px);
+    from{
+        opacity:0;
+        transform:translateY(10px);
     }
 
-    to {
-        opacity: 1;
-
-        transform: translateY(0);
+    to{
+        opacity:1;
+        transform:translateY(0);
     }
+
 }
 
 
@@ -395,444 +379,420 @@ h1 span {
    CARDS
 ========================================================= */
 
-.cards {
-    display: grid;
+.cards{
+    display:grid;
 
     grid-template-columns:
-        repeat(3, 1fr);
+    repeat(3,1fr);
 
-    gap: 20px;
+    gap:20px;
 }
 
-.card {
-    background: #0d2d3b;
+.card{
+    background:#0d2d3b;
 
-    padding: 30px;
+    padding:30px;
 
-    border-radius: 20px;
+    border-radius:20px;
 
-    border: 1px solid #17485b;
+    border:1px solid #17485b;
 
-    transition: 0.3s;
+    transition:.3s;
 }
 
-.card:hover {
-    transform: translateY(-5px);
-
-    border-color: #4de1ff;
+.card:hover{
+    transform:translateY(-5px);
+    border-color:#4de1ff;
 }
 
-.card h3 {
-    color: #4de1ff;
-
-    margin-bottom: 12px;
+.card h3{
+    color:#4de1ff;
+    margin-bottom:12px;
 }
 
-.card p {
-    color: #a9c4cd;
-
-    line-height: 1.6;
+.card p{
+    color:#a9c4cd;
+    line-height:1.6;
 }
 
 
 /* =========================================================
-   CHAT DA GOTTA AI
+   GOTTA AI
 ========================================================= */
 
-.chat-container {
-    max-width: 850px;
+.chat-container{
+    max-width:850px;
 
-    margin: auto;
+    margin:auto;
 
-    background: #071a23;
+    background:#071a23;
 
-    border: 1px solid #17485b;
+    border:1px solid #17485b;
 
-    border-radius: 25px;
+    border-radius:25px;
 
-    overflow: hidden;
+    overflow:hidden;
 
     box-shadow:
-        0 20px 60px rgba(0, 0, 0, 0.25);
+    0 20px 60px rgba(0,0,0,.25);
 }
 
-.chat-header {
-    padding: 20px 25px;
+.chat-header{
+    padding:20px 25px;
 
-    background: #0d2d3b;
+    background:#0d2d3b;
 
-    border-bottom: 1px solid #17485b;
+    border-bottom:1px solid #17485b;
 
-    display: flex;
+    display:flex;
 
-    align-items: center;
+    align-items:center;
 
-    gap: 15px;
+    gap:15px;
 }
 
-.ai-avatar {
-    width: 45px;
-    height: 45px;
+.ai-avatar{
+    width:45px;
+    height:45px;
 
-    border-radius: 50%;
+    border-radius:50%;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-    background: #4de1ff;
+    background:#4de1ff;
 
-    color: #06151d;
+    color:#06151d;
 
-    font-size: 22px;
+    font-size:22px;
 
-    font-weight: bold;
+    font-weight:bold;
 }
 
-.ai-title strong {
-    display: block;
-
-    font-size: 17px;
+.ai-title strong{
+    display:block;
 }
 
-.ai-status {
-    color: #4dff9a;
-
-    font-size: 12px;
+.ai-status{
+    color:#4dff9a;
+    font-size:12px;
 }
 
-.chat-body {
-    min-height: 520px;
+.chat-body{
+    min-height:500px;
 
-    max-height: 650px;
+    max-height:650px;
 
-    overflow-y: auto;
+    overflow-y:auto;
 
-    padding: 25px;
+    padding:25px;
 }
 
-.mensagem {
-    display: flex;
+.mensagem{
+    display:flex;
 
-    margin-bottom: 18px;
+    margin-bottom:18px;
 
-    animation: mensagemEntrar 0.3s ease;
+    animation:mensagemEntrar .3s ease;
 }
 
-.mensagem.ai {
-    justify-content: flex-start;
+.mensagem.ai{
+    justify-content:flex-start;
 }
 
-.mensagem.usuario {
-    justify-content: flex-end;
+.mensagem.usuario{
+    justify-content:flex-end;
 }
 
-.bolha {
-    max-width: 75%;
+.bolha{
+    max-width:75%;
 
-    padding: 14px 17px;
+    padding:14px 17px;
 
-    border-radius: 18px;
+    border-radius:18px;
 
-    line-height: 1.5;
+    line-height:1.5;
 
-    font-size: 15px;
+    font-size:15px;
 }
 
-.mensagem.ai .bolha {
-    background: #0d2d3b;
+.mensagem.ai .bolha{
+    background:#0d2d3b;
 
-    color: #d9edf2;
+    color:#d9edf2;
 
-    border-bottom-left-radius: 5px;
+    border-bottom-left-radius:5px;
 }
 
-.mensagem.usuario .bolha {
-    background: #4de1ff;
+.mensagem.usuario .bolha{
+    background:#4de1ff;
 
-    color: #06151d;
+    color:#06151d;
 
-    border-bottom-right-radius: 5px;
+    border-bottom-right-radius:5px;
 }
 
-@keyframes mensagemEntrar {
-
-    from {
-        opacity: 0;
-
-        transform: translateY(8px);
+@keyframes mensagemEntrar{
+    from{
+        opacity:0;
+        transform:translateY(8px);
     }
 
-    to {
-        opacity: 1;
-
-        transform: translateY(0);
+    to{
+        opacity:1;
+        transform:translateY(0);
     }
 }
 
-.chat-opcoes {
-    padding: 0 25px 25px;
+.chat-opcoes{
+    padding:0 25px 25px;
 
-    display: grid;
+    display:grid;
 
     grid-template-columns:
-        1fr 1fr;
+    1fr 1fr;
 
-    gap: 12px;
+    gap:12px;
 }
 
-.chat-opcao {
-    background: #0d2d3b;
+.chat-opcao{
+    background:#0d2d3b;
 
-    color: white;
+    color:white;
 
-    border: 1px solid #20566a;
+    border:1px solid #20566a;
 
-    border-radius: 12px;
+    border-radius:12px;
 
-    padding: 15px;
+    padding:15px;
 
-    cursor: pointer;
+    cursor:pointer;
 
-    text-align: left;
+    text-align:left;
 
-    font-size: 15px;
-
-    transition: 0.3s;
+    transition:.3s;
 }
 
-.chat-opcao:hover {
-    border-color: #4de1ff;
+.chat-opcao:hover{
+    border-color:#4de1ff;
 
-    transform: translateY(-2px);
+    transform:translateY(-2px);
 }
 
-.chat-input-area {
-    padding: 0 25px 25px;
+.chat-input-area{
+    padding:0 25px 25px;
 
-    display: flex;
+    display:flex;
 
-    gap: 10px;
+    gap:10px;
 }
 
-.chat-input {
-    flex: 1;
+.chat-input{
+    flex:1;
 
-    padding: 15px;
+    padding:15px;
 
-    background: #0d2d3b;
+    background:#0d2d3b;
 
-    color: white;
+    color:white;
 
-    border: 1px solid #20566a;
+    border:1px solid #20566a;
 
-    border-radius: 12px;
+    border-radius:12px;
 
-    outline: none;
-
-    font-size: 15px;
+    outline:none;
 }
 
-.chat-input:focus {
-    border-color: #4de1ff;
-}
+.chat-send{
+    padding:15px 20px;
 
-.chat-send {
-    padding: 15px 20px;
+    border:none;
 
-    border: none;
+    border-radius:12px;
 
-    border-radius: 12px;
+    background:#4de1ff;
 
-    background: #4de1ff;
+    color:#06151d;
 
-    color: #06151d;
+    font-weight:bold;
 
-    font-weight: bold;
-
-    cursor: pointer;
+    cursor:pointer;
 }
 
 
 /* =========================================================
-   RESULTADO IA
+   RESULTADO AI
 ========================================================= */
 
-.analise-final {
-    max-width: 850px;
+.analise-final{
+    max-width:850px;
 
-    margin: 30px auto 0;
+    margin:30px auto 0;
 
-    background: #071a23;
+    background:#071a23;
 
-    border: 1px solid #4de1ff;
+    border:1px solid #4de1ff;
 
-    border-radius: 25px;
+    border-radius:25px;
 
-    padding: 30px;
+    padding:30px;
 
-    display: none;
-
-    animation: aparecer 0.4s ease;
+    display:none;
 }
 
-.analise-topo {
-    text-align: center;
+.analise-topo{
+    text-align:center;
 
-    margin-bottom: 25px;
+    margin-bottom:25px;
 }
 
-.analise-topo h3 {
-    color: #4de1ff;
+.analise-topo h3{
+    color:#4de1ff;
 
-    font-size: 28px;
+    font-size:28px;
 
-    margin-bottom: 8px;
+    margin-bottom:8px;
 }
 
-.score-grande {
-    font-size: 75px;
+.score-grande{
+    font-size:75px;
 
-    font-weight: 900;
+    font-weight:900;
 
-    color: #4de1ff;
+    color:#4de1ff;
 }
 
-.recomendacoes {
-    display: grid;
+.recomendacoes{
+    display:grid;
 
     grid-template-columns:
-        repeat(2, 1fr);
+    repeat(2,1fr);
 
-    gap: 15px;
+    gap:15px;
 }
 
-.recomendacao-card {
-    padding: 22px;
+.recomendacao-card{
+    padding:22px;
 
-    background: #0d2d3b;
+    background:#0d2d3b;
 
-    border-radius: 15px;
+    border-radius:15px;
 }
 
-.recomendacao-card small {
-    display: block;
+.recomendacao-card small{
+    display:block;
 
-    color: #8aaab5;
+    color:#8aaab5;
 
-    margin-bottom: 8px;
+    margin-bottom:8px;
 }
 
-.recomendacao-card strong {
-    color: #4de1ff;
+.recomendacao-card strong{
+    color:#4de1ff;
 
-    font-size: 23px;
+    font-size:23px;
 }
 
-.missao-final {
-    margin-top: 20px;
+.missao-final{
+    margin-top:20px;
 
-    padding: 22px;
+    padding:22px;
 
-    background: #0d2d3b;
+    background:#0d2d3b;
 
-    border-left: 4px solid #4de1ff;
+    border-left:4px solid #4de1ff;
 
-    border-radius: 12px;
+    border-radius:12px;
 }
 
-.missao-final h4 {
-    color: #4de1ff;
+.missao-final h4{
+    color:#4de1ff;
 
-    margin-bottom: 10px;
+    margin-bottom:10px;
 
-    font-size: 20px;
+    font-size:20px;
 }
 
-.missao-final p {
-    color: #d7e9ee;
+.missao-final p{
+    color:#d7e9ee;
 
-    line-height: 1.6;
+    line-height:1.6;
 }
 
-.botoes-final {
-    display: grid;
+.botoes-final{
+    display:grid;
 
     grid-template-columns:
-        1fr 1fr;
+    1fr 1fr;
 
-    gap: 12px;
+    gap:12px;
 
-    margin-top: 20px;
+    margin-top:20px;
 }
 
-.botao-final {
-    padding: 15px;
+.botao-final{
+    padding:15px;
 
-    border-radius: 30px;
+    border-radius:30px;
 
-    font-weight: bold;
+    font-weight:bold;
 
-    cursor: pointer;
+    cursor:pointer;
 }
 
-.botao-nova {
-    background: #4de1ff;
+.botao-nova{
+    background:#4de1ff;
 
-    border: none;
+    border:none;
 
-    color: #06151d;
+    color:#06151d;
 }
 
-.botao-reinicio {
-    background: transparent;
+.botao-reinicio{
+    background:transparent;
 
-    border: 1px solid #4de1ff;
+    border:1px solid #4de1ff;
 
-    color: #4de1ff;
+    color:#4de1ff;
 }
 
+.historico{
+    max-width:850px;
 
-/* =========================================================
-   HISTÓRICO
-========================================================= */
-
-.historico {
-    max-width: 850px;
-
-    margin: 30px auto 0;
+    margin:30px auto 0;
 }
 
-.historico h3 {
-    margin-bottom: 15px;
+.historico h3{
+    margin-bottom:15px;
 
-    color: #4de1ff;
+    color:#4de1ff;
 }
 
-.historico-lista {
-    display: grid;
+.historico-lista{
+    display:grid;
 
-    gap: 10px;
+    gap:10px;
 }
 
-.historico-item {
-    background: #0d2d3b;
+.historico-item{
+    background:#0d2d3b;
 
-    border: 1px solid #17485b;
+    border:1px solid #17485b;
 
-    border-radius: 12px;
+    border-radius:12px;
 
-    padding: 15px;
+    padding:15px;
 
-    display: flex;
+    display:flex;
 
-    justify-content: space-between;
+    justify-content:space-between;
 
-    align-items: center;
+    align-items:center;
 }
 
-.historico-item strong {
-    color: #4de1ff;
+.historico-item strong{
+    color:#4de1ff;
 }
 
 
@@ -840,153 +800,153 @@ h1 span {
    SIMULADOR
 ========================================================= */
 
-.simulador {
-    max-width: 700px;
+.simulador{
+    max-width:700px;
 
-    margin: auto;
+    margin:auto;
 
-    background: #071a23;
+    background:#071a23;
 
-    border: 1px solid #17485b;
+    border:1px solid #17485b;
 
-    padding: 35px;
+    padding:35px;
 
-    border-radius: 22px;
+    border-radius:22px;
 }
 
-.campo {
-    margin-bottom: 20px;
+.campo{
+    margin-bottom:20px;
 }
 
-.campo label {
-    display: block;
+.campo label{
+    display:block;
 
-    color: #b9d0d7;
+    color:#b9d0d7;
 
-    margin-bottom: 8px;
+    margin-bottom:8px;
 }
 
 .input,
-select {
-    width: 100%;
+select{
+    width:100%;
 
-    padding: 16px;
+    padding:16px;
 
-    background: #0d2d3b;
+    background:#0d2d3b;
 
-    color: white;
+    color:white;
 
-    border: 1px solid #20566a;
+    border:1px solid #20566a;
 
-    border-radius: 10px;
+    border-radius:10px;
 
-    font-size: 16px;
+    font-size:16px;
 
-    outline: none;
+    outline:none;
 }
 
 .input:focus,
-select:focus {
-    border-color: #4de1ff;
+select:focus{
+    border-color:#4de1ff;
 }
 
-.botao-largo {
-    width: 100%;
+.botao-largo{
+    width:100%;
 
-    margin-top: 15px;
+    margin-top:15px;
 
-    padding: 16px;
+    padding:16px;
 
-    border: none;
+    border:none;
 
-    border-radius: 30px;
+    border-radius:30px;
 
-    background: #4de1ff;
+    background:#4de1ff;
 
-    color: #06151d;
+    color:#06151d;
 
-    font-weight: bold;
+    font-weight:bold;
 
-    cursor: pointer;
+    cursor:pointer;
 
-    transition: 0.3s;
+    transition:.3s;
 }
 
-.botao-largo:hover {
-    transform: translateY(-2px);
+.botao-largo:hover{
+    transform:translateY(-2px);
 }
 
-.resultado-simulador {
-    margin-top: 25px;
+.resultado-simulador{
+    margin-top:25px;
 
-    padding: 25px;
+    padding:25px;
 
-    background: #0d2d3b;
+    background:#0d2d3b;
 
-    border-radius: 18px;
+    border-radius:18px;
 
-    display: none;
+    display:none;
 }
 
-.resultado-simulador h3 {
-    color: #4de1ff;
+.resultado-simulador h3{
+    color:#4de1ff;
 
-    margin-bottom: 15px;
+    margin-bottom:15px;
 }
 
-.numero {
-    font-size: 35px;
+.numero{
+    font-size:35px;
 
-    font-weight: bold;
+    font-weight:bold;
 
-    color: #4de1ff;
+    color:#4de1ff;
 }
 
 
 /* =========================================================
-   ODS
+   IMPACTO
 ========================================================= */
 
-.ods {
-    text-align: center;
+.ods{
+    text-align:center;
 }
 
-.ods-numero {
-    font-size: 100px;
+.ods-numero{
+    font-size:100px;
 
-    font-weight: 900;
+    font-weight:900;
 
-    color: #4de1ff;
+    color:#4de1ff;
 
-    margin: 30px;
+    margin:30px;
 }
 
-.ods-box {
-    max-width: 700px;
+.ods-box{
+    max-width:700px;
 
-    margin: auto;
+    margin:auto;
 
-    background: #0d2d3b;
+    background:#0d2d3b;
 
-    padding: 35px;
+    padding:35px;
 
-    border-radius: 22px;
+    border-radius:22px;
 
-    border: 1px solid #17485b;
+    border:1px solid #17485b;
 }
 
-.ods-box h3 {
-    color: #4de1ff;
+.ods-box h3{
+    color:#4de1ff;
 
-    font-size: 25px;
+    font-size:25px;
 
-    margin-bottom: 15px;
+    margin-bottom:15px;
 }
 
-.ods-box p {
-    color: #a9c4cd;
+.ods-box p{
+    color:#a9c4cd;
 
-    line-height: 1.7;
+    line-height:1.7;
 }
 
 
@@ -994,105 +954,550 @@ select:focus {
    NOSSA STARTUP
 ========================================================= */
 
-.startup-grid {
-    display: grid;
+.startup-grid{
+    display:grid;
 
     grid-template-columns:
-        repeat(2, 1fr);
+    repeat(2,1fr);
 
-    gap: 20px;
+    gap:20px;
 }
 
-.startup-card {
+.startup-card{
+    width:100%;
 
-    width: 100%;
+    padding:30px;
 
-    padding: 30px;
+    background:#0d2d3b;
 
-    background: #0d2d3b;
+    border:1px solid #17485b;
 
-    border: 1px solid #17485b;
+    border-radius:20px;
 
-    border-radius: 20px;
+    transition:.3s;
 
-    transition: 0.3s;
+    cursor:pointer;
 
-    cursor: pointer;
+    text-align:left;
 
-    text-align: left;
-
-    color: white;
-
-    font-family: Arial, Helvetica, sans-serif;
+    color:white;
 }
 
-.startup-card:hover {
+.startup-card:hover{
+    transform:translateY(-6px);
 
-    transform: translateY(-6px);
-
-    border-color: #4de1ff;
+    border-color:#4de1ff;
 
     box-shadow:
-        0 10px 30px
-        rgba(77, 225, 255, 0.12);
+    0 10px 30px
+    rgba(77,225,255,.12);
 }
 
-.startup-card:active {
-    transform: scale(0.98);
+.startup-card h3{
+    color:#4de1ff;
+
+    margin-bottom:12px;
 }
 
-.startup-card h3 {
-    color: #4de1ff;
+.startup-card p{
+    color:#a9c4cd;
 
-    margin-bottom: 12px;
+    line-height:1.6;
 }
 
-.startup-card p {
-    color: #a9c4cd;
+.explicacao-startup{
+    max-width:850px;
 
-    line-height: 1.6;
+    margin:30px auto 0;
+
+    padding:30px;
+
+    background:#071a23;
+
+    border:1px solid #4de1ff;
+
+    border-radius:20px;
+
+    display:none;
+}
+
+.explicacao-startup h3{
+    color:#4de1ff;
+
+    font-size:26px;
+
+    margin-bottom:15px;
+}
+
+.explicacao-startup p{
+    color:#b9d0d7;
+
+    line-height:1.7;
+
+    font-size:17px;
 }
 
 
 /* =========================================================
-   EXPLICAÇÃO STARTUP
+   GOTTA STORE
 ========================================================= */
 
-.explicacao-startup {
+.loja-header{
+    display:flex;
 
-    max-width: 850px;
+    justify-content:space-between;
 
-    margin: 30px auto 0;
+    align-items:center;
 
-    padding: 30px;
+    gap:20px;
 
-    background: #071a23;
-
-    border: 1px solid #4de1ff;
-
-    border-radius: 20px;
-
-    display: none;
-
-    animation: aparecer 0.4s ease;
+    margin-bottom:30px;
 }
 
-.explicacao-startup h3 {
+.carrinho-btn{
+    padding:14px 20px;
 
-    color: #4de1ff;
+    border:1px solid #4de1ff;
 
-    font-size: 26px;
+    background:#0d2d3b;
 
-    margin-bottom: 15px;
+    color:#4de1ff;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    font-weight:bold;
 }
 
-.explicacao-startup p {
+.produtos-grid{
+    display:grid;
 
-    color: #b9d0d7;
+    grid-template-columns:
+    repeat(2,1fr);
 
-    line-height: 1.7;
+    gap:20px;
 
-    font-size: 17px;
+    margin-bottom:55px;
+}
+
+.produto{
+    background:#0d2d3b;
+
+    border:1px solid #17485b;
+
+    border-radius:22px;
+
+    padding:30px;
+
+    transition:.3s;
+
+    position:relative;
+}
+
+.produto:hover{
+    transform:translateY(-6px);
+
+    border-color:#4de1ff;
+}
+
+.produto-icon{
+    font-size:50px;
+
+    margin-bottom:15px;
+}
+
+.produto h3{
+    color:#4de1ff;
+
+    font-size:25px;
+
+    margin-bottom:10px;
+}
+
+.produto p{
+    color:#a9c4cd;
+
+    line-height:1.6;
+
+    min-height:70px;
+}
+
+.preco{
+    font-size:30px;
+
+    font-weight:900;
+
+    color:#4de1ff;
+
+    margin:20px 0;
+}
+
+.preco span{
+    font-size:14px;
+
+    font-weight:normal;
+
+    color:#8aaab5;
+}
+
+.comprar-btn{
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:#4de1ff;
+
+    color:#06151d;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+    font-size:15px;
+}
+
+.planos{
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:20px;
+
+    margin-bottom:40px;
+}
+
+.plano{
+    background:#0d2d3b;
+
+    border:1px solid #17485b;
+
+    border-radius:22px;
+
+    padding:30px;
+
+    display:flex;
+
+    flex-direction:column;
+}
+
+.plano.destaque{
+    border:2px solid #4de1ff;
+
+    transform:translateY(-8px);
+}
+
+.plano h3{
+    color:#4de1ff;
+
+    font-size:23px;
+
+    margin-bottom:10px;
+}
+
+.plano-preco{
+    font-size:32px;
+
+    font-weight:900;
+
+    margin:18px 0;
+}
+
+.plano-preco span{
+    color:#8aaab5;
+
+    font-size:14px;
+
+    font-weight:normal;
+}
+
+.plano ul{
+    list-style:none;
+
+    color:#a9c4cd;
+
+    line-height:1.8;
+
+    margin-bottom:25px;
+}
+
+.plano li::before{
+    content:"✓ ";
+
+    color:#4de1ff;
+
+    font-weight:bold;
+}
+
+.assinar-btn{
+    margin-top:auto;
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:#4de1ff;
+
+    color:#06151d;
+
+    font-weight:bold;
+
+    cursor:pointer;
+}
+
+.aviso-loja{
+    max-width:800px;
+
+    margin:40px auto 0;
+
+    padding:18px;
+
+    background:#0d2d3b;
+
+    border:1px solid #17485b;
+
+    border-radius:15px;
+
+    color:#8aaab5;
+
+    text-align:center;
+
+    line-height:1.6;
+
+    font-size:13px;
+}
+
+
+/* =========================================================
+   CARRINHO
+========================================================= */
+
+.carrinho{
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.7);
+
+    z-index:3000;
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:20px;
+}
+
+.carrinho.active{
+    display:flex;
+}
+
+.carrinho-box{
+    width:min(600px,100%);
+
+    max-height:90vh;
+
+    overflow-y:auto;
+
+    background:#071a23;
+
+    border:1px solid #4de1ff;
+
+    border-radius:24px;
+
+    padding:30px;
+}
+
+.carrinho-topo{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+}
+
+.fechar{
+    width:38px;
+    height:38px;
+
+    border-radius:50%;
+
+    border:1px solid #17485b;
+
+    background:#0d2d3b;
+
+    color:white;
+
+    cursor:pointer;
+}
+
+.carrinho-item{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:15px;
+
+    background:#0d2d3b;
+
+    border-radius:14px;
+
+    margin-bottom:10px;
+}
+
+.carrinho-item-info{
+    flex:1;
+}
+
+.carrinho-item-info strong{
+    color:#4de1ff;
+}
+
+.quantidade{
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+}
+
+.qtd-btn{
+    width:30px;
+    height:30px;
+
+    border-radius:50%;
+
+    border:1px solid #4de1ff;
+
+    background:transparent;
+
+    color:#4de1ff;
+
+    cursor:pointer;
+}
+
+.total-box{
+    margin-top:20px;
+
+    padding:20px;
+
+    background:#0d2d3b;
+
+    border-radius:15px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+}
+
+.total-box strong{
+    color:#4de1ff;
+
+    font-size:25px;
+}
+
+.checkout-btn{
+    width:100%;
+
+    margin-top:15px;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:#4de1ff;
+
+    color:#06151d;
+
+    font-weight:bold;
+
+    cursor:pointer;
+}
+
+.vazio{
+    text-align:center;
+
+    color:#8aaab5;
+
+    padding:30px 10px;
+}
+
+
+/* =========================================================
+   CHECKOUT
+========================================================= */
+
+.checkout{
+    display:none;
+}
+
+.checkout.active{
+    display:block;
+}
+
+.checkout h3{
+    color:#4de1ff;
+
+    margin-bottom:10px;
+
+    font-size:25px;
+}
+
+.checkout input{
+    width:100%;
+
+    margin-top:12px;
+
+    padding:14px;
+
+    border-radius:10px;
+
+    border:1px solid #20566a;
+
+    background:#0d2d3b;
+
+    color:white;
+
+    outline:none;
+}
+
+.checkout input:focus{
+    border-color:#4de1ff;
+}
+
+.checkout-info{
+    margin:20px 0;
+
+    padding:18px;
+
+    background:#0d2d3b;
+
+    border-radius:14px;
+
+    color:#a9c4cd;
+
+    line-height:1.6;
 }
 
 
@@ -1100,18 +1505,18 @@ select:focus {
    FOOTER
 ========================================================= */
 
-footer {
-    text-align: center;
+footer{
+    text-align:center;
 
-    padding: 35px;
+    padding:35px;
 
-    background: #041017;
+    background:#041017;
 
-    color: #718e97;
+    color:#718e97;
 }
 
-footer strong {
-    color: #4de1ff;
+footer strong{
+    color:#4de1ff;
 }
 
 
@@ -1119,62 +1524,70 @@ footer strong {
    RESPONSIVO
 ========================================================= */
 
-@media (max-width: 850px) {
+@media(max-width:900px){
 
-    header {
-        align-items: flex-start;
+    header{
+        flex-direction:column;
 
-        gap: 15px;
+        align-items:flex-start;
 
-        flex-direction: column;
+        gap:15px;
     }
 
-    .menu {
-        width: 100%;
+    .menu{
+        width:100%;
 
-        overflow-x: auto;
+        overflow-x:auto;
     }
 
-    .inicio {
-        flex-direction: column;
+    .inicio{
+        flex-direction:column;
 
-        text-align: center;
+        text-align:center;
     }
 
-    .gota {
-        width: 220px;
-
-        height: 220px;
+    .gota{
+        width:220px;
+        height:220px;
     }
 
-    .fluxo {
-        grid-template-columns: 1fr;
+    .fluxo{
+        grid-template-columns:1fr;
     }
 
-    .cards {
-        grid-template-columns: 1fr;
+    .cards{
+        grid-template-columns:1fr;
     }
 
-    .startup-grid {
-        grid-template-columns: 1fr;
+    .recomendacoes{
+        grid-template-columns:1fr;
     }
 
-    .recomendacoes {
-        grid-template-columns: 1fr;
+    .botoes-final{
+        grid-template-columns:1fr;
     }
 
-    .botoes-final {
-        grid-template-columns: 1fr;
+    .chat-opcoes{
+        grid-template-columns:1fr;
     }
 
-    .chat-opcoes {
-        grid-template-columns: 1fr;
+    .chat-input-area{
+        flex-direction:column;
     }
 
-    .chat-input-area {
-        flex-direction: column;
+    .startup-grid{
+        grid-template-columns:1fr;
     }
 
+    .produtos-grid,
+    .planos{
+        grid-template-columns:1fr;
+    }
+
+    .loja-header{
+        flex-direction:column;
+        align-items:flex-start;
+    }
 }
 
 </style>
@@ -1197,34 +1610,38 @@ GOTTA<span>.</span>
 
 <div class="menu">
 
-<button
-class="active"
-onclick="abrirAba('inicio', this)">
+<button class="active"
+onclick="abrirAba('inicio',this)">
 Início
 </button>
 
 <button
-onclick="abrirAba('funciona', this)">
+onclick="abrirAba('funciona',this)">
 Como funciona
 </button>
 
 <button
-onclick="abrirAba('score', this)">
+onclick="abrirAba('score',this)">
 Gotta AI
 </button>
 
 <button
-onclick="abrirAba('simulador', this)">
+onclick="abrirAba('simulador',this)">
 Simulador
 </button>
 
 <button
-onclick="abrirAba('impacto', this)">
+onclick="abrirAba('loja',this)">
+🛒 Loja
+</button>
+
+<button
+onclick="abrirAba('impacto',this)">
 Impacto
 </button>
 
 <button
-onclick="abrirAba('startup', this)">
+onclick="abrirAba('startup',this)">
 Nossa startup
 </button>
 
@@ -1256,30 +1673,23 @@ A água fala.
 </h1>
 
 <p>
-
 A GOTTA é uma plataforma de
 inteligência hídrica criada para
 identificar desperdícios, analisar
 hábitos de consumo e incentivar
 a economia de água.
-
 </p>
 
 <button
 class="botao"
 onclick="abrirPorNome('score')">
-
 Conversar com a Gotta AI →
-
 </button>
 
 </div>
 
-
 <div class="gota">
-
 <span>G</span>
-
 </div>
 
 </div>
@@ -1326,9 +1736,7 @@ onclick="mostrarEtapa(1)">
 📡
 </div>
 
-<h3>
-1. Sensores
-</h3>
+<h3>1. Sensores</h3>
 
 <p>
 Como a GOTTA coleta os dados.
@@ -1345,9 +1753,7 @@ onclick="mostrarEtapa(2)">
 📊
 </div>
 
-<h3>
-2. Dados
-</h3>
+<h3>2. Dados</h3>
 
 <p>
 Como os dados são organizados.
@@ -1364,9 +1770,7 @@ onclick="mostrarEtapa(3)">
 🧠
 </div>
 
-<h3>
-3. Inteligência
-</h3>
+<h3>3. Inteligência</h3>
 
 <p>
 Como a tecnologia aprende.
@@ -1383,9 +1787,7 @@ onclick="mostrarEtapa(4)">
 🔎
 </div>
 
-<h3>
-4. Análise
-</h3>
+<h3>4. Análise</h3>
 
 <p>
 Como encontramos desperdícios.
@@ -1402,16 +1804,13 @@ onclick="mostrarEtapa(5)">
 💧
 </div>
 
-<h3>
-5. Economia
-</h3>
+<h3>5. Economia</h3>
 
 <p>
 Como transformamos dados em ações.
 </p>
 
 </button>
-
 
 </div>
 
@@ -1431,25 +1830,19 @@ Selecione uma das etapas acima.
 </div>
 
 
-<br>
-<br>
+<br><br>
 
 
 <div class="cards">
 
-
 <div class="card">
 
-<h3>
-Gotta Pulse
-</h3>
+<h3>Gotta Pulse</h3>
 
 <p>
-
 Sistema de sensores pensado
 para acompanhar o consumo
 de água em tempo real.
-
 </p>
 
 </div>
@@ -1457,16 +1850,12 @@ de água em tempo real.
 
 <div class="card">
 
-<h3>
-Gotta Intelligence
-</h3>
+<h3>Gotta Intelligence</h3>
 
 <p>
-
 Sistema responsável por analisar
 os dados e encontrar padrões
 de consumo.
-
 </p>
 
 </div>
@@ -1474,20 +1863,15 @@ de consumo.
 
 <div class="card">
 
-<h3>
-Gotta Mission
-</h3>
+<h3>Gotta Mission</h3>
 
 <p>
-
 Transforma a análise em
 missões simples para incentivar
 mudanças de comportamento.
-
 </p>
 
 </div>
-
 
 </div>
 
@@ -1521,7 +1905,6 @@ e criará uma recomendação personalizada.
 
 <div class="chat-container">
 
-
 <div class="chat-header">
 
 <div class="ai-avatar">
@@ -1530,9 +1913,7 @@ G
 
 <div class="ai-title">
 
-<strong>
-Gotta AI
-</strong>
+<strong>Gotta AI</strong>
 
 <div class="ai-status">
 ● Online
@@ -1546,14 +1927,12 @@ Gotta AI
 <div
 id="chatBody"
 class="chat-body">
-
 </div>
 
 
 <div
 id="chatOpcoes"
 class="chat-opcoes">
-
 </div>
 
 
@@ -1577,14 +1956,12 @@ Enviar
 
 </div>
 
-
 </div>
 
 
 <div
 id="analiseFinal"
 class="analise-final">
-
 </div>
 
 
@@ -1606,7 +1983,6 @@ Nenhuma análise realizada ainda.
 
 </div>
 
-
 </div>
 
 </section>
@@ -1627,16 +2003,13 @@ Simulador de Economia
 </h2>
 
 <p class="subtitulo">
-
 Veja uma estimativa de quanto
 uma família poderia economizar
 reduzindo o consumo de água.
-
 </p>
 
 
 <div class="simulador">
-
 
 <div class="campo">
 
@@ -1681,25 +2054,15 @@ Quanto você acredita que consegue reduzir?
 id="simReducao"
 class="input">
 
-<option value="0.05">
-5%
-</option>
+<option value="0.05">5%</option>
 
-<option value="0.10">
-10%
-</option>
+<option value="0.10">10%</option>
 
-<option value="0.15">
-15%
-</option>
+<option value="0.15">15%</option>
 
-<option value="0.20">
-20%
-</option>
+<option value="0.20">20%</option>
 
-<option value="0.25">
-25%
-</option>
+<option value="0.25">25%</option>
 
 </select>
 
@@ -1756,8 +2119,296 @@ class="numero">
 
 </div>
 
+</div>
 
 </div>
+
+</section>
+
+
+<!-- =========================================================
+     LOJA
+========================================================= -->
+
+<section
+id="loja"
+class="aba">
+
+<div class="conteudo">
+
+
+<div class="loja-header">
+
+<div>
+
+<h2 class="titulo"
+style="text-align:left;margin-bottom:8px;">
+Gotta Store
+</h2>
+
+<p
+style="color:#a9c4cd;line-height:1.6;">
+Conheça nossos produtos e planos.
+</p>
+
+</div>
+
+
+<button
+class="carrinho-btn"
+onclick="abrirCarrinho()">
+
+🛒 Carrinho
+<span id="contadorCarrinho">
+0
+</span>
+
+</button>
+
+</div>
+
+
+<!-- PRODUTOS -->
+
+<h2
+style="color:#4de1ff;margin-bottom:20px;">
+Produtos
+</h2>
+
+
+<div class="produtos-grid">
+
+
+<div class="produto">
+
+<div class="produto-icon">
+💧
+</div>
+
+<h3>
+Gotta Pulse
+</h3>
+
+<p>
+Sensor inteligente para
+monitoramento do consumo
+de água.
+</p>
+
+<div class="preco">
+R$ 249,90
+</div>
+
+<button
+class="comprar-btn"
+onclick="adicionarCarrinho('Gotta Pulse',249.90,'produto')">
+
+🛒 Comprar
+
+</button>
+
+</div>
+
+
+<div class="produto">
+
+<div class="produto-icon">
+📡
+</div>
+
+<h3>
+Gotta Pulse Pro
+</h3>
+
+<p>
+Versão avançada para
+ambientes com maior volume
+de consumo.
+</p>
+
+<div class="preco">
+R$ 499,90
+</div>
+
+<button
+class="comprar-btn"
+onclick="adicionarCarrinho('Gotta Pulse Pro',499.90,'produto')">
+
+🛒 Comprar
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- PLANOS -->
+
+<h2
+style="color:#4de1ff;margin-bottom:20px;">
+Planos
+</h2>
+
+
+<div class="planos">
+
+
+<div class="plano">
+
+<h3>
+GOTTA Free
+</h3>
+
+<p
+style="color:#a9c4cd;">
+Para começar.
+</p>
+
+<div class="plano-preco">
+R$ 0
+<span>/mês</span>
+</div>
+
+<ul>
+
+<li>Consumo básico</li>
+<li>Histórico simples</li>
+<li>Gotta Score</li>
+
+</ul>
+
+<button
+class="assinar-btn"
+onclick="adicionarCarrinho('GOTTA Free',0,'plano')">
+
+Começar grátis
+
+</button>
+
+</div>
+
+
+<div class="plano destaque">
+
+<h3>
+GOTTA Plus
+</h3>
+
+<p
+style="color:#a9c4cd;">
+Para famílias e pequenos ambientes.
+</p>
+
+<div class="plano-preco">
+R$ 29,90
+<span>/mês</span>
+</div>
+
+<ul>
+
+<li>Gotta AI</li>
+<li>Relatórios</li>
+<li>Gotta Mission</li>
+<li>Alertas inteligentes</li>
+
+</ul>
+
+<button
+class="assinar-btn"
+onclick="adicionarCarrinho('GOTTA Plus',29.90,'plano')">
+
+Assinar plano
+
+</button>
+
+</div>
+
+
+<div class="plano">
+
+<h3>
+GOTTA Business
+</h3>
+
+<p
+style="color:#a9c4cd;">
+Para empresas, escolas e condomínios.
+</p>
+
+<div class="plano-preco">
+R$ 399
+<span>/mês</span>
+</div>
+
+<ul>
+
+<li>Monitoramento múltiplo</li>
+<li>Gotta Hub</li>
+<li>Relatórios avançados</li>
+<li>Suporte prioritário</li>
+
+</ul>
+
+<button
+class="assinar-btn"
+onclick="adicionarCarrinho('GOTTA Business',399,'plano')">
+
+Assinar plano
+
+</button>
+
+</div>
+
+
+<div class="plano">
+
+<h3>
+GOTTA School
+</h3>
+
+<p
+style="color:#a9c4cd;">
+Para projetos e instituições de ensino.
+</p>
+
+<div class="plano-preco">
+R$ 199
+<span>/mês</span>
+</div>
+
+<ul>
+
+<li>Painel escolar</li>
+<li>Desafios entre turmas</li>
+<li>Relatórios</li>
+<li>Gotta Score</li>
+
+</ul>
+
+<button
+class="assinar-btn"
+onclick="adicionarCarrinho('GOTTA School',199,'plano')">
+
+Assinar plano
+
+</button>
+
+</div>
+
+
+</div>
+
+
+<div class="aviso-loja">
+
+🧪 <strong>Protótipo escolar:</strong>
+os botões de compra e assinatura demonstram
+como funcionaria a plataforma comercial da GOTTA.
+Não há pagamento real neste site.
+
+</div>
+
 
 </div>
 
@@ -1968,13 +2619,11 @@ nosso impacto.
 id="explicacaoStartup"
 class="explicacao-startup">
 
-<h3
-id="tituloStartup">
+<h3 id="tituloStartup">
 👆 Clique em um tópico
 </h3>
 
-<p
-id="textoStartup">
+<p id="textoStartup">
 Selecione um dos tópicos acima
 para conhecer melhor a GOTTA.
 </p>
@@ -1985,6 +2634,125 @@ para conhecer melhor a GOTTA.
 </div>
 
 </section>
+
+
+<!-- =========================================================
+     CARRINHO
+========================================================= -->
+
+<div
+id="carrinho"
+class="carrinho">
+
+<div class="carrinho-box">
+
+
+<div class="carrinho-topo">
+
+<h2>
+🛒 Seu carrinho
+</h2>
+
+<button
+class="fechar"
+onclick="fecharCarrinho()">
+
+×
+</button>
+
+</div>
+
+
+<div
+id="carrinhoLista">
+
+</div>
+
+
+<div
+class="total-box">
+
+<span>
+Total
+</span>
+
+<strong
+id="carrinhoTotal">
+R$ 0,00
+</strong>
+
+</div>
+
+
+<button
+class="checkout-btn"
+onclick="abrirCheckout()">
+
+Continuar para checkout →
+
+</button>
+
+
+<div
+id="checkoutArea"
+class="checkout">
+
+<hr
+style="
+border:none;
+border-top:1px solid #17485b;
+margin:25px 0;
+">
+
+
+<h3>
+Checkout demonstrativo
+</h3>
+
+<div class="checkout-info">
+
+Este checkout é apenas uma
+simulação para o projeto escolar.
+Nenhuma compra real será realizada.
+
+</div>
+
+
+<input
+id="nomeCheckout"
+placeholder="Nome">
+
+
+<input
+id="emailCheckout"
+type="email"
+placeholder="E-mail">
+
+
+<button
+class="checkout-btn"
+onclick="finalizarCompra()">
+
+Confirmar pedido demonstrativo
+
+</button>
+
+
+<div
+id="checkoutResultado"
+style="
+margin-top:20px;
+color:#4de1ff;
+line-height:1.6;
+">
+
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 
 <!-- =========================================================
@@ -2009,39 +2777,43 @@ Projeto escolar de empreendedorismo — 2026
 
 <script>
 
+
 /* =========================================================
-   SISTEMA DE ABAS
+   ABAS
 ========================================================= */
 
-function abrirAba(id, botao) {
+function abrirAba(id,botao){
 
     const abas =
-        document.querySelectorAll(".aba");
+    document.querySelectorAll(".aba");
 
-    abas.forEach(function(aba) {
+    abas.forEach(function(aba){
         aba.classList.remove("active");
     });
 
+
     document
-        .getElementById(id)
-        .classList.add("active");
+    .getElementById(id)
+    .classList.add("active");
 
 
     const botoes =
-        document.querySelectorAll(".menu button");
+    document.querySelectorAll(".menu button");
 
-    botoes.forEach(function(btn) {
+    botoes.forEach(function(btn){
         btn.classList.remove("active");
     });
 
-    if (botao) {
+
+    if(botao){
         botao.classList.add("active");
     }
 
-    window.scrollTo(0, 0);
+
+    window.scrollTo(0,0);
 
 
-    if (id === "score") {
+    if(id === "score"){
         iniciarNovaAnalise();
     }
 
@@ -2049,31 +2821,31 @@ function abrirAba(id, botao) {
 
 
 /* =========================================================
-   ABRIR ABA PELO NOME
+   ABRIR POR NOME
 ========================================================= */
 
-function abrirPorNome(id) {
+function abrirPorNome(id){
 
     const botoes =
-        document.querySelectorAll(".menu button");
+    document.querySelectorAll(".menu button");
 
-    for (let botao of botoes) {
 
-        if (
+    for(let botao of botoes){
+
+        if(
             botao.innerText
-                .toLowerCase()
-                .includes(id.toLowerCase())
-        ) {
+            .toLowerCase()
+            .includes(id.toLowerCase())
+        ){
 
-            abrirAba(id, botao);
+            abrirAba(id,botao);
 
             return;
-
         }
-
     }
 
-    abrirAba(id, null);
+
+    abrirAba(id,null);
 
 }
 
@@ -2082,81 +2854,85 @@ function abrirPorNome(id) {
    COMO FUNCIONA
 ========================================================= */
 
-function mostrarEtapa(numero) {
+function mostrarEtapa(numero){
 
     const caixa =
-        document.getElementById(
-            "explicacaoEtapa"
-        );
+    document.getElementById(
+        "explicacaoEtapa"
+    );
+
 
     const titulo =
-        document.getElementById(
-            "tituloEtapa"
-        );
+    document.getElementById(
+        "tituloEtapa"
+    );
+
 
     const texto =
-        document.getElementById(
-            "textoEtapa"
-        );
+    document.getElementById(
+        "textoEtapa"
+    );
 
 
     const etapas = {
 
-        1: {
+        1:{
             titulo:
-                "📡 Gotta Pulse — Sensores",
+            "📡 Gotta Pulse — Sensores",
 
             texto:
-                "A primeira etapa utiliza sensores inteligentes para acompanhar o fluxo e o consumo de água. Em uma versão real da GOTTA, esses sensores poderiam enviar informações automaticamente para a plataforma."
+            "A primeira etapa utiliza sensores inteligentes para acompanhar o fluxo e o consumo de água. Em uma versão real da GOTTA, esses sensores poderiam enviar informações automaticamente para a plataforma."
         },
 
-        2: {
+        2:{
             titulo:
-                "📊 Gotta Data — Dados",
+            "📊 Gotta Data — Dados",
 
             texto:
-                "Os dados coletados são organizados pela plataforma. A GOTTA transforma números difíceis de entender em informações simples sobre o comportamento do consumo."
+            "Os dados coletados são organizados pela plataforma. A GOTTA transforma números difíceis de entender em informações simples sobre o comportamento do consumo."
         },
 
-        3: {
+        3:{
             titulo:
-                "🧠 Gotta Intelligence — Inteligência",
+            "🧠 Gotta Intelligence — Inteligência",
 
             texto:
-                "A tecnologia analisa os dados e procura padrões. Com o tempo, o sistema poderia aprender os hábitos de cada ambiente e identificar comportamentos fora do padrão."
+            "A tecnologia analisa os dados e procura padrões. Com o tempo, o sistema poderia aprender os hábitos de cada ambiente e identificar comportamentos fora do padrão."
         },
 
-        4: {
+        4:{
             titulo:
-                "🔎 Gotta Analysis — Análise",
+            "🔎 Gotta Analysis — Análise",
 
             texto:
-                "Depois de analisar os padrões, a GOTTA procura possíveis desperdícios, como consumo muito acima do normal ou situações que podem indicar vazamentos."
+            "Depois de analisar os padrões, a GOTTA procura possíveis desperdícios, como consumo muito acima do normal ou situações que podem indicar vazamentos."
         },
 
-        5: {
+        5:{
             titulo:
-                "💧 Gotta Mission — Economia",
+            "💧 Gotta Mission — Economia",
 
             texto:
-                "Por fim, a GOTTA transforma a análise em ações. O usuário recebe recomendações e missões personalizadas para reduzir o desperdício e utilizar a água de maneira mais inteligente."
+            "Por fim, a GOTTA transforma a análise em ações. O usuário recebe recomendações e missões personalizadas para reduzir o desperdício e utilizar a água de maneira mais inteligente."
         }
 
     };
 
 
     titulo.innerText =
-        etapas[numero].titulo;
+    etapas[numero].titulo;
+
 
     texto.innerText =
-        etapas[numero].texto;
+    etapas[numero].texto;
 
-    caixa.style.display =
-        "block";
+
+    caixa.style.display="block";
+
 
     caixa.scrollIntoView({
-        behavior: "smooth",
-        block: "center"
+        behavior:"smooth",
+        block:"center"
     });
 
 }
@@ -2166,179 +2942,157 @@ function mostrarEtapa(numero) {
    NOSSA STARTUP
 ========================================================= */
 
-function mostrarStartup(numero) {
+function mostrarStartup(numero){
 
     const caixa =
-        document.getElementById(
-            "explicacaoStartup"
-        );
+    document.getElementById(
+        "explicacaoStartup"
+    );
+
 
     const titulo =
-        document.getElementById(
-            "tituloStartup"
-        );
+    document.getElementById(
+        "tituloStartup"
+    );
+
 
     const texto =
-        document.getElementById(
-            "textoStartup"
-        );
+    document.getElementById(
+        "textoStartup"
+    );
 
 
     const temas = {
 
-        1: {
-
+        1:{
             titulo:
-                "🎯 O problema",
+            "🎯 O problema",
 
             texto:
-                "Muitas pessoas e organizações sabem que precisam economizar água, mas não conseguem identificar facilmente onde o desperdício acontece. A GOTTA busca transformar esse problema em informações claras e ações práticas."
-
+            "Muitas pessoas e organizações sabem que precisam economizar água, mas não conseguem identificar facilmente onde o desperdício acontece. A GOTTA busca transformar esse problema em informações claras e ações práticas."
         },
 
-        2: {
-
+        2:{
             titulo:
-                "💡 A solução",
+            "💡 A solução",
 
             texto:
-                "A GOTTA combina sensores, análise de dados e Inteligência Artificial para entender o comportamento hídrico de um ambiente. Em vez de apenas mostrar números, a plataforma transforma esses dados em recomendações personalizadas."
-
+            "A GOTTA combina sensores, análise de dados e Inteligência Artificial para entender o comportamento hídrico de um ambiente. Em vez de apenas mostrar números, a plataforma transforma esses dados em recomendações personalizadas."
         },
 
-        3: {
-
+        3:{
             titulo:
-                "👥 Público-alvo",
+            "👥 Público-alvo",
 
             texto:
-                "A solução pode ser utilizada por famílias, escolas, condomínios, empresas e outros locais que consomem água. Cada público poderia receber uma versão adaptada da plataforma."
-
+            "A solução pode ser utilizada por famílias, escolas, condomínios, empresas e outros locais que consomem água. Cada público poderia receber uma versão adaptada da plataforma."
         },
 
-        4: {
-
+        4:{
             titulo:
-                "💰 Como a GOTTA ganha dinheiro",
+            "💰 Como a GOTTA ganha dinheiro",
 
             texto:
-                "A startup poderia gerar receita com a venda dos dispositivos Gotta Pulse e com assinaturas mensais da plataforma Gotta Intelligence. Empresas, escolas e condomínios poderiam contratar planos maiores com monitoramento de vários ambientes."
-
+            "A startup poderia gerar receita com a venda dos dispositivos Gotta Pulse e com assinaturas mensais da plataforma Gotta Intelligence. Empresas, escolas e condomínios poderiam contratar planos maiores com monitoramento de vários ambientes."
         },
 
-        5: {
-
+        5:{
             titulo:
-                "🚀 Nosso diferencial",
+            "🚀 Nosso diferencial",
 
             texto:
-                "A GOTTA não quer apenas mostrar quanto de água foi consumido. O diferencial está em transformar os dados em inteligência, recomendações e missões personalizadas, criando um sistema que ajuda o usuário a agir."
-
+            "A GOTTA não quer apenas mostrar quanto de água foi consumido. O diferencial está em transformar os dados em inteligência, recomendações e missões personalizadas, criando um sistema que ajuda o usuário a agir."
         },
 
-        6: {
-
+        6:{
             titulo:
-                "🌎 ODS 6",
+            "🌎 ODS 6",
 
             texto:
-                "A principal relação da GOTTA é com a ODS 6 — Água Potável e Saneamento. A startup busca contribuir para o uso mais consciente da água e para a redução do desperdício por meio da tecnologia."
-
+            "A principal relação da GOTTA é com a ODS 6 — Água Potável e Saneamento. A startup busca contribuir para o uso mais consciente da água e para a redução do desperdício por meio da tecnologia."
         }
 
     };
 
 
     titulo.innerText =
-        temas[numero].titulo;
+    temas[numero].titulo;
+
 
     texto.innerText =
-        temas[numero].texto;
+    temas[numero].texto;
 
-    caixa.style.display =
-        "block";
+
+    caixa.style.display="block";
+
 
     caixa.scrollIntoView({
-        behavior: "smooth",
-        block: "center"
+        behavior:"smooth",
+        block:"center"
     });
 
 }
 
 
 /* =========================================================
-   VARIÁVEIS DO CHAT
+   GOTTA AI
 ========================================================= */
 
-let etapaChat = 0;
+let etapaChat=0;
 
-let respostasChat = {
+let respostasChat={
 
-    local: "",
-
-    pessoas: 0,
-
-    estado: "",
-
-    banhos: 0,
-
-    consumo: 0,
-
-    torneiras: "",
-
-    vaso: "",
-
-    reuso: ""
+    local:"",
+    pessoas:0,
+    estado:"",
+    banhos:0,
+    consumo:0,
+    torneiras:"",
+    vaso:"",
+    reuso:""
 
 };
 
-let historicoAnalises = [];
+let historicoAnalises=[];
 
 
-/* =========================================================
-   NOVA ANÁLISE
-========================================================= */
+function iniciarNovaAnalise(){
 
-function iniciarNovaAnalise() {
+    etapaChat=0;
 
-    etapaChat = 0;
 
-    respostasChat = {
+    respostasChat={
 
-        local: "",
-
-        pessoas: 0,
-
-        estado: "",
-
-        banhos: 0,
-
-        consumo: 0,
-
-        torneiras: "",
-
-        vaso: "",
-
-        reuso: ""
+        local:"",
+        pessoas:0,
+        estado:"",
+        banhos:0,
+        consumo:0,
+        torneiras:"",
+        vaso:"",
+        reuso:""
 
     };
 
 
     document
-        .getElementById("chatBody")
-        .innerHTML = "";
+    .getElementById("chatBody")
+    .innerHTML="";
+
 
     document
-        .getElementById("chatOpcoes")
-        .innerHTML = "";
+    .getElementById("chatOpcoes")
+    .innerHTML="";
+
 
     document
-        .getElementById("chatInputArea")
-        .style.display = "none";
+    .getElementById("chatInputArea")
+    .style.display="none";
+
 
     document
-        .getElementById("analiseFinal")
-        .style.display = "none";
+    .getElementById("analiseFinal")
+    .style.display="none";
 
 
     adicionarMensagem(
@@ -2346,10 +3100,12 @@ function iniciarNovaAnalise() {
         "Olá! 👋 Eu sou a Gotta AI."
     );
 
+
     adicionarMensagem(
         "ai",
         "Vou fazer algumas perguntas para entender o perfil hídrico do seu ambiente e criar uma recomendação personalizada."
     );
+
 
     adicionarMensagem(
         "ai",
@@ -2360,23 +3116,23 @@ function iniciarNovaAnalise() {
     mostrarOpcoes([
 
         {
-            texto: "🏠 Casa",
-            valor: "casa"
+            texto:"🏠 Casa",
+            valor:"casa"
         },
 
         {
-            texto: "🏢 Apartamento",
-            valor: "apartamento"
+            texto:"🏢 Apartamento",
+            valor:"apartamento"
         },
 
         {
-            texto: "🏫 Escola",
-            valor: "escola"
+            texto:"🏫 Escola",
+            valor:"escola"
         },
 
         {
-            texto: "🏢 Empresa",
-            valor: "empresa"
+            texto:"🏢 Empresa",
+            valor:"empresa"
         }
 
     ]);
@@ -2384,69 +3140,72 @@ function iniciarNovaAnalise() {
 }
 
 
-/* =========================================================
-   ADICIONAR MENSAGEM
-========================================================= */
-
-function adicionarMensagem(tipo, texto) {
+function adicionarMensagem(tipo,texto){
 
     const chat =
-        document.getElementById("chatBody");
+    document.getElementById(
+        "chatBody"
+    );
+
 
     const mensagem =
-        document.createElement("div");
+    document.createElement("div");
+
 
     mensagem.className =
-        "mensagem " + tipo;
+    "mensagem " + tipo;
+
 
     const bolha =
-        document.createElement("div");
+    document.createElement("div");
 
-    bolha.className =
-        "bolha";
 
-    bolha.innerText =
-        texto;
+    bolha.className="bolha";
+
+    bolha.innerText=texto;
+
 
     mensagem.appendChild(bolha);
 
     chat.appendChild(mensagem);
 
+
     chat.scrollTop =
-        chat.scrollHeight;
+    chat.scrollHeight;
 
 }
 
 
-/* =========================================================
-   MOSTRAR OPÇÕES
-========================================================= */
-
-function mostrarOpcoes(opcoes) {
+function mostrarOpcoes(opcoes){
 
     const area =
-        document.getElementById("chatOpcoes");
+    document.getElementById(
+        "chatOpcoes"
+    );
 
-    area.innerHTML = "";
+
+    area.innerHTML="";
 
 
     document
-        .getElementById("chatInputArea")
-        .style.display = "none";
+    .getElementById("chatInputArea")
+    .style.display="none";
 
 
-    opcoes.forEach(function(opcao) {
+    opcoes.forEach(function(opcao){
 
         const botao =
-            document.createElement("button");
+        document.createElement("button");
 
-        botao.className =
-            "chat-opcao";
+
+        botao.className="chat-opcao";
+
 
         botao.innerText =
-            opcao.texto;
+        opcao.texto;
 
-        botao.onclick = function() {
+
+        botao.onclick=function(){
 
             responderChat(
                 opcao.valor,
@@ -2455,6 +3214,7 @@ function mostrarOpcoes(opcoes) {
 
         };
 
+
         area.appendChild(botao);
 
     });
@@ -2462,63 +3222,59 @@ function mostrarOpcoes(opcoes) {
 }
 
 
-/* =========================================================
-   CAMPO DE TEXTO
-========================================================= */
-
-function mostrarCampoTexto(placeholder, tipo) {
+function mostrarCampoTexto(
+    placeholder,
+    tipo
+){
 
     const area =
-        document.getElementById(
-            "chatInputArea"
-        );
+    document.getElementById(
+        "chatInputArea"
+    );
+
 
     const input =
-        document.getElementById(
-            "chatInput"
-        );
+    document.getElementById(
+        "chatInput"
+    );
 
 
     document
-        .getElementById("chatOpcoes")
-        .innerHTML = "";
+    .getElementById("chatOpcoes")
+    .innerHTML="";
 
 
-    area.style.display = "flex";
+    area.style.display="flex";
 
 
-    input.placeholder =
-        placeholder;
+    input.placeholder=placeholder;
 
-    input.value = "";
+    input.value="";
 
-    input.dataset.tipo =
-        tipo;
+    input.dataset.tipo=tipo;
 
     input.focus();
 
 }
 
 
-/* =========================================================
-   ENVIAR TEXTO
-========================================================= */
-
-function enviarTexto() {
+function enviarTexto(){
 
     const input =
-        document.getElementById(
-            "chatInput"
-        );
+    document.getElementById(
+        "chatInput"
+    );
+
 
     const valor =
-        input.value.trim();
+    input.value.trim();
+
 
     const tipo =
-        input.dataset.tipo;
+    input.dataset.tipo;
 
 
-    if (!valor) {
+    if(!valor){
         return;
     }
 
@@ -2529,13 +3285,14 @@ function enviarTexto() {
     );
 
 
-    input.value = "";
+    input.value="";
+
 
     document
-        .getElementById(
-            "chatInputArea"
-        )
-        .style.display = "none";
+    .getElementById(
+        "chatInputArea"
+    )
+    .style.display="none";
 
 
     processarTexto(
@@ -2546,36 +3303,24 @@ function enviarTexto() {
 }
 
 
-/* =========================================================
-   ENTER
-========================================================= */
-
 document
-    .getElementById("chatInput")
-    .addEventListener(
-        "keydown",
-        function(event) {
+.getElementById("chatInput")
+.addEventListener(
+    "keydown",
+    function(event){
 
-            if (
-                event.key === "Enter"
-            ) {
-
-                enviarTexto();
-
-            }
-
+        if(event.key==="Enter"){
+            enviarTexto();
         }
-    );
 
+    }
+);
 
-/* =========================================================
-   RESPONDER CHAT
-========================================================= */
 
 function responderChat(
     valor,
     texto
-) {
+){
 
     adicionarMensagem(
         "usuario",
@@ -2583,12 +3328,11 @@ function responderChat(
     );
 
 
-    if (etapaChat === 0) {
+    if(etapaChat===0){
 
-        respostasChat.local =
-            valor;
+        respostasChat.local=valor;
 
-        etapaChat = 1;
+        etapaChat=1;
 
 
         adicionarMensagem(
@@ -2602,16 +3346,16 @@ function responderChat(
             "pessoas"
         );
 
+
         return;
     }
 
 
-    if (etapaChat === 2) {
+    if(etapaChat===2){
 
-        respostasChat.estado =
-            valor;
+        respostasChat.estado=valor;
 
-        etapaChat = 3;
+        etapaChat=3;
 
 
         adicionarMensagem(
@@ -2625,16 +3369,16 @@ function responderChat(
             "banhos"
         );
 
+
         return;
     }
 
 
-    if (etapaChat === 4) {
+    if(etapaChat===4){
 
-        respostasChat.torneiras =
-            valor;
+        respostasChat.torneiras=valor;
 
-        etapaChat = 5;
+        etapaChat=5;
 
 
         adicionarMensagem(
@@ -2646,32 +3390,32 @@ function responderChat(
         mostrarOpcoes([
 
             {
-                texto: "🟢 Não",
-                valor: "nao"
+                texto:"🟢 Não",
+                valor:"nao"
             },
 
             {
-                texto: "🟡 Talvez",
-                valor: "talvez"
+                texto:"🟡 Talvez",
+                valor:"talvez"
             },
 
             {
-                texto: "🔴 Sim",
-                valor: "sim"
+                texto:"🔴 Sim",
+                valor:"sim"
             }
 
         ]);
+
 
         return;
     }
 
 
-    if (etapaChat === 5) {
+    if(etapaChat===5){
 
-        respostasChat.vaso =
-            valor;
+        respostasChat.vaso=valor;
 
-        etapaChat = 6;
+        etapaChat=6;
 
 
         adicionarMensagem(
@@ -2683,30 +3427,30 @@ function responderChat(
         mostrarOpcoes([
 
             {
-                texto: "🟢 Sim",
-                valor: "sim"
+                texto:"🟢 Sim",
+                valor:"sim"
             },
 
             {
-                texto: "🟡 Às vezes",
-                valor: "as vezes"
+                texto:"🟡 Às vezes",
+                valor:"as vezes"
             },
 
             {
-                texto: "🔴 Não",
-                valor: "nao"
+                texto:"🔴 Não",
+                valor:"nao"
             }
 
         ]);
+
 
         return;
     }
 
 
-    if (etapaChat === 6) {
+    if(etapaChat===6){
 
-        respostasChat.reuso =
-            valor;
+        respostasChat.reuso=valor;
 
         gerarAnalise();
 
@@ -2716,25 +3460,21 @@ function responderChat(
 }
 
 
-/* =========================================================
-   PROCESSAR TEXTO
-========================================================= */
-
 function processarTexto(
     valor,
     tipo
-) {
+){
 
-    if (tipo === "pessoas") {
+    if(tipo==="pessoas"){
 
-        const numero =
-            Number(valor);
+        const numero=
+        Number(valor);
 
 
-        if (
+        if(
             !numero ||
-            numero < 1
-        ) {
+            numero<1
+        ){
 
             adicionarMensagem(
                 "ai",
@@ -2747,15 +3487,16 @@ function processarTexto(
                 "pessoas"
             );
 
+
             return;
         }
 
 
-        respostasChat.pessoas =
-            numero;
+        respostasChat.pessoas=
+        numero;
 
 
-        etapaChat = 2;
+        etapaChat=2;
 
 
         adicionarMensagem(
@@ -2767,62 +3508,63 @@ function processarTexto(
         mostrarOpcoes([
 
             {
-                texto: "Santa Catarina",
-                valor: "Santa Catarina"
+                texto:"Santa Catarina",
+                valor:"Santa Catarina"
             },
 
             {
-                texto: "Paraná",
-                valor: "Paraná"
+                texto:"Paraná",
+                valor:"Paraná"
             },
 
             {
-                texto: "Rio Grande do Sul",
-                valor: "Rio Grande do Sul"
+                texto:"Rio Grande do Sul",
+                valor:"Rio Grande do Sul"
             },
 
             {
-                texto: "São Paulo",
-                valor: "São Paulo"
+                texto:"São Paulo",
+                valor:"São Paulo"
             },
 
             {
-                texto: "Rio de Janeiro",
-                valor: "Rio de Janeiro"
+                texto:"Rio de Janeiro",
+                valor:"Rio de Janeiro"
             },
 
             {
-                texto: "Minas Gerais",
-                valor: "Minas Gerais"
+                texto:"Minas Gerais",
+                valor:"Minas Gerais"
             },
 
             {
-                texto: "Bahia",
-                valor: "Bahia"
+                texto:"Bahia",
+                valor:"Bahia"
             },
 
             {
-                texto: "Outro estado",
-                valor: "Outro"
+                texto:"Outro estado",
+                valor:"Outro"
             }
 
         ]);
+
 
         return;
     }
 
 
-    if (tipo === "banhos") {
+    if(tipo==="banhos"){
 
-        const numero =
-            Number(valor);
-
-
-        respostasChat.banhos =
-            numero || 0;
+        const numero=
+        Number(valor);
 
 
-        etapaChat = 4;
+        respostasChat.banhos=
+        numero||0;
+
+
+        etapaChat=4;
 
 
         adicionarMensagem(
@@ -2834,18 +3576,18 @@ function processarTexto(
         mostrarOpcoes([
 
             {
-                texto: "🟢 Não",
-                valor: "nao"
+                texto:"🟢 Não",
+                valor:"nao"
             },
 
             {
-                texto: "🟡 Talvez",
-                valor: "talvez"
+                texto:"🟡 Talvez",
+                valor:"talvez"
             },
 
             {
-                texto: "🔴 Sim",
-                valor: "sim"
+                texto:"🔴 Sim",
+                valor:"sim"
             }
 
         ]);
@@ -2855,124 +3597,103 @@ function processarTexto(
 }
 
 
-/* =========================================================
-   GERAR ANÁLISE
-========================================================= */
+function gerarAnalise(){
 
-function gerarAnalise() {
-
-    let consumo;
-
-
-    /*
-       Estimativa do protótipo.
-       Não representa uma medição real.
-    */
-
-    consumo =
-        respostasChat.pessoas *
-        150 *
-        30;
+    const consumo =
+    respostasChat.pessoas *
+    150 *
+    30;
 
 
-    let score = 100;
+    let score=100;
 
 
-    if (
-        respostasChat.torneiras === "sim"
-    ) {
-
-        score -= 15;
-
+    if(
+        respostasChat.torneiras==="sim"
+    ){
+        score-=15;
     }
 
-    if (
-        respostasChat.torneiras === "talvez"
-    ) {
 
-        score -= 7;
-
+    if(
+        respostasChat.torneiras==="talvez"
+    ){
+        score-=7;
     }
 
-    if (
-        respostasChat.vaso === "sim"
-    ) {
 
-        score -= 15;
-
+    if(
+        respostasChat.vaso==="sim"
+    ){
+        score-=15;
     }
 
-    if (
-        respostasChat.vaso === "talvez"
-    ) {
 
-        score -= 7;
-
+    if(
+        respostasChat.vaso==="talvez"
+    ){
+        score-=7;
     }
 
-    if (
-        respostasChat.reuso === "sim"
-    ) {
 
-        score += 5;
-
+    if(
+        respostasChat.reuso==="sim"
+    ){
+        score+=5;
     }
 
-    if (
-        respostasChat.reuso === "nao"
-    ) {
 
-        score -= 5;
-
+    if(
+        respostasChat.reuso==="nao"
+    ){
+        score-=5;
     }
 
 
     const mediaBanhos =
-        respostasChat.pessoas * 1.5;
+    respostasChat.pessoas*1.5;
 
 
-    if (
-        respostasChat.banhos >
+    if(
+        respostasChat.banhos>
         mediaBanhos
-    ) {
-
-        score -= 10;
-
+    ){
+        score-=10;
     }
 
 
     score =
-        Math.max(
-            0,
-            Math.min(
-                100,
-                score
-            )
-        );
+    Math.max(
+        0,
+        Math.min(
+            100,
+            score
+        )
+    );
 
 
     let classificacao;
 
 
-    if (score >= 80) {
+    if(score>=80){
 
-        classificacao =
-            "🌊 Guardião da Água";
+        classificacao=
+        "🌊 Guardião da Água";
 
-    } else if (score >= 60) {
+    }else if(score>=60){
 
-        classificacao =
-            "💧 Consumidor Consciente";
+        classificacao=
+        "💧 Consumidor Consciente";
 
-    } else if (score >= 40) {
+    }else if(score>=40){
 
-        classificacao =
-            "🌱 Em Evolução";
+        classificacao=
+        "🌱 Em Evolução";
 
-    } else {
+    }else{
 
-        classificacao =
-            "⚠️ Alto potencial de economia";
+        classificacao=
+        "⚠️ Alto potencial de economia";
 
     }
 
@@ -2980,31 +3701,31 @@ function gerarAnalise() {
     let percentual;
 
 
-    if (score >= 80) {
+    if(score>=80){
 
-        percentual = 0.08;
+        percentual=.08;
 
-    } else if (score >= 60) {
+    }else if(score>=60){
 
-        percentual = 0.12;
+        percentual=.12;
 
-    } else if (score >= 40) {
+    }else if(score>=40){
 
-        percentual = 0.18;
+        percentual=.18;
 
-    } else {
+    }else{
 
-        percentual = 0.25;
+        percentual=.25;
 
     }
 
 
-    const economiaMensal =
-        consumo * percentual;
+    const economiaMensal=
+    consumo*percentual;
 
 
-    const economiaAnual =
-        economiaMensal * 12;
+    const economiaAnual=
+    economiaMensal*12;
 
 
     let recomendacao;
@@ -3012,221 +3733,219 @@ function gerarAnalise() {
     let missao;
 
 
-    if (
-        respostasChat.torneiras === "sim"
-    ) {
+    if(
+        respostasChat.torneiras==="sim"
+    ){
 
-        recomendacao =
-            "Comece verificando e corrigindo as torneiras que apresentam vazamentos.";
+        recomendacao=
+        "Comece verificando e corrigindo as torneiras que apresentam vazamentos.";
 
-        missao =
-            "Encontrar e corrigir todos os pontos de vazamento.";
+        missao=
+        "Encontrar e corrigir todos os pontos de vazamento.";
 
-    } else if (
-        respostasChat.vaso === "sim"
-    ) {
+    }else if(
+        respostasChat.vaso==="sim"
+    ){
 
-        recomendacao =
-            "Verifique o vaso sanitário, pois pequenos vazamentos podem passar despercebidos.";
+        recomendacao=
+        "Verifique o vaso sanitário, pois pequenos vazamentos podem passar despercebidos.";
 
-        missao =
-            "Verificar o vaso sanitário e solucionar qualquer vazamento.";
+        missao=
+        "Verificar o vaso sanitário e solucionar qualquer vazamento.";
 
-    } else if (
-        respostasChat.reuso === "nao"
-    ) {
+    }else if(
+        respostasChat.reuso==="nao"
+    ){
 
-        recomendacao =
-            "Procure maneiras de reutilizar água em atividades como limpeza e rega de plantas.";
+        recomendacao=
+        "Procure maneiras de reutilizar água em atividades como limpeza e rega de plantas.";
 
-        missao =
-            "Encontrar pelo menos uma forma de reutilizar água nesta semana.";
+        missao=
+        "Encontrar pelo menos uma forma de reutilizar água nesta semana.";
 
-    } else if (
-        respostasChat.banhos >
+    }else if(
+        respostasChat.banhos>
         mediaBanhos
-    ) {
+    ){
 
-        recomendacao =
-            "Uma boa oportunidade é reduzir o tempo dos banhos.";
+        recomendacao=
+        "Uma boa oportunidade é reduzir o tempo dos banhos.";
 
-        missao =
-            "Reduzir o tempo médio dos banhos em 2 minutos.";
+        missao=
+        "Reduzir o tempo médio dos banhos em 2 minutos.";
 
-    } else {
+    }else{
 
-        recomendacao =
-            "Seu perfil já apresenta bons hábitos. Agora o objetivo é manter a consistência e encontrar novos pontos de melhoria.";
+        recomendacao=
+        "Seu perfil já apresenta bons hábitos. Agora o objetivo é manter a consistência e encontrar novos pontos de melhoria.";
 
-        missao =
-            "Encontrar um novo ponto de economia de água nesta semana.";
+        missao=
+        "Encontrar um novo ponto de economia de água nesta semana.";
 
     }
 
 
     const analise =
-        document.getElementById(
-            "analiseFinal"
-        );
+    document.getElementById(
+        "analiseFinal"
+    );
 
 
-    analise.style.display =
-        "block";
+    analise.style.display="block";
 
 
-    analise.innerHTML = `
+    analise.innerHTML=`
 
-        <div class="analise-topo">
+    <div class="analise-topo">
 
-            <h3>
-                🧠 Análise concluída
-            </h3>
+        <h3>
+        🧠 Análise concluída
+        </h3>
 
-            <div class="score-grande">
-                ${score}
-            </div>
-
-            <p>
-                ${classificacao}
-            </p>
-
+        <div class="score-grande">
+        ${score}
         </div>
 
-
-        <div class="recomendacoes">
-
-
-            <div class="recomendacao-card">
-
-                <small>
-                    💧 Consumo estimado
-                </small>
-
-                <strong>
-                    ${consumo.toLocaleString("pt-BR")} L/mês
-                </strong>
-
-            </div>
-
-
-            <div class="recomendacao-card">
-
-                <small>
-                    ♻️ Economia potencial
-                </small>
-
-                <strong>
-                    ${economiaMensal.toLocaleString("pt-BR")} L/mês
-                </strong>
-
-            </div>
-
-
-            <div class="recomendacao-card">
-
-                <small>
-                    🌎 Economia anual
-                </small>
-
-                <strong>
-                    ${economiaAnual.toLocaleString("pt-BR")} L/ano
-                </strong>
-
-            </div>
-
-
-            <div class="recomendacao-card">
-
-                <small>
-                    📍 Perfil
-                </small>
-
-                <strong>
-                    ${respostasChat.local}
-                </strong>
-
-            </div>
-
-
-        </div>
-
-
-        <div class="missao-final">
-
-            <h4>
-                🎯 Recomendação da Gotta AI
-            </h4>
-
-            <p>
-                ${recomendacao}
-            </p>
-
-            <br>
-
-            <h4>
-                🚀 Sua Gotta Mission
-            </h4>
-
-            <p>
-                ${missao}
-            </p>
-
-        </div>
-
-
-        <div class="botoes-final">
-
-            <button
-                class="botao-final botao-nova"
-                onclick="iniciarNovaAnalise()">
-
-                🔄 Nova análise
-
-            </button>
-
-
-            <button
-                class="botao-final botao-reinicio"
-                onclick="limparHistorico()">
-
-                🗑️ Limpar histórico
-
-            </button>
-
-        </div>
-
-
-        <p style="
-            color:#708d96;
-            font-size:13px;
-            margin-top:20px;
-            line-height:1.5;
-        ">
-
-            *Os valores mostrados são estimativas
-            do protótipo escolar. Uma futura versão
-            utilizaria dados reais dos sensores GOTTA.
-
+        <p>
+        ${classificacao}
         </p>
+
+    </div>
+
+
+    <div class="recomendacoes">
+
+        <div class="recomendacao-card">
+
+            <small>
+            💧 Consumo estimado
+            </small>
+
+            <strong>
+            ${consumo.toLocaleString("pt-BR")} L/mês
+            </strong>
+
+        </div>
+
+
+        <div class="recomendacao-card">
+
+            <small>
+            ♻️ Economia potencial
+            </small>
+
+            <strong>
+            ${economiaMensal.toLocaleString("pt-BR")} L/mês
+            </strong>
+
+        </div>
+
+
+        <div class="recomendacao-card">
+
+            <small>
+            🌎 Economia anual
+            </small>
+
+            <strong>
+            ${economiaAnual.toLocaleString("pt-BR")} L/ano
+            </strong>
+
+        </div>
+
+
+        <div class="recomendacao-card">
+
+            <small>
+            📍 Perfil
+            </small>
+
+            <strong>
+            ${respostasChat.local}
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <div class="missao-final">
+
+        <h4>
+        🎯 Recomendação da Gotta AI
+        </h4>
+
+        <p>
+        ${recomendacao}
+        </p>
+
+
+        <br>
+
+
+        <h4>
+        🚀 Sua Gotta Mission
+        </h4>
+
+        <p>
+        ${missao}
+        </p>
+
+    </div>
+
+
+    <div class="botoes-final">
+
+        <button
+        class="botao-final botao-nova"
+        onclick="iniciarNovaAnalise()">
+
+        🔄 Nova análise
+
+        </button>
+
+
+        <button
+        class="botao-final botao-reinicio"
+        onclick="limparHistorico()">
+
+        🗑️ Limpar histórico
+
+        </button>
+
+    </div>
+
+
+    <p
+    style="
+    color:#708d96;
+    font-size:13px;
+    margin-top:20px;
+    line-height:1.5;
+    ">
+
+    *Os valores mostrados são estimativas
+    do protótipo escolar.
+
+    </p>
 
     `;
 
 
     historicoAnalises.push({
 
-        score: score,
+        score:score,
 
-        classificacao:
-            classificacao,
+        classificacao:classificacao,
 
         data:
-            new Date().toLocaleTimeString(
-                "pt-BR",
-                {
-                    hour: "2-digit",
-                    minute: "2-digit"
-                }
-            )
+        new Date().toLocaleTimeString(
+            "pt-BR",
+            {
+                hour:"2-digit",
+                minute:"2-digit"
+            }
+        )
 
     });
 
@@ -3242,111 +3961,105 @@ function gerarAnalise() {
 
     adicionarMensagem(
         "ai",
-        "Seu GOTTA Score foi " +
-        score +
+        "Seu GOTTA Score foi "
+        +score+
         "/100. Preparei uma recomendação personalizada para você abaixo. 💧"
     );
 
 
     analise.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
+        behavior:"smooth",
+        block:"start"
     });
 
 }
 
 
-/* =========================================================
-   HISTÓRICO
-========================================================= */
-
-function atualizarHistorico() {
+function atualizarHistorico(){
 
     const lista =
-        document.getElementById(
-            "historicoLista"
-        );
+    document.getElementById(
+        "historicoLista"
+    );
 
 
-    if (
-        historicoAnalises.length === 0
-    ) {
+    if(
+        historicoAnalises.length===0
+    ){
 
-        lista.innerHTML =
-            `
-            <p style="color:#8aaab5;">
-                Nenhuma análise realizada ainda.
-            </p>
-            `;
+        lista.innerHTML=
+        `
+        <p style="color:#8aaab5;">
+        Nenhuma análise realizada ainda.
+        </p>
+        `;
 
         return;
     }
 
 
-    lista.innerHTML =
-        historicoAnalises
-            .map(function(item, index) {
+    lista.innerHTML=
+    historicoAnalises
+    .map(function(item,index){
 
-                return `
+        return `
 
-                    <div class="historico-item">
+        <div class="historico-item">
 
-                        <div>
+            <div>
 
-                            <strong>
-                                Análise #${index + 1}
-                            </strong>
+                <strong>
+                Análise #${index+1}
+                </strong>
 
-                            <br>
+                <br>
 
-                            <span style="
-                                color:#8aaab5;
-                                font-size:13px;
-                            ">
+                <span
+                style="
+                color:#8aaab5;
+                font-size:13px;
+                ">
 
-                                ${item.classificacao}
+                ${item.classificacao}
 
-                            </span>
+                </span>
 
-                        </div>
+            </div>
 
 
-                        <div>
+            <div>
 
-                            <strong>
-                                ${item.score}/100
-                            </strong>
+                <strong>
+                ${item.score}/100
+                </strong>
 
-                            <br>
+                <br>
 
-                            <span style="
-                                color:#8aaab5;
-                                font-size:12px;
-                            ">
+                <span
+                style="
+                color:#8aaab5;
+                font-size:12px;
+                ">
 
-                                ${item.data}
+                ${item.data}
 
-                            </span>
+                </span>
 
-                        </div>
+            </div>
 
-                    </div>
+        </div>
 
-                `;
+        `;
 
-            })
-            .join("");
+    })
+    .join("");
 
 }
 
 
-/* =========================================================
-   LIMPAR HISTÓRICO
-========================================================= */
+function limparHistorico(){
 
-function limparHistorico() {
-
-    historicoAnalises = [];
+    historicoAnalises=[];
 
     atualizarHistorico();
 
@@ -3359,36 +4072,36 @@ function limparHistorico() {
    SIMULADOR
 ========================================================= */
 
-function calcularSimulador() {
+function calcularSimulador(){
 
-    const pessoas =
-        Number(
-            document.getElementById(
-                "simPessoas"
-            ).value
-        );
-
-
-    const litros =
-        Number(
-            document.getElementById(
-                "simLitros"
-            ).value
-        );
+    const pessoas=
+    Number(
+        document.getElementById(
+            "simPessoas"
+        ).value
+    );
 
 
-    const reducao =
-        Number(
-            document.getElementById(
-                "simReducao"
-            ).value
-        );
+    const litros=
+    Number(
+        document.getElementById(
+            "simLitros"
+        ).value
+    );
 
 
-    if (
+    const reducao=
+    Number(
+        document.getElementById(
+            "simReducao"
+        ).value
+    );
+
+
+    if(
         !pessoas ||
-        pessoas < 1
-    ) {
+        pessoas<1
+    ){
 
         alert(
             "Digite a quantidade de pessoas."
@@ -3398,65 +4111,421 @@ function calcularSimulador() {
     }
 
 
-    const consumo =
-        pessoas *
-        litros *
-        30;
+    const consumo=
+    pessoas*litros*30;
 
 
-    const economia =
-        consumo *
-        reducao;
+    const economia=
+    consumo*reducao;
 
 
-    const anual =
-        economia *
-        12;
+    const anual=
+    economia*12;
 
 
     document
-        .getElementById(
-            "resultadoSimulador"
-        )
-        .style.display = "block";
+    .getElementById(
+        "resultadoSimulador"
+    )
+    .style.display="block";
 
 
     document
-        .getElementById(
-            "consumoSim"
-        )
-        .innerText =
-        consumo.toLocaleString("pt-BR")
-        + " L/mês";
+    .getElementById(
+        "consumoSim"
+    )
+    .innerText=
+    consumo.toLocaleString("pt-BR")
+    +" L/mês";
 
 
     document
-        .getElementById(
-            "economiaSim"
-        )
-        .innerText =
-        economia.toLocaleString("pt-BR")
-        + " L/mês";
+    .getElementById(
+        "economiaSim"
+    )
+    .innerText=
+    economia.toLocaleString("pt-BR")
+    +" L/mês";
 
 
     document
-        .getElementById(
-            "anoSim"
-        )
-        .innerText =
-        anual.toLocaleString("pt-BR")
-        + " L/ano";
+    .getElementById(
+        "anoSim"
+    )
+    .innerText=
+    anual.toLocaleString("pt-BR")
+    +" L/ano";
 
 }
 
 
 /* =========================================================
-   INICIAR A GOTTA AI
+   LOJA / CARRINHO
+========================================================= */
+
+let carrinho=[];
+
+
+function adicionarCarrinho(
+    nome,
+    preco,
+    tipo
+){
+
+    const existente =
+    carrinho.find(
+        item =>
+        item.nome===nome
+    );
+
+
+    if(existente){
+
+        existente.quantidade++;
+
+    }else{
+
+        carrinho.push({
+
+            nome:nome,
+
+            preco:preco,
+
+            tipo:tipo,
+
+            quantidade:1
+
+        });
+
+    }
+
+
+    atualizarCarrinho();
+
+
+    abrirCarrinho();
+
+}
+
+
+function atualizarCarrinho(){
+
+    const lista =
+    document.getElementById(
+        "carrinhoLista"
+    );
+
+
+    const contador =
+    document.getElementById(
+        "contadorCarrinho"
+    );
+
+
+    const totalElemento =
+    document.getElementById(
+        "carrinhoTotal"
+    );
+
+
+    let quantidadeTotal=0;
+
+    let total=0;
+
+
+    carrinho.forEach(function(item){
+
+        quantidadeTotal+=
+        item.quantidade;
+
+        total+=
+        item.preco*
+        item.quantidade;
+
+    });
+
+
+    contador.innerText=
+    quantidadeTotal;
+
+
+    totalElemento.innerText=
+    formatarMoeda(total);
+
+
+    if(carrinho.length===0){
+
+        lista.innerHTML=
+        `
+        <div class="vazio">
+
+        🛒 Seu carrinho está vazio.
+
+        </div>
+        `;
+
+        return;
+    }
+
+
+    lista.innerHTML=
+    carrinho
+    .map(function(item,index){
+
+        return `
+
+        <div class="carrinho-item">
+
+            <div class="carrinho-item-info">
+
+                <strong>
+                ${item.nome}
+                </strong>
+
+                <br>
+
+                <span
+                style="
+                color:#8aaab5;
+                font-size:13px;
+                ">
+
+                ${item.preco===0
+                    ? "Grátis"
+                    : formatarMoeda(item.preco)
+                }
+
+                ${item.tipo==="plano"
+                    && item.preco>0
+                    ? "/mês"
+                    : ""
+                }
+
+                </span>
+
+            </div>
+
+
+            <div class="quantidade">
+
+                <button
+                class="qtd-btn"
+                onclick="alterarQuantidade(${index},-1)">
+
+                −
+
+                </button>
+
+
+                <strong>
+                ${item.quantidade}
+                </strong>
+
+
+                <button
+                class="qtd-btn"
+                onclick="alterarQuantidade(${index},1)">
+
+                +
+
+                </button>
+
+            </div>
+
+        </div>
+
+        `;
+
+    })
+    .join("");
+
+}
+
+
+function alterarQuantidade(
+    index,
+    mudanca
+){
+
+    carrinho[index].quantidade +=
+    mudanca;
+
+
+    if(
+        carrinho[index].quantidade<=0
+    ){
+
+        carrinho.splice(index,1);
+
+    }
+
+
+    atualizarCarrinho();
+
+}
+
+
+function formatarMoeda(valor){
+
+    return valor.toLocaleString(
+        "pt-BR",
+        {
+            style:"currency",
+            currency:"BRL"
+        }
+    );
+
+}
+
+
+function abrirCarrinho(){
+
+    document
+    .getElementById("carrinho")
+    .classList.add("active");
+
+    atualizarCarrinho();
+
+}
+
+
+function fecharCarrinho(){
+
+    document
+    .getElementById("carrinho")
+    .classList.remove("active");
+
+}
+
+
+function abrirCheckout(){
+
+    if(carrinho.length===0){
+
+        alert(
+            "Seu carrinho está vazio."
+        );
+
+        return;
+    }
+
+
+    document
+    .getElementById(
+        "checkoutArea"
+    )
+    .classList.add("active");
+
+}
+
+
+function finalizarCompra(){
+
+    const nome =
+    document
+    .getElementById(
+        "nomeCheckout"
+    )
+    .value
+    .trim();
+
+
+    const email =
+    document
+    .getElementById(
+        "emailCheckout"
+    )
+    .value
+    .trim();
+
+
+    const resultado =
+    document
+    .getElementById(
+        "checkoutResultado"
+    );
+
+
+    if(!nome || !email){
+
+        resultado.innerHTML=
+        "⚠️ Preencha nome e e-mail para continuar.";
+
+        return;
+    }
+
+
+    let total=0;
+
+
+    carrinho.forEach(function(item){
+
+        total+=
+        item.preco*
+        item.quantidade;
+
+    });
+
+
+    resultado.innerHTML=
+    `
+    ✅ Pedido demonstrativo registrado!
+
+    <br><br>
+
+    Obrigado, ${nome}.
+
+    <br>
+
+    Total simulado:
+    <strong>
+    ${formatarMoeda(total)}
+    </strong>
+
+    <br><br>
+
+    📧 E-mail:
+    ${email}
+
+    <br><br>
+
+    <small
+    style="color:#8aaab5;">
+
+    Nenhum pagamento foi realizado.
+    Esta é uma simulação para o projeto escolar.
+
+    </small>
+    `;
+
+}
+
+
+document
+.getElementById("carrinho")
+.addEventListener(
+    "click",
+    function(event){
+
+        if(
+            event.target===this
+        ){
+
+            fecharCarrinho();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   INICIALIZAÇÃO
 ========================================================= */
 
 window.addEventListener(
     "load",
-    function() {
+    function(){
 
         iniciarNovaAnalise();
 
