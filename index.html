@@ -1,1878 +1,484 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>GOTTA | Water Intelligence</title>
+<title>GOTTA | Tecnologia pela água</title>
 
 <style>
-
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html{
-    scroll-behavior:smooth;
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f2f8fb;
+    color: #123;
 }
 
-body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:#06151d;
-    color:white;
+/* =========================
+   CABEÇALHO
+========================= */
+
+header {
+    background: linear-gradient(135deg, #0077b6, #00b4d8);
+    color: white;
+    padding: 18px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.15);
 }
 
-button,
-input,
-select{
-    font-family:inherit;
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
 
-
-/* =========================================================
-   MENU
-========================================================= */
-
-header{
-    position:sticky;
-    top:0;
-    z-index:1000;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    padding:18px 7%;
-
-    background:rgba(6,21,29,.97);
-
-    border-bottom:1px solid #17485b;
+nav {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
 }
 
-.logo{
-    font-size:30px;
-    font-weight:900;
-    letter-spacing:4px;
-    color:#4de1ff;
+nav button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px 13px;
+    border-radius: 8px;
 }
 
-.logo span{
-    color:white;
+nav button:hover {
+    background: rgba(255,255,255,0.18);
 }
 
-.menu{
-    display:flex;
-    gap:8px;
-    flex-wrap:wrap;
+/* =========================
+   PÁGINAS
+========================= */
+
+.page {
+    display: none;
+    padding: 45px 8%;
+    min-height: calc(100vh - 80px);
 }
 
-.menu button{
-    background:transparent;
-    border:0;
-
-    color:#b9d0d7;
-
-    padding:10px 13px;
-
-    cursor:pointer;
-
-    border-radius:8px;
-
-    font-size:14px;
-
-    transition:.3s;
+.page.active {
+    display: block;
 }
 
-.menu button:hover,
-.menu button.active{
-    background:#103746;
-    color:#4de1ff;
+h1 {
+    color: #0077b6;
+    margin-bottom: 12px;
 }
 
-
-/* =========================================================
-   ABAS
-========================================================= */
-
-.aba{
-    display:none;
-    min-height:calc(100vh - 80px);
+h2 {
+    color: #0077b6;
+    margin-bottom: 15px;
 }
 
-.aba.active{
-    display:block;
+p {
+    line-height: 1.6;
 }
 
-
-/* =========================================================
+/* =========================
    INÍCIO
-========================================================= */
+========================= */
 
-.inicio{
-    min-height:calc(100vh - 80px);
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    padding:70px 8%;
-    gap:50px;
-
-    background:
-    radial-gradient(
-        circle at 80% 50%,
-        rgba(77,225,255,.16),
-        transparent 35%
-    );
+.hero {
+    text-align: center;
+    padding: 70px 20px;
 }
 
-.inicio-texto{
-    max-width:650px;
+.hero h1 {
+    font-size: 60px;
+    color: #0077b6;
 }
 
-.tag{
-    display:inline-block;
-
-    padding:8px 15px;
-
-    border:1px solid #20566a;
-    border-radius:30px;
-
-    color:#4de1ff;
-
-    font-size:13px;
-
-    margin-bottom:25px;
+.hero h2 {
+    color: #023e8a;
 }
 
-h1{
-    font-size:clamp(50px,7vw,85px);
-    line-height:1;
-
-    margin-bottom:25px;
+.hero p {
+    max-width: 700px;
+    margin: 20px auto;
+    font-size: 18px;
 }
 
-h1 span{
-    color:#4de1ff;
+.primary {
+    background: #0077b6;
+    color: white;
+    border: none;
+    padding: 14px 25px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-.inicio p{
-    color:#a9c4cd;
-
-    font-size:19px;
-    line-height:1.7;
-
-    margin-bottom:35px;
+.primary:hover {
+    background: #005f8f;
 }
 
-.botao{
-    display:inline-block;
-
-    padding:16px 28px;
-
-    border:0;
-    border-radius:30px;
-
-    background:#4de1ff;
-    color:#06151d;
-
-    font-weight:bold;
-
-    cursor:pointer;
-
-    transition:.3s;
-}
-
-.botao:hover{
-    transform:translateY(-3px);
-
-    box-shadow:
-    0 10px 30px rgba(77,225,255,.18);
-}
-
-.gota{
-    width:280px;
-    height:280px;
-
-    border-radius:50%;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    background:
-    radial-gradient(
-        circle at 35% 30%,
-        #b5f5ff,
-        #4de1ff 30%,
-        #14799a 65%,
-        #073848
-    );
-
-    box-shadow:
-    0 0 70px rgba(77,225,255,.25),
-    inset -25px -25px 50px rgba(0,0,0,.25);
-
-    animation:flutuar 4s infinite ease-in-out;
-}
-
-.gota span{
-    font-size:90px;
-    font-weight:900;
-    color:rgba(255,255,255,.85);
-}
-
-@keyframes flutuar{
-    0%,100%{
-        transform:translateY(0);
-    }
-
-    50%{
-        transform:translateY(-18px);
-    }
-}
-
-
-/* =========================================================
-   GERAL
-========================================================= */
-
-.conteudo{
-    max-width:1100px;
-    margin:auto;
-    padding:70px 25px;
-}
-
-.titulo{
-    text-align:center;
-
-    font-size:45px;
-
-    margin-bottom:15px;
-}
-
-.subtitulo{
-    text-align:center;
-
-    max-width:700px;
-
-    margin:0 auto 50px;
-
-    color:#a9c4cd;
-
-    line-height:1.7;
-}
-
-
-/* =========================================================
-   COMO FUNCIONA
-========================================================= */
-
-.fluxo{
-    display:grid;
-
-    grid-template-columns:
-    repeat(5,1fr);
-
-    gap:15px;
-}
-
-.etapa{
-    width:100%;
-
-    background:#0d2d3b;
-    color:white;
-
-    padding:25px 15px;
-
-    border-radius:18px;
-
-    text-align:center;
-
-    border:1px solid #17485b;
-
-    transition:.3s;
-
-    cursor:pointer;
-}
-
-.etapa:hover{
-    transform:translateY(-8px);
-
-    border-color:#4de1ff;
-
-    box-shadow:
-    0 10px 30px
-    rgba(77,225,255,.12);
-}
-
-.etapa .emoji{
-    font-size:40px;
-    margin-bottom:15px;
-}
-
-.etapa h3{
-    color:#4de1ff;
-    margin-bottom:10px;
-}
-
-.etapa p{
-    color:#9bb8c0;
-    line-height:1.5;
-    font-size:14px;
-}
-
-.explicacao-etapa{
-    max-width:900px;
-
-    margin:35px auto 0;
-
-    padding:30px;
-
-    background:#071a23;
-
-    border:1px solid #4de1ff;
-
-    border-radius:20px;
-
-    display:none;
-
-    animation:aparecer .4s ease;
-}
-
-.explicacao-etapa h3{
-    color:#4de1ff;
-
-    font-size:26px;
-
-    margin-bottom:12px;
-}
-
-.explicacao-etapa p{
-    color:#b9d0d7;
-
-    line-height:1.7;
-
-    font-size:17px;
-}
-
-@keyframes aparecer{
-
-    from{
-        opacity:0;
-        transform:translateY(10px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-
-}
-
-
-/* =========================================================
+/* =========================
    CARDS
-========================================================= */
+========================= */
 
-.cards{
-    display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
-    gap:20px;
-}
-
-.card{
-    background:#0d2d3b;
-
-    padding:30px;
-
-    border-radius:20px;
-
-    border:1px solid #17485b;
-
-    transition:.3s;
-}
-
-.card:hover{
-    transform:translateY(-5px);
-    border-color:#4de1ff;
-}
-
-.card h3{
-    color:#4de1ff;
-    margin-bottom:12px;
-}
-
-.card p{
-    color:#a9c4cd;
-    line-height:1.6;
-}
-
-
-/* =========================================================
-   GOTTA AI
-========================================================= */
-
-.chat-container{
-    max-width:850px;
-
-    margin:auto;
-
-    background:#071a23;
-
-    border:1px solid #17485b;
-
-    border-radius:25px;
-
-    overflow:hidden;
-
-    box-shadow:
-    0 20px 60px rgba(0,0,0,.25);
-}
-
-.chat-header{
-    padding:20px 25px;
-
-    background:#0d2d3b;
-
-    border-bottom:1px solid #17485b;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:15px;
-}
-
-.ai-avatar{
-    width:45px;
-    height:45px;
-
-    border-radius:50%;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    background:#4de1ff;
-
-    color:#06151d;
-
-    font-size:22px;
-
-    font-weight:bold;
-}
-
-.ai-title strong{
-    display:block;
-}
-
-.ai-status{
-    color:#4dff9a;
-    font-size:12px;
-}
-
-.chat-body{
-    min-height:500px;
-
-    max-height:650px;
-
-    overflow-y:auto;
-
-    padding:25px;
-}
-
-.mensagem{
-    display:flex;
-
-    margin-bottom:18px;
-
-    animation:mensagemEntrar .3s ease;
-}
-
-.mensagem.ai{
-    justify-content:flex-start;
-}
-
-.mensagem.usuario{
-    justify-content:flex-end;
-}
-
-.bolha{
-    max-width:75%;
-
-    padding:14px 17px;
-
-    border-radius:18px;
-
-    line-height:1.5;
-
-    font-size:15px;
-}
-
-.mensagem.ai .bolha{
-    background:#0d2d3b;
-
-    color:#d9edf2;
-
-    border-bottom-left-radius:5px;
-}
-
-.mensagem.usuario .bolha{
-    background:#4de1ff;
-
-    color:#06151d;
-
-    border-bottom-right-radius:5px;
-}
-
-@keyframes mensagemEntrar{
-    from{
-        opacity:0;
-        transform:translateY(8px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-.chat-opcoes{
-    padding:0 25px 25px;
-
-    display:grid;
-
-    grid-template-columns:
-    1fr 1fr;
-
-    gap:12px;
-}
-
-.chat-opcao{
-    background:#0d2d3b;
-
-    color:white;
-
-    border:1px solid #20566a;
-
-    border-radius:12px;
-
-    padding:15px;
-
-    cursor:pointer;
-
-    text-align:left;
-
-    transition:.3s;
-}
-
-.chat-opcao:hover{
-    border-color:#4de1ff;
-
-    transform:translateY(-2px);
-}
-
-.chat-input-area{
-    padding:0 25px 25px;
-
-    display:flex;
-
-    gap:10px;
-}
-
-.chat-input{
-    flex:1;
-
-    padding:15px;
-
-    background:#0d2d3b;
-
-    color:white;
-
-    border:1px solid #20566a;
-
-    border-radius:12px;
-
-    outline:none;
-}
-
-.chat-send{
-    padding:15px 20px;
-
-    border:none;
-
-    border-radius:12px;
-
-    background:#4de1ff;
-
-    color:#06151d;
-
-    font-weight:bold;
-
-    cursor:pointer;
-}
-
-
-/* =========================================================
-   RESULTADO AI
-========================================================= */
-
-.analise-final{
-    max-width:850px;
-
-    margin:30px auto 0;
-
-    background:#071a23;
-
-    border:1px solid #4de1ff;
-
-    border-radius:25px;
-
-    padding:30px;
-
-    display:none;
-}
-
-.analise-topo{
-    text-align:center;
-
-    margin-bottom:25px;
-}
-
-.analise-topo h3{
-    color:#4de1ff;
-
-    font-size:28px;
-
-    margin-bottom:8px;
-}
-
-.score-grande{
-    font-size:75px;
-
-    font-weight:900;
-
-    color:#4de1ff;
-}
-
-.recomendacoes{
-    display:grid;
-
-    grid-template-columns:
-    repeat(2,1fr);
-
-    gap:15px;
-}
-
-.recomendacao-card{
-    padding:22px;
-
-    background:#0d2d3b;
-
-    border-radius:15px;
-}
-
-.recomendacao-card small{
-    display:block;
-
-    color:#8aaab5;
-
-    margin-bottom:8px;
-}
-
-.recomendacao-card strong{
-    color:#4de1ff;
-
-    font-size:23px;
-}
-
-.missao-final{
-    margin-top:20px;
-
-    padding:22px;
-
-    background:#0d2d3b;
-
-    border-left:4px solid #4de1ff;
-
-    border-radius:12px;
-}
-
-.missao-final h4{
-    color:#4de1ff;
-
-    margin-bottom:10px;
-
-    font-size:20px;
-}
-
-.missao-final p{
-    color:#d7e9ee;
-
-    line-height:1.6;
-}
-
-.botoes-final{
-    display:grid;
-
-    grid-template-columns:
-    1fr 1fr;
-
-    gap:12px;
-
-    margin-top:20px;
-}
-
-.botao-final{
-    padding:15px;
-
-    border-radius:30px;
-
-    font-weight:bold;
-
-    cursor:pointer;
-}
-
-.botao-nova{
-    background:#4de1ff;
-
-    border:none;
-
-    color:#06151d;
-}
-
-.botao-reinicio{
-    background:transparent;
-
-    border:1px solid #4de1ff;
-
-    color:#4de1ff;
-}
-
-.historico{
-    max-width:850px;
-
-    margin:30px auto 0;
-}
-
-.historico h3{
-    margin-bottom:15px;
-
-    color:#4de1ff;
-}
-
-.historico-lista{
-    display:grid;
-
-    gap:10px;
-}
-
-.historico-item{
-    background:#0d2d3b;
-
-    border:1px solid #17485b;
-
-    border-radius:12px;
-
-    padding:15px;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-}
-
-.historico-item strong{
-    color:#4de1ff;
-}
-
-
-/* =========================================================
-   SIMULADOR
-========================================================= */
-
-.simulador{
-    max-width:700px;
-
-    margin:auto;
-
-    background:#071a23;
-
-    border:1px solid #17485b;
-
-    padding:35px;
-
-    border-radius:22px;
-}
-
-.campo{
-    margin-bottom:20px;
-}
-
-.campo label{
-    display:block;
-
-    color:#b9d0d7;
-
-    margin-bottom:8px;
-}
-
-.input,
-select{
-    width:100%;
-
-    padding:16px;
-
-    background:#0d2d3b;
-
-    color:white;
-
-    border:1px solid #20566a;
-
-    border-radius:10px;
-
-    font-size:16px;
-
-    outline:none;
-}
-
-.input:focus,
-select:focus{
-    border-color:#4de1ff;
-}
-
-.botao-largo{
-    width:100%;
-
-    margin-top:15px;
-
-    padding:16px;
-
-    border:none;
-
-    border-radius:30px;
-
-    background:#4de1ff;
-
-    color:#06151d;
-
-    font-weight:bold;
-
-    cursor:pointer;
-
-    transition:.3s;
-}
-
-.botao-largo:hover{
-    transform:translateY(-2px);
-}
-
-.resultado-simulador{
-    margin-top:25px;
-
-    padding:25px;
-
-    background:#0d2d3b;
-
-    border-radius:18px;
-
-    display:none;
-}
-
-.resultado-simulador h3{
-    color:#4de1ff;
-
-    margin-bottom:15px;
-}
-
-.numero{
-    font-size:35px;
-
-    font-weight:bold;
-
-    color:#4de1ff;
-}
-
-
-/* =========================================================
-   IMPACTO
-========================================================= */
-
-.ods{
-    text-align:center;
-}
-
-.ods-numero{
-    font-size:100px;
-
-    font-weight:900;
-
-    color:#4de1ff;
-
-    margin:30px;
-}
-
-.ods-box{
-    max-width:700px;
-
-    margin:auto;
-
-    background:#0d2d3b;
-
-    padding:35px;
-
-    border-radius:22px;
-
-    border:1px solid #17485b;
-}
-
-.ods-box h3{
-    color:#4de1ff;
-
-    font-size:25px;
-
-    margin-bottom:15px;
-}
-
-.ods-box p{
-    color:#a9c4cd;
-
-    line-height:1.7;
-}
-
-
-/* =========================================================
-   NOSSA STARTUP
-========================================================= */
-
-.startup-grid{
-    display:grid;
-
-    grid-template-columns:
-    repeat(2,1fr);
-
-    gap:20px;
-}
-
-.startup-card{
-    width:100%;
-
-    padding:30px;
-
-    background:#0d2d3b;
-
-    border:1px solid #17485b;
-
-    border-radius:20px;
-
-    transition:.3s;
-
-    cursor:pointer;
-
-    text-align:left;
-
-    color:white;
-}
-
-.startup-card:hover{
-    transform:translateY(-6px);
-
-    border-color:#4de1ff;
-
-    box-shadow:
-    0 10px 30px
-    rgba(77,225,255,.12);
-}
-
-.startup-card h3{
-    color:#4de1ff;
-
-    margin-bottom:12px;
-}
-
-.startup-card p{
-    color:#a9c4cd;
-
-    line-height:1.6;
-}
-
-.explicacao-startup{
-    max-width:850px;
-
-    margin:30px auto 0;
-
-    padding:30px;
-
-    background:#071a23;
-
-    border:1px solid #4de1ff;
-
-    border-radius:20px;
-
-    display:none;
-}
-
-.explicacao-startup h3{
-    color:#4de1ff;
-
-    font-size:26px;
-
-    margin-bottom:15px;
-}
-
-.explicacao-startup p{
-    color:#b9d0d7;
-
-    line-height:1.7;
-
-    font-size:17px;
-}
-
-
-/* =========================================================
-   GOTTA STORE
-========================================================= */
-
-.loja-header{
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    gap:20px;
-
-    margin-bottom:30px;
-}
-
-.carrinho-btn{
-    padding:14px 20px;
-
-    border:1px solid #4de1ff;
-
-    background:#0d2d3b;
-
-    color:#4de1ff;
-
-    border-radius:30px;
-
-    cursor:pointer;
-
-    font-weight:bold;
-}
-
-.produtos-grid{
-    display:grid;
-
-    grid-template-columns:
-    repeat(2,1fr);
-
-    gap:20px;
-
-    margin-bottom:55px;
-}
-
-.produto{
-    background:#0d2d3b;
-
-    border:1px solid #17485b;
-
-    border-radius:22px;
-
-    padding:30px;
-
-    transition:.3s;
-
-    position:relative;
-}
-
-.produto:hover{
-    transform:translateY(-6px);
-
-    border-color:#4de1ff;
-}
-
-.produto-icon{
-    font-size:50px;
-
-    margin-bottom:15px;
-}
-
-.produto h3{
-    color:#4de1ff;
-
-    font-size:25px;
-
-    margin-bottom:10px;
-}
-
-.produto p{
-    color:#a9c4cd;
-
-    line-height:1.6;
-
-    min-height:70px;
-}
-
-.preco{
-    font-size:30px;
-
-    font-weight:900;
-
-    color:#4de1ff;
-
-    margin:20px 0;
-}
-
-.preco span{
-    font-size:14px;
-
-    font-weight:normal;
-
-    color:#8aaab5;
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
 }
 
-.comprar-btn{
-    width:100%;
-
-    padding:15px;
-
-    border:none;
-
-    border-radius:30px;
-
-    background:#4de1ff;
-
-    color:#06151d;
-
-    cursor:pointer;
-
-    font-weight:bold;
-
-    font-size:15px;
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
 }
-
-.planos{
-    display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
-    gap:20px;
 
-    margin-bottom:40px;
+.card h3 {
+    margin-bottom: 10px;
+    color: #0077b6;
 }
-
-.plano{
-    background:#0d2d3b;
-
-    border:1px solid #17485b;
-
-    border-radius:22px;
-
-    padding:30px;
 
-    display:flex;
-
-    flex-direction:column;
+.icon {
+    font-size: 40px;
+    margin-bottom: 12px;
 }
 
-.plano.destaque{
-    border:2px solid #4de1ff;
+/* =========================
+   PERFIL
+========================= */
 
-    transform:translateY(-8px);
+.profile-box {
+    max-width: 700px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
 }
-
-.plano h3{
-    color:#4de1ff;
-
-    font-size:23px;
 
-    margin-bottom:10px;
+input, select {
+    width: 100%;
+    padding: 13px;
+    margin: 8px 0 18px;
+    border: 1px solid #ccd;
+    border-radius: 8px;
+    font-size: 15px;
 }
 
-.plano-preco{
-    font-size:32px;
-
-    font-weight:900;
-
-    margin:18px 0;
+label {
+    font-weight: bold;
 }
-
-.plano-preco span{
-    color:#8aaab5;
-
-    font-size:14px;
 
-    font-weight:normal;
+.profile-info {
+    background: #e8f7fc;
+    padding: 18px;
+    border-radius: 12px;
+    margin-top: 20px;
 }
 
-.plano ul{
-    list-style:none;
+/* =========================
+   SCORE
+========================= */
 
-    color:#a9c4cd;
-
-    line-height:1.8;
-
-    margin-bottom:25px;
+.score-container {
+    text-align: center;
+    max-width: 650px;
+    margin: auto;
 }
-
-.plano li::before{
-    content:"✓ ";
-
-    color:#4de1ff;
 
-    font-weight:bold;
+.score {
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #00b4d8, #0077b6);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px auto;
+    font-size: 55px;
+    font-weight: bold;
+    box-shadow: 0 8px 25px rgba(0,119,182,0.3);
 }
-
-.assinar-btn{
-    margin-top:auto;
-
-    width:100%;
-
-    padding:15px;
-
-    border:none;
 
-    border-radius:30px;
-
-    background:#4de1ff;
-
-    color:#06151d;
-
-    font-weight:bold;
-
-    cursor:pointer;
+.progress {
+    height: 20px;
+    background: #dceef4;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 20px 0;
 }
-
-.aviso-loja{
-    max-width:800px;
-
-    margin:40px auto 0;
-
-    padding:18px;
 
-    background:#0d2d3b;
-
-    border:1px solid #17485b;
-
-    border-radius:15px;
-
-    color:#8aaab5;
-
-    text-align:center;
-
-    line-height:1.6;
-
-    font-size:13px;
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #00b4d8, #0077b6);
+    width: 0%;
+    transition: 0.5s;
 }
-
-
-/* =========================================================
-   CARRINHO
-========================================================= */
 
-.carrinho{
-    position:fixed;
+/* =========================
+   IA
+========================= */
 
-    inset:0;
-
-    background:rgba(0,0,0,.7);
-
-    z-index:3000;
-
-    display:none;
-
-    align-items:center;
-
-    justify-content:center;
-
-    padding:20px;
-}
-
-.carrinho.active{
-    display:flex;
+.ai-box {
+    max-width: 750px;
+    margin: auto;
 }
-
-.carrinho-box{
-    width:min(600px,100%);
-
-    max-height:90vh;
-
-    overflow-y:auto;
 
-    background:#071a23;
-
-    border:1px solid #4de1ff;
-
-    border-radius:24px;
-
-    padding:30px;
+.chat {
+    background: white;
+    border-radius: 18px;
+    padding: 25px;
+    min-height: 300px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
 }
-
-.carrinho-topo{
-    display:flex;
 
-    justify-content:space-between;
-
-    align-items:center;
-
-    margin-bottom:25px;
+.message {
+    padding: 13px 16px;
+    border-radius: 12px;
+    margin: 12px 0;
+    max-width: 85%;
+    line-height: 1.5;
 }
-
-.fechar{
-    width:38px;
-    height:38px;
-
-    border-radius:50%;
-
-    border:1px solid #17485b;
-
-    background:#0d2d3b;
-
-    color:white;
 
-    cursor:pointer;
+.ai {
+    background: #e4f7fc;
+    margin-right: auto;
 }
 
-.carrinho-item{
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    gap:15px;
-
-    padding:15px;
-
-    background:#0d2d3b;
-
-    border-radius:14px;
-
-    margin-bottom:10px;
+.user {
+    background: #0077b6;
+    color: white;
+    margin-left: auto;
 }
 
-.carrinho-item-info{
-    flex:1;
+.option-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
 }
 
-.carrinho-item-info strong{
-    color:#4de1ff;
+.option-buttons button {
+    padding: 12px 18px;
+    border: 2px solid #0077b6;
+    background: white;
+    color: #0077b6;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
 }
-
-.quantidade{
-    display:flex;
 
-    align-items:center;
-
-    gap:10px;
+.option-buttons button:hover {
+    background: #0077b6;
+    color: white;
 }
-
-.qtd-btn{
-    width:30px;
-    height:30px;
-
-    border-radius:50%;
 
-    border:1px solid #4de1ff;
+/* =========================
+   GAMIFICAÇÃO
+========================= */
 
-    background:transparent;
-
-    color:#4de1ff;
-
-    cursor:pointer;
+.xp-box {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    max-width: 700px;
+    margin: auto;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
 }
-
-.total-box{
-    margin-top:20px;
-
-    padding:20px;
 
-    background:#0d2d3b;
-
-    border-radius:15px;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
+.xp-number {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: #0077b6;
 }
 
-.total-box strong{
-    color:#4de1ff;
-
-    font-size:25px;
+.badges {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 15px;
+    margin-top: 25px;
 }
-
-.checkout-btn{
-    width:100%;
-
-    margin-top:15px;
-
-    padding:16px;
 
-    border:none;
-
-    border-radius:30px;
-
-    background:#4de1ff;
-
-    color:#06151d;
-
-    font-weight:bold;
-
-    cursor:pointer;
+.badge {
+    text-align: center;
+    padding: 20px;
+    background: #eef8fb;
+    border-radius: 15px;
 }
-
-.vazio{
-    text-align:center;
-
-    color:#8aaab5;
 
-    padding:30px 10px;
+.badge.locked {
+    opacity: 0.35;
 }
 
+/* =========================
+   LEAK
+========================= */
 
-/* =========================================================
-   CHECKOUT
-========================================================= */
-
-.checkout{
-    display:none;
-}
-
-.checkout.active{
-    display:block;
+.leak-box {
+    max-width: 700px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
 }
-
-.checkout h3{
-    color:#4de1ff;
 
-    margin-bottom:10px;
-
-    font-size:25px;
+.result {
+    display: none;
+    margin-top: 25px;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
 }
-
-.checkout input{
-    width:100%;
-
-    margin-top:12px;
-
-    padding:14px;
 
-    border-radius:10px;
-
-    border:1px solid #20566a;
-
-    background:#0d2d3b;
-
-    color:white;
-
-    outline:none;
+.safe {
+    background: #e4f8ed;
+    color: #087443;
 }
 
-.checkout input:focus{
-    border-color:#4de1ff;
+.warning {
+    background: #fff3cd;
+    color: #856404;
 }
-
-.checkout-info{
-    margin:20px 0;
-
-    padding:18px;
-
-    background:#0d2d3b;
-
-    border-radius:14px;
 
-    color:#a9c4cd;
-
-    line-height:1.6;
+.danger {
+    background: #ffe5e5;
+    color: #a40000;
 }
-
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-footer{
-    text-align:center;
 
-    padding:35px;
+/* =========================
+   RODAPÉ
+========================= */
 
-    background:#041017;
-
-    color:#718e97;
-}
-
-footer strong{
-    color:#4de1ff;
+footer {
+    background: #023e8a;
+    color: white;
+    text-align: center;
+    padding: 25px;
 }
-
 
-/* =========================================================
+/* =========================
    RESPONSIVO
-========================================================= */
+========================= */
 
-@media(max-width:900px){
+@media(max-width: 700px) {
 
-    header{
-        flex-direction:column;
-
-        align-items:flex-start;
-
-        gap:15px;
+    header {
+        flex-direction: column;
+        gap: 12px;
     }
 
-    .menu{
-        width:100%;
-
-        overflow-x:auto;
+    .hero h1 {
+        font-size: 42px;
     }
 
-    .inicio{
-        flex-direction:column;
-
-        text-align:center;
+    nav {
+        justify-content: center;
     }
 
-    .gota{
-        width:220px;
-        height:220px;
-    }
-
-    .fluxo{
-        grid-template-columns:1fr;
-    }
-
-    .cards{
-        grid-template-columns:1fr;
-    }
-
-    .recomendacoes{
-        grid-template-columns:1fr;
-    }
-
-    .botoes-final{
-        grid-template-columns:1fr;
-    }
-
-    .chat-opcoes{
-        grid-template-columns:1fr;
-    }
-
-    .chat-input-area{
-        flex-direction:column;
-    }
-
-    .startup-grid{
-        grid-template-columns:1fr;
-    }
-
-    .produtos-grid,
-    .planos{
-        grid-template-columns:1fr;
-    }
-
-    .loja-header{
-        flex-direction:column;
-        align-items:flex-start;
+    .page {
+        padding: 30px 5%;
     }
 }
-
 </style>
-
 </head>
-
 
 <body>
 
-
-<!-- =========================================================
-     MENU
-========================================================= -->
+<!-- =========================
+     CABEÇALHO
+========================= -->
 
 <header>
 
-<div class="logo">
-GOTTA<span>.</span>
-</div>
+<div class="logo">💧 GOTTA</div>
 
-<div class="menu">
-
-<button class="active"
-onclick="abrirAba('inicio',this)">
-Início
-</button>
-
-<button
-onclick="abrirAba('funciona',this)">
-Como funciona
-</button>
-
-<button
-onclick="abrirAba('score',this)">
-Gotta AI
-</button>
-
-<button
-onclick="abrirAba('simulador',this)">
-Simulador
-</button>
-
-<button
-onclick="abrirAba('loja',this)">
-🛒 Loja
-</button>
-
-<button
-onclick="abrirAba('impacto',this)">
-Impacto
-</button>
-
-<button
-onclick="abrirAba('startup',this)">
-Nossa startup
-</button>
-
-</div>
+<nav>
+<button onclick="showPage('inicio')">Início</button>
+<button onclick="showPage('perfil')">Perfil</button>
+<button onclick="showPage('ia')">GOTTA AI</button>
+<button onclick="showPage('score')">Score</button>
+<button onclick="showPage('game')">Gamificação</button>
+<button onclick="showPage('leak')">GOTTA LEAK</button>
+</nav>
 
 </header>
 
 
-<!-- =========================================================
+<!-- =========================
      INÍCIO
-========================================================= -->
+========================= -->
 
-<section
-id="inicio"
-class="aba active">
+<section id="inicio" class="page active">
 
-<div class="inicio">
+<div class="hero">
 
-<div class="inicio-texto">
+<h1>GOTTA</h1>
 
-<div class="tag">
-💧 WATER INTELLIGENCE
-</div>
-
-<h1>
-A água fala.
-<br>
-<span>Nós prevemos.</span>
-</h1>
+<h2>Tecnologia para cuidar da água.</h2>
 
 <p>
-A GOTTA é uma plataforma de
-inteligência hídrica criada para
-identificar desperdícios, analisar
-hábitos de consumo e incentivar
-a economia de água.
+A GOTTA é uma startup que utiliza tecnologia,
+dados e inteligência artificial para ajudar pessoas
+a identificar desperdícios e criar hábitos mais sustentáveis.
 </p>
 
-<button
-class="botao"
-onclick="abrirPorNome('score')">
-Conversar com a Gotta AI →
+<button class="primary" onclick="showPage('ia')">
+Começar análise 💧
 </button>
 
 </div>
-
-<div class="gota">
-<span>G</span>
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================================================
-     COMO FUNCIONA
-========================================================= -->
-
-<section
-id="funciona"
-class="aba">
-
-<div class="conteudo">
-
-<h2 class="titulo">
-Como a GOTTA funciona?
-</h2>
-
-<p class="subtitulo">
-
-A GOTTA transforma dados sobre água
-em decisões simples e inteligentes.
-
-<br>
-
-<strong>
-Clique nas etapas para saber mais.
-</strong>
-
-</p>
-
-
-<div class="fluxo">
-
-
-<button
-class="etapa"
-onclick="mostrarEtapa(1)">
-
-<div class="emoji">
-📡
-</div>
-
-<h3>1. Sensores</h3>
-
-<p>
-Como a GOTTA coleta os dados.
-</p>
-
-</button>
-
-
-<button
-class="etapa"
-onclick="mostrarEtapa(2)">
-
-<div class="emoji">
-📊
-</div>
-
-<h3>2. Dados</h3>
-
-<p>
-Como os dados são organizados.
-</p>
-
-</button>
-
-
-<button
-class="etapa"
-onclick="mostrarEtapa(3)">
-
-<div class="emoji">
-🧠
-</div>
-
-<h3>3. Inteligência</h3>
-
-<p>
-Como a tecnologia aprende.
-</p>
-
-</button>
-
-
-<button
-class="etapa"
-onclick="mostrarEtapa(4)">
-
-<div class="emoji">
-🔎
-</div>
-
-<h3>4. Análise</h3>
-
-<p>
-Como encontramos desperdícios.
-</p>
-
-</button>
-
-
-<button
-class="etapa"
-onclick="mostrarEtapa(5)">
-
-<div class="emoji">
-💧
-</div>
-
-<h3>5. Economia</h3>
-
-<p>
-Como transformamos dados em ações.
-</p>
-
-</button>
-
-</div>
-
-
-<div
-id="explicacaoEtapa"
-class="explicacao-etapa">
-
-<h3 id="tituloEtapa">
-👆 Clique em uma etapa
-</h3>
-
-<p id="textoEtapa">
-Selecione uma das etapas acima.
-</p>
-
-</div>
-
-
-<br><br>
-
 
 <div class="cards">
 
 <div class="card">
-
-<h3>Gotta Pulse</h3>
-
+<div class="icon">🤖</div>
+<h3>GOTTA AI</h3>
 <p>
-Sistema de sensores pensado
-para acompanhar o consumo
-de água em tempo real.
+Uma inteligência artificial simulada que analisa
+as respostas do usuário e cria recomendações personalizadas.
 </p>
-
 </div>
-
 
 <div class="card">
-
-<h3>Gotta Intelligence</h3>
-
+<div class="icon">💧</div>
+<h3>GOTTA Score</h3>
 <p>
-Sistema responsável por analisar
-os dados e encontrar padrões
-de consumo.
+Um sistema de pontuação para acompanhar seus hábitos
+relacionados ao consumo de água.
 </p>
-
 </div>
-
 
 <div class="card">
-
-<h3>Gotta Mission</h3>
-
+<div class="icon">🏆</div>
+<h3>GOTTA Game</h3>
 <p>
-Transforma a análise em
-missões simples para incentivar
-mudanças de comportamento.
+Ganhe XP, conquiste medalhas e participe de desafios.
 </p>
-
 </div>
 
+<div class="card">
+<div class="icon">🚨</div>
+<h3>GOTTA LEAK</h3>
+<p>
+Uma simulação que analisa possíveis sinais de vazamento.
+</p>
 </div>
 
 </div>
@@ -1880,242 +486,79 @@ mudanças de comportamento.
 </section>
 
 
-<!-- =========================================================
-     GOTTA AI
-========================================================= -->
+<!-- =========================
+     PERFIL
+========================= -->
 
-<section
-id="score"
-class="aba">
+<section id="perfil" class="page">
 
-<div class="conteudo">
+<h1>👤 Meu Perfil</h1>
 
-<h2 class="titulo">
-Gotta AI
-</h2>
+<div class="profile-box">
 
-<p class="subtitulo">
+<label>Seu nome</label>
 
-Converse com a inteligência da GOTTA.
-Ela fará perguntas sobre seu ambiente
-e criará uma recomendação personalizada.
+<input id="nome" placeholder="Digite seu nome">
 
-</p>
+<label>Onde você mora?</label>
 
+<select id="moradia">
 
-<div class="chat-container">
-
-<div class="chat-header">
-
-<div class="ai-avatar">
-G
-</div>
-
-<div class="ai-title">
-
-<strong>Gotta AI</strong>
-
-<div class="ai-status">
-● Online
-</div>
-
-</div>
-
-</div>
-
-
-<div
-id="chatBody"
-class="chat-body">
-</div>
-
-
-<div
-id="chatOpcoes"
-class="chat-opcoes">
-</div>
-
-
-<div
-id="chatInputArea"
-class="chat-input-area"
-style="display:none;">
-
-<input
-id="chatInput"
-class="chat-input"
-placeholder="Digite sua resposta...">
-
-<button
-class="chat-send"
-onclick="enviarTexto()">
-
-Enviar
-
-</button>
-
-</div>
-
-</div>
-
-
-<div
-id="analiseFinal"
-class="analise-final">
-</div>
-
-
-<div class="historico">
-
-<h3>
-📚 Histórico desta sessão
-</h3>
-
-<div
-id="historicoLista"
-class="historico-lista">
-
-<p style="color:#8aaab5;">
-Nenhuma análise realizada ainda.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================================================
-     SIMULADOR
-========================================================= -->
-
-<section
-id="simulador"
-class="aba">
-
-<div class="conteudo">
-
-<h2 class="titulo">
-Simulador de Economia
-</h2>
-
-<p class="subtitulo">
-Veja uma estimativa de quanto
-uma família poderia economizar
-reduzindo o consumo de água.
-</p>
-
-
-<div class="simulador">
-
-<div class="campo">
-
-<label>
-Quantas pessoas moram na casa?
-</label>
-
-<input
-id="simPessoas"
-class="input"
-type="number"
-min="1"
-placeholder="Ex: 4">
-
-</div>
-
-
-<div class="campo">
-
-<label>
-Consumo médio por pessoa/dia
-(em litros)
-</label>
-
-<input
-id="simLitros"
-class="input"
-type="number"
-min="1"
-value="150">
-
-</div>
-
-
-<div class="campo">
-
-<label>
-Quanto você acredita que consegue reduzir?
-</label>
-
-<select
-id="simReducao"
-class="input">
-
-<option value="0.05">5%</option>
-
-<option value="0.10">10%</option>
-
-<option value="0.15">15%</option>
-
-<option value="0.20">20%</option>
-
-<option value="0.25">25%</option>
+<option value="casa">Casa</option>
+<option value="apartamento">Apartamento</option>
+<option value="outro">Outro</option>
 
 </select>
 
-</div>
+<label>Quantas pessoas moram com você?</label>
 
+<input id="pessoas" type="number" min="1" placeholder="Ex: 3">
 
-<button
-class="botao-largo"
-onclick="calcularSimulador()">
-
-Calcular economia 💧
-
+<button class="primary" onclick="salvarPerfil()">
+Salvar perfil
 </button>
 
-
-<div
-id="resultadoSimulador"
-class="resultado-simulador">
-
-<h3>
-Resultado da simulação
-</h3>
-
-<p>
-Consumo estimado mensal:
-</p>
-
-<div
-id="consumoSim"
-class="numero">
+<div id="perfilInfo" class="profile-info">
+Seu perfil ainda não foi configurado.
 </div>
 
-<br>
-
-<p>
-Economia possível por mês:
-</p>
-
-<div
-id="economiaSim"
-class="numero">
 </div>
 
-<br>
+</section>
 
-<p>
-Economia possível por ano:
+
+<!-- =========================
+     GOTTA AI
+========================= -->
+
+<section id="ia" class="page">
+
+<h1>🤖 GOTTA AI</h1>
+
+<p style="text-align:center;margin-bottom:25px;">
+Converse com a GOTTA e receba uma recomendação personalizada.
 </p>
 
-<div
-id="anoSim"
-class="numero">
+<div class="ai-box">
+
+<div id="chat" class="chat">
+
+<div class="message ai">
+Olá! 👋 Eu sou a GOTTA AI.
+Vou fazer algumas perguntas para entender seus hábitos.
 </div>
+
+<div class="message ai">
+Primeiro: onde você mora?
+</div>
+
+<div class="option-buttons">
+
+<button onclick="answer('Casa')">🏠 Casa</button>
+
+<button onclick="answer('Apartamento')">
+🏢 Apartamento
+</button>
 
 </div>
 
@@ -2126,2414 +569,866 @@ class="numero">
 </section>
 
 
-<!-- =========================================================
-     LOJA
-========================================================= -->
+<!-- =========================
+     SCORE
+========================= -->
 
-<section
-id="loja"
-class="aba">
+<section id="score" class="page">
 
-<div class="conteudo">
+<h1>💧 GOTTA Score</h1>
 
-
-<div class="loja-header">
-
-<div>
-
-<h2 class="titulo"
-style="text-align:left;margin-bottom:8px;">
-Gotta Store
-</h2>
-
-<p
-style="color:#a9c4cd;line-height:1.6;">
-Conheça nossos produtos e planos.
-</p>
-
-</div>
-
-
-<button
-class="carrinho-btn"
-onclick="abrirCarrinho()">
-
-🛒 Carrinho
-<span id="contadorCarrinho">
-0
-</span>
-
-</button>
-
-</div>
-
-
-<!-- PRODUTOS -->
-
-<h2
-style="color:#4de1ff;margin-bottom:20px;">
-Produtos
-</h2>
-
-
-<div class="produtos-grid">
-
-
-<div class="produto">
-
-<div class="produto-icon">
-💧
-</div>
-
-<h3>
-Gotta Pulse
-</h3>
+<div class="score-container">
 
 <p>
-Sensor inteligente para
-monitoramento do consumo
-de água.
+Seu Score representa uma estimativa baseada nas
+respostas fornecidas à GOTTA AI.
 </p>
 
-<div class="preco">
-R$ 249,90
+<div class="score" id="scoreValue">
+50
 </div>
 
-<button
-class="comprar-btn"
-onclick="adicionarCarrinho('Gotta Pulse',249.90,'produto')">
-
-🛒 Comprar
-
-</button>
-
-</div>
-
-
-<div class="produto">
-
-<div class="produto-icon">
-📡
-</div>
-
-<h3>
-Gotta Pulse Pro
-</h3>
-
-<p>
-Versão avançada para
-ambientes com maior volume
-de consumo.
-</p>
-
-<div class="preco">
-R$ 499,90
-</div>
-
-<button
-class="comprar-btn"
-onclick="adicionarCarrinho('Gotta Pulse Pro',499.90,'produto')">
-
-🛒 Comprar
-
-</button>
-
-</div>
-
-</div>
-
-
-<!-- PLANOS -->
-
-<h2
-style="color:#4de1ff;margin-bottom:20px;">
-Planos
+<h2 id="scoreText">
+Continue melhorando!
 </h2>
 
+<div class="progress">
 
-<div class="planos">
+<div class="progress-bar" id="scoreBar"></div>
 
+</div>
 
-<div class="plano">
-
-<h3>
-GOTTA Free
-</h3>
-
-<p
-style="color:#a9c4cd;">
-Para começar.
+<p id="scoreExplanation">
+Faça uma análise com a GOTTA AI para atualizar seu Score.
 </p>
-
-<div class="plano-preco">
-R$ 0
-<span>/mês</span>
-</div>
-
-<ul>
-
-<li>Consumo básico</li>
-<li>Histórico simples</li>
-<li>Gotta Score</li>
-
-</ul>
-
-<button
-class="assinar-btn"
-onclick="adicionarCarrinho('GOTTA Free',0,'plano')">
-
-Começar grátis
-
-</button>
-
-</div>
-
-
-<div class="plano destaque">
-
-<h3>
-GOTTA Plus
-</h3>
-
-<p
-style="color:#a9c4cd;">
-Para famílias e pequenos ambientes.
-</p>
-
-<div class="plano-preco">
-R$ 29,90
-<span>/mês</span>
-</div>
-
-<ul>
-
-<li>Gotta AI</li>
-<li>Relatórios</li>
-<li>Gotta Mission</li>
-<li>Alertas inteligentes</li>
-
-</ul>
-
-<button
-class="assinar-btn"
-onclick="adicionarCarrinho('GOTTA Plus',29.90,'plano')">
-
-Assinar plano
-
-</button>
-
-</div>
-
-
-<div class="plano">
-
-<h3>
-GOTTA Business
-</h3>
-
-<p
-style="color:#a9c4cd;">
-Para empresas, escolas e condomínios.
-</p>
-
-<div class="plano-preco">
-R$ 399
-<span>/mês</span>
-</div>
-
-<ul>
-
-<li>Monitoramento múltiplo</li>
-<li>Gotta Hub</li>
-<li>Relatórios avançados</li>
-<li>Suporte prioritário</li>
-
-</ul>
-
-<button
-class="assinar-btn"
-onclick="adicionarCarrinho('GOTTA Business',399,'plano')">
-
-Assinar plano
-
-</button>
-
-</div>
-
-
-<div class="plano">
-
-<h3>
-GOTTA School
-</h3>
-
-<p
-style="color:#a9c4cd;">
-Para projetos e instituições de ensino.
-</p>
-
-<div class="plano-preco">
-R$ 199
-<span>/mês</span>
-</div>
-
-<ul>
-
-<li>Painel escolar</li>
-<li>Desafios entre turmas</li>
-<li>Relatórios</li>
-<li>Gotta Score</li>
-
-</ul>
-
-<button
-class="assinar-btn"
-onclick="adicionarCarrinho('GOTTA School',199,'plano')">
-
-Assinar plano
-
-</button>
-
-</div>
-
-
-</div>
-
-
-<div class="aviso-loja">
-
-🧪 <strong>Protótipo escolar:</strong>
-os botões de compra e assinatura demonstram
-como funcionaria a plataforma comercial da GOTTA.
-Não há pagamento real neste site.
-
-</div>
-
 
 </div>
 
 </section>
 
 
-<!-- =========================================================
-     IMPACTO
-========================================================= -->
+<!-- =========================
+     GAMIFICAÇÃO
+========================= -->
 
-<section
-id="impacto"
-class="aba">
+<section id="game" class="page">
 
-<div class="conteudo">
+<h1>🏆 GOTTA Game</h1>
 
-<h2 class="titulo">
-Nosso impacto
-</h2>
+<div class="xp-box">
 
-<p class="subtitulo">
+<div class="xp-number">
 
-A GOTTA está diretamente relacionada
-à ODS 6 — Água Potável e Saneamento.
+<span id="xp">0</span> XP
 
-</p>
-
-
-<div class="ods">
-
-<div class="ods-numero">
-ODS 6
 </div>
 
+<div class="progress">
 
-<div class="ods-box">
+<div class="progress-bar" id="xpBar"></div>
 
-<h3>
-💧 Água Potável e Saneamento
-</h3>
+</div>
+
+<h2>🎯 Desafio atual</h2>
 
 <p>
+Complete uma análise com a GOTTA AI para ganhar XP.
+</p>
 
-A GOTTA busca incentivar o uso
-consciente da água, reduzir
-desperdícios e utilizar tecnologia
-para melhorar a gestão dos
-recursos hídricos.
+<button class="primary" onclick="showPage('ia')">
+Fazer análise
+</button>
 
+<div class="badges">
+
+<div class="badge" id="badge1">
+
+<div style="font-size:40px;">💧</div>
+
+<strong>Primeira análise</strong>
+
+<p>Faça sua primeira análise.</p>
+
+</div>
+
+<div class="badge locked" id="badge2">
+
+<div style="font-size:40px;">🌱</div>
+
+<strong>Economizador</strong>
+
+<p>Melhore seu Score.</p>
+
+</div>
+
+<div class="badge locked" id="badge3">
+
+<div style="font-size:40px;">🚨</div>
+
+<strong>Caçador de vazamentos</strong>
+
+<p>Use o GOTTA LEAK.</p>
+
+</div>
+
+<div class="badge locked" id="badge4">
+
+<div style="font-size:40px;">🏆</div>
+
+<strong>Mestre da Água</strong>
+
+<p>Chegue a 1000 XP.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     GOTTA LEAK
+========================= -->
+
+<section id="leak" class="page">
+
+<h1>🚨 GOTTA LEAK</h1>
+
+<div class="leak-box">
+
+<p>
+O GOTTA LEAK é uma ferramenta experimental da GOTTA
+que utiliza informações fornecidas pelo usuário para
+estimar a possibilidade de um vazamento.
 </p>
 
 <br>
 
-<p>
+<label>
+Quando ninguém está utilizando água, o hidrômetro
+continua registrando consumo?
+</label>
 
-Nosso projeto não pretende resolver
-todo o problema da água.
+<select id="hidrometro">
 
-A proposta é dar um passo progressivo:
+<option value="nao">Não</option>
+<option value="sim">Sim</option>
+<option value="naosei">Não sei</option>
 
-<strong>
-medir, entender e melhorar.
-</strong>
+</select>
 
-</p>
 
-</div>
+<label>
+Você percebeu aumento inesperado na conta de água?
+</label>
 
-</div>
+<select id="conta">
+
+<option value="nao">Não</option>
+<option value="sim">Sim</option>
+<option value="naosei">Não sei</option>
+
+</select>
+
+
+<label>
+Existem torneiras ou canos apresentando sinais
+de vazamento?
+</label>
+
+<select id="cano">
+
+<option value="nao">Não</option>
+<option value="sim">Sim</option>
+<option value="naosei">Não sei</option>
+
+</select>
+
+<br><br>
+
+<button class="primary" onclick="analisarLeak()">
+🔎 Analisar
+</button>
+
+<div id="leakResult" class="result"></div>
 
 </div>
 
 </section>
 
 
-<!-- =========================================================
-     NOSSA STARTUP
-========================================================= -->
-
-<section
-id="startup"
-class="aba">
-
-<div class="conteudo">
-
-<h2 class="titulo">
-Nossa Startup
-</h2>
-
-<p class="subtitulo">
-
-A GOTTA foi pensada como uma
-startup real, com tecnologia,
-impacto e um modelo de negócio.
-
-<br>
-
-<strong>
-Clique nos tópicos para saber mais.
-</strong>
-
-</p>
-
-
-<div class="startup-grid">
-
-
-<button
-class="startup-card"
-onclick="mostrarStartup(1)">
-
-<h3>
-🎯 Problema
-</h3>
-
-<p>
-Clique para entender o problema
-que a GOTTA quer resolver.
-</p>
-
-</button>
-
-
-<button
-class="startup-card"
-onclick="mostrarStartup(2)">
-
-<h3>
-💡 Solução
-</h3>
-
-<p>
-Clique para conhecer a solução
-da GOTTA.
-</p>
-
-</button>
-
-
-<button
-class="startup-card"
-onclick="mostrarStartup(3)">
-
-<h3>
-👥 Público-alvo
-</h3>
-
-<p>
-Clique para descobrir quem
-poderia utilizar a GOTTA.
-</p>
-
-</button>
-
-
-<button
-class="startup-card"
-onclick="mostrarStartup(4)">
-
-<h3>
-💰 Como ganhamos dinheiro
-</h3>
-
-<p>
-Clique para descobrir
-nosso modelo de negócio.
-</p>
-
-</button>
-
-
-<button
-class="startup-card"
-onclick="mostrarStartup(5)">
-
-<h3>
-🚀 Diferencial
-</h3>
-
-<p>
-Clique para descobrir
-o que torna a GOTTA diferente.
-</p>
-
-</button>
-
-
-<button
-class="startup-card"
-onclick="mostrarStartup(6)">
-
-<h3>
-🌎 ODS
-</h3>
-
-<p>
-Clique para descobrir
-nosso impacto.
-</p>
-
-</button>
-
-
-</div>
-
-
-<div
-id="explicacaoStartup"
-class="explicacao-startup">
-
-<h3 id="tituloStartup">
-👆 Clique em um tópico
-</h3>
-
-<p id="textoStartup">
-Selecione um dos tópicos acima
-para conhecer melhor a GOTTA.
-</p>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<!-- =========================================================
-     CARRINHO
-========================================================= -->
-
-<div
-id="carrinho"
-class="carrinho">
-
-<div class="carrinho-box">
-
-
-<div class="carrinho-topo">
-
-<h2>
-🛒 Seu carrinho
-</h2>
-
-<button
-class="fechar"
-onclick="fecharCarrinho()">
-
-×
-</button>
-
-</div>
-
-
-<div
-id="carrinhoLista">
-
-</div>
-
-
-<div
-class="total-box">
-
-<span>
-Total
-</span>
-
-<strong
-id="carrinhoTotal">
-R$ 0,00
-</strong>
-
-</div>
-
-
-<button
-class="checkout-btn"
-onclick="abrirCheckout()">
-
-Continuar para checkout →
-
-</button>
-
-
-<div
-id="checkoutArea"
-class="checkout">
-
-<hr
-style="
-border:none;
-border-top:1px solid #17485b;
-margin:25px 0;
-">
-
-
-<h3>
-Checkout demonstrativo
-</h3>
-
-<div class="checkout-info">
-
-Este checkout é apenas uma
-simulação para o projeto escolar.
-Nenhuma compra real será realizada.
-
-</div>
-
-
-<input
-id="nomeCheckout"
-placeholder="Nome">
-
-
-<input
-id="emailCheckout"
-type="email"
-placeholder="E-mail">
-
-
-<button
-class="checkout-btn"
-onclick="finalizarCompra()">
-
-Confirmar pedido demonstrativo
-
-</button>
-
-
-<div
-id="checkoutResultado"
-style="
-margin-top:20px;
-color:#4de1ff;
-line-height:1.6;
-">
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- =========================================================
-     FOOTER
-========================================================= -->
+<!-- =========================
+     RODAPÉ
+========================= -->
 
 <footer>
 
-<strong>
-GOTTA.
-</strong>
+<p><strong>GOTTA</strong> — Tecnologia pela água 💧</p>
 
-Water Intelligence.
-
-<br>
-<br>
-
-Projeto escolar de empreendedorismo — 2026
+<p>
+Projeto educacional de empreendedorismo.
+</p>
 
 </footer>
 
 
 <script>
 
+/* =========================
+   SISTEMA DE PÁGINAS
+========================= */
 
-/* =========================================================
-   ABAS
-========================================================= */
+function showPage(pageId) {
 
-function abrirAba(id,botao){
+    const pages = document.querySelectorAll(".page");
 
-    const abas =
-    document.querySelectorAll(".aba");
-
-    abas.forEach(function(aba){
-        aba.classList.remove("active");
+    pages.forEach(page => {
+        page.classList.remove("active");
     });
 
+    document.getElementById(pageId).classList.add("active");
 
-    document
-    .getElementById(id)
-    .classList.add("active");
-
-
-    const botoes =
-    document.querySelectorAll(".menu button");
-
-    botoes.forEach(function(btn){
-        btn.classList.remove("active");
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
     });
-
-
-    if(botao){
-        botao.classList.add("active");
-    }
-
-
-    window.scrollTo(0,0);
-
-
-    if(id === "score"){
-        iniciarNovaAnalise();
-    }
-
 }
 
 
-/* =========================================================
-   ABRIR POR NOME
-========================================================= */
+/* =========================
+   DADOS
+========================= */
 
-function abrirPorNome(id){
+let xp = Number(localStorage.getItem("gottaXP")) || 0;
 
-    const botoes =
-    document.querySelectorAll(".menu button");
+let score = Number(localStorage.getItem("gottaScore")) || 50;
+
+let perfil = JSON.parse(
+    localStorage.getItem("gottaPerfil")
+) || null;
 
 
-    for(let botao of botoes){
+/* =========================
+   PERFIL
+========================= */
 
-        if(
-            botao.innerText
-            .toLowerCase()
-            .includes(id.toLowerCase())
-        ){
+function salvarPerfil() {
 
-            abrirAba(id,botao);
+    const nome = document.getElementById("nome").value;
 
-            return;
-        }
+    const moradia = document.getElementById("moradia").value;
+
+    const pessoas = document.getElementById("pessoas").value;
+
+    if (!nome || !pessoas) {
+
+        alert("Preencha seu nome e quantas pessoas moram com você.");
+
+        return;
     }
 
+    perfil = {
 
-    abrirAba(id,null);
+        nome: nome,
 
-}
+        moradia: moradia,
 
-
-/* =========================================================
-   COMO FUNCIONA
-========================================================= */
-
-function mostrarEtapa(numero){
-
-    const caixa =
-    document.getElementById(
-        "explicacaoEtapa"
-    );
-
-
-    const titulo =
-    document.getElementById(
-        "tituloEtapa"
-    );
-
-
-    const texto =
-    document.getElementById(
-        "textoEtapa"
-    );
-
-
-    const etapas = {
-
-        1:{
-            titulo:
-            "📡 Gotta Pulse — Sensores",
-
-            texto:
-            "A primeira etapa utiliza sensores inteligentes para acompanhar o fluxo e o consumo de água. Em uma versão real da GOTTA, esses sensores poderiam enviar informações automaticamente para a plataforma."
-        },
-
-        2:{
-            titulo:
-            "📊 Gotta Data — Dados",
-
-            texto:
-            "Os dados coletados são organizados pela plataforma. A GOTTA transforma números difíceis de entender em informações simples sobre o comportamento do consumo."
-        },
-
-        3:{
-            titulo:
-            "🧠 Gotta Intelligence — Inteligência",
-
-            texto:
-            "A tecnologia analisa os dados e procura padrões. Com o tempo, o sistema poderia aprender os hábitos de cada ambiente e identificar comportamentos fora do padrão."
-        },
-
-        4:{
-            titulo:
-            "🔎 Gotta Analysis — Análise",
-
-            texto:
-            "Depois de analisar os padrões, a GOTTA procura possíveis desperdícios, como consumo muito acima do normal ou situações que podem indicar vazamentos."
-        },
-
-        5:{
-            titulo:
-            "💧 Gotta Mission — Economia",
-
-            texto:
-            "Por fim, a GOTTA transforma a análise em ações. O usuário recebe recomendações e missões personalizadas para reduzir o desperdício e utilizar a água de maneira mais inteligente."
-        }
+        pessoas: pessoas
 
     };
 
+    localStorage.setItem(
+        "gottaPerfil",
+        JSON.stringify(perfil)
+    );
 
-    titulo.innerText =
-    etapas[numero].titulo;
+    atualizarPerfil();
 
+    alert("Perfil salvo com sucesso! 💧");
 
-    texto.innerText =
-    etapas[numero].texto;
-
-
-    caixa.style.display="block";
-
-
-    caixa.scrollIntoView({
-        behavior:"smooth",
-        block:"center"
-    });
-
+    adicionarXP(50);
 }
 
 
-/* =========================================================
-   NOSSA STARTUP
-========================================================= */
+function atualizarPerfil() {
 
-function mostrarStartup(numero){
+    const info = document.getElementById("perfilInfo");
 
-    const caixa =
-    document.getElementById(
-        "explicacaoStartup"
-    );
+    if (!perfil) {
 
-
-    const titulo =
-    document.getElementById(
-        "tituloStartup"
-    );
-
-
-    const texto =
-    document.getElementById(
-        "textoStartup"
-    );
-
-
-    const temas = {
-
-        1:{
-            titulo:
-            "🎯 O problema",
-
-            texto:
-            "Muitas pessoas e organizações sabem que precisam economizar água, mas não conseguem identificar facilmente onde o desperdício acontece. A GOTTA busca transformar esse problema em informações claras e ações práticas."
-        },
-
-        2:{
-            titulo:
-            "💡 A solução",
-
-            texto:
-            "A GOTTA combina sensores, análise de dados e Inteligência Artificial para entender o comportamento hídrico de um ambiente. Em vez de apenas mostrar números, a plataforma transforma esses dados em recomendações personalizadas."
-        },
-
-        3:{
-            titulo:
-            "👥 Público-alvo",
-
-            texto:
-            "A solução pode ser utilizada por famílias, escolas, condomínios, empresas e outros locais que consomem água. Cada público poderia receber uma versão adaptada da plataforma."
-        },
-
-        4:{
-            titulo:
-            "💰 Como a GOTTA ganha dinheiro",
-
-            texto:
-            "A startup poderia gerar receita com a venda dos dispositivos Gotta Pulse e com assinaturas mensais da plataforma Gotta Intelligence. Empresas, escolas e condomínios poderiam contratar planos maiores com monitoramento de vários ambientes."
-        },
-
-        5:{
-            titulo:
-            "🚀 Nosso diferencial",
-
-            texto:
-            "A GOTTA não quer apenas mostrar quanto de água foi consumido. O diferencial está em transformar os dados em inteligência, recomendações e missões personalizadas, criando um sistema que ajuda o usuário a agir."
-        },
-
-        6:{
-            titulo:
-            "🌎 ODS 6",
-
-            texto:
-            "A principal relação da GOTTA é com a ODS 6 — Água Potável e Saneamento. A startup busca contribuir para o uso mais consciente da água e para a redução do desperdício por meio da tecnologia."
-        }
-
-    };
-
-
-    titulo.innerText =
-    temas[numero].titulo;
-
-
-    texto.innerText =
-    temas[numero].texto;
-
-
-    caixa.style.display="block";
-
-
-    caixa.scrollIntoView({
-        behavior:"smooth",
-        block:"center"
-    });
-
-}
-
-
-/* =========================================================
-   GOTTA AI
-========================================================= */
-
-let etapaChat=0;
-
-let respostasChat={
-
-    local:"",
-    pessoas:0,
-    estado:"",
-    banhos:0,
-    consumo:0,
-    torneiras:"",
-    vaso:"",
-    reuso:""
-
-};
-
-let historicoAnalises=[];
-
-
-function iniciarNovaAnalise(){
-
-    etapaChat=0;
-
-
-    respostasChat={
-
-        local:"",
-        pessoas:0,
-        estado:"",
-        banhos:0,
-        consumo:0,
-        torneiras:"",
-        vaso:"",
-        reuso:""
-
-    };
-
-
-    document
-    .getElementById("chatBody")
-    .innerHTML="";
-
-
-    document
-    .getElementById("chatOpcoes")
-    .innerHTML="";
-
-
-    document
-    .getElementById("chatInputArea")
-    .style.display="none";
-
-
-    document
-    .getElementById("analiseFinal")
-    .style.display="none";
-
-
-    adicionarMensagem(
-        "ai",
-        "Olá! 👋 Eu sou a Gotta AI."
-    );
-
-
-    adicionarMensagem(
-        "ai",
-        "Vou fazer algumas perguntas para entender o perfil hídrico do seu ambiente e criar uma recomendação personalizada."
-    );
-
-
-    adicionarMensagem(
-        "ai",
-        "Vamos começar? Em que tipo de local você está?"
-    );
-
-
-    mostrarOpcoes([
-
-        {
-            texto:"🏠 Casa",
-            valor:"casa"
-        },
-
-        {
-            texto:"🏢 Apartamento",
-            valor:"apartamento"
-        },
-
-        {
-            texto:"🏫 Escola",
-            valor:"escola"
-        },
-
-        {
-            texto:"🏢 Empresa",
-            valor:"empresa"
-        }
-
-    ]);
-
-}
-
-
-function adicionarMensagem(tipo,texto){
-
-    const chat =
-    document.getElementById(
-        "chatBody"
-    );
-
-
-    const mensagem =
-    document.createElement("div");
-
-
-    mensagem.className =
-    "mensagem " + tipo;
-
-
-    const bolha =
-    document.createElement("div");
-
-
-    bolha.className="bolha";
-
-    bolha.innerText=texto;
-
-
-    mensagem.appendChild(bolha);
-
-    chat.appendChild(mensagem);
-
-
-    chat.scrollTop =
-    chat.scrollHeight;
-
-}
-
-
-function mostrarOpcoes(opcoes){
-
-    const area =
-    document.getElementById(
-        "chatOpcoes"
-    );
-
-
-    area.innerHTML="";
-
-
-    document
-    .getElementById("chatInputArea")
-    .style.display="none";
-
-
-    opcoes.forEach(function(opcao){
-
-        const botao =
-        document.createElement("button");
-
-
-        botao.className="chat-opcao";
-
-
-        botao.innerText =
-        opcao.texto;
-
-
-        botao.onclick=function(){
-
-            responderChat(
-                opcao.valor,
-                opcao.texto
-            );
-
-        };
-
-
-        area.appendChild(botao);
-
-    });
-
-}
-
-
-function mostrarCampoTexto(
-    placeholder,
-    tipo
-){
-
-    const area =
-    document.getElementById(
-        "chatInputArea"
-    );
-
-
-    const input =
-    document.getElementById(
-        "chatInput"
-    );
-
-
-    document
-    .getElementById("chatOpcoes")
-    .innerHTML="";
-
-
-    area.style.display="flex";
-
-
-    input.placeholder=placeholder;
-
-    input.value="";
-
-    input.dataset.tipo=tipo;
-
-    input.focus();
-
-}
-
-
-function enviarTexto(){
-
-    const input =
-    document.getElementById(
-        "chatInput"
-    );
-
-
-    const valor =
-    input.value.trim();
-
-
-    const tipo =
-    input.dataset.tipo;
-
-
-    if(!valor){
-        return;
-    }
-
-
-    adicionarMensagem(
-        "usuario",
-        valor
-    );
-
-
-    input.value="";
-
-
-    document
-    .getElementById(
-        "chatInputArea"
-    )
-    .style.display="none";
-
-
-    processarTexto(
-        valor,
-        tipo
-    );
-
-}
-
-
-document
-.getElementById("chatInput")
-.addEventListener(
-    "keydown",
-    function(event){
-
-        if(event.key==="Enter"){
-            enviarTexto();
-        }
-
-    }
-);
-
-
-function responderChat(
-    valor,
-    texto
-){
-
-    adicionarMensagem(
-        "usuario",
-        texto
-    );
-
-
-    if(etapaChat===0){
-
-        respostasChat.local=valor;
-
-        etapaChat=1;
-
-
-        adicionarMensagem(
-            "ai",
-            "Perfeito! 💧 Agora preciso saber quantas pessoas utilizam esse local."
-        );
-
-
-        mostrarCampoTexto(
-            "Ex: 4",
-            "pessoas"
-        );
-
+        info.innerHTML =
+        "Seu perfil ainda não foi configurado.";
 
         return;
     }
 
+    info.innerHTML = `
 
-    if(etapaChat===2){
+    <h3>Olá, ${perfil.nome}! 👋</h3>
 
-        respostasChat.estado=valor;
+    <p><strong>Moradia:</strong> ${perfil.moradia}</p>
 
-        etapaChat=3;
-
-
-        adicionarMensagem(
-            "ai",
-            "Ótimo! 🚿 Quantos banhos aproximadamente são tomados por dia nesse local?"
-        );
-
-
-        mostrarCampoTexto(
-            "Ex: 6",
-            "banhos"
-        );
-
-
-        return;
-    }
-
-
-    if(etapaChat===4){
-
-        respostasChat.torneiras=valor;
-
-        etapaChat=5;
-
-
-        adicionarMensagem(
-            "ai",
-            "Entendi. 🚽 E o vaso sanitário apresenta algum problema ou possibilidade de vazamento?"
-        );
-
-
-        mostrarOpcoes([
-
-            {
-                texto:"🟢 Não",
-                valor:"nao"
-            },
-
-            {
-                texto:"🟡 Talvez",
-                valor:"talvez"
-            },
-
-            {
-                texto:"🔴 Sim",
-                valor:"sim"
-            }
-
-        ]);
-
-
-        return;
-    }
-
-
-    if(etapaChat===5){
-
-        respostasChat.vaso=valor;
-
-        etapaChat=6;
-
-
-        adicionarMensagem(
-            "ai",
-            "Última pergunta! ♻️ Esse local costuma reutilizar água?"
-        );
-
-
-        mostrarOpcoes([
-
-            {
-                texto:"🟢 Sim",
-                valor:"sim"
-            },
-
-            {
-                texto:"🟡 Às vezes",
-                valor:"as vezes"
-            },
-
-            {
-                texto:"🔴 Não",
-                valor:"nao"
-            }
-
-        ]);
-
-
-        return;
-    }
-
-
-    if(etapaChat===6){
-
-        respostasChat.reuso=valor;
-
-        gerarAnalise();
-
-        return;
-    }
-
-}
-
-
-function processarTexto(
-    valor,
-    tipo
-){
-
-    if(tipo==="pessoas"){
-
-        const numero=
-        Number(valor);
-
-
-        if(
-            !numero ||
-            numero<1
-        ){
-
-            adicionarMensagem(
-                "ai",
-                "Preciso de um número válido de pessoas. 😊"
-            );
-
-
-            mostrarCampoTexto(
-                "Ex: 4",
-                "pessoas"
-            );
-
-
-            return;
-        }
-
-
-        respostasChat.pessoas=
-        numero;
-
-
-        etapaChat=2;
-
-
-        adicionarMensagem(
-            "ai",
-            "Obrigado! 📍 Em qual estado esse local está?"
-        );
-
-
-        mostrarOpcoes([
-
-            {
-                texto:"Santa Catarina",
-                valor:"Santa Catarina"
-            },
-
-            {
-                texto:"Paraná",
-                valor:"Paraná"
-            },
-
-            {
-                texto:"Rio Grande do Sul",
-                valor:"Rio Grande do Sul"
-            },
-
-            {
-                texto:"São Paulo",
-                valor:"São Paulo"
-            },
-
-            {
-                texto:"Rio de Janeiro",
-                valor:"Rio de Janeiro"
-            },
-
-            {
-                texto:"Minas Gerais",
-                valor:"Minas Gerais"
-            },
-
-            {
-                texto:"Bahia",
-                valor:"Bahia"
-            },
-
-            {
-                texto:"Outro estado",
-                valor:"Outro"
-            }
-
-        ]);
-
-
-        return;
-    }
-
-
-    if(tipo==="banhos"){
-
-        const numero=
-        Number(valor);
-
-
-        respostasChat.banhos=
-        numero||0;
-
-
-        etapaChat=4;
-
-
-        adicionarMensagem(
-            "ai",
-            "Agora vamos analisar possíveis pontos de desperdício. 🚰 Existem torneiras pingando ou com vazamentos?"
-        );
-
-
-        mostrarOpcoes([
-
-            {
-                texto:"🟢 Não",
-                valor:"nao"
-            },
-
-            {
-                texto:"🟡 Talvez",
-                valor:"talvez"
-            },
-
-            {
-                texto:"🔴 Sim",
-                valor:"sim"
-            }
-
-        ]);
-
-    }
-
-}
-
-
-function gerarAnalise(){
-
-    const consumo =
-    respostasChat.pessoas *
-    150 *
-    30;
-
-
-    let score=100;
-
-
-    if(
-        respostasChat.torneiras==="sim"
-    ){
-        score-=15;
-    }
-
-
-    if(
-        respostasChat.torneiras==="talvez"
-    ){
-        score-=7;
-    }
-
-
-    if(
-        respostasChat.vaso==="sim"
-    ){
-        score-=15;
-    }
-
-
-    if(
-        respostasChat.vaso==="talvez"
-    ){
-        score-=7;
-    }
-
-
-    if(
-        respostasChat.reuso==="sim"
-    ){
-        score+=5;
-    }
-
-
-    if(
-        respostasChat.reuso==="nao"
-    ){
-        score-=5;
-    }
-
-
-    const mediaBanhos =
-    respostasChat.pessoas*1.5;
-
-
-    if(
-        respostasChat.banhos>
-        mediaBanhos
-    ){
-        score-=10;
-    }
-
-
-    score =
-    Math.max(
-        0,
-        Math.min(
-            100,
-            score
-        )
-    );
-
-
-    let classificacao;
-
-
-    if(score>=80){
-
-        classificacao=
-        "🌊 Guardião da Água";
-
-    }else if(score>=60){
-
-        classificacao=
-        "💧 Consumidor Consciente";
-
-    }else if(score>=40){
-
-        classificacao=
-        "🌱 Em Evolução";
-
-    }else{
-
-        classificacao=
-        "⚠️ Alto potencial de economia";
-
-    }
-
-
-    let percentual;
-
-
-    if(score>=80){
-
-        percentual=.08;
-
-    }else if(score>=60){
-
-        percentual=.12;
-
-    }else if(score>=40){
-
-        percentual=.18;
-
-    }else{
-
-        percentual=.25;
-
-    }
-
-
-    const economiaMensal=
-    consumo*percentual;
-
-
-    const economiaAnual=
-    economiaMensal*12;
-
-
-    let recomendacao;
-
-    let missao;
-
-
-    if(
-        respostasChat.torneiras==="sim"
-    ){
-
-        recomendacao=
-        "Comece verificando e corrigindo as torneiras que apresentam vazamentos.";
-
-        missao=
-        "Encontrar e corrigir todos os pontos de vazamento.";
-
-    }else if(
-        respostasChat.vaso==="sim"
-    ){
-
-        recomendacao=
-        "Verifique o vaso sanitário, pois pequenos vazamentos podem passar despercebidos.";
-
-        missao=
-        "Verificar o vaso sanitário e solucionar qualquer vazamento.";
-
-    }else if(
-        respostasChat.reuso==="nao"
-    ){
-
-        recomendacao=
-        "Procure maneiras de reutilizar água em atividades como limpeza e rega de plantas.";
-
-        missao=
-        "Encontrar pelo menos uma forma de reutilizar água nesta semana.";
-
-    }else if(
-        respostasChat.banhos>
-        mediaBanhos
-    ){
-
-        recomendacao=
-        "Uma boa oportunidade é reduzir o tempo dos banhos.";
-
-        missao=
-        "Reduzir o tempo médio dos banhos em 2 minutos.";
-
-    }else{
-
-        recomendacao=
-        "Seu perfil já apresenta bons hábitos. Agora o objetivo é manter a consistência e encontrar novos pontos de melhoria.";
-
-        missao=
-        "Encontrar um novo ponto de economia de água nesta semana.";
-
-    }
-
-
-    const analise =
-    document.getElementById(
-        "analiseFinal"
-    );
-
-
-    analise.style.display="block";
-
-
-    analise.innerHTML=`
-
-    <div class="analise-topo">
-
-        <h3>
-        🧠 Análise concluída
-        </h3>
-
-        <div class="score-grande">
-        ${score}
-        </div>
-
-        <p>
-        ${classificacao}
-        </p>
-
-    </div>
-
-
-    <div class="recomendacoes">
-
-        <div class="recomendacao-card">
-
-            <small>
-            💧 Consumo estimado
-            </small>
-
-            <strong>
-            ${consumo.toLocaleString("pt-BR")} L/mês
-            </strong>
-
-        </div>
-
-
-        <div class="recomendacao-card">
-
-            <small>
-            ♻️ Economia potencial
-            </small>
-
-            <strong>
-            ${economiaMensal.toLocaleString("pt-BR")} L/mês
-            </strong>
-
-        </div>
-
-
-        <div class="recomendacao-card">
-
-            <small>
-            🌎 Economia anual
-            </small>
-
-            <strong>
-            ${economiaAnual.toLocaleString("pt-BR")} L/ano
-            </strong>
-
-        </div>
-
-
-        <div class="recomendacao-card">
-
-            <small>
-            📍 Perfil
-            </small>
-
-            <strong>
-            ${respostasChat.local}
-            </strong>
-
-        </div>
-
-    </div>
-
-
-    <div class="missao-final">
-
-        <h4>
-        🎯 Recomendação da Gotta AI
-        </h4>
-
-        <p>
-        ${recomendacao}
-        </p>
-
-
-        <br>
-
-
-        <h4>
-        🚀 Sua Gotta Mission
-        </h4>
-
-        <p>
-        ${missao}
-        </p>
-
-    </div>
-
-
-    <div class="botoes-final">
-
-        <button
-        class="botao-final botao-nova"
-        onclick="iniciarNovaAnalise()">
-
-        🔄 Nova análise
-
-        </button>
-
-
-        <button
-        class="botao-final botao-reinicio"
-        onclick="limparHistorico()">
-
-        🗑️ Limpar histórico
-
-        </button>
-
-    </div>
-
-
-    <p
-    style="
-    color:#708d96;
-    font-size:13px;
-    margin-top:20px;
-    line-height:1.5;
-    ">
-
-    *Os valores mostrados são estimativas
-    do protótipo escolar.
-
-    </p>
-
-    `;
-
-
-    historicoAnalises.push({
-
-        score:score,
-
-        classificacao:classificacao,
-
-        data:
-        new Date().toLocaleTimeString(
-            "pt-BR",
-            {
-                hour:"2-digit",
-                minute:"2-digit"
-            }
-        )
-
-    });
-
-
-    atualizarHistorico();
-
-
-    adicionarMensagem(
-        "ai",
-        "Analisei suas respostas. 🔎"
-    );
-
-
-    adicionarMensagem(
-        "ai",
-        "Seu GOTTA Score foi "
-        +score+
-        "/100. Preparei uma recomendação personalizada para você abaixo. 💧"
-    );
-
-
-    analise.scrollIntoView({
-        behavior:"smooth",
-        block:"start"
-    });
-
-}
-
-
-function atualizarHistorico(){
-
-    const lista =
-    document.getElementById(
-        "historicoLista"
-    );
-
-
-    if(
-        historicoAnalises.length===0
-    ){
-
-        lista.innerHTML=
-        `
-        <p style="color:#8aaab5;">
-        Nenhuma análise realizada ainda.
-        </p>
-        `;
-
-        return;
-    }
-
-
-    lista.innerHTML=
-    historicoAnalises
-    .map(function(item,index){
-
-        return `
-
-        <div class="historico-item">
-
-            <div>
-
-                <strong>
-                Análise #${index+1}
-                </strong>
-
-                <br>
-
-                <span
-                style="
-                color:#8aaab5;
-                font-size:13px;
-                ">
-
-                ${item.classificacao}
-
-                </span>
-
-            </div>
-
-
-            <div>
-
-                <strong>
-                ${item.score}/100
-                </strong>
-
-                <br>
-
-                <span
-                style="
-                color:#8aaab5;
-                font-size:12px;
-                ">
-
-                ${item.data}
-
-                </span>
-
-            </div>
-
-        </div>
-
-        `;
-
-    })
-    .join("");
-
-}
-
-
-function limparHistorico(){
-
-    historicoAnalises=[];
-
-    atualizarHistorico();
-
-    iniciarNovaAnalise();
-
-}
-
-
-/* =========================================================
-   SIMULADOR
-========================================================= */
-
-function calcularSimulador(){
-
-    const pessoas=
-    Number(
-        document.getElementById(
-            "simPessoas"
-        ).value
-    );
-
-
-    const litros=
-    Number(
-        document.getElementById(
-            "simLitros"
-        ).value
-    );
-
-
-    const reducao=
-    Number(
-        document.getElementById(
-            "simReducao"
-        ).value
-    );
-
-
-    if(
-        !pessoas ||
-        pessoas<1
-    ){
-
-        alert(
-            "Digite a quantidade de pessoas."
-        );
-
-        return;
-    }
-
-
-    const consumo=
-    pessoas*litros*30;
-
-
-    const economia=
-    consumo*reducao;
-
-
-    const anual=
-    economia*12;
-
-
-    document
-    .getElementById(
-        "resultadoSimulador"
-    )
-    .style.display="block";
-
-
-    document
-    .getElementById(
-        "consumoSim"
-    )
-    .innerText=
-    consumo.toLocaleString("pt-BR")
-    +" L/mês";
-
-
-    document
-    .getElementById(
-        "economiaSim"
-    )
-    .innerText=
-    economia.toLocaleString("pt-BR")
-    +" L/mês";
-
-
-    document
-    .getElementById(
-        "anoSim"
-    )
-    .innerText=
-    anual.toLocaleString("pt-BR")
-    +" L/ano";
-
-}
-
-
-/* =========================================================
-   LOJA / CARRINHO
-========================================================= */
-
-let carrinho=[];
-
-
-function adicionarCarrinho(
-    nome,
-    preco,
-    tipo
-){
-
-    const existente =
-    carrinho.find(
-        item =>
-        item.nome===nome
-    );
-
-
-    if(existente){
-
-        existente.quantidade++;
-
-    }else{
-
-        carrinho.push({
-
-            nome:nome,
-
-            preco:preco,
-
-            tipo:tipo,
-
-            quantidade:1
-
-        });
-
-    }
-
-
-    atualizarCarrinho();
-
-
-    abrirCarrinho();
-
-}
-
-
-function atualizarCarrinho(){
-
-    const lista =
-    document.getElementById(
-        "carrinhoLista"
-    );
-
-
-    const contador =
-    document.getElementById(
-        "contadorCarrinho"
-    );
-
-
-    const totalElemento =
-    document.getElementById(
-        "carrinhoTotal"
-    );
-
-
-    let quantidadeTotal=0;
-
-    let total=0;
-
-
-    carrinho.forEach(function(item){
-
-        quantidadeTotal+=
-        item.quantidade;
-
-        total+=
-        item.preco*
-        item.quantidade;
-
-    });
-
-
-    contador.innerText=
-    quantidadeTotal;
-
-
-    totalElemento.innerText=
-    formatarMoeda(total);
-
-
-    if(carrinho.length===0){
-
-        lista.innerHTML=
-        `
-        <div class="vazio">
-
-        🛒 Seu carrinho está vazio.
-
-        </div>
-        `;
-
-        return;
-    }
-
-
-    lista.innerHTML=
-    carrinho
-    .map(function(item,index){
-
-        return `
-
-        <div class="carrinho-item">
-
-            <div class="carrinho-item-info">
-
-                <strong>
-                ${item.nome}
-                </strong>
-
-                <br>
-
-                <span
-                style="
-                color:#8aaab5;
-                font-size:13px;
-                ">
-
-                ${item.preco===0
-                    ? "Grátis"
-                    : formatarMoeda(item.preco)
-                }
-
-                ${item.tipo==="plano"
-                    && item.preco>0
-                    ? "/mês"
-                    : ""
-                }
-
-                </span>
-
-            </div>
-
-
-            <div class="quantidade">
-
-                <button
-                class="qtd-btn"
-                onclick="alterarQuantidade(${index},-1)">
-
-                −
-
-                </button>
-
-
-                <strong>
-                ${item.quantidade}
-                </strong>
-
-
-                <button
-                class="qtd-btn"
-                onclick="alterarQuantidade(${index},1)">
-
-                +
-
-                </button>
-
-            </div>
-
-        </div>
-
-        `;
-
-    })
-    .join("");
-
-}
-
-
-function alterarQuantidade(
-    index,
-    mudanca
-){
-
-    carrinho[index].quantidade +=
-    mudanca;
-
-
-    if(
-        carrinho[index].quantidade<=0
-    ){
-
-        carrinho.splice(index,1);
-
-    }
-
-
-    atualizarCarrinho();
-
-}
-
-
-function formatarMoeda(valor){
-
-    return valor.toLocaleString(
-        "pt-BR",
-        {
-            style:"currency",
-            currency:"BRL"
-        }
-    );
-
-}
-
-
-function abrirCarrinho(){
-
-    document
-    .getElementById("carrinho")
-    .classList.add("active");
-
-    atualizarCarrinho();
-
-}
-
-
-function fecharCarrinho(){
-
-    document
-    .getElementById("carrinho")
-    .classList.remove("active");
-
-}
-
-
-function abrirCheckout(){
-
-    if(carrinho.length===0){
-
-        alert(
-            "Seu carrinho está vazio."
-        );
-
-        return;
-    }
-
-
-    document
-    .getElementById(
-        "checkoutArea"
-    )
-    .classList.add("active");
-
-}
-
-
-function finalizarCompra(){
-
-    const nome =
-    document
-    .getElementById(
-        "nomeCheckout"
-    )
-    .value
-    .trim();
-
-
-    const email =
-    document
-    .getElementById(
-        "emailCheckout"
-    )
-    .value
-    .trim();
-
-
-    const resultado =
-    document
-    .getElementById(
-        "checkoutResultado"
-    );
-
-
-    if(!nome || !email){
-
-        resultado.innerHTML=
-        "⚠️ Preencha nome e e-mail para continuar.";
-
-        return;
-    }
-
-
-    let total=0;
-
-
-    carrinho.forEach(function(item){
-
-        total+=
-        item.preco*
-        item.quantidade;
-
-    });
-
-
-    resultado.innerHTML=
-    `
-    ✅ Pedido demonstrativo registrado!
-
-    <br><br>
-
-    Obrigado, ${nome}.
+    <p><strong>Pessoas na residência:</strong> ${perfil.pessoas}</p>
 
     <br>
 
-    Total simulado:
-    <strong>
-    ${formatarMoeda(total)}
-    </strong>
+    <p>
+    Seu perfil está pronto para receber recomendações
+    personalizadas da GOTTA AI.
+    </p>
+
+    `;
+}
+
+
+/* =========================
+   GOTTA AI
+========================= */
+
+let etapa = 1;
+
+let respostas = {};
+
+
+function answer(resposta) {
+
+    respostas["etapa" + etapa] = resposta;
+
+    const chat = document.getElementById("chat");
+
+    const userMessage = document.createElement("div");
+
+    userMessage.className = "message user";
+
+    userMessage.innerText = resposta;
+
+    chat.appendChild(userMessage);
+
+    etapa++;
+
+    proximaPergunta();
+
+}
+
+
+function proximaPergunta() {
+
+    const chat = document.getElementById("chat");
+
+    let pergunta = "";
+
+    let botoes = "";
+
+    if (etapa === 2) {
+
+        pergunta =
+        "Você possui jardim ou plantas que precisam de água? 🌱";
+
+        botoes = `
+
+        <button onclick="answer('Sim')">Sim</button>
+
+        <button onclick="answer('Não')">Não</button>
+
+        `;
+
+    }
+
+    else if (etapa === 3) {
+
+        pergunta =
+        "Você costuma tomar banhos com mais de 10 minutos? 🚿";
+
+        botoes = `
+
+        <button onclick="answer('Sim')">Sim</button>
+
+        <button onclick="answer('Não')">Não</button>
+
+        `;
+
+    }
+
+    else if (etapa === 4) {
+
+        pergunta =
+        "Você costuma deixar a torneira aberta enquanto escova os dentes? 🪥";
+
+        botoes = `
+
+        <button onclick="answer('Sim')">Sim</button>
+
+        <button onclick="answer('Não')">Não</button>
+
+        `;
+
+    }
+
+    else if (etapa === 5) {
+
+        pergunta =
+        "Você já verificou se existem vazamentos na sua casa? 🔎";
+
+        botoes = `
+
+        <button onclick="answer('Sim')">Sim</button>
+
+        <button onclick="answer('Não')">Não</button>
+
+        <button onclick="answer('Não sei')">Não sei</button>
+
+        `;
+
+    }
+
+    else {
+
+        finalizarIA();
+
+        return;
+
+    }
+
+
+    const aiMessage = document.createElement("div");
+
+    aiMessage.className = "message ai";
+
+    aiMessage.innerText = pergunta;
+
+    chat.appendChild(aiMessage);
+
+
+    const options = document.createElement("div");
+
+    options.className = "option-buttons";
+
+    options.innerHTML = botoes;
+
+    chat.appendChild(options);
+
+}
+
+
+function finalizarIA() {
+
+    let pontos = 50;
+
+    let recomendacoes = [];
+
+    if (respostas.etapa2 === "Sim") {
+
+        recomendacoes.push(
+            "🌱 Use horários estratégicos para regar suas plantas e evite horários de muito sol."
+        );
+
+        pontos -= 5;
+
+    }
+
+    if (respostas.etapa3 === "Sim") {
+
+        recomendacoes.push(
+            "🚿 Tente reduzir o tempo de banho para aproximadamente 5 minutos."
+        );
+
+        pontos -= 15;
+
+    }
+
+    if (respostas.etapa4 === "Sim") {
+
+        recomendacoes.push(
+            "🪥 Feche a torneira enquanto escova os dentes."
+        );
+
+        pontos -= 10;
+
+    }
+
+    if (
+        respostas.etapa5 === "Não" ||
+        respostas.etapa5 === "Não sei"
+    ) {
+
+        recomendacoes.push(
+            "🚨 Faça uma verificação de possíveis vazamentos."
+        );
+
+        pontos -= 10;
+
+    }
+
+    score = Math.max(0, Math.min(100, pontos));
+
+    localStorage.setItem(
+        "gottaScore",
+        score
+    );
+
+
+    const chat = document.getElementById("chat");
+
+    const result = document.createElement("div");
+
+    result.className = "message ai";
+
+    result.innerHTML = `
+
+    <strong>💧 Análise concluída!</strong>
 
     <br><br>
 
-    📧 E-mail:
-    ${email}
+    Seu Score GOTTA estimado é:
+
+    <strong>${score}/100</strong>
 
     <br><br>
 
-    <small
-    style="color:#8aaab5;">
+    <strong>Recomendações:</strong>
 
-    Nenhum pagamento foi realizado.
-    Esta é uma simulação para o projeto escolar.
+    <br>
 
-    </small>
+    ${recomendacoes.length
+        ? recomendacoes.map(x => "• " + x).join("<br>")
+        : "• Parabéns! Seus hábitos parecem muito positivos."
+    }
+
+    <br><br>
+
+    <button class="primary" onclick="novaAnalise()">
+    🔄 Fazer nova análise
+    </button>
+
+    `;
+
+    chat.appendChild(result);
+
+    adicionarXP(200);
+
+    atualizarScore();
+
+    document.getElementById("badge1")
+        .classList.remove("locked");
+
+}
+
+
+/* =========================
+   NOVA ANÁLISE
+========================= */
+
+function novaAnalise() {
+
+    etapa = 1;
+
+    respostas = {};
+
+    const chat = document.getElementById("chat");
+
+    chat.innerHTML = `
+
+    <div class="message ai">
+
+    🔄 Tudo pronto!
+
+    Vamos fazer uma nova análise.
+
+    </div>
+
+    <div class="message ai">
+
+    Primeiro: onde você mora?
+
+    </div>
+
+    <div class="option-buttons">
+
+    <button onclick="answer('Casa')">
+    🏠 Casa
+    </button>
+
+    <button onclick="answer('Apartamento')">
+    🏢 Apartamento
+    </button>
+
+    </div>
+
     `;
 
 }
 
 
-document
-.getElementById("carrinho")
-.addEventListener(
-    "click",
-    function(event){
+/* =========================
+   SCORE
+========================= */
 
-        if(
-            event.target===this
-        ){
+function atualizarScore() {
 
-            fecharCarrinho();
+    document.getElementById("scoreValue")
+        .innerText = score;
 
-        }
+    document.getElementById("scoreBar")
+        .style.width = score + "%";
+
+
+    let texto = "";
+
+    if (score >= 80) {
+
+        texto = "🌟 Excelente! Você está cuidando muito bem da água.";
 
     }
-);
+
+    else if (score >= 60) {
+
+        texto = "👍 Muito bom! Existem alguns pontos que podem melhorar.";
+
+    }
+
+    else if (score >= 40) {
+
+        texto = "💧 Você pode melhorar seus hábitos de consumo.";
+
+    }
+
+    else {
+
+        texto = "🚨 A GOTTA encontrou vários pontos para melhorar.";
+
+    }
+
+    document.getElementById("scoreText")
+        .innerText = texto;
 
 
-/* =========================================================
+    document.getElementById("scoreExplanation")
+        .innerText =
+        "Seu Score é uma estimativa educativa baseada nas respostas da GOTTA AI.";
+
+}
+
+
+/* =========================
+   XP
+========================= */
+
+function adicionarXP(valor) {
+
+    xp += valor;
+
+    localStorage.setItem(
+        "gottaXP",
+        xp
+    );
+
+    atualizarXP();
+
+}
+
+
+function atualizarXP() {
+
+    document.getElementById("xp")
+        .innerText = xp;
+
+
+    let progresso =
+        Math.min((xp / 1000) * 100, 100);
+
+    document.getElementById("xpBar")
+        .style.width = progresso + "%";
+
+
+    if (xp >= 300) {
+
+        document.getElementById("badge2")
+            .classList.remove("locked");
+
+    }
+
+
+    if (xp >= 1000) {
+
+        document.getElementById("badge4")
+            .classList.remove("locked");
+
+    }
+
+}
+
+
+/* =========================
+   GOTTA LEAK
+========================= */
+
+function analisarLeak() {
+
+    const hidrometro =
+        document.getElementById("hidrometro").value;
+
+    const conta =
+        document.getElementById("conta").value;
+
+    const cano =
+        document.getElementById("cano").value;
+
+
+    let risco = 0;
+
+
+    if (hidrometro === "sim")
+        risco += 40;
+
+    if (hidrometro === "naosei")
+        risco += 15;
+
+
+    if (conta === "sim")
+        risco += 30;
+
+    if (conta === "naosei")
+        risco += 10;
+
+
+    if (cano === "sim")
+        risco += 30;
+
+    if (cano === "naosei")
+        risco += 10;
+
+
+    const result =
+        document.getElementById("leakResult");
+
+
+    result.style.display = "block";
+
+
+    if (risco >= 70) {
+
+        result.className =
+            "result danger";
+
+        result.innerHTML = `
+
+        <h2>🚨 POSSÍVEL VAZAMENTO</h2>
+
+        <p>
+
+        Os dados fornecidos apresentam
+        vários sinais que podem indicar
+        um possível vazamento.
+
+        </p>
+
+        <br>
+
+        <strong>
+        Índice de risco estimado: ${risco}%
+        </strong>
+
+        <br><br>
+
+        Recomendamos verificar torneiras,
+        tubulações, vasos sanitários e hidrômetro.
+
+        `;
+
+        adicionarXP(150);
+
+        document.getElementById("badge3")
+            .classList.remove("locked");
+
+    }
+
+    else if (risco >= 35) {
+
+        result.className =
+            "result warning";
+
+        result.innerHTML = `
+
+        <h2>⚠️ ATENÇÃO</h2>
+
+        <p>
+
+        Existem alguns sinais que merecem
+        ser investigados.
+
+        </p>
+
+        <br>
+
+        <strong>
+        Índice de risco estimado: ${risco}%
+        </strong>
+
+        <br><br>
+
+        Faça uma verificação preventiva.
+
+        `;
+
+        adicionarXP(100);
+
+        document.getElementById("badge3")
+            .classList.remove("locked");
+
+    }
+
+    else {
+
+        result.className =
+            "result safe";
+
+        result.innerHTML = `
+
+        <h2>✅ NENHUM SINAL FORTE DETECTADO</h2>
+
+        <p>
+
+        Com base nas informações fornecidas,
+        não encontramos sinais fortes de vazamento.
+
+        </p>
+
+        <br>
+
+        <strong>
+        Índice de risco estimado: ${risco}%
+        </strong>
+
+        <br><br>
+
+        Continue realizando verificações preventivas.
+
+        `;
+
+        adicionarXP(100);
+
+    }
+
+}
+
+
+/* =========================
    INICIALIZAÇÃO
-========================================================= */
+========================= */
 
-window.addEventListener(
-    "load",
-    function(){
+window.onload = function() {
 
-        iniciarNovaAnalise();
+    atualizarPerfil();
 
-    }
-);
+    atualizarScore();
+
+    atualizarXP();
+
+};
 
 </script>
 
 </body>
-
 </html>
