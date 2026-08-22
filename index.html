@@ -11,1004 +11,1101 @@
 
 <style>
 
-/* =================================================
-   CONFIGURAÇÕES GERAIS
-================================================= */
+/* =========================================================
+   CONFIGURAÇÕES
+========================================================= */
 
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-html{
-    scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
 }
 
-body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#06151d;
-    color:white;
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #06151d;
+    color: white;
 }
 
 
-/* =================================================
+/* =========================================================
    MENU
-================================================= */
+========================================================= */
 
-header{
-    position:sticky;
-    top:0;
-    z-index:1000;
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-    padding:18px 7%;
+    padding: 18px 7%;
 
-    background:rgba(6,21,29,.97);
+    background: rgba(6, 21, 29, 0.97);
 
-    border-bottom:1px solid #17485b;
+    border-bottom: 1px solid #17485b;
 }
 
-.logo{
-    font-size:30px;
-    font-weight:900;
-    letter-spacing:4px;
-    color:#4de1ff;
+.logo {
+    font-size: 30px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    color: #4de1ff;
 }
 
-.logo span{
-    color:white;
+.logo span {
+    color: white;
 }
 
-.menu{
-    display:flex;
-    gap:8px;
-    flex-wrap:wrap;
+.menu {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
 }
 
-.menu button{
-    background:transparent;
-    border:0;
+.menu button {
+    background: transparent;
+    border: 0;
 
-    color:#b9d0d7;
+    color: #b9d0d7;
 
-    padding:10px 13px;
+    padding: 10px 13px;
 
-    cursor:pointer;
+    cursor: pointer;
 
-    border-radius:8px;
+    border-radius: 8px;
 
-    font-size:14px;
+    font-size: 14px;
 
-    transition:.3s;
+    transition: 0.3s;
 }
 
-.menu button:hover{
-    background:#103746;
-    color:#4de1ff;
-}
-
-.menu button.active{
-    background:#103746;
-    color:#4de1ff;
+.menu button:hover,
+.menu button.active {
+    background: #103746;
+    color: #4de1ff;
 }
 
 
-/* =================================================
-   SISTEMA DE ABAS
-================================================= */
+/* =========================================================
+   ABAS
+========================================================= */
 
-.aba{
-    display:none;
-    min-height:calc(100vh - 80px);
+.aba {
+    display: none;
+    min-height: calc(100vh - 80px);
 }
 
-.aba.active{
-    display:block;
+.aba.active {
+    display: block;
 }
 
 
-/* =================================================
+/* =========================================================
    INÍCIO
-================================================= */
+========================================================= */
 
-.inicio{
-    min-height:calc(100vh - 80px);
+.inicio {
+    min-height: calc(100vh - 80px);
 
-    display:flex;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-    align-items:center;
-    justify-content:space-between;
+    padding: 70px 8%;
 
-    padding:70px 8%;
-
-    gap:50px;
-
-    background:
-    radial-gradient(
-        circle at 80% 50%,
-        rgba(77,225,255,.16),
-        transparent 35%
-    );
-}
-
-.inicio-texto{
-    max-width:650px;
-}
-
-.tag{
-    display:inline-block;
-
-    padding:8px 15px;
-
-    border:1px solid #20566a;
-
-    border-radius:30px;
-
-    color:#4de1ff;
-
-    font-size:13px;
-
-    margin-bottom:25px;
-}
-
-h1{
-    font-size:clamp(50px,7vw,85px);
-
-    line-height:1;
-
-    margin-bottom:25px;
-}
-
-h1 span{
-    color:#4de1ff;
-}
-
-.inicio p{
-    color:#a9c4cd;
-
-    font-size:19px;
-
-    line-height:1.7;
-
-    margin-bottom:35px;
-}
-
-.botao{
-    display:inline-block;
-
-    padding:16px 28px;
-
-    border:0;
-
-    border-radius:30px;
-
-    background:#4de1ff;
-
-    color:#06151d;
-
-    font-weight:bold;
-
-    cursor:pointer;
-
-    transition:.3s;
-}
-
-.botao:hover{
-    transform:translateY(-3px);
-
-    box-shadow:
-    0 10px 30px rgba(77,225,255,.18);
-}
-
-.gota{
-    width:280px;
-    height:280px;
-
-    border-radius:50%;
-
-    display:flex;
-
-    justify-content:center;
-    align-items:center;
+    gap: 50px;
 
     background:
-    radial-gradient(
-        circle at 35% 30%,
-        #b5f5ff,
-        #4de1ff 30%,
-        #14799a 65%,
-        #073848
-    );
+        radial-gradient(
+            circle at 80% 50%,
+            rgba(77, 225, 255, 0.16),
+            transparent 35%
+        );
+}
+
+.inicio-texto {
+    max-width: 650px;
+}
+
+.tag {
+    display: inline-block;
+
+    padding: 8px 15px;
+
+    border: 1px solid #20566a;
+
+    border-radius: 30px;
+
+    color: #4de1ff;
+
+    font-size: 13px;
+
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-size: clamp(50px, 7vw, 85px);
+
+    line-height: 1;
+
+    margin-bottom: 25px;
+}
+
+h1 span {
+    color: #4de1ff;
+}
+
+.inicio p {
+    color: #a9c4cd;
+
+    font-size: 19px;
+
+    line-height: 1.7;
+
+    margin-bottom: 35px;
+}
+
+.botao {
+    display: inline-block;
+
+    padding: 16px 28px;
+
+    border: 0;
+
+    border-radius: 30px;
+
+    background: #4de1ff;
+
+    color: #06151d;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.botao:hover {
+    transform: translateY(-3px);
 
     box-shadow:
-    0 0 70px rgba(77,225,255,.25),
-
-    inset -25px -25px 50px
-    rgba(0,0,0,.25);
-
-    animation:
-    flutuar 4s infinite ease-in-out;
+        0 10px 30px rgba(77, 225, 255, 0.18);
 }
 
-.gota span{
-    font-size:90px;
+.gota {
+    width: 280px;
+    height: 280px;
 
-    font-weight:900;
+    border-radius: 50%;
 
-    color:rgba(255,255,255,.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #b5f5ff,
+            #4de1ff 30%,
+            #14799a 65%,
+            #073848
+        );
+
+    box-shadow:
+        0 0 70px rgba(77, 225, 255, 0.25),
+        inset -25px -25px 50px rgba(0, 0, 0, 0.25);
+
+    animation: flutuar 4s infinite ease-in-out;
 }
 
-@keyframes flutuar{
+.gota span {
+    font-size: 90px;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.85);
+}
 
-    0%,100%{
-        transform:translateY(0);
+@keyframes flutuar {
+
+    0%, 100% {
+        transform: translateY(0);
     }
 
-    50%{
-        transform:translateY(-18px);
+    50% {
+        transform: translateY(-18px);
     }
-
 }
 
 
-/* =================================================
-   CONTEÚDO GERAL
-================================================= */
+/* =========================================================
+   CONTEÚDO
+========================================================= */
 
-.conteudo{
-    max-width:1100px;
-
-    margin:auto;
-
-    padding:70px 25px;
+.conteudo {
+    max-width: 1100px;
+    margin: auto;
+    padding: 70px 25px;
 }
 
-.titulo{
-    text-align:center;
+.titulo {
+    text-align: center;
 
-    font-size:45px;
+    font-size: 45px;
 
-    margin-bottom:15px;
+    margin-bottom: 15px;
 }
 
-.subtitulo{
-    text-align:center;
+.subtitulo {
+    text-align: center;
 
-    max-width:700px;
+    max-width: 700px;
 
-    margin:0 auto 50px;
+    margin: 0 auto 50px;
 
-    color:#a9c4cd;
+    color: #a9c4cd;
 
-    line-height:1.7;
+    line-height: 1.7;
 }
 
 
-/* =================================================
+/* =========================================================
    COMO FUNCIONA
-================================================= */
+========================================================= */
 
-.fluxo{
-    display:grid;
+.fluxo {
+    display: grid;
 
     grid-template-columns:
-    repeat(5,1fr);
+        repeat(5, 1fr);
 
-    gap:15px;
+    gap: 15px;
 }
 
-.etapa{
+.etapa {
+    width: 100%;
 
-    width:100%;
+    background: #0d2d3b;
 
-    background:#0d2d3b;
+    color: white;
 
-    color:white;
+    padding: 25px 15px;
 
-    padding:25px 15px;
+    border-radius: 18px;
 
-    border-radius:18px;
+    text-align: center;
 
-    text-align:center;
+    border: 1px solid #17485b;
 
-    border:1px solid #17485b;
+    transition: 0.3s;
 
-    transition:.3s;
-
-    cursor:pointer;
+    cursor: pointer;
 }
 
-.etapa:hover{
+.etapa:hover {
+    transform: translateY(-8px);
 
-    transform:translateY(-8px);
-
-    border-color:#4de1ff;
+    border-color: #4de1ff;
 
     box-shadow:
-    0 10px 30px
-    rgba(77,225,255,.12);
+        0 10px 30px
+        rgba(77, 225, 255, 0.12);
 }
 
-.etapa:active{
-    transform:scale(.97);
+.etapa .emoji {
+    font-size: 40px;
+
+    margin-bottom: 15px;
 }
 
-.etapa .emoji{
+.etapa h3 {
+    color: #4de1ff;
 
-    font-size:40px;
-
-    margin-bottom:15px;
+    margin-bottom: 10px;
 }
 
-.etapa h3{
+.etapa p {
+    color: #9bb8c0;
 
-    color:#4de1ff;
+    line-height: 1.5;
 
-    margin-bottom:10px;
+    font-size: 14px;
 }
 
-.etapa p{
+.explicacao-etapa {
+    max-width: 900px;
 
-    color:#9bb8c0;
+    margin: 35px auto 0;
 
-    line-height:1.5;
+    padding: 30px;
 
-    font-size:14px;
+    background: #071a23;
+
+    border: 1px solid #4de1ff;
+
+    border-radius: 20px;
+
+    display: none;
+
+    animation: aparecer 0.4s ease;
 }
 
-.explicacao-etapa{
+.explicacao-etapa h3 {
+    color: #4de1ff;
 
-    max-width:900px;
+    font-size: 26px;
 
-    margin:35px auto 0;
-
-    padding:30px;
-
-    background:#071a23;
-
-    border:1px solid #4de1ff;
-
-    border-radius:20px;
-
-    display:none;
-
-    animation:aparecer .4s ease;
+    margin-bottom: 12px;
 }
 
-.explicacao-etapa h3{
+.explicacao-etapa p {
+    color: #b9d0d7;
 
-    color:#4de1ff;
+    line-height: 1.7;
 
-    font-size:26px;
-
-    margin-bottom:12px;
+    font-size: 17px;
 }
 
-.explicacao-etapa p{
+@keyframes aparecer {
 
-    color:#b9d0d7;
-
-    line-height:1.7;
-
-    font-size:17px;
-}
-
-@keyframes aparecer{
-
-    from{
-        opacity:0;
+    from {
+        opacity: 0;
 
         transform:
-        translateY(10px);
+            translateY(10px);
     }
 
-    to{
-        opacity:1;
+    to {
+        opacity: 1;
 
         transform:
-        translateY(0);
+            translateY(0);
     }
-
 }
 
 
-/* =================================================
+/* =========================================================
    CARDS
-================================================= */
+========================================================= */
 
-.cards{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
-    gap:20px;
-}
-
-.card{
-
-    background:#0d2d3b;
-
-    padding:30px;
-
-    border-radius:20px;
-
-    border:1px solid #17485b;
-
-    transition:.3s;
-}
-
-.card:hover{
-
-    transform:translateY(-5px);
-
-    border-color:#4de1ff;
-}
-
-.card h3{
-
-    color:#4de1ff;
-
-    margin-bottom:12px;
-}
-
-.card p{
-
-    color:#a9c4cd;
-
-    line-height:1.6;
-}
-
-
-/* =================================================
-   QUESTIONÁRIO
-================================================= */
-
-.questionario{
-
-    max-width:800px;
-
-    margin:auto;
-
-    background:#071a23;
-
-    border:1px solid #17485b;
-
-    border-radius:22px;
-
-    padding:35px;
-}
-
-.progresso{
-
-    color:#8aaab5;
-
-    margin-bottom:10px;
-}
-
-.barra{
-
-    width:100%;
-
-    height:8px;
-
-    background:#163b49;
-
-    border-radius:20px;
-
-    overflow:hidden;
-
-    margin-bottom:30px;
-}
-
-.barra div{
-
-    height:100%;
-
-    width:12.5%;
-
-    background:#4de1ff;
-
-    transition:.3s;
-}
-
-.pergunta{
-
-    font-size:27px;
-
-    margin-bottom:25px;
-}
-
-.opcoes{
-
-    display:grid;
+.cards {
+    display: grid;
 
     grid-template-columns:
-    1fr 1fr;
+        repeat(3, 1fr);
 
-    gap:15px;
+    gap: 20px;
 }
 
-.opcao{
+.card {
+    background: #0d2d3b;
 
-    padding:18px;
+    padding: 30px;
 
-    background:#0d2d3b;
+    border-radius: 20px;
 
-    color:white;
+    border: 1px solid #17485b;
 
-    border:1px solid #20566a;
-
-    border-radius:12px;
-
-    cursor:pointer;
-
-    text-align:left;
-
-    font-size:16px;
-
-    transition:.3s;
+    transition: 0.3s;
 }
 
-.opcao:hover{
+.card:hover {
+    transform: translateY(-5px);
 
-    border-color:#4de1ff;
+    border-color: #4de1ff;
+}
 
-    transform:translateY(-2px);
+.card h3 {
+    color: #4de1ff;
+
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: #a9c4cd;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   CHAT DA GOTTA AI
+========================================================= */
+
+.chat-container {
+    max-width: 850px;
+
+    margin: auto;
+
+    background: #071a23;
+
+    border: 1px solid #17485b;
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.chat-header {
+    padding: 20px 25px;
+
+    background: #0d2d3b;
+
+    border-bottom: 1px solid #17485b;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+.ai-avatar {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #4de1ff;
+
+    color: #06151d;
+
+    font-size: 22px;
+
+    font-weight: bold;
+}
+
+.ai-title strong {
+    display: block;
+
+    font-size: 17px;
+}
+
+.ai-status {
+    color: #4dff9a;
+
+    font-size: 12px;
+}
+
+.chat-body {
+    min-height: 520px;
+
+    max-height: 650px;
+
+    overflow-y: auto;
+
+    padding: 25px;
+}
+
+.mensagem {
+    display: flex;
+
+    margin-bottom: 18px;
+
+    animation: mensagemEntrar 0.3s ease;
+}
+
+.mensagem.ai {
+    justify-content: flex-start;
+}
+
+.mensagem.usuario {
+    justify-content: flex-end;
+}
+
+.bolha {
+    max-width: 75%;
+
+    padding: 14px 17px;
+
+    border-radius: 18px;
+
+    line-height: 1.5;
+
+    font-size: 15px;
+}
+
+.mensagem.ai .bolha {
+    background: #0d2d3b;
+
+    color: #d9edf2;
+
+    border-bottom-left-radius: 5px;
+}
+
+.mensagem.usuario .bolha {
+    background: #4de1ff;
+
+    color: #06151d;
+
+    border-bottom-right-radius: 5px;
+}
+
+@keyframes mensagemEntrar {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+.chat-opcoes {
+    padding: 0 25px 25px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 12px;
+}
+
+.chat-opcao {
+    background: #0d2d3b;
+
+    color: white;
+
+    border: 1px solid #20566a;
+
+    border-radius: 12px;
+
+    padding: 15px;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    font-size: 15px;
+
+    transition: 0.3s;
+}
+
+.chat-opcao:hover {
+    border-color: #4de1ff;
+
+    transform: translateY(-2px);
+}
+
+.chat-input-area {
+    padding: 0 25px 25px;
+
+    display: flex;
+
+    gap: 10px;
+}
+
+.chat-input {
+    flex: 1;
+
+    padding: 15px;
+
+    background: #0d2d3b;
+
+    color: white;
+
+    border: 1px solid #20566a;
+
+    border-radius: 12px;
+
+    outline: none;
+
+    font-size: 15px;
+}
+
+.chat-input:focus {
+    border-color: #4de1ff;
+}
+
+.chat-send {
+    padding: 15px 20px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #4de1ff;
+
+    color: #06151d;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   RESULTADO DA IA
+========================================================= */
+
+.analise-final {
+    max-width: 850px;
+
+    margin: 30px auto 0;
+
+    background: #071a23;
+
+    border: 1px solid #4de1ff;
+
+    border-radius: 25px;
+
+    padding: 30px;
+
+    display: none;
+
+    animation: aparecer 0.4s ease;
+}
+
+.analise-topo {
+    text-align: center;
+
+    margin-bottom: 25px;
+}
+
+.analise-topo h3 {
+    color: #4de1ff;
+
+    font-size: 28px;
+
+    margin-bottom: 8px;
+}
+
+.score-grande {
+    font-size: 75px;
+
+    font-weight: 900;
+
+    color: #4de1ff;
+}
+
+.recomendacoes {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 15px;
+}
+
+.recomendacao-card {
+    padding: 22px;
+
+    background: #0d2d3b;
+
+    border-radius: 15px;
+}
+
+.recomendacao-card small {
+    display: block;
+
+    color: #8aaab5;
+
+    margin-bottom: 8px;
+}
+
+.recomendacao-card strong {
+    color: #4de1ff;
+
+    font-size: 23px;
+}
+
+.missao-final {
+    margin-top: 20px;
+
+    padding: 22px;
+
+    background: #0d2d3b;
+
+    border-left:
+        4px solid #4de1ff;
+
+    border-radius: 12px;
+}
+
+.missao-final h4 {
+    color: #4de1ff;
+
+    margin-bottom: 10px;
+
+    font-size: 20px;
+}
+
+.missao-final p {
+    color: #d7e9ee;
+
+    line-height: 1.6;
+}
+
+.botoes-final {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 12px;
+
+    margin-top: 20px;
+}
+
+.botao-final {
+    padding: 15px;
+
+    border-radius: 30px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.botao-nova {
+    background: #4de1ff;
+
+    border: none;
+
+    color: #06151d;
+}
+
+.botao-reinicio {
+    background: transparent;
+
+    border: 1px solid #4de1ff;
+
+    color: #4de1ff;
+}
+
+
+/* =========================================================
+   HISTÓRICO
+========================================================= */
+
+.historico {
+    max-width: 850px;
+
+    margin: 30px auto 0;
+}
+
+.historico h3 {
+    margin-bottom: 15px;
+
+    color: #4de1ff;
+}
+
+.historico-lista {
+    display: grid;
+
+    gap: 10px;
+}
+
+.historico-item {
+    background: #0d2d3b;
+
+    border: 1px solid #17485b;
+
+    border-radius: 12px;
+
+    padding: 15px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.historico-item strong {
+    color: #4de1ff;
+}
+
+
+/* =========================================================
+   SIMULADOR
+========================================================= */
+
+.simulador {
+    max-width: 700px;
+
+    margin: auto;
+
+    background: #071a23;
+
+    border: 1px solid #17485b;
+
+    padding: 35px;
+
+    border-radius: 22px;
+}
+
+.campo {
+    margin-bottom: 20px;
+}
+
+.campo label {
+    display: block;
+
+    color: #b9d0d7;
+
+    margin-bottom: 8px;
 }
 
 .input,
-select{
+select {
+    width: 100%;
 
-    width:100%;
+    padding: 16px;
 
-    padding:16px;
+    background: #0d2d3b;
 
-    background:#0d2d3b;
+    color: white;
 
-    color:white;
+    border: 1px solid #20566a;
 
-    border:1px solid #20566a;
+    border-radius: 10px;
 
-    border-radius:10px;
+    font-size: 16px;
 
-    font-size:16px;
-
-    outline:none;
+    outline: none;
 }
 
 .input:focus,
-select:focus{
-
-    border-color:#4de1ff;
+select:focus {
+    border-color: #4de1ff;
 }
 
-.botao-largo{
+.botao-largo {
+    width: 100%;
 
-    width:100%;
+    margin-top: 15px;
 
-    margin-top:15px;
+    padding: 16px;
 
-    padding:16px;
+    border: none;
 
-    border:0;
+    border-radius: 30px;
 
-    border-radius:30px;
+    background: #4de1ff;
 
-    background:#4de1ff;
+    color: #06151d;
 
-    color:#06151d;
+    font-weight: bold;
 
-    font-weight:bold;
-
-    cursor:pointer;
-
-    transition:.3s;
+    cursor: pointer;
 }
 
-.botao-largo:hover{
+.resultado-simulador {
+    margin-top: 25px;
 
-    transform:translateY(-2px);
+    padding: 25px;
 
-    box-shadow:
-    0 8px 20px rgba(77,225,255,.15);
+    background: #0d2d3b;
+
+    border-radius: 18px;
+
+    display: none;
 }
 
+.resultado-simulador h3 {
+    color: #4de1ff;
 
-/* =================================================
-   RESULTADO SCORE
-================================================= */
-
-.resultado{
-
-    margin-top:30px;
-
-    background:#071a23;
-
-    border:1px solid #4de1ff;
-
-    border-radius:22px;
-
-    padding:30px;
+    margin-bottom: 15px;
 }
 
-.score{
+.numero {
+    font-size: 35px;
 
-    text-align:center;
+    font-weight: bold;
 
-    background:#0d2d3b;
-
-    padding:30px;
-
-    border-radius:18px;
-
-    margin-bottom:20px;
-}
-
-.numero-score{
-
-    font-size:80px;
-
-    font-weight:900;
-
-    color:#4de1ff;
-}
-
-.nome-score{
-
-    font-size:20px;
-
-    color:#b9d0d7;
-}
-
-.resultado-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    1fr 1fr;
-
-    gap:15px;
-}
-
-.resultado-card{
-
-    background:#0d2d3b;
-
-    padding:22px;
-
-    border-radius:15px;
-}
-
-.resultado-card small{
-
-    color:#8aaab5;
-}
-
-.resultado-card strong{
-
-    display:block;
-
-    color:#4de1ff;
-
-    font-size:24px;
-
-    margin-top:8px;
-}
-
-.missao{
-
-    margin-top:20px;
-
-    padding:22px;
-
-    border-left:
-    4px solid #4de1ff;
-
-    background:#0d2d3b;
-
-    border-radius:10px;
-}
-
-.missao h3{
-
-    color:#4de1ff;
-
-    margin-bottom:10px;
-}
-
-.missao p{
-
-    color:#d4e4e8;
-
-    line-height:1.6;
-}
-
-.botao-refazer{
-
-    width:100%;
-
-    margin-top:20px;
-
-    padding:16px;
-
-    border:1px solid #4de1ff;
-
-    border-radius:30px;
-
-    background:transparent;
-
-    color:#4de1ff;
-
-    font-weight:bold;
-
-    cursor:pointer;
-
-    transition:.3s;
-}
-
-.botao-refazer:hover{
-
-    background:#103746;
-
-    transform:translateY(-2px);
+    color: #4de1ff;
 }
 
 
-/* =================================================
-   SIMULADOR
-================================================= */
-
-.simulador{
-
-    max-width:700px;
-
-    margin:auto;
-
-    background:#071a23;
-
-    border:1px solid #17485b;
-
-    padding:35px;
-
-    border-radius:22px;
-}
-
-.campo{
-
-    margin-bottom:20px;
-}
-
-.campo label{
-
-    display:block;
-
-    color:#b9d0d7;
-
-    margin-bottom:8px;
-}
-
-.resultado-simulador{
-
-    margin-top:25px;
-
-    padding:25px;
-
-    background:#0d2d3b;
-
-    border-radius:18px;
-
-    display:none;
-}
-
-.resultado-simulador h3{
-
-    color:#4de1ff;
-
-    margin-bottom:15px;
-}
-
-.numero{
-
-    font-size:35px;
-
-    font-weight:bold;
-
-    color:#4de1ff;
-}
-
-
-/* =================================================
+/* =========================================================
    ODS
-================================================= */
+========================================================= */
 
-.ods{
-
-    text-align:center;
+.ods {
+    text-align: center;
 }
 
-.ods-numero{
+.ods-numero {
+    font-size: 100px;
 
-    font-size:100px;
+    font-weight: 900;
 
-    font-weight:900;
+    color: #4de1ff;
 
-    color:#4de1ff;
-
-    margin:30px;
+    margin: 30px;
 }
 
-.ods-box{
+.ods-box {
+    max-width: 700px;
 
-    max-width:700px;
+    margin: auto;
 
-    margin:auto;
+    background: #0d2d3b;
 
-    background:#0d2d3b;
+    padding: 35px;
 
-    padding:35px;
+    border-radius: 22px;
 
-    border-radius:22px;
-
-    border:1px solid #17485b;
+    border: 1px solid #17485b;
 }
 
-.ods-box h3{
+.ods-box h3 {
+    color: #4de1ff;
 
-    color:#4de1ff;
+    font-size: 25px;
 
-    font-size:25px;
-
-    margin-bottom:15px;
+    margin-bottom: 15px;
 }
 
-.ods-box p{
+.ods-box p {
+    color: #a9c4cd;
 
-    color:#a9c4cd;
-
-    line-height:1.7;
+    line-height: 1.7;
 }
 
 
-/* =================================================
+/* =========================================================
    STARTUP
-================================================= */
+========================================================= */
 
-.startup-grid{
-
-    display:grid;
+.startup-grid {
+    display: grid;
 
     grid-template-columns:
-    repeat(2,1fr);
+        repeat(2, 1fr);
 
-    gap:20px;
+    gap: 20px;
 }
 
-.startup-card{
+.startup-card {
+    padding: 30px;
 
-    padding:30px;
+    background: #0d2d3b;
 
-    background:#0d2d3b;
+    border: 1px solid #17485b;
 
-    border:1px solid #17485b;
+    border-radius: 20px;
 
-    border-radius:20px;
-
-    transition:.3s;
+    transition: 0.3s;
 }
 
-.startup-card:hover{
+.startup-card:hover {
+    transform: translateY(-5px);
 
-    transform:translateY(-5px);
-
-    border-color:#4de1ff;
+    border-color: #4de1ff;
 }
 
-.startup-card h3{
+.startup-card h3 {
+    color: #4de1ff;
 
-    color:#4de1ff;
-
-    margin-bottom:12px;
+    margin-bottom: 12px;
 }
 
-.startup-card p{
+.startup-card p {
+    color: #a9c4cd;
 
-    color:#a9c4cd;
-
-    line-height:1.6;
-}
-
-.dinheiro{
-
-    border-color:#4de1ff;
+    line-height: 1.6;
 }
 
 
-/* =================================================
+/* =========================================================
    FOOTER
-================================================= */
+========================================================= */
 
-footer{
+footer {
+    text-align: center;
 
-    text-align:center;
+    padding: 35px;
 
-    padding:35px;
+    background: #041017;
 
-    background:#041017;
-
-    color:#718e97;
+    color: #718e97;
 }
 
-footer strong{
-
-    color:#4de1ff;
+footer strong {
+    color: #4de1ff;
 }
 
 
-/* =================================================
+/* =========================================================
    RESPONSIVO
-================================================= */
+========================================================= */
 
-@media(max-width:850px){
+@media (max-width: 850px) {
 
-    header{
+    header {
+        align-items: flex-start;
 
-        align-items:flex-start;
+        gap: 15px;
 
-        gap:15px;
-
-        flex-direction:column;
+        flex-direction: column;
     }
 
-    .menu{
+    .menu {
+        width: 100%;
 
-        width:100%;
-
-        overflow-x:auto;
+        overflow-x: auto;
     }
 
-    .inicio{
+    .inicio {
+        flex-direction: column;
 
-        flex-direction:column;
-
-        text-align:center;
+        text-align: center;
     }
 
-    .gota{
+    .gota {
+        width: 220px;
 
-        width:220px;
-
-        height:220px;
+        height: 220px;
     }
 
-    .fluxo{
-
-        grid-template-columns:1fr;
+    .fluxo {
+        grid-template-columns: 1fr;
     }
 
-    .cards{
-
-        grid-template-columns:1fr;
+    .cards {
+        grid-template-columns: 1fr;
     }
 
-    .startup-grid{
-
-        grid-template-columns:1fr;
+    .startup-grid {
+        grid-template-columns: 1fr;
     }
 
-    .resultado-grid{
-
-        grid-template-columns:1fr;
+    .recomendacoes {
+        grid-template-columns: 1fr;
     }
 
-    .opcoes{
+    .botoes-final {
+        grid-template-columns: 1fr;
+    }
 
-        grid-template-columns:1fr;
+    .chat-opcoes {
+        grid-template-columns: 1fr;
+    }
+
+    .chat-input-area {
+        flex-direction: column;
     }
 
 }
@@ -1021,109 +1118,75 @@ footer strong{
 <body>
 
 
-<!-- =================================================
+<!-- =========================================================
      MENU
-================================================= -->
+========================================================= -->
 
 <header>
 
 <div class="logo">
-
 GOTTA<span>.</span>
-
 </div>
-
 
 <div class="menu">
 
 <button
 class="active"
-onclick="abrirAba('inicio',this)">
-
+onclick="abrirAba('inicio', this)">
 Início
-
 </button>
 
-
 <button
-onclick="abrirAba('funciona',this)">
-
+onclick="abrirAba('funciona', this)">
 Como funciona
-
 </button>
 
-
 <button
-onclick="abrirAba('score',this)">
-
-GOTTA Score
-
+onclick="abrirAba('score', this)">
+Gotta AI
 </button>
 
-
 <button
-onclick="abrirAba('simulador',this)">
-
+onclick="abrirAba('simulador', this)">
 Simulador
-
 </button>
 
-
 <button
-onclick="abrirAba('impacto',this)">
-
+onclick="abrirAba('impacto', this)">
 Impacto
-
 </button>
-
 
 <button
-onclick="abrirAba('startup',this)">
-
+onclick="abrirAba('startup', this)">
 Nossa startup
-
 </button>
-
 
 </div>
 
 </header>
 
 
-<!-- =================================================
+<!-- =========================================================
      INÍCIO
-================================================= -->
+========================================================= -->
 
 <section
 id="inicio"
 class="aba active">
 
-
 <div class="inicio">
-
 
 <div class="inicio-texto">
 
-
 <div class="tag">
-
 💧 WATER INTELLIGENCE
-
 </div>
 
-
 <h1>
-
 A água fala.
-
 <br>
-
-<span>
-Nós prevemos.
-</span>
-
+<span>Nós prevemos.</span>
 </h1>
-
 
 <p>
 
@@ -1135,62 +1198,51 @@ a economia de água.
 
 </p>
 
-
 <button
 class="botao"
 onclick="abrirPorNome('score')">
 
-Começar análise GOTTA →
+Conversar com a Gotta AI →
 
 </button>
-
 
 </div>
 
 
 <div class="gota">
 
-<span>
-G
-</span>
+<span>G</span>
 
 </div>
-
 
 </div>
 
 </section>
 
 
-<!-- =================================================
+<!-- =========================================================
      COMO FUNCIONA
-================================================= -->
+========================================================= -->
 
 <section
 id="funciona"
 class="aba">
 
-
 <div class="conteudo">
 
-
 <h2 class="titulo">
-
 Como a GOTTA funciona?
-
 </h2>
-
 
 <p class="subtitulo">
 
-A GOTTA transforma dados sobre
-água em decisões simples e
-inteligentes.
+A GOTTA transforma dados sobre água
+em decisões simples e inteligentes.
 
 <br>
 
 <strong>
-Clique nas etapas abaixo.
+Clique nas etapas para saber mais.
 </strong>
 
 </p>
@@ -1212,10 +1264,7 @@ onclick="mostrarEtapa(1)">
 </h3>
 
 <p>
-
-Clique para descobrir
-como a GOTTA coleta os dados.
-
+Como a GOTTA coleta os dados.
 </p>
 
 </button>
@@ -1234,10 +1283,7 @@ onclick="mostrarEtapa(2)">
 </h3>
 
 <p>
-
-Clique para descobrir
-como os dados são organizados.
-
+Como os dados são organizados.
 </p>
 
 </button>
@@ -1256,10 +1302,7 @@ onclick="mostrarEtapa(3)">
 </h3>
 
 <p>
-
-Clique para descobrir
-como a tecnologia analisa tudo.
-
+Como a tecnologia aprende.
 </p>
 
 </button>
@@ -1278,10 +1321,7 @@ onclick="mostrarEtapa(4)">
 </h3>
 
 <p>
-
-Clique para descobrir
-como encontramos desperdícios.
-
+Como encontramos desperdícios.
 </p>
 
 </button>
@@ -1300,11 +1340,7 @@ onclick="mostrarEtapa(5)">
 </h3>
 
 <p>
-
-Clique para descobrir
-como transformamos dados
-em economia.
-
+Como transformamos dados em ações.
 </p>
 
 </button>
@@ -1317,31 +1353,18 @@ em economia.
 id="explicacaoEtapa"
 class="explicacao-etapa">
 
-
-<h3
-id="tituloEtapa">
-
+<h3 id="tituloEtapa">
 👆 Clique em uma etapa
-
 </h3>
 
-
-<p
-id="textoEtapa">
-
-Selecione uma das etapas acima
-para conhecer melhor a tecnologia
-da GOTTA.
-
+<p id="textoEtapa">
+Selecione uma das etapas acima.
 </p>
-
 
 </div>
 
-
 <br>
 <br>
-
 
 <div class="cards">
 
@@ -1371,9 +1394,9 @@ Gotta Intelligence
 
 <p>
 
-Sistema responsável por
-analisar os dados e encontrar
-padrões de consumo.
+Sistema responsável por analisar
+os dados e encontrar padrões
+de consumo.
 
 </p>
 
@@ -1399,121 +1422,119 @@ mudanças de comportamento.
 
 </div>
 
-
 </div>
 
 </section>
 
 
-<!-- =================================================
-     GOTTA SCORE
-================================================= -->
+<!-- =========================================================
+     GOTTA AI / CHAT
+========================================================= -->
 
 <section
 id="score"
 class="aba">
 
-
 <div class="conteudo">
 
-
 <h2 class="titulo">
-
-GOTTA Score
-
+Gotta AI
 </h2>
-
 
 <p class="subtitulo">
 
-Descubra o perfil hídrico
-do seu ambiente respondendo
-algumas perguntas.
+Converse com a inteligência da GOTTA.
+Ela fará perguntas sobre seu ambiente
+e criará uma recomendação personalizada.
 
 </p>
 
 
-<div
-id="questionario"
-class="questionario">
+<div class="chat-container">
 
 
-<div
-id="progresso"
-class="progresso">
+<div class="chat-header">
 
-Pergunta 1 de 8
+<div class="ai-avatar">
+G
+</div>
+
+<div class="ai-title">
+
+<strong>
+Gotta AI
+</strong>
+
+<div class="ai-status">
+● Online
+</div>
+
+</div>
 
 </div>
 
 
-<div class="barra">
+<div
+id="chatBody"
+class="chat-body">
+
+</div>
+
 
 <div
-id="barraScore">
+id="chatOpcoes"
+class="chat-opcoes">
 
 </div>
 
+
+<div
+id="chatInputArea"
+class="chat-input-area"
+style="display:none;">
+
+<input
+id="chatInput"
+class="chat-input"
+placeholder="Digite sua resposta...">
+
+<button
+class="chat-send"
+onclick="enviarTexto()">
+
+Enviar
+
+</button>
+
 </div>
 
 
-<h3
-id="pergunta"
-class="pergunta">
+</div>
 
-Qual é o tipo de local?
 
+<div
+id="analiseFinal"
+class="analise-final">
+
+</div>
+
+
+<div
+class="historico">
+
+<h3>
+📚 Histórico desta sessão
 </h3>
 
-
 <div
-id="opcoes"
-class="opcoes">
+id="historicoLista"
+class="historico-lista">
 
-
-<button
-class="opcao"
-onclick="responder('casa')">
-
-🏠 Casa
-
-</button>
-
-
-<button
-class="opcao"
-onclick="responder('apartamento')">
-
-🏢 Apartamento
-
-</button>
-
-
-<button
-class="opcao"
-onclick="responder('escola')">
-
-🏫 Escola
-
-</button>
-
-
-<button
-class="opcao"
-onclick="responder('empresa')">
-
-🏢 Empresa
-
-</button>
-
+<p style="color:#8aaab5;">
+Nenhuma análise realizada ainda.
+</p>
 
 </div>
-
-
-</div>
-
-
-<div id="resultadoScore">
 
 </div>
 
@@ -1523,24 +1544,19 @@ onclick="responder('empresa')">
 </section>
 
 
-<!-- =================================================
+<!-- =========================================================
      SIMULADOR
-================================================= -->
+========================================================= -->
 
 <section
 id="simulador"
 class="aba">
 
-
 <div class="conteudo">
 
-
 <h2 class="titulo">
-
 Simulador de Economia
-
 </h2>
-
 
 <p class="subtitulo">
 
@@ -1556,13 +1572,9 @@ reduzindo o consumo de água.
 
 <div class="campo">
 
-
 <label>
-
 Quantas pessoas moram na casa?
-
 </label>
-
 
 <input
 id="simPessoas"
@@ -1571,20 +1583,15 @@ type="number"
 min="1"
 placeholder="Ex: 4">
 
-
 </div>
 
 
 <div class="campo">
 
-
 <label>
-
 Consumo médio por pessoa/dia
-(Litros)
-
+(em litros)
 </label>
-
 
 <input
 id="simLitros"
@@ -1593,53 +1600,30 @@ type="number"
 min="1"
 value="150">
 
-
 </div>
 
 
 <div class="campo">
 
-
 <label>
-
-Quanto você acredita que
-consegue reduzir?
-
+Quanto você acredita que consegue reduzir?
 </label>
-
 
 <select
 id="simReducao"
 class="input">
 
+<option value="0.05">5%</option>
 
-<option value="0.05">
-5%
-</option>
+<option value="0.10">10%</option>
 
+<option value="0.15">15%</option>
 
-<option value="0.10">
-10%
-</option>
+<option value="0.20">20%</option>
 
-
-<option value="0.15">
-15%
-</option>
-
-
-<option value="0.20">
-20%
-</option>
-
-
-<option value="0.25">
-25%
-</option>
-
+<option value="0.25">25%</option>
 
 </select>
-
 
 </div>
 
@@ -1657,20 +1641,13 @@ Calcular economia 💧
 id="resultadoSimulador"
 class="resultado-simulador">
 
-
 <h3>
-
 Resultado da simulação
-
 </h3>
 
-
 <p>
-
 Consumo estimado mensal:
-
 </p>
-
 
 <div
 id="consumoSim"
@@ -1678,16 +1655,11 @@ class="numero">
 
 </div>
 
-
 <br>
 
-
 <p>
-
 Economia possível por mês:
-
 </p>
-
 
 <div
 id="economiaSim"
@@ -1695,16 +1667,11 @@ class="numero">
 
 </div>
 
-
 <br>
 
-
 <p>
-
 Economia possível por ano:
-
 </p>
-
 
 <div
 id="anoSim"
@@ -1712,131 +1679,102 @@ class="numero">
 
 </div>
 
-
 </div>
 
-
 </div>
-
 
 </div>
 
 </section>
 
 
-<!-- =================================================
+<!-- =========================================================
      IMPACTO
-================================================= -->
+========================================================= -->
 
 <section
 id="impacto"
 class="aba">
 
-
 <div class="conteudo">
 
-
 <h2 class="titulo">
-
 Nosso impacto
-
 </h2>
-
 
 <p class="subtitulo">
 
-A GOTTA está diretamente
-relacionada à ODS 6 —
-Água Potável e Saneamento.
+A GOTTA está diretamente relacionada
+à ODS 6 — Água Potável e Saneamento.
 
 </p>
 
 
 <div class="ods">
 
-
 <div class="ods-numero">
-
 ODS 6
-
 </div>
 
 
 <div class="ods-box">
 
-
 <h3>
-
 💧 Água Potável e Saneamento
-
 </h3>
-
 
 <p>
 
-A GOTTA busca incentivar
-o uso consciente da água,
-reduzir desperdícios e utilizar
-tecnologia para melhorar a
-gestão dos recursos hídricos.
+A GOTTA busca incentivar o uso
+consciente da água, reduzir
+desperdícios e utilizar tecnologia
+para melhorar a gestão dos
+recursos hídricos.
 
 </p>
 
-
 <br>
-
 
 <p>
 
-Nosso projeto não pretende
-resolver todo o problema da água.
+Nosso projeto não pretende resolver
+todo o problema da água.
 
-A proposta é dar um passo
-progressivo:
+A proposta é dar um passo progressivo:
 
 <strong>
-
 medir, entender e melhorar.
-
 </strong>
 
 </p>
 
-
 </div>
 
-
 </div>
-
 
 </div>
 
 </section>
 
 
-<!-- =================================================
-     NOSSA STARTUP
-================================================= -->
+<!-- =========================================================
+     STARTUP
+========================================================= -->
 
 <section
 id="startup"
 class="aba">
 
-
 <div class="conteudo">
 
-
 <h2 class="titulo">
-
 Nossa Startup
-
 </h2>
-
 
 <p class="subtitulo">
 
-A GOTTA foi pensada como
-uma startup real, com tecnologia,
+A GOTTA foi pensada como uma
+startup real, com tecnologia,
 impacto e um modelo de negócio.
 
 </p>
@@ -1897,7 +1835,7 @@ consomem água diariamente.
 </div>
 
 
-<div class="startup-card dinheiro">
+<div class="startup-card">
 
 <h3>
 💰 Como ganhamos dinheiro
@@ -1943,8 +1881,7 @@ e desafios personalizados.
 
 ODS 6 — Água Potável e
 Saneamento, contribuindo
-para o uso sustentável
-da água.
+para o uso sustentável da água.
 
 </p>
 
@@ -1953,15 +1890,14 @@ da água.
 
 </div>
 
-
 </div>
 
 </section>
 
 
-<!-- =================================================
+<!-- =========================================================
      FOOTER
-================================================= -->
+========================================================= -->
 
 <footer>
 
@@ -1974,1208 +1910,1284 @@ Water Intelligence.
 <br>
 <br>
 
-Projeto escolar de
-empreendedorismo — 2026
+Projeto escolar de empreendedorismo — 2026
 
 </footer>
 
 
 <script>
 
+/* =========================================================
+   ABAS
+========================================================= */
 
-/* =================================================
-   SISTEMA DE ABAS
-================================================= */
-
-function abrirAba(id,botao){
+function abrirAba(id, botao) {
 
     const abas =
-    document.querySelectorAll(".aba");
+        document.querySelectorAll(".aba");
 
-    abas.forEach(function(aba){
-
+    abas.forEach(function(aba) {
         aba.classList.remove("active");
-
     });
-
 
     document
-    .getElementById(id)
-    .classList.add("active");
+        .getElementById(id)
+        .classList.add("active");
 
 
     const botoes =
-    document.querySelectorAll(".menu button");
+        document.querySelectorAll(".menu button");
 
-    botoes.forEach(function(btn){
-
+    botoes.forEach(function(btn) {
         btn.classList.remove("active");
-
     });
 
-
-    if(botao){
-
+    if (botao) {
         botao.classList.add("active");
-
     }
 
-
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
 
 }
 
 
-/* =================================================
-   ABRIR ABA PELO NOME
-================================================= */
+/* =========================================================
+   ABRIR ABA
+========================================================= */
 
-function abrirPorNome(id){
+function abrirPorNome(id) {
 
     const botoes =
-    document.querySelectorAll(".menu button");
+        document.querySelectorAll(".menu button");
 
+    for (let botao of botoes) {
 
-    for(
-        let botao of botoes
-    ){
-
-        if(
-
+        if (
             botao.innerText
             .toLowerCase()
-            .includes(id.toLowerCase())
+            .includes(
+                id.toLowerCase()
+            )
+        ) {
 
-        ){
+            abrirAba(id, botao);
 
-            abrirAba(id,botao);
+            iniciarNovaAnalise();
 
             return;
-
         }
 
     }
 
+    abrirAba(id, null);
 
-    abrirAba(id,null);
-
+    iniciarNovaAnalise();
 }
 
 
-/* =================================================
+/* =========================================================
    COMO FUNCIONA
-================================================= */
+========================================================= */
 
-function mostrarEtapa(numero){
+function mostrarEtapa(numero) {
 
     const caixa =
-    document.getElementById(
-        "explicacaoEtapa"
-    );
-
+        document.getElementById(
+            "explicacaoEtapa"
+        );
 
     const titulo =
-    document.getElementById(
-        "tituloEtapa"
-    );
-
+        document.getElementById(
+            "tituloEtapa"
+        );
 
     const texto =
-    document.getElementById(
-        "textoEtapa"
-    );
+        document.getElementById(
+            "textoEtapa"
+        );
 
 
-    const etapas={
+    const etapas = {
 
-
-        1:{
-
+        1: {
             titulo:
-            "📡 Gotta Pulse — Sensores",
+                "📡 Gotta Pulse — Sensores",
 
             texto:
-            "A primeira etapa utiliza sensores inteligentes para acompanhar o fluxo e o consumo de água. Em uma versão real da GOTTA, esses sensores poderiam enviar informações automaticamente para a plataforma."
-
+                "A primeira etapa utiliza sensores inteligentes para acompanhar o fluxo e o consumo de água. Em uma versão real da GOTTA, esses sensores poderiam enviar informações automaticamente para a plataforma."
         },
 
-
-        2:{
-
+        2: {
             titulo:
-            "📊 Gotta Data — Dados",
+                "📊 Gotta Data — Dados",
 
             texto:
-            "Os dados coletados são organizados pela plataforma. A GOTTA transforma números difíceis de entender em informações simples sobre o comportamento do consumo."
-
+                "Os dados coletados são organizados pela plataforma. A GOTTA transforma números difíceis de entender em informações simples sobre o comportamento do consumo."
         },
 
-
-        3:{
-
+        3: {
             titulo:
-            "🧠 Gotta Intelligence — Inteligência",
+                "🧠 Gotta Intelligence — Inteligência",
 
             texto:
-            "A tecnologia analisa os dados e procura padrões. Com o tempo, o sistema poderia aprender os hábitos de cada ambiente e identificar comportamentos fora do padrão."
-
+                "A tecnologia analisa os dados e procura padrões. Com o tempo, o sistema poderia aprender os hábitos de cada ambiente e identificar comportamentos fora do padrão."
         },
 
-
-        4:{
-
+        4: {
             titulo:
-            "🔎 Gotta Analysis — Análise",
+                "🔎 Gotta Analysis — Análise",
 
             texto:
-            "Depois de analisar os padrões, a GOTTA procura possíveis desperdícios, como consumo muito acima do normal ou situações que podem indicar vazamentos."
-
+                "Depois de analisar os padrões, a GOTTA procura possíveis desperdícios, como consumo muito acima do normal ou situações que podem indicar vazamentos."
         },
 
-
-        5:{
-
+        5: {
             titulo:
-            "💧 Gotta Mission — Economia",
+                "💧 Gotta Mission — Economia",
 
             texto:
-            "Por fim, a GOTTA transforma a análise em ações. O usuário recebe recomendações e missões personalizadas para reduzir o desperdício e utilizar a água de maneira mais inteligente."
-
+                "Por fim, a GOTTA transforma a análise em ações. O usuário recebe recomendações e missões personalizadas para reduzir o desperdício e utilizar a água de maneira mais inteligente."
         }
-
 
     };
 
 
     titulo.innerText =
-    etapas[numero].titulo;
-
+        etapas[numero].titulo;
 
     texto.innerText =
-    etapas[numero].texto;
-
+        etapas[numero].texto;
 
     caixa.style.display =
-    "block";
-
+        "block";
 
     caixa.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
 
-        behavior:"smooth",
+}
 
-        block:"center"
+
+/* =========================================================
+   VARIÁVEIS DO CHAT
+========================================================= */
+
+let etapaChat = 0;
+
+let respostasChat = {
+
+    local: "",
+
+    pessoas: 0,
+
+    estado: "",
+
+    banhos: 0,
+
+    consumo: 0,
+
+    torneiras: "",
+
+    vaso: "",
+
+    reuso: ""
+
+};
+
+let historicoAnalises = [];
+
+
+/* =========================================================
+   COMEÇAR NOVA ANÁLISE
+========================================================= */
+
+function iniciarNovaAnalise() {
+
+    etapaChat = 0;
+
+    respostasChat = {
+
+        local: "",
+
+        pessoas: 0,
+
+        estado: "",
+
+        banhos: 0,
+
+        consumo: 0,
+
+        torneiras: "",
+
+        vaso: "",
+
+        reuso: ""
+
+    };
+
+
+    document
+        .getElementById("chatBody")
+        .innerHTML = "";
+
+    document
+        .getElementById("chatOpcoes")
+        .innerHTML = "";
+
+    document
+        .getElementById("chatInputArea")
+        .style.display = "none";
+
+    document
+        .getElementById("analiseFinal")
+        .style.display = "none";
+
+
+    adicionarMensagem(
+        "ai",
+        "Olá! 👋 Eu sou a Gotta AI."
+    );
+
+    adicionarMensagem(
+        "ai",
+        "Vou fazer algumas perguntas para entender o perfil hídrico do seu ambiente e criar uma recomendação personalizada."
+    );
+
+    adicionarMensagem(
+        "ai",
+        "Vamos começar? Em que tipo de local você está?"
+    );
+
+
+    mostrarOpcoes([
+        {
+            texto: "🏠 Casa",
+            valor: "casa"
+        },
+        {
+            texto: "🏢 Apartamento",
+            valor: "apartamento"
+        },
+        {
+            texto: "🏫 Escola",
+            valor: "escola"
+        },
+        {
+            texto: "🏢 Empresa",
+            valor: "empresa"
+        }
+    ]);
+
+}
+
+
+/* =========================================================
+   MENSAGEM
+========================================================= */
+
+function adicionarMensagem(tipo, texto) {
+
+    const chat =
+        document.getElementById("chatBody");
+
+    const mensagem =
+        document.createElement("div");
+
+    mensagem.className =
+        "mensagem " + tipo;
+
+    const bolha =
+        document.createElement("div");
+
+    bolha.className =
+        "bolha";
+
+    bolha.innerText =
+        texto;
+
+    mensagem.appendChild(bolha);
+
+    chat.appendChild(mensagem);
+
+
+    chat.scrollTop =
+        chat.scrollHeight;
+}
+
+
+/* =========================================================
+   OPÇÕES
+========================================================= */
+
+function mostrarOpcoes(opcoes) {
+
+    const area =
+        document.getElementById(
+            "chatOpcoes"
+        );
+
+    area.innerHTML = "";
+
+    document
+        .getElementById("chatInputArea")
+        .style.display = "none";
+
+
+    opcoes.forEach(function(opcao) {
+
+        const botao =
+            document.createElement("button");
+
+        botao.className =
+            "chat-opcao";
+
+        botao.innerText =
+            opcao.texto;
+
+        botao.onclick = function() {
+
+            responderChat(
+                opcao.valor,
+                opcao.texto
+            );
+
+        };
+
+        area.appendChild(botao);
 
     });
 
 }
 
 
-/* =================================================
-   QUESTIONÁRIO
-================================================= */
+/* =========================================================
+   CAMPO DE TEXTO
+========================================================= */
 
-let perguntaAtual=1;
+function mostrarCampoTexto(placeholder, tipo) {
 
+    const area =
+        document.getElementById(
+            "chatInputArea"
+        );
 
-let respostas={
+    const input =
+        document.getElementById(
+            "chatInput"
+        );
 
-    local:"",
-    pessoas:0,
-    estado:"",
-    banhos:0,
-    consumo:0,
-    torneiras:"",
-    vaso:"",
-    reuso:""
+    document
+        .getElementById("chatOpcoes")
+        .innerHTML = "";
 
-};
+    area.style.display = "flex";
 
+    input.placeholder =
+        placeholder;
 
-function responder(valor){
+    input.value = "";
 
-    if(
-        perguntaAtual===1
-    ){
+    input.dataset.tipo =
+        tipo;
 
-        respostas.local=valor;
-
-        perguntaAtual=2;
-
-        mostrarPergunta();
-
-        return;
-
-    }
-
-
-    if(
-        perguntaAtual===3
-    ){
-
-        respostas.estado=valor;
-
-        perguntaAtual=4;
-
-        mostrarPergunta();
-
-        return;
-
-    }
-
-
-    if(
-        perguntaAtual===6
-    ){
-
-        respostas.torneiras=valor;
-
-        perguntaAtual=7;
-
-        mostrarPergunta();
-
-        return;
-
-    }
-
-
-    if(
-        perguntaAtual===7
-    ){
-
-        respostas.vaso=valor;
-
-        perguntaAtual=8;
-
-        mostrarPergunta();
-
-        return;
-
-    }
-
-
-    if(
-        perguntaAtual===8
-    ){
-
-        respostas.reuso=valor;
-
-        mostrarResultado();
-
-        return;
-
-    }
-
+    input.focus();
 }
 
 
-/* =================================================
-   MOSTRAR PERGUNTA
-================================================= */
-
-function mostrarPergunta(){
-
-    const pergunta =
-    document.getElementById("pergunta");
-
-
-    const opcoes =
-    document.getElementById("opcoes");
-
-
-    const progresso =
-    document.getElementById("progresso");
-
-
-    const barra =
-    document.getElementById("barraScore");
-
-
-    progresso.innerText =
-    "Pergunta "
-    +perguntaAtual+
-    " de 8";
-
-
-    barra.style.width =
-    ((perguntaAtual/8)*100)+"%";
-
-
-    if(
-        perguntaAtual===2
-    ){
-
-        pergunta.innerText =
-        "Quantas pessoas utilizam este local?";
-
-
-        opcoes.innerHTML=`
-
-        <input
-        id="pessoas"
-        class="input"
-        type="number"
-        min="1"
-        placeholder="Ex: 4">
-
-        <button
-        class="botao-largo"
-        onclick="salvarPessoas()">
-
-        Continuar →
-
-        </button>
-
-        `;
-
-        return;
-    }
-
-
-    if(
-        perguntaAtual===3
-    ){
-
-        pergunta.innerText =
-        "Em qual estado você está?";
-
-
-        opcoes.innerHTML=`
-
-        <select
-        id="estado"
-        class="input">
-
-        <option value="">
-        Selecione
-        </option>
-
-        <option>Santa Catarina</option>
-        <option>Paraná</option>
-        <option>Rio Grande do Sul</option>
-        <option>São Paulo</option>
-        <option>Rio de Janeiro</option>
-        <option>Minas Gerais</option>
-        <option>Bahia</option>
-        <option>Pará</option>
-        <option>Amazonas</option>
-        <option>Goiás</option>
-        <option>Pernambuco</option>
-        <option>Ceará</option>
-        <option>Outro</option>
-
-        </select>
-
-        <button
-        class="botao-largo"
-        onclick="salvarEstado()">
-
-        Continuar →
-
-        </button>
-
-        `;
-
-        return;
-    }
-
-
-    if(
-        perguntaAtual===4
-    ){
-
-        pergunta.innerText =
-        "Quantos banhos aproximadamente são tomados por dia?";
-
-
-        opcoes.innerHTML=`
-
-        <input
-        id="banhos"
-        class="input"
-        type="number"
-        min="0"
-        placeholder="Ex: 5">
-
-        <button
-        class="botao-largo"
-        onclick="salvarBanhos()">
-
-        Continuar →
-
-        </button>
-
-        `;
-
-        return;
-    }
-
-
-    if(
-        perguntaAtual===5
-    ){
-
-        pergunta.innerText =
-        "Você sabe seu consumo mensal de água?";
-
-
-        opcoes.innerHTML=`
-
-        <input
-        id="consumo"
-        class="input"
-        type="number"
-        min="0"
-        placeholder="Litros por mês">
-
-        <button
-        class="botao-largo"
-        onclick="salvarConsumo()">
-
-        Continuar →
-
-        </button>
-
-        `;
-
-        return;
-    }
-
-
-    if(
-        perguntaAtual===6
-    ){
-
-        pergunta.innerText =
-        "Existem torneiras pingando ou com vazamentos?";
-
-
-        opcoes.innerHTML=`
-
-        <button
-        class="opcao"
-        onclick="responder('nao')">
-
-        🟢 Não
-
-        </button>
-
-        <button
-        class="opcao"
-        onclick="responder('talvez')">
-
-        🟡 Talvez
-
-        </button>
-
-        <button
-        class="opcao"
-        onclick="responder('sim')">
-
-        🔴 Sim
-
-        </button>
-
-        `;
-
-        return;
-    }
-
-
-    if(
-        perguntaAtual===7
-    ){
-
-        pergunta.innerText =
-        "O vaso sanitário apresenta algum problema?";
-
-
-        opcoes.innerHTML=`
-
-        <button
-        class="opcao"
-        onclick="responder('nao')">
-
-        🟢 Não
-
-        </button>
-
-        <button
-        class="opcao"
-        onclick="responder('talvez')">
-
-        🟡 Talvez
-
-        </button>
-
-        <button
-        class="opcao"
-        onclick="responder('sim')">
-
-        🔴 Sim
-
-        </button>
-
-        `;
-
-        return;
-    }
-
-
-    if(
-        perguntaAtual===8
-    ){
-
-        pergunta.innerText =
-        "Você reutiliza água?";
-
-
-        opcoes.innerHTML=`
-
-        <button
-        class="opcao"
-        onclick="responder('sim')">
-
-        🟢 Sim
-
-        </button>
-
-        <button
-        class="opcao"
-        onclick="responder('as vezes')">
-
-        🟡 Às vezes
-
-        </button>
-
-        <button
-        class="opcao"
-        onclick="responder('nao')">
-
-        🔴 Não
-
-        </button>
-
-        `;
-
-    }
-
-}
-
-
-/* =================================================
-   SALVAR PESSOAS
-================================================= */
-
-function salvarPessoas(){
+/* =========================================================
+   ENVIO DE TEXTO
+========================================================= */
+
+function enviarTexto() {
+
+    const input =
+        document.getElementById(
+            "chatInput"
+        );
 
     const valor =
-    Number(
-        document
-        .getElementById("pessoas")
-        .value
+        input.value.trim();
+
+    const tipo =
+        input.dataset.tipo;
+
+
+    if (!valor) {
+        return;
+    }
+
+
+    adicionarMensagem(
+        "usuario",
+        valor
     );
 
 
-    if(
-        !valor ||
-        valor<1
-    ){
+    input.value = "";
 
-        alert(
-            "Digite um número válido."
-        );
-
-        return;
-    }
-
-
-    respostas.pessoas=valor;
-
-    perguntaAtual=3;
-
-    mostrarPergunta();
-
-}
-
-
-/* =================================================
-   SALVAR ESTADO
-================================================= */
-
-function salvarEstado(){
-
-    const valor =
     document
-    .getElementById("estado")
-    .value;
+        .getElementById("chatInputArea")
+        .style.display = "none";
 
 
-    if(!valor){
+    processarTexto(
+        valor,
+        tipo
+    );
+}
 
-        alert(
-            "Selecione seu estado."
+
+/* =========================================================
+   ENTER
+========================================================= */
+
+document
+    .getElementById("chatInput")
+    .addEventListener(
+        "keydown",
+        function(event) {
+
+            if (
+                event.key === "Enter"
+            ) {
+
+                enviarTexto();
+
+            }
+
+        }
+    );
+
+
+/* =========================================================
+   RESPOSTA DO CHAT
+========================================================= */
+
+function responderChat(
+    valor,
+    texto
+) {
+
+    adicionarMensagem(
+        "usuario",
+        texto
+    );
+
+
+    if (etapaChat === 0) {
+
+        respostasChat.local =
+            valor;
+
+        etapaChat = 1;
+
+        adicionarMensagem(
+            "ai",
+            "Perfeito! 💧 Agora preciso saber quantas pessoas utilizam esse local."
+        );
+
+        mostrarCampoTexto(
+            "Ex: 4",
+            "pessoas"
         );
 
         return;
     }
 
 
-    respostas.estado=valor;
+    if (etapaChat === 2) {
 
-    perguntaAtual=4;
+        respostasChat.estado =
+            valor;
 
-    mostrarPergunta();
+        etapaChat = 3;
+
+        adicionarMensagem(
+            "ai",
+            "Ótimo! 🚿 Quantos banhos aproximadamente são tomados por dia nesse local?"
+        );
+
+        mostrarCampoTexto(
+            "Ex: 6",
+            "banhos"
+        );
+
+        return;
+    }
+
+
+    if (etapaChat === 4) {
+
+        respostasChat.torneiras =
+            valor;
+
+        etapaChat = 5;
+
+        adicionarMensagem(
+            "ai",
+            "Entendi. 🚽 E o vaso sanitário apresenta algum problema ou possibilidade de vazamento?"
+        );
+
+        mostrarOpcoes([
+            {
+                texto: "🟢 Não",
+                valor: "nao"
+            },
+            {
+                texto: "🟡 Talvez",
+                valor: "talvez"
+            },
+            {
+                texto: "🔴 Sim",
+                valor: "sim"
+            }
+        ]);
+
+        return;
+    }
+
+
+    if (etapaChat === 5) {
+
+        respostasChat.vaso =
+            valor;
+
+        etapaChat = 6;
+
+        adicionarMensagem(
+            "ai",
+            "Última pergunta! ♻️ Esse local costuma reutilizar água?"
+        );
+
+        mostrarOpcoes([
+            {
+                texto: "🟢 Sim",
+                valor: "sim"
+            },
+            {
+                texto: "🟡 Às vezes",
+                valor: "as vezes"
+            },
+            {
+                texto: "🔴 Não",
+                valor: "nao"
+            }
+        ]);
+
+        return;
+    }
+
+
+    if (etapaChat === 6) {
+
+        respostasChat.reuso =
+            valor;
+
+        adicionarMensagem(
+            "usuario",
+            texto
+        );
+
+        gerarAnalise();
+
+        return;
+    }
 
 }
 
 
-/* =================================================
-   SALVAR BANHOS
-================================================= */
+/* =========================================================
+   PROCESSAR TEXTO
+========================================================= */
 
-function salvarBanhos(){
+function processarTexto(
+    valor,
+    tipo
+) {
 
-    respostas.banhos =
-    Number(
-        document
-        .getElementById("banhos")
-        .value
-    ) || 0;
+    if (tipo === "pessoas") {
+
+        const numero =
+            Number(valor);
+
+        if (
+            !numero ||
+            numero < 1
+        ) {
+
+            adicionarMensagem(
+                "ai",
+                "Preciso de um número válido de pessoas. 😊"
+            );
+
+            mostrarCampoTexto(
+                "Ex: 4",
+                "pessoas"
+            );
+
+            return;
+        }
 
 
-    perguntaAtual=5;
+        respostasChat.pessoas =
+            numero;
 
-    mostrarPergunta();
+        etapaChat = 2;
+
+
+        adicionarMensagem(
+            "ai",
+            "Obrigado! 📍 Em qual estado esse local está?"
+        );
+
+
+        mostrarOpcoes([
+
+            {
+                texto: "Santa Catarina",
+                valor: "Santa Catarina"
+            },
+
+            {
+                texto: "Paraná",
+                valor: "Paraná"
+            },
+
+            {
+                texto: "Rio Grande do Sul",
+                valor: "Rio Grande do Sul"
+            },
+
+            {
+                texto: "São Paulo",
+                valor: "São Paulo"
+            },
+
+            {
+                texto: "Rio de Janeiro",
+                valor: "Rio de Janeiro"
+            },
+
+            {
+                texto: "Minas Gerais",
+                valor: "Minas Gerais"
+            },
+
+            {
+                texto: "Outro estado",
+                valor: "Outro"
+            }
+
+        ]);
+
+        return;
+    }
+
+
+    if (tipo === "banhos") {
+
+        const numero =
+            Number(valor);
+
+        respostasChat.banhos =
+            numero || 0;
+
+        etapaChat = 4;
+
+
+        adicionarMensagem(
+            "ai",
+            "Agora vamos analisar possíveis pontos de desperdício. 🚰 Existem torneiras pingando ou com vazamentos?"
+        );
+
+
+        mostrarOpcoes([
+
+            {
+                texto: "🟢 Não",
+                valor: "nao"
+            },
+
+            {
+                texto: "🟡 Talvez",
+                valor: "talvez"
+            },
+
+            {
+                texto: "🔴 Sim",
+                valor: "sim"
+            }
+
+        ]);
+
+    }
 
 }
 
 
-/* =================================================
-   SALVAR CONSUMO
-================================================= */
+/* =========================================================
+   GERAÇÃO DA ANÁLISE
+========================================================= */
 
-function salvarConsumo(){
-
-    respostas.consumo =
-    Number(
-        document
-        .getElementById("consumo")
-        .value
-    ) || 0;
-
-
-    perguntaAtual=6;
-
-    mostrarPergunta();
-
-}
-
-
-/* =================================================
-   RESULTADO
-================================================= */
-
-function mostrarResultado(){
+function gerarAnalise() {
 
     let consumo;
 
 
-    if(
-        respostas.consumo>0
-    ){
+    /*
+        Caso o usuário não tenha
+        informado uma conta real,
+        usamos uma estimativa.
 
-        consumo =
-        respostas.consumo;
+        150 litros por pessoa/dia.
+    */
 
-    }else{
-
-        consumo =
-        respostas.pessoas *
+    consumo =
+        respostasChat.pessoas *
         150 *
         30;
 
-    }
+
+    let score = 100;
 
 
-    let score=100;
+    if (
+        respostasChat.torneiras === "sim"
+    ) {
 
-
-    if(
-        respostas.torneiras==="sim"
-    ){
-
-        score-=15;
+        score -= 15;
 
     }
 
+    if (
+        respostasChat.torneiras === "talvez"
+    ) {
 
-    if(
-        respostas.torneiras==="talvez"
-    ){
-
-        score-=7;
-
-    }
-
-
-    if(
-        respostas.vaso==="sim"
-    ){
-
-        score-=15;
+        score -= 7;
 
     }
 
+    if (
+        respostasChat.vaso === "sim"
+    ) {
 
-    if(
-        respostas.vaso==="talvez"
-    ){
-
-        score-=7;
-
-    }
-
-
-    if(
-        respostas.reuso==="sim"
-    ){
-
-        score+=5;
+        score -= 15;
 
     }
 
+    if (
+        respostasChat.vaso === "talvez"
+    ) {
 
-    if(
-        respostas.reuso==="nao"
-    ){
+        score -= 7;
 
-        score-=5;
+    }
+
+    if (
+        respostasChat.reuso === "sim"
+    ) {
+
+        score += 5;
+
+    }
+
+    if (
+        respostasChat.reuso === "nao"
+    ) {
+
+        score -= 5;
 
     }
 
 
-    if(
-        respostas.banhos >
-        respostas.pessoas*1.5
-    ){
+    const mediaBanhos =
+        respostasChat.pessoas * 1.5;
 
-        score-=10;
+
+    if (
+        respostasChat.banhos >
+        mediaBanhos
+    ) {
+
+        score -= 10;
 
     }
 
 
     score =
-    Math.max(
-        0,
-        Math.min(
-            100,
-            score
-        )
-    );
+        Math.max(
+            0,
+            Math.min(
+                100,
+                score
+            )
+        );
 
 
-    let nome;
+    /*
+        CLASSIFICAÇÃO
+    */
 
+    let classificacao;
 
-    if(
-        score>=80
-    ){
+    if (score >= 80) {
 
-        nome=
-        "🌊 Guardião da Água";
+        classificacao =
+            "🌊 Guardião da Água";
 
-    }
+    } else if (score >= 60) {
 
-    else if(
-        score>=60
-    ){
+        classificacao =
+            "💧 Consumidor Consciente";
 
-        nome=
-        "💧 Consumidor Consciente";
+    } else if (score >= 40) {
 
-    }
+        classificacao =
+            "🌱 Em Evolução";
 
-    else if(
-        score>=40
-    ){
+    } else {
 
-        nome=
-        "🌱 Em Evolução";
+        classificacao =
+            "⚠️ Alto potencial de economia";
 
     }
 
-    else{
 
-        nome=
-        "⚠️ Alto potencial de economia";
-
-    }
-
+    /*
+        POTENCIAL DE ECONOMIA
+    */
 
     let percentual;
 
+    if (score >= 80) {
 
-    if(
-        score>=80
-    ){
+        percentual = 0.08;
 
-        percentual=.08;
+    } else if (score >= 60) {
 
-    }
+        percentual = 0.12;
 
-    else if(
-        score>=60
-    ){
+    } else if (score >= 40) {
 
-        percentual=.12;
+        percentual = 0.18;
 
-    }
+    } else {
 
-    else if(
-        score>=40
-    ){
-
-        percentual=.18;
-
-    }
-
-    else{
-
-        percentual=.25;
+        percentual = 0.25;
 
     }
 
 
-    const economia =
-    consumo *
-    percentual;
+    const economiaMensal =
+        consumo * percentual;
 
 
-    const anual =
-    economia *
-    12;
+    const economiaAnual =
+        economiaMensal * 12;
 
+
+    /*
+        RECOMENDAÇÃO
+    */
+
+    let recomendacao;
 
     let missao;
 
 
-    if(
-        respostas.torneiras==="sim"
-    ){
+    if (
+        respostasChat.torneiras === "sim"
+    ) {
+
+        recomendacao =
+            "Comece verificando e corrigindo as torneiras que apresentam vazamentos.";
 
         missao =
-        "Verifique e conserte as torneiras com vazamentos.";
+            "Encontrar e corrigir todos os pontos de vazamento.";
+
+    } else if (
+        respostasChat.vaso === "sim"
+    ) {
+
+        recomendacao =
+            "Verifique o vaso sanitário, pois pequenos vazamentos podem passar despercebidos.";
+
+        missao =
+            "Verificar o vaso sanitário e solucionar qualquer vazamento.";
+
+    } else if (
+        respostasChat.reuso === "nao"
+    ) {
+
+        recomendacao =
+            "Procure maneiras de reutilizar água em atividades como limpeza e rega de plantas.";
+
+        missao =
+            "Encontrar pelo menos uma forma de reutilizar água nesta semana.";
+
+    } else if (
+        respostasChat.banhos >
+        mediaBanhos
+    ) {
+
+        recomendacao =
+            "Uma boa oportunidade é reduzir o tempo dos banhos.";
+
+        missao =
+            "Reduzir o tempo médio dos banhos em 2 minutos.";
+
+    } else {
+
+        recomendacao =
+            "Seu perfil já apresenta bons hábitos. Agora o objetivo é manter a consistência e encontrar novos pontos de melhoria.";
+
+        missao =
+            "Encontrar um novo ponto de economia de água nesta semana.";
 
     }
 
-    else if(
-        respostas.vaso==="sim"
-    ){
 
-        missao =
-        "Verifique o vaso sanitário e procure possíveis vazamentos.";
+    /*
+        MOSTRAR RESPOSTA DA IA
+    */
 
-    }
-
-    else if(
-        respostas.reuso==="nao"
-    ){
-
-        missao =
-        "Procure uma forma de reutilizar água em tarefas como limpeza.";
-
-    }
-
-    else{
-
-        missao =
-        "Reduza o tempo dos banhos e observe seu consumo durante esta semana.";
-
-    }
+    const analise =
+        document.getElementById(
+            "analiseFinal"
+        );
 
 
-    document
-    .getElementById("questionario")
-    .style.display="none";
+    analise.style.display =
+        "block";
 
 
-    document
-    .getElementById("resultadoScore")
-    .innerHTML=`
+    analise.innerHTML = `
 
-    <div class="resultado">
-
-
-        <div class="score">
-
-            <div class="numero-score">
-            ${score}
-            </div>
-
-            <div class="nome-score">
-            ${nome}
-            </div>
-
-        </div>
-
-
-        <div class="resultado-grid">
-
-
-            <div class="resultado-card">
-
-                <small>
-                👥 Pessoas
-                </small>
-
-                <strong>
-                ${respostas.pessoas}
-                </strong>
-
-            </div>
-
-
-            <div class="resultado-card">
-
-                <small>
-                💧 Consumo estimado
-                </small>
-
-                <strong>
-                ${consumo.toLocaleString("pt-BR")} L
-                </strong>
-
-            </div>
-
-
-            <div class="resultado-card">
-
-                <small>
-                ♻️ Economia mensal
-                </small>
-
-                <strong>
-                ${economia.toLocaleString("pt-BR")} L
-                </strong>
-
-            </div>
-
-
-            <div class="resultado-card">
-
-                <small>
-                🌎 Economia anual
-                </small>
-
-                <strong>
-                ${anual.toLocaleString("pt-BR")} L
-                </strong>
-
-            </div>
-
-
-        </div>
-
-
-        <div class="missao">
+        <div class="analise-topo">
 
             <h3>
-            🎯 Sua GOTTA Mission
+                🧠 Análise concluída
             </h3>
 
+            <div class="score-grande">
+                ${score}
+            </div>
+
             <p>
-            ${missao}
+                ${classificacao}
             </p>
 
         </div>
 
 
-        <button
-        class="botao-refazer"
-        onclick="refazerQuestionario()">
-
-        🔄 Fazer novamente
-
-        </button>
+        <div class="recomendacoes">
 
 
-    </div>
+            <div class="recomendacao-card">
+
+                <small>
+                    💧 Consumo estimado
+                </small>
+
+                <strong>
+                    ${consumo.toLocaleString("pt-BR")} L/mês
+                </strong>
+
+            </div>
+
+
+            <div class="recomendacao-card">
+
+                <small>
+                    ♻️ Economia potencial
+                </small>
+
+                <strong>
+                    ${economiaMensal.toLocaleString("pt-BR")} L/mês
+                </strong>
+
+            </div>
+
+
+            <div class="recomendacao-card">
+
+                <small>
+                    🌎 Economia anual
+                </small>
+
+                <strong>
+                    ${economiaAnual.toLocaleString("pt-BR")} L/ano
+                </strong>
+
+            </div>
+
+
+            <div class="recomendacao-card">
+
+                <small>
+                    📍 Perfil
+                </small>
+
+                <strong>
+                    ${respostasChat.local}
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="missao-final">
+
+            <h4>
+                🎯 Recomendação da Gotta AI
+            </h4>
+
+            <p>
+                ${recomendacao}
+            </p>
+
+            <br>
+
+            <h4>
+                🚀 Sua Gotta Mission
+            </h4>
+
+            <p>
+                ${missao}
+            </p>
+
+        </div>
+
+
+        <div class="botoes-final">
+
+            <button
+                class="botao-final botao-nova"
+                onclick="iniciarNovaAnalise()">
+
+                🔄 Nova análise
+
+            </button>
+
+
+            <button
+                class="botao-final botao-reinicio"
+                onclick="limparHistorico()">
+
+                🗑️ Limpar histórico
+
+            </button>
+
+        </div>
+
+        <p style="
+            color:#708d96;
+            font-size:13px;
+            margin-top:20px;
+            line-height:1.5;
+        ">
+
+            *Os valores mostrados são estimativas do protótipo
+            escolar. Uma futura versão utilizaria dados reais
+            dos sensores GOTTA.
+
+        </p>
 
     `;
 
-}
 
+    /*
+        SALVAR NO HISTÓRICO
+    */
 
-/* =================================================
-   FAZER QUESTIONÁRIO NOVAMENTE
-================================================= */
+    historicoAnalises.push({
 
-function refazerQuestionario(){
+        score: score,
 
-    /* Voltar para a pergunta 1 */
+        classificacao:
+            classificacao,
 
-    perguntaAtual=1;
-
-
-    /* Apagar respostas anteriores */
-
-    respostas={
-
-        local:"",
-        pessoas:0,
-        estado:"",
-        banhos:0,
-        consumo:0,
-        torneiras:"",
-        vaso:"",
-        reuso:""
-
-    };
-
-
-    /* Mostrar novamente o questionário */
-
-    document
-    .getElementById("questionario")
-    .style.display="block";
-
-
-    /* Apagar o resultado */
-
-    document
-    .getElementById("resultadoScore")
-    .innerHTML="";
-
-
-    /* Mostrar a primeira pergunta */
-
-    mostrarPrimeiraPergunta();
-
-
-    /* Voltar até o questionário */
-
-    document
-    .getElementById("questionario")
-    .scrollIntoView({
-
-        behavior:"smooth",
-
-        block:"start"
+        data:
+            new Date().toLocaleTimeString(
+                "pt-BR",
+                {
+                    hour: "2-digit",
+                    minute: "2-digit"
+                }
+            )
 
     });
 
-}
+
+    atualizarHistorico();
 
 
-/* =================================================
-   PRIMEIRA PERGUNTA
-================================================= */
+    /*
+        RESPOSTA DA IA NO CHAT
+    */
 
-function mostrarPrimeiraPergunta(){
+    adicionarMensagem(
+        "ai",
+        "Analisei suas respostas. 🔎"
+    );
 
-    const pergunta =
-    document.getElementById("pergunta");
-
-
-    const opcoes =
-    document.getElementById("opcoes");
-
-
-    const progresso =
-    document.getElementById("progresso");
-
-
-    const barra =
-    document.getElementById("barraScore");
+    adicionarMensagem(
+        "ai",
+        "Seu GOTTA Score foi " +
+        score +
+        "/100. Preparei uma recomendação personalizada para você abaixo. 💧"
+    );
 
 
-    progresso.innerText =
-    "Pergunta 1 de 8";
+    document
+        .getElementById(
+            "analiseFinal"
+        )
+        .scrollIntoView({
 
+            behavior: "smooth",
 
-    barra.style.width="12.5%";
+            block: "start"
 
-
-    pergunta.innerText =
-    "Qual é o tipo de local?";
-
-
-    opcoes.innerHTML=`
-
-        <button
-        class="opcao"
-        onclick="responder('casa')">
-
-        🏠 Casa
-
-        </button>
-
-
-        <button
-        class="opcao"
-        onclick="responder('apartamento')">
-
-        🏢 Apartamento
-
-        </button>
-
-
-        <button
-        class="opcao"
-        onclick="responder('escola')">
-
-        🏫 Escola
-
-        </button>
-
-
-        <button
-        class="opcao"
-        onclick="responder('empresa')">
-
-        🏢 Empresa
-
-        </button>
-
-    `;
+        });
 
 }
 
 
-/* =================================================
+/* =========================================================
+   HISTÓRICO
+========================================================= */
+
+function atualizarHistorico() {
+
+    const lista =
+        document.getElementById(
+            "historicoLista"
+        );
+
+
+    if (
+        historicoAnalises.length === 0
+    ) {
+
+        lista.innerHTML =
+            `<p style="color:#8aaab5;">
+                Nenhuma análise realizada ainda.
+            </p>`;
+
+        return;
+    }
+
+
+    lista.innerHTML =
+        historicoAnalises
+            .map(function(item, index) {
+
+                return `
+
+                <div class="historico-item">
+
+                    <div>
+
+                        <strong>
+                            Análise #${index + 1}
+                        </strong>
+
+                        <br>
+
+                        <span style="
+                            color:#8aaab5;
+                            font-size:13px;
+                        ">
+
+                            ${item.classificacao}
+
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            ${item.score}/100
+                        </strong>
+
+                        <br>
+
+                        <span style="
+                            color:#8aaab5;
+                            font-size:12px;
+                        ">
+
+                            ${item.data}
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+                `;
+
+            })
+            .join("");
+
+}
+
+
+/* =========================================================
+   LIMPAR HISTÓRICO
+========================================================= */
+
+function limparHistorico() {
+
+    historicoAnalises = [];
+
+    atualizarHistorico();
+
+    iniciarNovaAnalise();
+
+}
+
+
+/* =========================================================
    SIMULADOR
-================================================= */
+========================================================= */
 
-function calcularSimulador(){
+function calcularSimulador() {
 
     const pessoas =
-    Number(
-        document
-        .getElementById("simPessoas")
-        .value
-    );
+        Number(
+            document.getElementById(
+                "simPessoas"
+            ).value
+        );
 
 
     const litros =
-    Number(
-        document
-        .getElementById("simLitros")
-        .value
-    );
+        Number(
+            document.getElementById(
+                "simLitros"
+            ).value
+        );
 
 
     const reducao =
-    Number(
-        document
-        .getElementById("simReducao")
-        .value
-    );
+        Number(
+            document.getElementById(
+                "simReducao"
+            ).value
+        );
 
 
-    if(
+    if (
         !pessoas ||
-        pessoas<1
-    ){
+        pessoas < 1
+    ) {
 
         alert(
             "Digite a quantidade de pessoas."
@@ -3186,45 +3198,53 @@ function calcularSimulador(){
 
 
     const consumo =
-    pessoas *
-    litros *
-    30;
+        pessoas *
+        litros *
+        30;
 
 
     const economia =
-    consumo *
-    reducao;
+        consumo *
+        reducao;
 
 
     const anual =
-    economia *
-    12;
+        economia *
+        12;
 
 
     document
-    .getElementById("resultadoSimulador")
-    .style.display="block";
+        .getElementById(
+            "resultadoSimulador"
+        )
+        .style.display = "block";
 
 
     document
-    .getElementById("consumoSim")
-    .innerText =
-    consumo.toLocaleString("pt-BR")
-    +" L/mês";
+        .getElementById(
+            "consumoSim"
+        )
+        .innerText =
+        consumo.toLocaleString("pt-BR")
+        + " L/mês";
 
 
     document
-    .getElementById("economiaSim")
-    .innerText =
-    economia.toLocaleString("pt-BR")
-    +" L/mês";
+        .getElementById(
+            "economiaSim"
+        )
+        .innerText =
+        economia.toLocaleString("pt-BR")
+        + " L/mês";
 
 
     document
-    .getElementById("anoSim")
-    .innerText =
-    anual.toLocaleString("pt-BR")
-    +" L/ano";
+        .getElementById(
+            "anoSim"
+        )
+        .innerText =
+        anual.toLocaleString("pt-BR")
+        + " L/ano";
 
 }
 
