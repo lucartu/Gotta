@@ -42,8 +42,8 @@ header {
     z-index: 1000;
 
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 
     padding: 18px 7%;
 
@@ -317,6 +317,10 @@ h1 span {
         rgba(77, 225, 255, 0.12);
 }
 
+.etapa:active {
+    transform: scale(0.97);
+}
+
 .etapa .emoji {
     font-size: 40px;
 
@@ -376,15 +380,13 @@ h1 span {
     from {
         opacity: 0;
 
-        transform:
-            translateY(10px);
+        transform: translateY(10px);
     }
 
     to {
         opacity: 1;
 
-        transform:
-            translateY(0);
+        transform: translateY(0);
     }
 }
 
@@ -558,15 +560,13 @@ h1 span {
     from {
         opacity: 0;
 
-        transform:
-            translateY(8px);
+        transform: translateY(8px);
     }
 
     to {
         opacity: 1;
 
-        transform:
-            translateY(0);
+        transform: translateY(0);
     }
 }
 
@@ -655,7 +655,7 @@ h1 span {
 
 
 /* =========================================================
-   RESULTADO DA IA
+   RESULTADO IA
 ========================================================= */
 
 .analise-final {
@@ -736,8 +736,7 @@ h1 span {
 
     background: #0d2d3b;
 
-    border-left:
-        4px solid #4de1ff;
+    border-left: 4px solid #4de1ff;
 
     border-radius: 12px;
 }
@@ -909,6 +908,12 @@ select:focus {
     font-weight: bold;
 
     cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.botao-largo:hover {
+    transform: translateY(-2px);
 }
 
 .resultado-simulador {
@@ -986,7 +991,7 @@ select:focus {
 
 
 /* =========================================================
-   STARTUP
+   NOSSA STARTUP
 ========================================================= */
 
 .startup-grid {
@@ -999,6 +1004,9 @@ select:focus {
 }
 
 .startup-card {
+
+    width: 100%;
+
     padding: 30px;
 
     background: #0d2d3b;
@@ -1008,12 +1016,29 @@ select:focus {
     border-radius: 20px;
 
     transition: 0.3s;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    color: white;
+
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .startup-card:hover {
-    transform: translateY(-5px);
+
+    transform: translateY(-6px);
 
     border-color: #4de1ff;
+
+    box-shadow:
+        0 10px 30px
+        rgba(77, 225, 255, 0.12);
+}
+
+.startup-card:active {
+    transform: scale(0.98);
 }
 
 .startup-card h3 {
@@ -1026,6 +1051,48 @@ select:focus {
     color: #a9c4cd;
 
     line-height: 1.6;
+}
+
+
+/* =========================================================
+   EXPLICAÇÃO STARTUP
+========================================================= */
+
+.explicacao-startup {
+
+    max-width: 850px;
+
+    margin: 30px auto 0;
+
+    padding: 30px;
+
+    background: #071a23;
+
+    border: 1px solid #4de1ff;
+
+    border-radius: 20px;
+
+    display: none;
+
+    animation: aparecer 0.4s ease;
+}
+
+.explicacao-startup h3 {
+
+    color: #4de1ff;
+
+    font-size: 26px;
+
+    margin-bottom: 15px;
+}
+
+.explicacao-startup p {
+
+    color: #b9d0d7;
+
+    line-height: 1.7;
+
+    font-size: 17px;
 }
 
 
@@ -1363,8 +1430,10 @@ Selecione uma das etapas acima.
 
 </div>
 
+
 <br>
 <br>
+
 
 <div class="cards">
 
@@ -1428,7 +1497,7 @@ mudanças de comportamento.
 
 
 <!-- =========================================================
-     GOTTA AI / CHAT
+     GOTTA AI
 ========================================================= -->
 
 <section
@@ -1519,8 +1588,7 @@ class="analise-final">
 </div>
 
 
-<div
-class="historico">
+<div class="historico">
 
 <h3>
 📚 Histórico desta sessão
@@ -1613,15 +1681,25 @@ Quanto você acredita que consegue reduzir?
 id="simReducao"
 class="input">
 
-<option value="0.05">5%</option>
+<option value="0.05">
+5%
+</option>
 
-<option value="0.10">10%</option>
+<option value="0.10">
+10%
+</option>
 
-<option value="0.15">15%</option>
+<option value="0.15">
+15%
+</option>
 
-<option value="0.20">20%</option>
+<option value="0.20">
+20%
+</option>
 
-<option value="0.25">25%</option>
+<option value="0.25">
+25%
+</option>
 
 </select>
 
@@ -1652,7 +1730,6 @@ Consumo estimado mensal:
 <div
 id="consumoSim"
 class="numero">
-
 </div>
 
 <br>
@@ -1664,7 +1741,6 @@ Economia possível por mês:
 <div
 id="economiaSim"
 class="numero">
-
 </div>
 
 <br>
@@ -1676,10 +1752,10 @@ Economia possível por ano:
 <div
 id="anoSim"
 class="numero">
-
 </div>
 
 </div>
+
 
 </div>
 
@@ -1758,7 +1834,7 @@ medir, entender e melhorar.
 
 
 <!-- =========================================================
-     STARTUP
+     NOSSA STARTUP
 ========================================================= -->
 
 <section
@@ -1777,118 +1853,134 @@ A GOTTA foi pensada como uma
 startup real, com tecnologia,
 impacto e um modelo de negócio.
 
+<br>
+
+<strong>
+Clique nos tópicos para saber mais.
+</strong>
+
 </p>
 
 
 <div class="startup-grid">
 
 
-<div class="startup-card">
+<button
+class="startup-card"
+onclick="mostrarStartup(1)">
 
 <h3>
 🎯 Problema
 </h3>
 
 <p>
-
-Muitas pessoas não sabem
-exatamente onde estão
-desperdiçando água.
-
+Clique para entender o problema
+que a GOTTA quer resolver.
 </p>
 
-</div>
+</button>
 
 
-<div class="startup-card">
+<button
+class="startup-card"
+onclick="mostrarStartup(2)">
 
 <h3>
 💡 Solução
 </h3>
 
 <p>
-
-Uma plataforma que utiliza
-dados, sensores e análise
-inteligente para identificar
-oportunidades de economia.
-
+Clique para conhecer a solução
+da GOTTA.
 </p>
 
-</div>
+</button>
 
 
-<div class="startup-card">
+<button
+class="startup-card"
+onclick="mostrarStartup(3)">
 
 <h3>
 👥 Público-alvo
 </h3>
 
 <p>
-
-Famílias, escolas, empresas
-e outros ambientes que
-consomem água diariamente.
-
+Clique para descobrir quem
+poderia utilizar a GOTTA.
 </p>
 
-</div>
+</button>
 
 
-<div class="startup-card">
+<button
+class="startup-card"
+onclick="mostrarStartup(4)">
 
 <h3>
 💰 Como ganhamos dinheiro
 </h3>
 
 <p>
-
-A GOTTA poderia vender
-kits de sensores e oferecer
-uma assinatura mensal da
-plataforma de análise.
-
+Clique para descobrir
+nosso modelo de negócio.
 </p>
 
-</div>
+</button>
 
 
-<div class="startup-card">
+<button
+class="startup-card"
+onclick="mostrarStartup(5)">
 
 <h3>
 🚀 Diferencial
 </h3>
 
 <p>
-
-A GOTTA não apenas mostra
-o consumo. Ela transforma
-os dados em recomendações
-e desafios personalizados.
-
+Clique para descobrir
+o que torna a GOTTA diferente.
 </p>
 
-</div>
+</button>
 
 
-<div class="startup-card">
+<button
+class="startup-card"
+onclick="mostrarStartup(6)">
 
 <h3>
 🌎 ODS
 </h3>
 
 <p>
+Clique para descobrir
+nosso impacto.
+</p>
 
-ODS 6 — Água Potável e
-Saneamento, contribuindo
-para o uso sustentável da água.
+</button>
 
+
+</div>
+
+
+<div
+id="explicacaoStartup"
+class="explicacao-startup">
+
+<h3
+id="tituloStartup">
+👆 Clique em um tópico
+</h3>
+
+<p
+id="textoStartup">
+Selecione um dos tópicos acima
+para conhecer melhor a GOTTA.
 </p>
 
 </div>
 
-
-</div>
 
 </div>
 
@@ -1918,7 +2010,7 @@ Projeto escolar de empreendedorismo — 2026
 <script>
 
 /* =========================================================
-   ABAS
+   SISTEMA DE ABAS
 ========================================================= */
 
 function abrirAba(id, botao) {
@@ -1948,11 +2040,16 @@ function abrirAba(id, botao) {
 
     window.scrollTo(0, 0);
 
+
+    if (id === "score") {
+        iniciarNovaAnalise();
+    }
+
 }
 
 
 /* =========================================================
-   ABRIR ABA
+   ABRIR ABA PELO NOME
 ========================================================= */
 
 function abrirPorNome(id) {
@@ -1964,24 +2061,20 @@ function abrirPorNome(id) {
 
         if (
             botao.innerText
-            .toLowerCase()
-            .includes(
-                id.toLowerCase()
-            )
+                .toLowerCase()
+                .includes(id.toLowerCase())
         ) {
 
             abrirAba(id, botao);
 
-            iniciarNovaAnalise();
-
             return;
+
         }
 
     }
 
     abrirAba(id, null);
 
-    iniciarNovaAnalise();
 }
 
 
@@ -2070,6 +2163,110 @@ function mostrarEtapa(numero) {
 
 
 /* =========================================================
+   NOSSA STARTUP
+========================================================= */
+
+function mostrarStartup(numero) {
+
+    const caixa =
+        document.getElementById(
+            "explicacaoStartup"
+        );
+
+    const titulo =
+        document.getElementById(
+            "tituloStartup"
+        );
+
+    const texto =
+        document.getElementById(
+            "textoStartup"
+        );
+
+
+    const temas = {
+
+        1: {
+
+            titulo:
+                "🎯 O problema",
+
+            texto:
+                "Muitas pessoas e organizações sabem que precisam economizar água, mas não conseguem identificar facilmente onde o desperdício acontece. A GOTTA busca transformar esse problema em informações claras e ações práticas."
+
+        },
+
+        2: {
+
+            titulo:
+                "💡 A solução",
+
+            texto:
+                "A GOTTA combina sensores, análise de dados e Inteligência Artificial para entender o comportamento hídrico de um ambiente. Em vez de apenas mostrar números, a plataforma transforma esses dados em recomendações personalizadas."
+
+        },
+
+        3: {
+
+            titulo:
+                "👥 Público-alvo",
+
+            texto:
+                "A solução pode ser utilizada por famílias, escolas, condomínios, empresas e outros locais que consomem água. Cada público poderia receber uma versão adaptada da plataforma."
+
+        },
+
+        4: {
+
+            titulo:
+                "💰 Como a GOTTA ganha dinheiro",
+
+            texto:
+                "A startup poderia gerar receita com a venda dos dispositivos Gotta Pulse e com assinaturas mensais da plataforma Gotta Intelligence. Empresas, escolas e condomínios poderiam contratar planos maiores com monitoramento de vários ambientes."
+
+        },
+
+        5: {
+
+            titulo:
+                "🚀 Nosso diferencial",
+
+            texto:
+                "A GOTTA não quer apenas mostrar quanto de água foi consumido. O diferencial está em transformar os dados em inteligência, recomendações e missões personalizadas, criando um sistema que ajuda o usuário a agir."
+
+        },
+
+        6: {
+
+            titulo:
+                "🌎 ODS 6",
+
+            texto:
+                "A principal relação da GOTTA é com a ODS 6 — Água Potável e Saneamento. A startup busca contribuir para o uso mais consciente da água e para a redução do desperdício por meio da tecnologia."
+
+        }
+
+    };
+
+
+    titulo.innerText =
+        temas[numero].titulo;
+
+    texto.innerText =
+        temas[numero].texto;
+
+    caixa.style.display =
+        "block";
+
+    caixa.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+
+}
+
+
+/* =========================================================
    VARIÁVEIS DO CHAT
 ========================================================= */
 
@@ -2099,7 +2296,7 @@ let historicoAnalises = [];
 
 
 /* =========================================================
-   COMEÇAR NOVA ANÁLISE
+   NOVA ANÁLISE
 ========================================================= */
 
 function iniciarNovaAnalise() {
@@ -2161,29 +2358,34 @@ function iniciarNovaAnalise() {
 
 
     mostrarOpcoes([
+
         {
             texto: "🏠 Casa",
             valor: "casa"
         },
+
         {
             texto: "🏢 Apartamento",
             valor: "apartamento"
         },
+
         {
             texto: "🏫 Escola",
             valor: "escola"
         },
+
         {
             texto: "🏢 Empresa",
             valor: "empresa"
         }
+
     ]);
 
 }
 
 
 /* =========================================================
-   MENSAGEM
+   ADICIONAR MENSAGEM
 ========================================================= */
 
 function adicionarMensagem(tipo, texto) {
@@ -2210,24 +2412,23 @@ function adicionarMensagem(tipo, texto) {
 
     chat.appendChild(mensagem);
 
-
     chat.scrollTop =
         chat.scrollHeight;
+
 }
 
 
 /* =========================================================
-   OPÇÕES
+   MOSTRAR OPÇÕES
 ========================================================= */
 
 function mostrarOpcoes(opcoes) {
 
     const area =
-        document.getElementById(
-            "chatOpcoes"
-        );
+        document.getElementById("chatOpcoes");
 
     area.innerHTML = "";
+
 
     document
         .getElementById("chatInputArea")
@@ -2277,11 +2478,14 @@ function mostrarCampoTexto(placeholder, tipo) {
             "chatInput"
         );
 
+
     document
         .getElementById("chatOpcoes")
         .innerHTML = "";
 
+
     area.style.display = "flex";
+
 
     input.placeholder =
         placeholder;
@@ -2292,11 +2496,12 @@ function mostrarCampoTexto(placeholder, tipo) {
         tipo;
 
     input.focus();
+
 }
 
 
 /* =========================================================
-   ENVIO DE TEXTO
+   ENVIAR TEXTO
 ========================================================= */
 
 function enviarTexto() {
@@ -2327,7 +2532,9 @@ function enviarTexto() {
     input.value = "";
 
     document
-        .getElementById("chatInputArea")
+        .getElementById(
+            "chatInputArea"
+        )
         .style.display = "none";
 
 
@@ -2335,6 +2542,7 @@ function enviarTexto() {
         valor,
         tipo
     );
+
 }
 
 
@@ -2361,7 +2569,7 @@ document
 
 
 /* =========================================================
-   RESPOSTA DO CHAT
+   RESPONDER CHAT
 ========================================================= */
 
 function responderChat(
@@ -2382,10 +2590,12 @@ function responderChat(
 
         etapaChat = 1;
 
+
         adicionarMensagem(
             "ai",
             "Perfeito! 💧 Agora preciso saber quantas pessoas utilizam esse local."
         );
+
 
         mostrarCampoTexto(
             "Ex: 4",
@@ -2403,10 +2613,12 @@ function responderChat(
 
         etapaChat = 3;
 
+
         adicionarMensagem(
             "ai",
             "Ótimo! 🚿 Quantos banhos aproximadamente são tomados por dia nesse local?"
         );
+
 
         mostrarCampoTexto(
             "Ex: 6",
@@ -2424,24 +2636,30 @@ function responderChat(
 
         etapaChat = 5;
 
+
         adicionarMensagem(
             "ai",
             "Entendi. 🚽 E o vaso sanitário apresenta algum problema ou possibilidade de vazamento?"
         );
 
+
         mostrarOpcoes([
+
             {
                 texto: "🟢 Não",
                 valor: "nao"
             },
+
             {
                 texto: "🟡 Talvez",
                 valor: "talvez"
             },
+
             {
                 texto: "🔴 Sim",
                 valor: "sim"
             }
+
         ]);
 
         return;
@@ -2455,24 +2673,30 @@ function responderChat(
 
         etapaChat = 6;
 
+
         adicionarMensagem(
             "ai",
             "Última pergunta! ♻️ Esse local costuma reutilizar água?"
         );
 
+
         mostrarOpcoes([
+
             {
                 texto: "🟢 Sim",
                 valor: "sim"
             },
+
             {
                 texto: "🟡 Às vezes",
                 valor: "as vezes"
             },
+
             {
                 texto: "🔴 Não",
                 valor: "nao"
             }
+
         ]);
 
         return;
@@ -2483,11 +2707,6 @@ function responderChat(
 
         respostasChat.reuso =
             valor;
-
-        adicionarMensagem(
-            "usuario",
-            texto
-        );
 
         gerarAnalise();
 
@@ -2511,6 +2730,7 @@ function processarTexto(
         const numero =
             Number(valor);
 
+
         if (
             !numero ||
             numero < 1
@@ -2520,6 +2740,7 @@ function processarTexto(
                 "ai",
                 "Preciso de um número válido de pessoas. 😊"
             );
+
 
             mostrarCampoTexto(
                 "Ex: 4",
@@ -2532,6 +2753,7 @@ function processarTexto(
 
         respostasChat.pessoas =
             numero;
+
 
         etapaChat = 2;
 
@@ -2575,6 +2797,11 @@ function processarTexto(
             },
 
             {
+                texto: "Bahia",
+                valor: "Bahia"
+            },
+
+            {
                 texto: "Outro estado",
                 valor: "Outro"
             }
@@ -2590,8 +2817,10 @@ function processarTexto(
         const numero =
             Number(valor);
 
+
         respostasChat.banhos =
             numero || 0;
+
 
         etapaChat = 4;
 
@@ -2627,7 +2856,7 @@ function processarTexto(
 
 
 /* =========================================================
-   GERAÇÃO DA ANÁLISE
+   GERAR ANÁLISE
 ========================================================= */
 
 function gerarAnalise() {
@@ -2636,11 +2865,8 @@ function gerarAnalise() {
 
 
     /*
-        Caso o usuário não tenha
-        informado uma conta real,
-        usamos uma estimativa.
-
-        150 litros por pessoa/dia.
+       Estimativa do protótipo.
+       Não representa uma medição real.
     */
 
     consumo =
@@ -2725,11 +2951,8 @@ function gerarAnalise() {
         );
 
 
-    /*
-        CLASSIFICAÇÃO
-    */
-
     let classificacao;
+
 
     if (score >= 80) {
 
@@ -2754,11 +2977,8 @@ function gerarAnalise() {
     }
 
 
-    /*
-        POTENCIAL DE ECONOMIA
-    */
-
     let percentual;
+
 
     if (score >= 80) {
 
@@ -2786,10 +3006,6 @@ function gerarAnalise() {
     const economiaAnual =
         economiaMensal * 12;
 
-
-    /*
-        RECOMENDAÇÃO
-    */
 
     let recomendacao;
 
@@ -2847,10 +3063,6 @@ function gerarAnalise() {
 
     }
 
-
-    /*
-        MOSTRAR RESPOSTA DA IA
-    */
 
     const analise =
         document.getElementById(
@@ -2983,6 +3195,7 @@ function gerarAnalise() {
 
         </div>
 
+
         <p style="
             color:#708d96;
             font-size:13px;
@@ -2990,18 +3203,14 @@ function gerarAnalise() {
             line-height:1.5;
         ">
 
-            *Os valores mostrados são estimativas do protótipo
-            escolar. Uma futura versão utilizaria dados reais
-            dos sensores GOTTA.
+            *Os valores mostrados são estimativas
+            do protótipo escolar. Uma futura versão
+            utilizaria dados reais dos sensores GOTTA.
 
         </p>
 
     `;
 
-
-    /*
-        SALVAR NO HISTÓRICO
-    */
 
     historicoAnalises.push({
 
@@ -3025,14 +3234,11 @@ function gerarAnalise() {
     atualizarHistorico();
 
 
-    /*
-        RESPOSTA DA IA NO CHAT
-    */
-
     adicionarMensagem(
         "ai",
         "Analisei suas respostas. 🔎"
     );
+
 
     adicionarMensagem(
         "ai",
@@ -3042,17 +3248,10 @@ function gerarAnalise() {
     );
 
 
-    document
-        .getElementById(
-            "analiseFinal"
-        )
-        .scrollIntoView({
-
-            behavior: "smooth",
-
-            block: "start"
-
-        });
+    analise.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
 
 }
 
@@ -3074,9 +3273,11 @@ function atualizarHistorico() {
     ) {
 
         lista.innerHTML =
-            `<p style="color:#8aaab5;">
+            `
+            <p style="color:#8aaab5;">
                 Nenhuma análise realizada ainda.
-            </p>`;
+            </p>
+            `;
 
         return;
     }
@@ -3088,48 +3289,48 @@ function atualizarHistorico() {
 
                 return `
 
-                <div class="historico-item">
+                    <div class="historico-item">
 
-                    <div>
+                        <div>
 
-                        <strong>
-                            Análise #${index + 1}
-                        </strong>
+                            <strong>
+                                Análise #${index + 1}
+                            </strong>
 
-                        <br>
+                            <br>
 
-                        <span style="
-                            color:#8aaab5;
-                            font-size:13px;
-                        ">
+                            <span style="
+                                color:#8aaab5;
+                                font-size:13px;
+                            ">
 
-                            ${item.classificacao}
+                                ${item.classificacao}
 
-                        </span>
+                            </span>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                ${item.score}/100
+                            </strong>
+
+                            <br>
+
+                            <span style="
+                                color:#8aaab5;
+                                font-size:12px;
+                            ">
+
+                                ${item.data}
+
+                            </span>
+
+                        </div>
 
                     </div>
-
-
-                    <div>
-
-                        <strong>
-                            ${item.score}/100
-                        </strong>
-
-                        <br>
-
-                        <span style="
-                            color:#8aaab5;
-                            font-size:12px;
-                        ">
-
-                            ${item.data}
-
-                        </span>
-
-                    </div>
-
-                </div>
 
                 `;
 
@@ -3247,6 +3448,20 @@ function calcularSimulador() {
         + " L/ano";
 
 }
+
+
+/* =========================================================
+   INICIAR A GOTTA AI
+========================================================= */
+
+window.addEventListener(
+    "load",
+    function() {
+
+        iniciarNovaAnalise();
+
+    }
+);
 
 </script>
 
